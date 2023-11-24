@@ -1,46 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McKing-Burguers</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu 5</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
     <header>
-        <h1>McKing-Burguers</h1>
-        <nav>
-            <ul>
-                <li><a href="#menu">Menú</a></li>
-                <li><a href="#quienes-somos">Quiénes Somos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <button class="burger" onclick="toggleMenu()"></button>
 
-    <section id="menu">
-        <!-- Contenido del menú -->
-    </section>
+    <div class="menu">
+      <div></div>
+      <div style="transition-delay: 0.1s"></div>
+      <div style="transition-delay: 0.2s"></div>
+      <div style="transition-delay: 0.3s"></div>
+      <div style="transition-delay: 0.4s"></div>
+      <ul>
+        <li style="animation-delay: 0.4s">
+          <a href="#home">Nosotros</a>
+        </li>
+        <li style="animation-delay: 0.5s">
+          <a href="#home">Menu</a>
+        </li>
+        <li style="animation-delay: 0.7s">
+          <a href="#home">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
-    <section id="quienes-somos">
-        <!-- Sección "Quiénes Somos" -->
-        <h2>Quiénes Somos</h2>
-        <p>Somos un equipo apasionado por ofrecer deliciosas hamburguesas con ingredientes frescos y de calidad.</p>
-        <p>Nuestra misión es...</p>
-        <!-- Puedes agregar más información sobre la historia, valores, etc. -->
-    </section>
+    <script type="text/javascript">
+      const toggleMenu = () => document.body.classList.toggle("open");
+    </script>
 
-    <section id="contacto">
-        <!-- Información de contacto -->
-        <h2>Contacto</h2>
-        <p>Dirección: [Dirección]</p>
-        <p>Teléfono: [Número de Teléfono]</p>
-        <p>Email: [Correo Electrónico]</p>
-    </section>
-
-    <footer>
-        <!-- Pie de página -->
-        <p>&copy; 2023 Nombre de tu Local de Comida Rápida</p>
-    </footer>
-</body>
+  </body>
 </html>
