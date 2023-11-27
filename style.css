@@ -1,102 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
 body {
   margin: 0;
   display: grid;
   font-family: "Euclid Circular A";
   height: 100vh;
+  background: rgb(140, 34, 195);
+  background: linear-gradient(180deg, rgba(140, 34, 195, 1) 0%, rgba(68, 9, 126, 1) 53%, rgba(28, 1, 59, 1) 100%);
+  font-family: 'Kdam Thmor Pro', sans-serif;
 }
 
-@media (max-width: 250px) {
+@media (min-width: 250px) {
 
-a {
-  text-decoration: none;
-  color: #f9f9f9;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 20px;
-}
-
-ul li {
-  text-align: center;
-}
-
-label {
-  height: 100vh;
-  cursor: pointer;
-}
-
-input {
-  position: absolute;
-  scale: 0;
-}
-
-
-.burger {
-  position: fixed;
-  z-index: 2;
-  display: grid;
-  width: 80px;
-  height: 80px;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  background-image: url("menu-desplegable-removebg-preview.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 30%;
-  cursor: pointer;
-  transition: 0.175s;
-}
-
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 6px;
-  display: grid;
-  transition: 0.3s;
-}
-
-.menu > div {
-  background: #030108;
-  translate: -100% 0;
-  transition: 0.2s ease-in-out;
-}
-
-body.open .menu > div {
-  translate: 0;
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-    translate: 0 20px;
+  a {
+    text-decoration: none;
+    color: #f9f9f9;
   }
-  100% {
-    opacity: 1;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 20px;
+  }
+
+  ul li {
+    text-align: center;
+  }
+
+  label {
+    height: 100vh;
+    cursor: pointer;
+  }
+
+  input {
+    position: absolute;
+    scale: 0;
+  }
+
+  .burger {
+    z-index: 2;
+    display: grid;
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    background-image: url("menu-desplegable-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    cursor: pointer;
+    transition: 0.175s;
+    margin-left: -20px;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 6px;
+    display: grid;
+    transition: 0.3s;
+  }
+
+  .menu>div {
+    background: #030108;
+    translate: -100% 0;
+    transition: 0.2s ease-in-out;
+  }
+
+  body.open .menu>div {
     translate: 0;
   }
-}
 
-.menu ul {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  opacity: 0;
-  transition: 0.3s;
-}
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      translate: 0 20px;
+    }
 
-body.open .menu ul {
-  opacity: 1;
-}
+    100% {
+      opacity: 1;
+      translate: 0;
+    }
+  }
 
-body.open .menu ul li {
-  animation: appear 0.4s both;
-}
+  .menu ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  body.open .menu ul {
+    opacity: 1;
+  }
+
+  body.open .menu ul li {
+    animation: appear 0.4s both;
+  }
+
+  header {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .div-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .frase-header {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0px;
+  }
+
+  .circulo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: solid 2px #fcb502;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .img-logo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: auto;
+  }
+
+  .nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .texto-mc {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 41px;
+  }
+
+  .mundo {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+  }
+
+  .pacman {
+    width: 247px;
+  }
 }
