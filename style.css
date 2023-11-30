@@ -8,6 +8,7 @@ body {
   background: rgb(140, 34, 195);
   background: linear-gradient(180deg, rgba(140, 34, 195, 1) 0%, rgba(68, 9, 126, 1) 53%, rgba(28, 1, 59, 1) 100%);
   font-family: 'Kdam Thmor Pro', sans-serif;
+  color: white
 }
 
 @media (min-width: 250px) {
@@ -54,6 +55,7 @@ body {
     cursor: pointer;
     transition: 0.175s;
     margin-left: -20px;
+    position: fixed;
   }
 
   .menu {
@@ -64,6 +66,8 @@ body {
     bottom: 6px;
     display: grid;
     transition: 0.3s;
+    height: 100%;
+    z-index: 1;
   }
 
   .menu>div {
@@ -113,6 +117,8 @@ body {
   }
 
   .div-header {
+    right: 0px;
+    position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -121,7 +127,6 @@ body {
   .frase-header {
     font-size: 18px;
     color: rgb(255, 255, 255);
-    margin-bottom: 0px;
   }
 
   .circulo {
@@ -161,5 +166,41 @@ body {
 
   .pacman {
     width: 247px;
+  }
+
+  .section-menu {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section-menu p {
+    font-size: 16px;
+    padding: 26px;
+    margin: 0px;
+  }
+
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .carousel-item img {
+    width: 72%;
+    height: auto;
+  }
+
+  .mario {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    left: 0px;
   }
 }
