@@ -4,8 +4,6 @@ body {
   margin: 0;
   display: grid;
   font-family: "Euclid Circular A";
-  height: 100vh;
-  background: rgb(140, 34, 195);
   background: linear-gradient(180deg, rgba(140, 34, 195, 1) 0%, rgba(68, 9, 126, 1) 53%, rgba(28, 1, 59, 1) 100%);
   font-family: 'Kdam Thmor Pro', sans-serif;
   color: white
@@ -43,8 +41,8 @@ body {
   .burger {
     z-index: 2;
     display: grid;
-    width: 80px;
-    height: 80px;
+    width: 99px;
+    height: 71px;
     background: transparent;
     border: 0;
     cursor: pointer;
@@ -135,7 +133,8 @@ body {
     border-radius: 50%;
     border: solid 2px #fcb502;
     overflow: hidden;
-    margin-bottom: 20px;
+    margin-bottom: 2em;
+    box-shadow: 0px 0px 44px 12px rgba(255,199,0,0.75);
   }
 
   .img-logo {
@@ -149,13 +148,20 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2em;
   }
 
   .texto-mc {
-    font-size: 18px;
+    font-size: 19px;
     color: rgb(255, 255, 255);
     text-align: center;
-    margin-bottom: 41px;
+    margin: 0px;
+    width: 20em;
+    word-spacing: .2em;
+  }
+
+  .h1-nosotros {
+    margin: .5em;
   }
 
   .mundo {
@@ -165,6 +171,7 @@ body {
   }
 
   .pacman {
+    margin-top: 1em;
     width: 342px;
   }
 
@@ -177,7 +184,7 @@ body {
   }
 
   .section-menu p {
-    font-size: 16px;
+    font-size: 19px;
     padding: 26px;
     margin: 0px;
   }
@@ -201,27 +208,27 @@ body {
     position: absolute;
     width: 75px;
     height: 75px;
-    left: 0px;
+    left: 14px;
+    top: 45%;
   }
-
 
   .dino-mario {
     position: absolute;
     width: 75px;
     height: 75px;
-    left: 14px;
-    bottom: -64%;
+    right: 14px;
+    bottom: -107%;
   }
 
   .mario {
     position: absolute;
     width: 75px;
     height: 75px;
-    right: 5px;
-    top: 33%;
+    right: 12px;
+    top: 47%;
   }
 
-  .contacto a {
+  .ancla-ig {
     cursor: pointer;
     z-index: 2;
     position: absolute;
@@ -244,12 +251,19 @@ body {
     border-radius: 30px;
     padding: 10px;
     text-align: center;
-    height: 11em;
+    height: 16em;
     width: 12em;
     padding-top: 0px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0px 0px 37px 0px rgba(255,199,0,0.75);
   }
+
+  #whatsapp-card {
+    height: 20.5em;
+  }
+  
   
   .card h3 {
     margin-bottom: 10px;
@@ -259,33 +273,25 @@ body {
     width: 11em;
     border-radius: 20px;
   }
-  
-  .whatsapp-dropdown {
-    position: relative;
-    display: inline-block;
+
+  .texto-contacto {
+    font-size: 17px;
+    width: 15em;
   }
-  
-  .whatsapp-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+
+  .anclas-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1em;
   }
-  
-  .whatsapp-dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+
+  .anclas-wsp {
+    cursor: pointer;
+    z-index: 2;
+    border: 2px solid #fcb502;
+    border-radius: 30px;
+    padding: 3px 19px;
   }
-  
-  .whatsapp-dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .show-dropdown {
-    display: block;
-  }
+
 }

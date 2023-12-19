@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="/mk-logo-removebg-preview.png">
   <title>McKing-burguers</title>
   <link rel="stylesheet" href="style.css" />
+  
 </head>
 
 <body>
@@ -44,9 +45,10 @@
       <div class="circulo">
         <img class="img-logo" src="/logo-mcking.png" alt="logo">
       </div>
-      <p class="texto-mc">Bienvenido a
-      <h1>McKing burguers</h1>, una familia que trabaja con mucha dedicacion y amor
-      </p>
+      <p class="texto-mc">Bienvenid@s  a</p>
+      <h1 class="h1-nosotros">McKing burguers</h1>
+      <p class="texto-mc">una familia que trabaja con mucha dedicacion y amor</p>
+      
 
       <img class="pacman" src="/th-removebg-preview.png" alt="pacman">
     </section>
@@ -80,25 +82,26 @@
       <div class="contacto-container">
         <div class="red-social">
           <div class="card">
-            <a href="https://www.instagram.com/mckingburguers/" target="_blank">
+            <a class="ancla-ig" href="https://www.instagram.com/mckingburguers/" target="_blank">
               <h3>Instagram</h3>
+              <p class="texto-contacto">Seguinos en nuestro Instagram, para no perderte ninguna de nuestras novedades!</p>
               <img class="img-insta" src="/instagram-mc.png" alt="imagen ig">
             </a>
           </div>
         </div>
 
+        <img class="sonic" src="/sonic.png" alt="sonic">
+
         <div class="red-social">
           <div class="card" id="whatsapp-card">
             <h3>WhatsApp</h3>
-            <div class="whatsapp-dropdown">
-              <button onclick="toggleWhatsappDropdown()">Locales</button>
-              <div class="whatsapp-dropdown-content">
-                <a href="#local1">Local 1</a>
-                <a href="#local2">Local 2</a>
-                <a href="#local3">Local 3</a>
-                <a href="#local4">Local 4</a>
-              </div>
-            </div>
+             <p class="texto-contacto">Tambien podes hablar directamente por wsp, eligiendo la sucursal mas cercana</p>
+             <div class="anclas-contacto">
+             <a class="anclas-wsp" href="wa.link/41auq0">Villa Martelli</a>
+             <a class="anclas-wsp" href="wa.link/27xn0b">San Andres</a>
+             <a class="anclas-wsp" href="wa.link/9x6v27">Chilavert</a>
+             <a class="anclas-wsp" href="wa.link/6o9fyx">Carcova</a>
+             </div>
           </div>
         </div>
       </div>
@@ -111,19 +114,11 @@
 
 
   <script type="text/javascript">
-    const toggleMenu = () => document.body.classList.toggle("open");
-
     document.querySelectorAll('.menu ul li a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-
-        // Scroll suave
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth'
-        });
 
         // Cerrar el menú después de hacer clic en un enlace
         document.body.classList.remove("open");
