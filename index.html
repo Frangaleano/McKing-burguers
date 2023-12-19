@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/mk-logo-removebg-preview.png">
   <title>McKing-burguers</title>
   <link rel="stylesheet" href="style.css" />
@@ -22,7 +22,7 @@
       <div style="transition-delay: 0.4s"></div>
       <ul>
         <li style="animation-delay: 0.4s">
-          <a href="#home">Nosotros</a>
+          <a href="#nosotros">Nosotros</a>
         </li>
         <li style="animation-delay: 0.5s">
           <a href="#home">Menu</a>
@@ -39,11 +39,13 @@
   </header>
 
   <main>
-    <section class="nosotros">
+
+    <section id="nosotros">
       <div class="circulo">
         <img class="img-logo" src="/logo-mcking.png" alt="logo">
       </div>
-      <p class="texto-mc">Bienvenido a McKing burguers, una familia que trabaja con mucha dedicacion y amor
+      <p class="texto-mc">Bienvenido a
+      <h1>McKing burguers</h1>, una familia que trabaja con mucha dedicacion y amor
       </p>
 
       <img class="pacman" src="/th-removebg-preview.png" alt="pacman">
@@ -64,13 +66,42 @@
         </div>
       </div>
 
-      <p>Todos nuestros productos son 100% frescos y de muy alta calidad, para llevar nuestras hamburguesas al proximo nivel!</p>
+      <p>Todos nuestros productos son 100% frescos y de muy alta calidad, para llevar nuestras hamburguesas al proximo
+        nivel!</p>
 
-      <img class="mario" src="/dino-mario.png" alt="dino mario">
-      <img class="mario" src="/luigi-mario.png" alt="luigi mario">
+      <img class="dino-mario" src="/dino-mario.png" alt="dino mario">
+      <img class="luigi-mario" src="/luigi-mario.png" alt="luigi mario">
       <img class="mario" src="/mario-bros.png" alt="mario bros">
 
+    </section>
 
+    <section class="contacto">
+      <h2>Contacto</h2>
+      <div class="contacto-container">
+        <div class="red-social">
+          <div class="card">
+            <a href="https://www.instagram.com/mckingburguers/" target="_blank">
+              <h3>Instagram</h3>
+              <img class="img-insta" src="/instagram-mc.png" alt="imagen ig">
+            </a>
+          </div>
+        </div>
+
+        <div class="red-social">
+          <div class="card" id="whatsapp-card">
+            <h3>WhatsApp</h3>
+            <div class="whatsapp-dropdown">
+              <button onclick="toggleWhatsappDropdown()">Locales</button>
+              <div class="whatsapp-dropdown-content">
+                <a href="#local1">Local 1</a>
+                <a href="#local2">Local 2</a>
+                <a href="#local3">Local 3</a>
+                <a href="#local4">Local 4</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
 
@@ -81,6 +112,23 @@
 
   <script type="text/javascript">
     const toggleMenu = () => document.body.classList.toggle("open");
+
+    document.querySelectorAll('.menu ul li a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        // Scroll suave
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+
+        // Cerrar el menú después de hacer clic en un enlace
+        document.body.classList.remove("open");
+      });
+    });
 
     const carouselInner = document.querySelector('.carousel-inner');
     const items = document.querySelectorAll('.carousel-item');
