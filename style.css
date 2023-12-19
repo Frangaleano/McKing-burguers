@@ -6,14 +6,16 @@ body {
   font-family: "Euclid Circular A";
   background: linear-gradient(180deg, rgba(140, 34, 195, 1) 0%, rgba(68, 9, 126, 1) 53%, rgba(28, 1, 59, 1) 100%);
   font-family: 'Kdam Thmor Pro', sans-serif;
-  color: white
+  color: white;
+  overflow-x: hidden;
 }
 
 @media (min-width: 250px) {
 
-  a {
+  .anclas-menu {
     text-decoration: none;
     color: #f9f9f9;
+    font-size: 26px;
   }
 
   ul {
@@ -54,6 +56,22 @@ body {
     transition: 0.175s;
     margin-left: -20px;
     position: fixed;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .close-button {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
 
   .menu {
@@ -75,7 +93,9 @@ body {
   }
 
   body.open .menu>div {
-    translate: 0;
+    transform: translateX(0);
+    background-color: #030108;
+    height: 140px;
   }
 
   @keyframes appear {
@@ -107,6 +127,17 @@ body {
     animation: appear 0.4s both;
   }
 
+  body.open .burger {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  body.open .close-button {
+    display: block;
+    opacity: 1;
+    z-index: 2;
+  }
+
   header {
     height: 50px;
     display: flex;
@@ -123,7 +154,7 @@ body {
   }
 
   .frase-header {
-    font-size: 18px;
+    font-size: 20px;
     color: rgb(255, 255, 255);
   }
 
@@ -134,7 +165,7 @@ body {
     border: solid 2px #fcb502;
     overflow: hidden;
     margin-bottom: 2em;
-    box-shadow: 0px 0px 44px 12px rgba(255,199,0,0.75);
+    box-shadow: 0px 0px 44px 12px rgba(255, 199, 0, 0.75);
   }
 
   .img-logo {
@@ -232,20 +263,22 @@ body {
     cursor: pointer;
     z-index: 2;
     position: absolute;
+    color: white;
+    text-decoration: none;
   }
-  
+
   .contacto {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
+
   .contacto-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .card {
     border: 2px solid #fcb502;
     border-radius: 30px;
@@ -257,18 +290,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: inset 0px 0px 37px 0px rgba(255,199,0,0.75);
+    box-shadow: inset 0px 0px 37px 0px rgba(255, 199, 0, 0.75);
   }
 
   #whatsapp-card {
     height: 20.5em;
   }
-  
-  
+
+  .sonic {
+    width: 60px;
+    position: absolute;
+    bottom: -110%;
+    left: 15px;
+  }
+
   .card h3 {
     margin-bottom: 10px;
   }
-  
+
   .red-social img {
     width: 11em;
     border-radius: 20px;
@@ -292,6 +331,8 @@ body {
     border: 2px solid #fcb502;
     border-radius: 30px;
     padding: 3px 19px;
+    color: white;
+    text-decoration: none;
   }
 
 }
