@@ -249,11 +249,11 @@ body {
   }
 
   .luigi-mario {
-    position: absolute;
+    position: relative;
     width: 75px;
     height: 75px;
-    left: 14px;
-    top: 45%;
+    right: 6em;
+    bottom: 11em;
   }
 
   .dino-mario {
