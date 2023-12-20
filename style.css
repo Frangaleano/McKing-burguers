@@ -167,6 +167,10 @@ body {
     color: rgb(255, 255, 255);
   }
 
+  main {
+    padding-bottom: 20px;
+  }
+
   .circulo {
     width: 180px;
     height: 180px;
@@ -293,7 +297,7 @@ body {
     border-radius: 30px;
     padding: 10px;
     text-align: center;
-    height: 16em;
+    height: 17em;
     width: 12em;
     padding-top: 0px;
     display: flex;
@@ -306,7 +310,7 @@ body {
   }
 
   #whatsapp-card {
-    height: 21.5em;
+    height: 22.5em;
   }
 
   .sonic {
@@ -346,5 +350,4 @@ body {
     color: white;
     text-decoration: none;
   }
-
 }
