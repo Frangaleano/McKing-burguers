@@ -98,7 +98,7 @@ body {
   body.open .menu>div {
     transform: translateX(0);
     background-color: #030108;
-    height: 140px;
+    height: 145px;
     width: 100%;
   }
 
@@ -123,9 +123,7 @@ body {
     transition: 0.3s;
   }
 
-  body.open-menu {
-    overflow: hidden;
-  }
+  
 
   body.open .menu ul {
     opacity: 1;

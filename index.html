@@ -22,7 +22,6 @@
       <div style="transition-delay: 0.1s"></div>
       <div style="transition-delay: 0.2s"></div>
       <div style="transition-delay: 0.3s"></div>
-      <div style="transition-delay: 0.4s"></div>
       <ul>
         <li style="animation-delay: 0.4s">
           <a class="anclas-menu" href="#nosotros">Nosotros</a>
@@ -41,7 +40,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <section id="nosotros">
       <div class="circulo">
@@ -119,7 +118,22 @@
 
 
   <script type="text/javascript">
-    const toggleMenu = () => document.body.classList.toggle("open");
+
+    const toggleMenu = () => {
+      const body = document.body;
+      const main = document.getElementById("main");
+
+      body.classList.toggle('open');
+
+      // Bloquear o restaurar el scroll del cuerpo
+      if (body.classList.contains('open')) {
+        body.style.overflow = 'hidden'; // Bloquear el scroll
+        main.style.opacity = "0"
+      } else {
+        body.style.overflow = ''; // Restaurar el scroll
+        main.style.opacity = "1"
+      }
+    };
 
     document.querySelectorAll('.menu ul li a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -134,7 +148,7 @@
         });
 
         // Cerrar el menú después de hacer clic en un enlace
-        document.body.classList.remove("open");
+        toggleMenu();
       });
     });
 
