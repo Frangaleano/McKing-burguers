@@ -287,6 +287,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
 
   .card {
@@ -312,9 +313,6 @@ body {
 
   .sonic {
     width: 60px;
-    position: absolute;
-    left: 5px;
-    bottom: -195%;
   }
 
   .card h3 {
