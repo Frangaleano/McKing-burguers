@@ -314,6 +314,7 @@ body {
     width: 60px;
     position: absolute;
     left: 0px;
+    bottom: -195%;
   }
 
   .card h3 {
