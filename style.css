@@ -7,7 +7,6 @@ body {
   background: linear-gradient(180deg, rgba(140, 34, 195, 1) 0%, rgba(68, 9, 126, 1) 53%, rgba(28, 1, 59, 1) 100%);
   font-family: 'Kdam Thmor Pro', sans-serif;
   color: white;
-  overflow-x: hidden;
 }
 
 @media (min-width: 250px) {
@@ -40,7 +39,7 @@ body {
   }
 
   .burger {
-    z-index: 2;
+    z-index: 5;
     display: grid;
     width: 99px;
     height: 71px;
@@ -78,11 +77,10 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 6px;
+    bottom: 0;
     display: grid;
     transition: 0.3s;
-    height: 100%;
-    z-index: 1;
+    z-index: 3;
   }
 
   .menu>div {
@@ -95,6 +93,7 @@ body {
     transform: translateX(0);
     background-color: #030108;
     height: 140px;
+    width: 100%;
   }
 
   @keyframes appear {
@@ -118,6 +117,10 @@ body {
     transition: 0.3s;
   }
 
+  body.open-menu {
+    overflow: hidden;
+  }
+
   body.open .menu ul {
     opacity: 1;
   }
@@ -134,7 +137,8 @@ body {
   body.open .close-button {
     display: block;
     opacity: 1;
-    z-index: 2;
+    z-index: 4;
+    position: fixed;
   }
 
   header {
@@ -186,7 +190,7 @@ body {
     color: rgb(255, 255, 255);
     text-align: center;
     margin: 0px;
-    width: 20em;
+    width: 17em;
     word-spacing: .2em;
   }
 
