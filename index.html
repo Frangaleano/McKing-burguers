@@ -63,15 +63,15 @@
 
       <div class="menu-section" id="menu-section">
         <div class="menu-button-container">
-          <button class="menu-button" onclick="selectButton(1)">Botón 1</button>
-          <button class="menu-button" onclick="selectButton(2)">Botón 2</button>
-          <button class="menu-button" onclick="selectButton(3)">Botón 3</button>
-          <button class="menu-button" onclick="selectButton(4)">Botón 4</button>
-          <button class="menu-button" onclick="selectButton(5)">Botón 5</button>
+          <button class="menu-button" onclick="selectButton(1)">Hamburguesas - 1 Carne</button>
+          <button class="menu-button" onclick="selectButton(2)">Hamburguesas - 2 Carnes</button>
+          <button class="menu-button" onclick="selectButton(3)">Papas fritas / Acompañamientos</button>
+          <button class="menu-button" onclick="selectButton(4)">Linea Pollo</button>
+          <button class="menu-button" onclick="selectButton(5)">Bebidas / Otros</button>
         </div>
       </div>
 
-      <div class="carousel-inner ">
+      <div class="carousel-inner" id="hidden">
         <div class="carousel-item">
           <img src="/patitas.png" alt="First slide">
         </div>
@@ -83,7 +83,8 @@
         </div>
       </div>
 
-      <p>Todos nuestros productos son 100% frescos y de muy alta calidad, para llevar nuestras hamburguesas al proximo
+      <p id="hidden">Todos nuestros productos son 100% frescos y de muy alta calidad, para llevar nuestras hamburguesas
+        al proximo
         nivel!</p>
 
       <img class="dino-mario " src="/dino-mario.png" alt="dino mario">
@@ -174,10 +175,28 @@
     }, 1500);
 
     function toggleMenuSection() {
-      const menuProductos = document.getElementById("menu-section")
-      const sectionMenu = document.getElementById("menu")
+      const menuProductos = document.getElementById("menu-section");
+      const tituloMenu = document.getElementById("menu-title");
+      const carousel = document.getElementById("hidden")
 
-      menuProductos.style.display = "flex"
+      menuProductos.classList.toggle("visible");
+
+      if (menuProductos.classList.contains("visible")) {
+        setTimeout(() => {
+          menuProductos.style.opacity = "1";
+          menuProductos.style.transform = "translateY(0)";
+          menuProductos.style.display = "flex"; // Agregado para mostrar los botones
+        }, 50);
+        carousel.style.display = "none"
+      } else {
+        menuProductos.style.opacity = "0";
+        menuProductos.style.transform = " 2s translateY(-20px)";
+        menuProductos.style.display = "none"; // Agregado para ocultar los botones
+        carousel.style.display = "flex"
+      }
+
+      tituloMenu.style.backgroundColor = "#fcb502";
+      tituloMenu.style.color = "rgba(140, 34, 195, 1)";
     }
 
     function selectButton(buttonNumber) {

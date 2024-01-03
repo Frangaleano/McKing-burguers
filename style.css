@@ -358,9 +358,17 @@ body {
   .menu-section {
     padding: 20px;
     width: 100%;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s, transform 1s;
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .menu-button-container {
