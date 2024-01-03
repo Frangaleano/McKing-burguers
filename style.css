@@ -358,7 +358,7 @@ body {
   .menu-section {
     padding: 20px;
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     opacity: 0;

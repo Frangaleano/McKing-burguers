@@ -182,17 +182,21 @@
       menuProductos.classList.toggle("visible");
 
       if (menuProductos.classList.contains("visible")) {
-        setTimeout(() => {
-          menuProductos.style.opacity = "1";
-          menuProductos.style.transform = "translateY(0)";
-          menuProductos.style.display = "flex"; // Agregado para mostrar los botones
-        }, 50);
+        // Mostrar la sección del menú
+        menuProductos.style.display = "flex";
+        menuProductos.offsetHeight; // Activar reflow
+        menuProductos.style.opacity = "1";
+        menuProductos.style.transform = "translateY(0)";
+        menuProductos.style.visibility = "visible";
         carousel.style.display = "none"
       } else {
         menuProductos.style.opacity = "0";
-        menuProductos.style.transform = " 2s translateY(-20px)";
-        menuProductos.style.display = "none"; // Agregado para ocultar los botones
-        carousel.style.display = "flex"
+        menuProductos.style.transform = "translateY(-20px)";
+        setTimeout(() => {
+          menuProductos.style.visibility = "hidden";
+          menuProductos.style.display = "none"
+          carousel.style.display = "flex"
+        }, 800); // Establecer un tiempo de espera para ocultar después de la animación
       }
 
       tituloMenu.style.backgroundColor = "#fcb502";
