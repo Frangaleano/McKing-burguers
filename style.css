@@ -17,6 +17,10 @@ body {
 
 @media (min-width: 250px) {
 
+  .list-menu {
+    display: none;
+  }
+
   .anclas-menu {
     text-decoration: none;
     color: #f9f9f9;
@@ -105,12 +109,12 @@ body {
   @keyframes appear {
     0% {
       opacity: 0;
-      translate: 0 20px;
+      transform: translate(0, 20px);
     }
 
     100% {
       opacity: 1;
-      translate: 0;
+      transform: translate(0);
     }
   }
 
@@ -123,10 +127,9 @@ body {
     transition: 0.3s;
   }
 
-  
-
   body.open .menu ul {
     opacity: 1;
+    display: grid;
   }
 
   body.open .menu ul li {
@@ -343,4 +346,50 @@ body {
     color: white;
     text-decoration: none;
   }
+
+  #menu-title {
+    border: 2px solid #fcb502;
+    box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
+    padding: 4px 37px;
+    border-radius: 30px;
+    z-index: 5;
+  }
+
+  .menu-section {
+    padding: 20px;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-button-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+  }
+
+  .menu-button {
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    border: 2px solid #fcb502;
+    box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
+    padding: 4px 37px;
+    border-radius: 30px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: white;
+  }
+
+  .menu-button:hover {
+    background-color: #d89f02;
+  }
+
+  .menu-button.active {
+    background-color: #a77501;
+  }
+
+
 }

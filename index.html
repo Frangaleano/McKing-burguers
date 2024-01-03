@@ -22,7 +22,7 @@
       <div style="transition-delay: 0.1s"></div>
       <div style="transition-delay: 0.2s"></div>
       <div style="transition-delay: 0.3s"></div>
-      <ul>
+      <ul class="list-menu">
         <li style="animation-delay: 0.4s">
           <a class="anclas-menu" href="#nosotros">Nosotros</a>
         </li>
@@ -40,7 +40,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" class="main-content">
 
     <section id="nosotros">
       <div class="circulo">
@@ -59,8 +59,19 @@
 
     <section class="section-menu" id="menu">
 
-      <h2>Menú</h2>
-      <div class="carousel-inner">
+      <h2 id="menu-title" onclick="toggleMenuSection()">Menú</h2>
+
+      <div class="menu-section" id="menu-section">
+        <div class="menu-button-container">
+          <button class="menu-button" onclick="selectButton(1)">Botón 1</button>
+          <button class="menu-button" onclick="selectButton(2)">Botón 2</button>
+          <button class="menu-button" onclick="selectButton(3)">Botón 3</button>
+          <button class="menu-button" onclick="selectButton(4)">Botón 4</button>
+          <button class="menu-button" onclick="selectButton(5)">Botón 5</button>
+        </div>
+      </div>
+
+      <div class="carousel-inner ">
         <div class="carousel-item">
           <img src="/patitas.png" alt="First slide">
         </div>
@@ -75,7 +86,7 @@
       <p>Todos nuestros productos son 100% frescos y de muy alta calidad, para llevar nuestras hamburguesas al proximo
         nivel!</p>
 
-      <img class="dino-mario" src="/dino-mario.png" alt="dino mario">
+      <img class="dino-mario " src="/dino-mario.png" alt="dino mario">
 
     </section>
 
@@ -161,6 +172,24 @@
       const translateValue = -currentIndex * 100 + '%';
       carouselInner.style.transform = 'translateX(' + translateValue + ')';
     }, 1500);
+
+    function toggleMenuSection() {
+      const menuProductos = document.getElementById("menu-section")
+      const sectionMenu = document.getElementById("menu")
+
+      menuProductos.style.display = "flex"
+    }
+
+    function selectButton(buttonNumber) {
+      const allButtons = document.querySelectorAll('.menu-button');
+      allButtons.forEach(button => button.classList.remove('active'));
+
+      const selectedButton = document.querySelector(`.menu-button:nth-child(${buttonNumber})`);
+      selectedButton.classList.add('active');
+    }
+
+
+
   </script>
 
 </body>
