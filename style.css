@@ -353,6 +353,7 @@ body {
     padding: 4px 37px;
     border-radius: 30px;
     z-index: 5;
+    transition: background-color 0.3s;
   }
 
   .menu-section {
@@ -364,6 +365,7 @@ body {
     opacity: 0;
     transform: translateY(-50px);
     transition: opacity 1s, transform 1s;
+    z-index: 5;
   }
   
   .visible {
@@ -391,13 +393,28 @@ body {
     color: white;
   }
 
-  .menu-button:hover {
-    background-color: #d89f02;
-  }
-
   .menu-button.active {
     background-color: #a77501;
   }
+
+  .sub-menu {
+    transition: opacity 1s, transform 1s;
+  }
+
+  .menu-button.sub-menu-button {
+    background-color: transparent;
+    border: 2px solid #fcb502;
+    box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
+    padding: 4px 37px;
+    border-radius: 30px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: white;
+  }
+  
+  .menu-button.sub-menu-button.active {
+    background-color: #a77501; /* Puedes ajustar este estilo según tus necesidades */
+  }
+  
 
 
 }

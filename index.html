@@ -63,11 +63,16 @@
 
       <div class="menu-section" id="menu-section">
         <div class="menu-button-container">
-          <button class="menu-button" onclick="selectButton(1)">Hamburguesas - 1 Carne</button>
-          <button class="menu-button" onclick="selectButton(2)">Hamburguesas - 2 Carnes</button>
-          <button class="menu-button" onclick="selectButton(3)">Papas fritas / Acompañamientos</button>
-          <button class="menu-button" onclick="selectButton(4)">Linea Pollo</button>
-          <button class="menu-button" onclick="selectButton(5)">Bebidas / Otros</button>
+          <button class="menu-button main-menu-button" id="boton1" onclick="toggleSubMenu()">Hamburguesas - 1
+            carne</button>
+          <div id="subMenu" class="sub-menu">
+          </div>
+          <button class="menu-button main-menu-button" id="boton2" onclick="selectButton(2)">Hamburguesas - 2
+            Carnes</button>
+          <button class="menu-button main-menu-button" id="boton3" onclick="selectButton(3)">Papas fritas /
+            Acompañamientos</button>
+          <button class="menu-button main-menu-button" id="boton4" onclick="selectButton(4)">Linea Pollo</button>
+          <button class="menu-button main-menu-button" id="boton5" onclick="selectButton(5)">Bebidas / Otros</button>
         </div>
       </div>
 
@@ -189,6 +194,8 @@
         menuProductos.style.transform = "translateY(0)";
         menuProductos.style.visibility = "visible";
         carousel.style.display = "none"
+        tituloMenu.style.backgroundColor = "#fcb502";
+        tituloMenu.style.color = "rgba(140, 34, 195, 1)";
       } else {
         menuProductos.style.opacity = "0";
         menuProductos.style.transform = "translateY(-20px)";
@@ -197,20 +204,119 @@
           menuProductos.style.display = "none"
           carousel.style.display = "flex"
         }, 800); // Establecer un tiempo de espera para ocultar después de la animación
-      }
 
-      tituloMenu.style.backgroundColor = "#fcb502";
-      tituloMenu.style.color = "rgba(140, 34, 195, 1)";
+        tituloMenu.style.backgroundColor = "transparent";
+        tituloMenu.style.color = "white";
+      }
     }
 
     function selectButton(buttonNumber) {
-      const allButtons = document.querySelectorAll('.menu-button');
-      allButtons.forEach(button => button.classList.remove('active'));
+      console.log('Button clicked:', buttonNumber);
 
-      const selectedButton = document.querySelector(`.menu-button:nth-child(${buttonNumber})`);
+      const container = document.querySelector('.menu-button-container');
+      const allButtons = container.querySelectorAll('.menu-button');
+
+      allButtons.forEach((button, index) => {
+        button.classList.remove('active');
+        if (index + 1 === buttonNumber) {
+          button.classList.add('active');
+          console.log('Selected button:', button);
+        }
+      });
+    }
+
+    let subMenuVisible = false; // Declaración de la variable subMenuVisible
+
+    function toggleSubMenu() {
+      const subMenu = document.getElementById('subMenu');
+
+      if (!subMenuVisible) {
+        const buttonsHTML = `
+      <button class="menu-button sub-menu-button" data-button-number="1" onclick="selectSubMenuButton(1)">Hamburguesas - 1 Carne</button>
+      <button class="menu-button sub-menu-button" data-button-number="2" onclick="selectSubMenuButton(2)">Hamburguesas - 2 Carnes</button>
+      <button class="menu-button sub-menu-button" data-button-number="3" onclick="selectSubMenuButton(3)">Papas fritas / Acompañamientos</button>
+      <button class="menu-button sub-menu-button" data-button-number="4" onclick="selectSubMenuButton(4)">Linea Pollo</button>
+      <button class="menu-button sub-menu-button" data-button-number="5" onclick="selectSubMenuButton(5)">Bebidas / Otros</button>
+    `;
+        subMenu.innerHTML = buttonsHTML;
+
+        const subMenuButtons = document.querySelectorAll('.sub-menu-button');
+        subMenuButtons.forEach((button, index) => {
+          setTimeout(() => {
+            button.classList.add('initial');
+          }, index * 100);
+        });
+
+        subMenuVisible = true;
+
+        subMenu.style.display = "flex";
+        subMenu.offsetHeight; // Activar reflow
+        subMenu.style.opacity = "1";
+        subMenu.style.transform = "translateY(0)";
+        subMenu.style.visibility = "visible";
+        subMenu.style.flexDirection = "column"
+        subMenu.style.rowGap = "5px"
+      } else {
+        const subMenuButtons = document.querySelectorAll('.sub-menu-button');
+        subMenuButtons.forEach(button => {
+          button.classList.remove('active');
+          button.classList.remove('initial');
+        });
+        setTimeout(() => {
+          subMenu.innerHTML = '';
+        }, subMenuButtons.length * 100);
+
+        subMenuVisible = false;
+
+        subMenu.style.opacity = "0";
+        subMenu.style.transform = "translateY(-20px)";
+        setTimeout(() => {
+          subMenu.style.visibility = "hidden";
+          subMenu.style.display = "none";
+        }, 500); // Establecer un tiempo de espera para ocultar después de la animación
+      }
+    }
+
+    function selectMainMenuButton(buttonNumber) {
+      const allButtons = document.querySelectorAll('.menu-button');
+      allButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      const mainMenuButton = document.getElementById(`boton${buttonNumber}`);
+      mainMenuButton.classList.add('active');
+    }
+
+    // Asigna la función selectMainMenuButton al evento click de los botones del menú principal
+    document.querySelectorAll('.menu-button.main-menu-button').forEach(button => {
+      button.addEventListener('click', function () {
+        const buttonNumber = this.id.replace('boton', '');
+        selectMainMenuButton(buttonNumber);
+      });
+    });
+
+    function selectSubMenuButton(buttonNumber) {
+      const subMenuButtons = document.querySelectorAll('.sub-menu-button');
+      subMenuButtons.forEach(button => {
+        button.classList.remove('active');
+      });
+
+      const selectedButton = document.querySelector(`.sub-menu-button[data-button-number="${buttonNumber}"]`);
       selectedButton.classList.add('active');
     }
 
+    // Asigna la función selectSubMenuButton a los eventos click de los botones del submenú
+    document.querySelectorAll('.sub-menu-button').forEach(button => {
+      button.addEventListener('click', () => selectSubMenuButton(button.dataset.buttonNumber));
+    });
+
+    // Quita la clase 'active' al botón principal cuando se selecciona un botón del submenú
+    document.querySelectorAll('.menu-button.sub-menu-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const mainMenuButton = document.getElementById('boton1');
+        mainMenuButton.classList.remove('active');
+      });
+    });
 
 
   </script>
