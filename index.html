@@ -231,21 +231,44 @@
       const subMenu = document.getElementById('subMenu');
 
       if (!subMenuVisible) {
-        const buttonsHTML = `
-      <button class="menu-button sub-menu-button" data-button-number="1" onclick="selectSubMenuButton(1)">Hamburguesas - 1 Carne</button>
-      <button class="menu-button sub-menu-button" data-button-number="2" onclick="selectSubMenuButton(2)">Hamburguesas - 2 Carnes</button>
-      <button class="menu-button sub-menu-button" data-button-number="3" onclick="selectSubMenuButton(3)">Papas fritas / Acompañamientos</button>
-      <button class="menu-button sub-menu-button" data-button-number="4" onclick="selectSubMenuButton(4)">Linea Pollo</button>
-      <button class="menu-button sub-menu-button" data-button-number="5" onclick="selectSubMenuButton(5)">Bebidas / Otros</button>
+        const buttonsHTML = `<div class="div-botones-submenu" data-button-number="1"><button class="menu-button sub-menu-button" data-button-number="1">Simple</button>
+        <p>$1800</p><p>$1500</p><button class="counter-button" onclick="updateCounter(1, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(1, 'increment')">+</button></div> 
+
+        <div class="div-botones-submenu" data-button-number="2"><button class="menu-button sub-menu-button" data-button-number="2">Simple queso</button><p>$2000</p><p>$1700</p><button class="counter-button" onclick="updateCounter(2, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(2, 'increment')">+</button></div>
+
+          <div class="div-botones-submenu" data-button-number="3"><button class="menu-button sub-menu-button" data-button-number="3">Napoleon</button><p>$2050</p><p>$1750</p><button class="counter-button" onclick="updateCounter(3, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(3, 'increment')">+</button></div>
+
+            <div class="div-botones-submenu" data-button-number="4"> <button class="menu-button sub-menu-button" data-button-number="4">Classic</button><p>$2050</p><p>$1750</p><button class="counter-button" onclick="updateCounter(4, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(4, 'increment')">+</button></div>
+
+              <div class="div-botones-submenu" data-button-number="5"><button class="menu-button sub-menu-button" data-button-number="5">Fusion</button><p>$2050</p><p>$1750</p><button class="counter-button" onclick="updateCounter(5, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(5, 'increment')">+</button></div>
+
+                <div class="div-botones-submenu" data-button-number="6"> <button class="menu-button sub-menu-button" data-button-number="6">Cuarto</button><p>$2200</p><p>$1900</p><button class="counter-button" onclick="updateCounter(6, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(6, 'increment')">+</button></div>
+
+                  <div class="div-botones-submenu" data-button-number="7"> <button class="menu-button sub-menu-button" data-button-number="7">Magnifica</button><p>$2200</p><p>$1900</p><button class="counter-button" onclick="updateCounter(7, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(7, 'increment')">+</button></div>
+
+                    <div class="div-botones-submenu" data-button-number="8"><button class="menu-button sub-menu-button" data-button-number="8">Napolitano</button><p>$2200</p><p>$1900</p> <button class="counter-button" onclick="updateCounter(8, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(8, 'increment')">+</button></div>
+
+                      <div class="div-botones-submenu" data-button-number="9"><button class="menu-button sub-menu-button" data-button-number="9">Completa</button><p>$2300</p><p>$2000</p><button class="counter-button" onclick="updateCounter(9, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(9, 'increment')">+</button></div>
     `;
         subMenu.innerHTML = buttonsHTML;
-
-        const subMenuButtons = document.querySelectorAll('.sub-menu-button');
-        subMenuButtons.forEach((button, index) => {
-          setTimeout(() => {
-            button.classList.add('initial');
-          }, index * 100);
-        });
 
         subMenuVisible = true;
 
@@ -255,11 +278,11 @@
         subMenu.style.transform = "translateY(0)";
         subMenu.style.visibility = "visible";
         subMenu.style.flexDirection = "column"
-        subMenu.style.rowGap = "5px"
+        subMenu.style.rowGap = "17px"
+        document.getElementById('boton1').classList.add('active');
       } else {
-        const subMenuButtons = document.querySelectorAll('.sub-menu-button');
+        const subMenuButtons = document.querySelectorAll('.menu-button');
         subMenuButtons.forEach(button => {
-          button.classList.remove('active');
           button.classList.remove('initial');
         });
         setTimeout(() => {
@@ -273,7 +296,9 @@
         setTimeout(() => {
           subMenu.style.visibility = "hidden";
           subMenu.style.display = "none";
-        }, 500); // Establecer un tiempo de espera para ocultar después de la animación
+        }, 800);
+
+        document.getElementById('boton1').classList.remove('active');
       }
     }
 
@@ -295,29 +320,42 @@
       });
     });
 
-    function selectSubMenuButton(buttonNumber) {
-      const subMenuButtons = document.querySelectorAll('.sub-menu-button');
-      subMenuButtons.forEach(button => {
-        button.classList.remove('active');
-      });
+    let counters = {};
+    let selectedItems = [];
 
-      const selectedButton = document.querySelector(`.sub-menu-button[data-button-number="${buttonNumber}"]`);
-      selectedButton.classList.add('active');
+    function updateCounter(buttonNumber, action) {
+      const counterValue = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`);
+
+      if (counterValue) {
+        if (!counters[buttonNumber]) {
+          counters[buttonNumber] = 0;
+        }
+
+        switch (action) {
+          case 'increment':
+            counters[buttonNumber]++;
+            break;
+          case 'decrement':
+            if (counters[buttonNumber] > 0) {
+              counters[buttonNumber]--;
+            }
+            break;
+          default:
+            break;
+        }
+
+        counterValue.textContent = counters[buttonNumber];
+
+        // Registra la acción en la lista
+        const itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
+        const actionText = action === 'increment' ? 'Sumado' : 'Restado';
+        const logMessage = `${actionText} ${itemName} - Cantidad: ${counters[buttonNumber]}`;
+        selectedItems.push(logMessage);
+
+        // Muestra la lista en la consola
+        console.log('Lista de selecciones:', selectedItems);
+      }
     }
-
-    // Asigna la función selectSubMenuButton a los eventos click de los botones del submenú
-    document.querySelectorAll('.sub-menu-button').forEach(button => {
-      button.addEventListener('click', () => selectSubMenuButton(button.dataset.buttonNumber));
-    });
-
-    // Quita la clase 'active' al botón principal cuando se selecciona un botón del submenú
-    document.querySelectorAll('.menu-button.sub-menu-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const mainMenuButton = document.getElementById('boton1');
-        mainMenuButton.classList.remove('active');
-      });
-    });
-
 
   </script>
 

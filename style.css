@@ -367,7 +367,7 @@ body {
     transition: opacity 1s, transform 1s;
     z-index: 5;
   }
-  
+
   .visible {
     opacity: 1;
     transform: translateY(0);
@@ -377,7 +377,7 @@ body {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     row-gap: 15px;
   }
 
@@ -401,6 +401,19 @@ body {
     transition: opacity 1s, transform 1s;
   }
 
+  .div-botones-submenu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .div-botones-submenu p {
+    font-size: 17px;
+    padding: 14px;
+    margin: 0px;
+  }
+
   .menu-button.sub-menu-button {
     background-color: transparent;
     border: 2px solid #fcb502;
@@ -409,12 +422,28 @@ body {
     border-radius: 30px;
     font-family: 'Kdam Thmor Pro', sans-serif;
     color: white;
+    width: 5.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
-  
-  .menu-button.sub-menu-button.active {
-    background-color: #a77501; /* Puedes ajustar este estilo según tus necesidades */
+
+  .counter-value {
+    margin: 6px;
   }
-  
 
-
+  .counter-button {
+    width: 23px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #fcb502;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 26px;
+    justify-content: center;
+  }
 }
