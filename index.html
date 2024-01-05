@@ -67,8 +67,10 @@
             carne</button>
           <div id="subMenu" class="sub-menu">
           </div>
-          <button class="menu-button main-menu-button" id="boton2" onclick="selectButton(2)">Hamburguesas - 2
+          <button class="menu-button main-menu-button" id="boton2" onclick="toggleSubMenuDos()">Hamburguesas - 2
             Carnes</button>
+          <div id="subMenuDos" class="sub-menu-dos">
+          </div>
           <button class="menu-button main-menu-button" id="boton3" onclick="selectButton(3)">Papas fritas /
             Acompañamientos</button>
           <button class="menu-button main-menu-button" id="boton4" onclick="selectButton(4)">Linea Pollo</button>
@@ -229,57 +231,128 @@
 
     function toggleSubMenu() {
       const subMenu = document.getElementById('subMenu');
+      const boton1 = document.getElementById('boton1');
 
       if (!subMenuVisible) {
-        const buttonsHTML = `<div class="div-botones-submenu" data-button-number="1"><button class="menu-button sub-menu-button" data-button-number="1">Simple</button>
-        <p>$1800</p><p>$1500</p><button class="counter-button" onclick="updateCounter(1, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(1, 'increment')">+</button></div> 
+        const buttonsHTML = `
+      <div class="div-botones-submenu" data-button-number="1">
+        <button class="menu-button sub-menu-button" data-button-number="1">Simple</button>
+        <p>$1800</p>
+        <input class="radio-button" type="radio" name="simple" value="$1800">
+        <p>$1500</p>
+        <input class="radio-button" type="radio" name="simple" value="$1500">
+        <button class="counter-button" onclick="updateCounter(1, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(1, 'increment')">+</button>
+      </div> 
 
-        <div class="div-botones-submenu" data-button-number="2"><button class="menu-button sub-menu-button" data-button-number="2">Simple queso</button><p>$2000</p><p>$1700</p><button class="counter-button" onclick="updateCounter(2, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(2, 'increment')">+</button></div>
+      <div class="div-botones-submenu" data-button-number="2">
+        <button class="menu-button sub-menu-button" data-button-number="2">Simple queso</button>
+        <p>$2000</p>
+        <input class="radio-button" type="radio" name="simple queso" value="$2000">
+        <p>$1700</p>
+        <input class="radio-button" type="radio" name="simple queso" value="$1700">
+        <button class="counter-button" onclick="updateCounter(2, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(2, 'increment')">+</button>
+      </div>
 
-          <div class="div-botones-submenu" data-button-number="3"><button class="menu-button sub-menu-button" data-button-number="3">Napoleon</button><p>$2050</p><p>$1750</p><button class="counter-button" onclick="updateCounter(3, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(3, 'increment')">+</button></div>
+      <div class="div-botones-submenu" data-button-number="3">
+        <button class="menu-button sub-menu-button" data-button-number="3">Napoleon</button>
+        <p>$2050</p>
+        <input class="radio-button" type="radio" name="napoleon" value="$2050">
+        <p>$1750</p>
+        <input class="radio-button" type="radio" name="napoleon" value="$1750">
+        <button class="counter-button" onclick="updateCounter(3, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(3, 'increment')">+</button>
+      </div>
 
-            <div class="div-botones-submenu" data-button-number="4"> <button class="menu-button sub-menu-button" data-button-number="4">Classic</button><p>$2050</p><p>$1750</p><button class="counter-button" onclick="updateCounter(4, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(4, 'increment')">+</button></div>
+      <div class="div-botones-submenu" data-button-number="4">
+        <button class="menu-button sub-menu-button" data-button-number="4">Classic</button>
+        <p>$2050</p>
+        <input class="radio-button" type="radio" name="classic" value="$2050">
+        <p>$1750</p>
+        <input class="radio-button" type="radio" name="classic" value="$1750">
+        <button class="counter-button" onclick="updateCounter(4, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(4, 'increment')">+</button>
+      </div>
 
-              <div class="div-botones-submenu" data-button-number="5"><button class="menu-button sub-menu-button" data-button-number="5">Fusion</button><p>$2050</p><p>$1750</p><button class="counter-button" onclick="updateCounter(5, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(5, 'increment')">+</button></div>
+      <div class="div-botones-submenu" data-button-number="5">
+        <button class="menu-button sub-menu-button" data-button-number="5">Fusion</button>
+        <p>$2050</p>
+        <input class="radio-button" type="radio" name="fusion" value="$2050">
+        <p>$1750</p>
+        <input class="radio-button" type="radio" name="fusion" value="$1750">
+        <button class="counter-button" onclick="updateCounter(5, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(5, 'increment')">+</button>
+      </div>
 
-                <div class="div-botones-submenu" data-button-number="6"> <button class="menu-button sub-menu-button" data-button-number="6">Cuarto</button><p>$2200</p><p>$1900</p><button class="counter-button" onclick="updateCounter(6, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(6, 'increment')">+</button></div>
+      <div class="div-botones-submenu" data-button-number="6">
+        <button class="menu-button sub-menu-button" data-button-number="6">Cuarto</button>
+        <p>$2200</p>
+        <input class="radio-button" type="radio" name="cuarto" value="$2200">
+        <p>$1900</p>
+        <input class="radio-button" type="radio" name="cuarto" value="$1900">
+        <button class="counter-button" onclick="updateCounter(6, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(6, 'increment')">+</button>
+      </div>
 
-                  <div class="div-botones-submenu" data-button-number="7"> <button class="menu-button sub-menu-button" data-button-number="7">Magnifica</button><p>$2200</p><p>$1900</p><button class="counter-button" onclick="updateCounter(7, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(7, 'increment')">+</button></div>
+      <div class="div-botones-submenu" data-button-number="7">
+        <button class="menu-button sub-menu-button" data-button-number="7">Magnifica</button> 
+        <p>$2200</p>
+        <input class="radio-button" type="radio" name="magnifica" value="$2200">
+        <p>$1900</p>
+        <input class="radio-button" type="radio" name="magnifica" value="$1900">
+        <button class="counter-button" onclick="updateCounter(7, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(7, 'increment')">+</button>
+      </div>
 
-                    <div class="div-botones-submenu" data-button-number="8"><button class="menu-button sub-menu-button" data-button-number="8">Napolitano</button><p>$2200</p><p>$1900</p> <button class="counter-button" onclick="updateCounter(8, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(8, 'increment')">+</button></div>
+      <div class="div-botones-submenu" data-button-number="8">
+        <button class="menu-button sub-menu-button" data-button-number="8">Napolitano</button>
+        <p>$2200</p>
+        <input class="radio-button" type="radio" name="napolitano" value="$2200">
+        <p>$1900</p>
+        <input class="radio-button" type="radio" name="napolitano" value="$1900">
+        <button class="counter-button" onclick="updateCounter(8, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(8, 'increment')">+</button>
+      </div>
 
-                      <div class="div-botones-submenu" data-button-number="9"><button class="menu-button sub-menu-button" data-button-number="9">Completa</button><p>$2300</p><p>$2000</p><button class="counter-button" onclick="updateCounter(9, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(9, 'increment')">+</button></div>
+
+      <div class="div-botones-submenu" data-button-number="9">
+        <button class="menu-button sub-menu-button" data-button-number="9">Completa</button>
+        <p>$2300</p>
+        <input class="radio-button" type="radio" name="completa" value="$2300">
+        <p>$2000</p>
+        <input class="radio-button" type="radio" name="completa" value="$2000">
+        <button class="counter-button" onclick="updateCounter(9, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(9, 'increment')">+</button>
+      </div>
     `;
+
+
+
+
         subMenu.innerHTML = buttonsHTML;
 
         subMenuVisible = true;
-
         subMenu.style.display = "flex";
-        subMenu.offsetHeight; // Activar reflow
+        subMenu.offsetHeight;
         subMenu.style.opacity = "1";
         subMenu.style.transform = "translateY(0)";
         subMenu.style.visibility = "visible";
-        subMenu.style.flexDirection = "column"
-        subMenu.style.rowGap = "17px"
-        document.getElementById('boton1').classList.add('active');
+        subMenu.style.flexDirection = "column";
+        subMenu.style.rowGap = "10px";
+        subMenu.style.padding = "10px"
+
+        // Agrega la clase 'active' al botón1 cuando se despliega el submenú
+        boton1.classList.add('active');
       } else {
         const subMenuButtons = document.querySelectorAll('.menu-button');
         subMenuButtons.forEach(button => {
@@ -298,9 +371,161 @@
           subMenu.style.display = "none";
         }, 800);
 
-        document.getElementById('boton1').classList.remove('active');
+        // Quita la clase 'active' al botón1 cuando se contrae el submenú
+        boton1.classList.remove('active');
       }
     }
+
+    let subMenuDosVisible = false;
+
+    function toggleSubMenuDos() {
+      const subMenuDos = document.getElementById('subMenuDos');
+      const boton2 = document.getElementById('boton2');
+
+      if (!subMenuDosVisible) {
+        const buttonsHTML = `
+      <div class="div-botones-submenu" data-button-number="1">
+        <button class="menu-button sub-menu-button" data-button-number="1">Simple</button>
+        <p>$1800</p>
+        <input class="radio-button" type="radio" name="simple" value="$1800">
+        <p>$1500</p>
+        <input class="radio-button" type="radio" name="simple" value="$1500">
+        <button class="counter-button" onclick="updateCounter(1, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(1, 'increment')">+</button>
+      </div> 
+
+      <div class="div-botones-submenu" data-button-number="2">
+        <button class="menu-button sub-menu-button" data-button-number="2">Simple queso</button>
+        <p>$2000</p>
+        <input class="radio-button" type="radio" name="simple queso" value="$2000">
+        <p>$1700</p>
+        <input class="radio-button" type="radio" name="simple queso" value="$1700">
+        <button class="counter-button" onclick="updateCounter(2, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(2, 'increment')">+</button>
+      </div>
+
+      <div class="div-botones-submenu" data-button-number="3">
+        <button class="menu-button sub-menu-button" data-button-number="3">Napoleon</button>
+        <p>$2050</p>
+        <input class="radio-button" type="radio" name="napoleon" value="$2050">
+        <p>$1750</p>
+        <input class="radio-button" type="radio" name="napoleon" value="$1750">
+        <button class="counter-button" onclick="updateCounter(3, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(3, 'increment')">+</button>
+      </div>
+
+      <div class="div-botones-submenu" data-button-number="4">
+        <button class="menu-button sub-menu-button" data-button-number="4">Classic</button>
+        <p>$2050</p>
+        <input class="radio-button" type="radio" name="classic" value="$2050">
+        <p>$1750</p>
+        <input class="radio-button" type="radio" name="classic" value="$1750">
+        <button class="counter-button" onclick="updateCounter(4, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(4, 'increment')">+</button>
+      </div>
+
+      <div class="div-botones-submenu" data-button-number="5">
+        <button class="menu-button sub-menu-button" data-button-number="5">Fusion</button>
+        <p>$2050</p>
+        <input class="radio-button" type="radio" name="fusion" value="$2050">
+        <p>$1750</p>
+        <input class="radio-button" type="radio" name="fusion" value="$1750">
+        <button class="counter-button" onclick="updateCounter(5, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(5, 'increment')">+</button>
+      </div>
+
+      <div class="div-botones-submenu" data-button-number="6">
+        <button class="menu-button sub-menu-button" data-button-number="6">Cuarto</button>
+        <p>$2200</p>
+        <input class="radio-button" type="radio" name="cuarto" value="$2200">
+        <p>$1900</p>
+        <input class="radio-button" type="radio" name="cuarto" value="$1900">
+        <button class="counter-button" onclick="updateCounter(6, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(6, 'increment')">+</button>
+      </div>
+
+      <div class="div-botones-submenu" data-button-number="7">
+        <button class="menu-button sub-menu-button" data-button-number="7">Magnifica</button> 
+        <p>$2200</p>
+        <input class="radio-button" type="radio" name="magnifica" value="$2200">
+        <p>$1900</p>
+        <input class="radio-button" type="radio" name="magnifica" value="$1900">
+        <button class="counter-button" onclick="updateCounter(7, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(7, 'increment')">+</button>
+      </div>
+
+      <div class="div-botones-submenu" data-button-number="8">
+        <button class="menu-button sub-menu-button" data-button-number="8">Napolitano</button>
+        <p>$2200</p>
+        <input class="radio-button" type="radio" name="napolitano" value="$2200">
+        <p>$1900</p>
+        <input class="radio-button" type="radio" name="napolitano" value="$1900">
+        <button class="counter-button" onclick="updateCounter(8, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(8, 'increment')">+</button>
+      </div>
+
+
+      <div class="div-botones-submenu" data-button-number="9">
+        <button class="menu-button sub-menu-button" data-button-number="9">Completa</button>
+        <p>$2300</p>
+        <input class="radio-button" type="radio" name="completa" value="$2300">
+        <p>$2000</p>
+        <input class="radio-button" type="radio" name="completa" value="$2000">
+        <button class="counter-button" onclick="updateCounter(9, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(9, 'increment')">+</button>
+      </div>
+    `;
+
+
+
+
+        subMenuDos.innerHTML = buttonsHTML;
+
+        subMenuDosVisible = true;
+        subMenuDos.style.display = "flex";
+        subMenuDos.offsetHeight;
+        subMenuDos.style.opacity = "1";
+        subMenuDos.style.transform = "translateY(0)";
+        subMenuDos.style.visibility = "visible";
+        subMenuDos.style.flexDirection = "column";
+        subMenuDos.style.rowGap = "10px";
+        subMenuDos.style.padding = "10px"
+
+        // Agrega la clase 'active' al botón1 cuando se despliega el submenú
+        boton2.classList.add('active');
+      } else {
+        const subMenuDosButtons = document.querySelectorAll('.menu-button');
+        subMenuDosButtons.forEach(button => {
+          button.classList.remove('initial');
+        });
+        setTimeout(() => {
+          subMenuDos.innerHTML = '';
+        }, subMenuDosButtons.length * 100);
+
+        subMenuDosVisible = false;
+
+        subMenuDos.style.opacity = "0";
+        subMenuDos.style.transform = "translateY(-20px)";
+        setTimeout(() => {
+          subMenuDos.style.visibility = "hidden";
+          subMenuDos.style.display = "none";
+        }, 800);
+
+        // Quita la clase 'active' al botón1 cuando se contrae el submenú
+        boton2.classList.remove('active');
+      }
+    }
+    
+
 
     function selectMainMenuButton(buttonNumber) {
       const allButtons = document.querySelectorAll('.menu-button');
