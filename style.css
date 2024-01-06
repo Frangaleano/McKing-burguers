@@ -372,8 +372,9 @@ body {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     row-gap: 15px;
+    width: 100%;
   }
 
   .menu-button {
@@ -434,8 +435,8 @@ body {
     appearance: none; /* Oculta la apariencia por defecto del radio button */
     -webkit-appearance: none; /* Para navegadores basados en WebKit como Chrome y Safari */
     -moz-appearance: none; /* Para navegadores basados en Gecko como Firefox */
-    width: 8px; /* Tamaño del radio button */
-    height: 8px;
+    width: 10px; /* Tamaño del radio button */
+    height: 10px;
     margin-right: 8px;
     border-radius: 50%; /* Borde redondeado para que sea un círculo */
     border: 2px solid #fcb502; /* Borde azul */
@@ -467,6 +468,18 @@ body {
   }
 
   .sub-menu-dos {
+    transition: opacity 1s, transform 1s;
+  }
+
+  .sub-menu-tres {
+    transition: opacity 1s, transform 1s;
+  }
+
+  .sub-menu-cuatro {
+    transition: opacity 1s, transform 1s;
+  }
+
+  .sub-menu-cinco {
     transition: opacity 1s, transform 1s;
   }
 
