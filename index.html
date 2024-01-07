@@ -1221,7 +1221,6 @@
             name: itemName,
             count: itemCount,
             value: inputElement.value,
-            subtotal: (itemCount * itemPrice).toFixed(2),
           });
         }
       });
@@ -1257,7 +1256,7 @@
 
         // Agregar detalles de cada elemento del pedido al mensaje
         pedido.items.forEach((item) => {
-          mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unitario: $${item.value} - Subtotal: $${item.subtotal}\n`;
+          mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unidad: $${item.value}`;
         });
 
         // Agregar el total del pedido al mensaje
