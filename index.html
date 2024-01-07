@@ -1202,6 +1202,7 @@
     actualizarVisibilidadBotonPedido();
 
     function hacerPedido() {
+  // Crear el objeto pedido con información inicial
   const pedido = {
     items: [],
     total: total.toFixed(2),
@@ -1231,7 +1232,7 @@
   // Mostrar el botón "Hacer Pedido" (opcional, según tus necesidades)
   document.getElementById('hacerPedidoButton').style.display = 'block';
 
-  // También puedes redirigir al usuario a la sección de contacto después de hacer el pedido (opcional)
+  // También puedes redirigir al usuario a la sección de contacto después de hacer el pedido
   irAContacto();
 
   // Imprimir en la consola la información detallada del pedido
@@ -1239,34 +1240,47 @@
 
   // Imprimir en la consola el resumen del pedido
   console.log('Resumen del Pedido:', pedido.items);
+
+  // Imprimir en la consola para verificar el flujo
+  console.log('Pedido realizado con éxito.');
 }
 
 function enviarPedidoWhatsApp() {
+  // Obtener el objeto pedido del almacenamiento local
   const pedidoGuardado = localStorage.getItem('pedido');
 
   if (pedidoGuardado) {
+    // Parsear el objeto pedido
     const pedido = JSON.parse(pedidoGuardado);
 
     // Crear el mensaje para WhatsApp
     let mensajeWhatsApp = `¡Hola! Quiero realizar un pedido:\n\n`;
 
+    // Agregar detalles de cada elemento del pedido al mensaje
     pedido.items.forEach((item) => {
       mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unitario: $${item.value} - Subtotal: $${item.subtotal}\n`;
     });
 
+    // Agregar el total del pedido al mensaje
     mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
 
-    // Reemplazar 'TU_NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje
+    // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje
+    const numeroWhatsApp = '541128528053';
 
-    // Crear el enlace de WhatsApp
-    const enlaceWhatsApp = `https://wa.link/0u4nda?text=${encodeURIComponent(mensajeWhatsApp)}`;
+    // Crear el enlace de WhatsApp utilizando 'https://wa.me/'
+    const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
     // Redirigir a WhatsApp
     window.location.href = enlaceWhatsApp;
+
+    // Imprimir en la consola para verificar el flujo
+    console.log('Pedido enviado por WhatsApp.');
   } else {
     console.error('No se encontró información de pedido almacenada.');
   }
 }
+
+
 
 
 
