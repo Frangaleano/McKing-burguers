@@ -141,7 +141,7 @@
             <h3>WhatsApp</h3>
             <p class="texto-contacto">Tambien podes hablar directamente por wsp, eligiendo la sucursal mas cercana</p>
             <div class="anclas-contacto">
-              <a  href="javascript:void(0);" onclick="enviarPedidoWhatsApp()" class="anclas-wsp">Villa Martelli</a>
+              <a href="javascript:void(0);" onclick="enviarPedidoWhatsApp()" class="anclas-wsp">Villa Martelli</a>
               <a class="anclas-wsp" href="https://wa.link/whanmf">San Andres</a>
               <a class="anclas-wsp" href="https://wa.link/44qjbz">Chilavert</a>
               <a class="anclas-wsp" href="https://wa.link/3iwhd5">Carcova</a>
@@ -1202,83 +1202,83 @@
     actualizarVisibilidadBotonPedido();
 
     function hacerPedido() {
-  // Crear el objeto pedido con información inicial
-  const pedido = {
-    items: [],
-    total: total.toFixed(2),
-  };
+      // Crear el objeto pedido con información inicial
+      const pedido = {
+        items: [],
+        total: total.toFixed(2),
+      };
 
-  // Recorrer los contadores y recopilar la información
-  Object.keys(counters).forEach((buttonNumber) => {
-    const itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
-    const itemCount = counters[buttonNumber];
-    const inputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
-    const itemPrice = parseFloat(inputElement.value);
+      // Recorrer los contadores y recopilar la información
+      Object.keys(counters).forEach((buttonNumber) => {
+        const itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
+        const itemCount = counters[buttonNumber];
+        const inputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
+        const itemPrice = parseFloat(inputElement.value);
 
-    // Agregar la información del elemento al objeto pedido solo si se seleccionaron elementos
-    if (itemCount > 0) {
-      pedido.items.push({
-        name: itemName,
-        count: itemCount,
-        value: inputElement.value,
-        subtotal: (itemCount * itemPrice).toFixed(2),
+        // Agregar la información del elemento al objeto pedido solo si se seleccionaron elementos
+        if (itemCount > 0) {
+          pedido.items.push({
+            name: itemName,
+            count: itemCount,
+            value: inputElement.value,
+            subtotal: (itemCount * itemPrice).toFixed(2),
+          });
+        }
       });
+
+      // Almacenar el objeto pedido en el almacenamiento local
+      localStorage.setItem('pedido', JSON.stringify(pedido));
+
+      // Mostrar el botón "Hacer Pedido" (opcional, según tus necesidades)
+      document.getElementById('hacerPedidoButton').style.display = 'block';
+
+      // También puedes redirigir al usuario a la sección de contacto después de hacer el pedido
+      irAContacto();
+
+      // Imprimir en la consola la información detallada del pedido
+      console.log('Pedido Detallado:', pedido);
+
+      // Imprimir en la consola el resumen del pedido
+      console.log('Resumen del Pedido:', pedido.items);
+
+      // Imprimir en la consola para verificar el flujo
+      console.log('Pedido realizado con éxito.');
     }
-  });
+    function enviarPedidoWhatsApp() {
+      // Obtener el objeto pedido del almacenamiento local
+      const pedidoGuardado = localStorage.getItem('pedido');
 
-  // Almacenar el objeto pedido en el almacenamiento local
-  localStorage.setItem('pedido', JSON.stringify(pedido));
+      if (pedidoGuardado) {
+        // Parsear el objeto pedido
+        const pedido = JSON.parse(pedidoGuardado);
 
-  // Mostrar el botón "Hacer Pedido" (opcional, según tus necesidades)
-  document.getElementById('hacerPedidoButton').style.display = 'block';
+        // Crear el mensaje para WhatsApp
+        let mensajeWhatsApp = `¡Hola! Quiero realizar un pedido:\n\n`;
 
-  // También puedes redirigir al usuario a la sección de contacto después de hacer el pedido
-  irAContacto();
+        // Agregar detalles de cada elemento del pedido al mensaje
+        pedido.items.forEach((item) => {
+          mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unitario: $${item.value} - Subtotal: $${item.subtotal}\n`;
+        });
 
-  // Imprimir en la consola la información detallada del pedido
-  console.log('Pedido Detallado:', pedido);
+        // Agregar el total del pedido al mensaje
+        mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
 
-  // Imprimir en la consola el resumen del pedido
-  console.log('Resumen del Pedido:', pedido.items);
+        // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
+        const numeroWhatsApp = '541128528053';
 
-  // Imprimir en la consola para verificar el flujo
-  console.log('Pedido realizado con éxito.');
-}
+        // Crear el enlace de WhatsApp utilizando 'https://wa.me/'
+        const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
 
-function enviarPedidoWhatsApp() {
-  // Obtener el objeto pedido del almacenamiento local
-  const pedidoGuardado = localStorage.getItem('pedido');
+        // Redirigir a WhatsApp
+        window.location.href = enlaceWhatsApp;
 
-  if (pedidoGuardado) {
-    // Parsear el objeto pedido
-    const pedido = JSON.parse(pedidoGuardado);
+        // Imprimir en la consola para verificar el flujo
+        console.log('Pedido enviado por WhatsApp.');
+      } else {
+        console.error('No se encontró información de pedido almacenada.');
+      }
+    }
 
-    // Crear el mensaje para WhatsApp
-    let mensajeWhatsApp = `¡Hola! Quiero realizar un pedido:\n\n`;
-
-    // Agregar detalles de cada elemento del pedido al mensaje
-    pedido.items.forEach((item) => {
-      mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unitario: $${item.value} - Subtotal: $${item.subtotal}\n`;
-    });
-
-    // Agregar el total del pedido al mensaje
-    mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
-
-    // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje
-    const numeroWhatsApp = '1128528053';
-
-    // Crear el enlace de WhatsApp utilizando 'https://wa.me/'
-    const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
-
-    // Redirigir a WhatsApp
-    window.location.href = enlaceWhatsApp;
-
-    // Imprimir en la consola para verificar el flujo
-    console.log('Pedido enviado por WhatsApp.');
-  } else {
-    console.error('No se encontró información de pedido almacenada.');
-  }
-}
 
 
 
