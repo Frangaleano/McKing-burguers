@@ -1265,7 +1265,7 @@ function enviarPedidoWhatsApp() {
     mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
 
     // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje
-    const numeroWhatsApp = '541128528053';
+    const numeroWhatsApp = '1128528053';
 
     // Crear el enlace de WhatsApp utilizando 'https://wa.me/'
     const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
