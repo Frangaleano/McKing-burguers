@@ -499,5 +499,21 @@ body {
     transition: opacity 1s;
   }
 
+  #hacerPedidoButton {
+    position: fixed;
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior según tu preferencia */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    border: 2px solid #fcb502;
+    box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
+    padding: 4px 37px;
+    border-radius: 30px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: white;
+    backdrop-filter: blur(10px);
+    z-index: 6;
+  }
+
 
 }

@@ -42,6 +42,9 @@
     </div>
   </header>
 
+
+  <button id="hacerPedidoButton" onclick="hacerPedido()" style="display: none;">Hacer Pedido</button>
+
   <main id="main" class="main-content">
 
     <section id="nosotros">
@@ -63,10 +66,14 @@
 
       <h2 id="menu-title" onclick="toggleMenuSection()">Menú</h2>
 
+      <p id="parrafo-menu">Podes realizar tu pedido haciendo click en el boton Menú</p>
+
       <div class="menu-section" id="menu-section">
 
         <div class="menu-button-container">
-    
+
+          <p>Selecciona el metodo de pago, Mercadopago o efectivo para agilizar el pedido!</p>
+
           <button class="menu-button main-menu-button" id="boton1" onclick="toggleSubMenu()">Hamburguesas - 1
             carne</button>
           <div id="subMenu" class="sub-menu">
@@ -134,7 +141,7 @@
             <h3>WhatsApp</h3>
             <p class="texto-contacto">Tambien podes hablar directamente por wsp, eligiendo la sucursal mas cercana</p>
             <div class="anclas-contacto">
-              <a class="anclas-wsp" href="https://wa.link/0u4nda">Villa Martelli</a>
+              <a onclick="enviarPedidoWhatsApp()" class="anclas-wsp">Villa Martelli</a>
               <a class="anclas-wsp" href="https://wa.link/whanmf">San Andres</a>
               <a class="anclas-wsp" href="https://wa.link/44qjbz">Chilavert</a>
               <a class="anclas-wsp" href="https://wa.link/3iwhd5">Carcova</a>
@@ -202,6 +209,7 @@
       const tituloMenu = document.getElementById("menu-title");
       const carousel = document.getElementById("hidden")
       const total = document.getElementById("total")
+      const parrafoMenu = document.getElementById("parrafo-menu")
 
       menuProductos.classList.toggle("visible");
 
@@ -217,6 +225,7 @@
         tituloMenu.style.color = "rgba(140, 34, 195, 1)";
         total.style.display = "flex"
         total.style.opacity = "1"
+        parrafoMenu.style.display = "none"
       } else {
         menuProductos.style.opacity = "0";
         menuProductos.style.transform = "translateY(-20px)";
@@ -234,16 +243,14 @@
     }
 
     function selectButton(buttonNumber) {
-      console.log('Button clicked:', buttonNumber);
-
       const container = document.querySelector('.menu-button-container');
       const allButtons = container.querySelectorAll('.menu-button');
 
       allButtons.forEach((button, index) => {
         button.classList.remove('active');
         if (index + 1 === buttonNumber) {
+          event.preventDefault();
           button.classList.add('active');
-          console.log('Selected button:', button);
         }
       });
     }
@@ -360,6 +367,7 @@
 
 
 
+
         subMenu.innerHTML = buttonsHTML;
 
         subMenuVisible = true;
@@ -375,6 +383,7 @@
 
         // Agrega la clase 'active' al botón1 cuando se despliega el submenú
         boton1.classList.add('active');
+        window.scrollBy(0, subMenu.offsetHeight);
       } else {
         const subMenuButtons = document.querySelectorAll('.menu-button');
         subMenuButtons.forEach(button => {
@@ -395,6 +404,7 @@
 
         // Quita la clase 'active' al botón1 cuando se contrae el submenú
         boton1.classList.remove('active');
+        window.scrollBy(0, boton1.offsetHeight);
       }
     }
 
@@ -614,6 +624,9 @@
 
         // Agrega la clase 'active' al botón1 cuando se despliega el submenú
         boton2.classList.add('active');
+
+
+        window.scrollBy(0, subMenuDos.offsetHeight);
       } else {
         const subMenuDosButtons = document.querySelectorAll('.menu-button');
         subMenuDosButtons.forEach(button => {
@@ -634,6 +647,9 @@
 
         // Quita la clase 'active' al botón1 cuando se contrae el submenú
         boton2.classList.remove('active');
+
+
+        window.scrollBy(0, boton2.offsetHeight);
       }
     }
 
@@ -854,6 +870,9 @@
 
         // Agrega la clase 'active' al botón1 cuando se despliega el submenú
         boton3.classList.add('active');
+
+
+        window.scrollBy(0, subMenuTres.offsetHeight);
       } else {
         const subMenuTresButtons = document.querySelectorAll('.menu-button');
         subMenuTresButtons.forEach(button => {
@@ -874,6 +893,9 @@
 
         // Quita la clase 'active' al botón1 cuando se contrae el submenú
         boton3.classList.remove('active');
+
+
+        window.scrollBy(0, boton3.offsetHeight);
       }
     }
 
@@ -948,6 +970,9 @@
 
         // Agrega la clase 'active' al botón1 cuando se despliega el submenú
         boton4.classList.add('active');
+
+
+        window.scrollBy(0, subMenuCuatro.offsetHeight);
       } else {
         const subMenuCuatroButtons = document.querySelectorAll('.menu-button');
         subMenuCuatroButtons.forEach(button => {
@@ -968,6 +993,8 @@
 
         // Quita la clase 'active' al botón1 cuando se contrae el submenú
         boton4.classList.remove('active');
+
+        window.scrollBy(0, boton4.offsetHeight);
       }
     }
 
@@ -1048,6 +1075,9 @@
 
         // Agrega la clase 'active' al botón1 cuando se despliega el submenú
         boton5.classList.add('active');
+
+
+        window.scrollBy(0, subMenuCinco.offsetHeight);
       } else {
         const subMenuCincoButtons = document.querySelectorAll('.menu-button');
         subMenuCincoButtons.forEach(button => {
@@ -1068,6 +1098,8 @@
 
         // Quita la clase 'active' al botón1 cuando se contrae el submenú
         boton5.classList.remove('active');
+
+        window.scrollBy(0, boton5.offsetHeight);
       }
     }
 
@@ -1093,54 +1125,192 @@
     });
 
     let counters = {};
-let selectedItems = [];
-let total = 0;
+    let selectedItems = [];
+    let total = 0;
 
-function updateCounter(buttonNumber, action) {
-  const counterValue = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`);
+    // Después de cargar el contenido inicial del menú
+    actualizarVisibilidadBotonPedido();
 
-  if (counterValue) {
-    if (!counters[buttonNumber]) {
-      counters[buttonNumber] = 0;
-    }
+    function updateCounter(buttonNumber, action) {
+      const counterValue = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`);
+      const selectedInput = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
 
-    switch (action) {
-      case 'increment':
-        counters[buttonNumber]++;
-        total += parseFloat(document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`).value);
-        break;
-      case 'decrement':
-        if (counters[buttonNumber] > 0) {
-          counters[buttonNumber]--;
-          total -= parseFloat(document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`).value);
+      if (counterValue && selectedInput && selectedInput.value) {
+        if (!counters[buttonNumber]) {
+          counters[buttonNumber] = 0;
         }
-        break;
-      default:
-        break;
+
+        switch (action) {
+          case 'increment':
+            counters[buttonNumber]++;
+            total += parseFloat(selectedInput.value);
+            break;
+          case 'decrement':
+            if (counters[buttonNumber] > 0) {
+              counters[buttonNumber]--;
+              total -= parseFloat(selectedInput.value);
+            }
+            break;
+          default:
+            break;
+        }
+
+        counterValue.textContent = counters[buttonNumber];
+
+        // Registra la acción en la lista
+        const itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
+        const logMessage = `${itemName} - Cantidad total: ${counters[buttonNumber]}, Total: ${total.toFixed(2)}`;
+        selectedItems.push(logMessage);
+
+        // Muestra la lista en la consola
+        console.log('Lista de selecciones:', selectedItems);
+
+        // Actualiza el total en la consola
+        console.log('Total actual:', total.toFixed(2));
+
+        // Actualiza la visibilidad del botón 'Hacer Pedido'
+        actualizarVisibilidadBotonPedido();
+
+        // Actualiza el total
+        actualizarTotal();
+      }
     }
 
-    counterValue.textContent = counters[buttonNumber];
+    function actualizarVisibilidadBotonPedido() {
+      const hacerPedidoButton = document.getElementById('hacerPedidoButton');
+      hacerPedidoButton.style.display = hayElementosSeleccionadosConPrecio() ? 'block' : 'none';
+    }
 
-    // Registra la acción en la lista
+    function hayElementosSeleccionadosConPrecio() {
+      const hasElementsWithPrice = Object.values(counters).some((count, index) => {
+        const input = document.querySelector(`.div-botones-submenu[data-button-number="${index + 1}"] input:checked`);
+        return count > 0 && input && input.value;
+      });
+
+      console.log('Elementos con precio:', hasElementsWithPrice);
+
+      return hasElementsWithPrice;
+    }
+
+    function irAContacto() {
+      // Puedes personalizar esta función para hacer scroll hacia la sección de contacto
+      const contactoSection = document.getElementById('whatsapp-card');
+      contactoSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Mostrar el botón 'Hacer Pedido' después de cargar el contenido inicial del menú
+    actualizarVisibilidadBotonPedido();
+
+    function hacerPedido() {
+  const pedido = {
+    items: [],
+    total: total.toFixed(2),
+  };
+
+  // Recorrer los contadores y recopilar la información
+  Object.keys(counters).forEach((buttonNumber) => {
     const itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
-    const logMessage = `${itemName} - Cantidad total: ${counters[buttonNumber]}`;
-    selectedItems.push(logMessage);
+    const itemCount = counters[buttonNumber];
+    const inputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
+    const itemPrice = parseFloat(inputElement.value);
 
-    // Muestra la lista en la consola
-    console.log('Lista de selecciones:', selectedItems);
+    // Agregar la información del elemento al objeto pedido solo si se seleccionaron elementos
+    if (itemCount > 0) {
+      pedido.items.push({
+        name: itemName,
+        count: itemCount,
+        value: inputElement.value,
+        subtotal: (itemCount * itemPrice).toFixed(2),
+      });
+    }
+  });
 
-    // Actualiza el total
-    actualizarTotal();
+  // Almacenar el objeto pedido en el almacenamiento local
+  localStorage.setItem('pedido', JSON.stringify(pedido));
+
+  // Mostrar el botón "Hacer Pedido" (opcional, según tus necesidades)
+  document.getElementById('hacerPedidoButton').style.display = 'block';
+
+  // También puedes redirigir al usuario a la sección de contacto después de hacer el pedido (opcional)
+  irAContacto();
+
+  // Imprimir en la consola la información detallada del pedido
+  console.log('Pedido Detallado:', pedido);
+
+  // Imprimir en la consola el resumen del pedido
+  console.log('Resumen del Pedido:', pedido.items);
+}
+
+function enviarPedidoWhatsApp() {
+  const pedidoGuardado = localStorage.getItem('pedido');
+
+  if (pedidoGuardado) {
+    const pedido = JSON.parse(pedidoGuardado);
+
+    // Crear el mensaje para WhatsApp
+    let mensajeWhatsApp = `¡Hola! Quiero realizar un pedido:\n\n`;
+
+    pedido.items.forEach((item) => {
+      mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unitario: $${item.value} - Subtotal: $${item.subtotal}\n`;
+    });
+
+    mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
+
+    // Reemplazar 'TU_NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje
+
+    // Crear el enlace de WhatsApp
+    const enlaceWhatsApp = `https://wa.link/0u4nda?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+    // Redirigir a WhatsApp
+    window.location.href = enlaceWhatsApp;
+  } else {
+    console.error('No se encontró información de pedido almacenada.');
   }
 }
 
-// Función para actualizar el total
-function actualizarTotal() {
-  const totalElement = document.getElementById('total');
-  if (totalElement) {
-    totalElement.textContent = `$${total.toFixed(2)}`;
-  }
-}
+
+
+    // Agrega un manejador de eventos 'click' para los elementos de tipo radio
+    document.querySelectorAll('.div-botones-submenu input[type="radio"]').forEach((radio) => {
+      radio.addEventListener('click', (event) => {
+        const buttonNumber = event.target.closest('.div-botones-submenu').dataset.buttonNumber;
+        const counterValue = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`);
+
+        // Guarda el estado actual del radio button
+        const currentState = event.target.checked;
+
+        // Restablece todos los botones del grupo a su estado original
+        document.querySelectorAll(`.div-botones-submenu[data-button-number="${buttonNumber}"] input[type="radio"]`).forEach((r) => {
+          r.checked = false;
+        });
+
+        // Si el estado original era falso, marca el radio actual
+        if (!currentState) {
+          event.target.checked = true;
+
+          // Incrementa el contador y el total si se selecciona
+          counters[buttonNumber]++;
+          total += parseFloat(event.target.value);
+        } else {
+          // Decrementa el contador y el total si ya estaba seleccionado
+          counters[buttonNumber]--;
+          total -= parseFloat(event.target.value);
+        }
+
+        counterValue.textContent = counters[buttonNumber];
+        actualizarTotal();
+      });
+    });
+
+
+
+    // Función para actualizar el total
+    function actualizarTotal() {
+      const totalElement = document.getElementById('total');
+      if (totalElement) {
+        totalElement.textContent = `$${total.toFixed(2)}`;
+      }
+    }
 
 
 
