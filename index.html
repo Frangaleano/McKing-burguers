@@ -139,12 +139,19 @@
         <div class="red-social">
           <div class="card" id="whatsapp-card">
             <h3>WhatsApp</h3>
-            <p class="texto-contacto">Tambien podes hablar directamente por wsp, eligiendo la sucursal mas cercana</p>
+            <p class="texto-contacto">Elegí tu sucursal mas cercana:</p>
             <div class="anclas-contacto">
               <a href="javascript:void(0);" onclick="enviarPedidoWhatsApp()" class="anclas-wsp">Villa Martelli</a>
+              <p class="detalles">Melo 4882<br>Martes a Sábados (12 a 15hs -  20 a 23.30hs)
+                Domingos y Lunes (20 a 23.30hs) </p>
               <a href="javascript:void(0);" onclick="enviarPedidoWhatsApp2()" class="anclas-wsp">San Andres</a>
+              <p class="detalles">Bermejo 1590 <br>Martes a Sábados (12 a 15hs - 20 a 23.30hs)
+                Lunes (20 a 23.30hs)</p>
               <a href="javascript:void(0);" onclick="enviarPedidoWhatsApp3()" class="anclas-wsp">Chilavert</a>
+              <p class="detalles">SOLO DELIVERY<br>lunes a sábados (12 a 15hs - 20 a 23.30hs)
+                Domingo (20 a 23.30hs)</p>
               <a href="javascript:void(0);" onclick="enviarPedidoWhatsApp4()" class="anclas-wsp">Carcova</a>
+              <p class="detalles">SOLO DELIVERY<br>lunes a lunes (12 a 15hs - 20 a 23.30hs)</p>
             </div>
           </div>
         </div>
@@ -263,6 +270,10 @@
 
       if (!subMenuVisible) {
         const buttonsHTML = `
+        <div class="metodo-pago">
+        <p id="parrafos-pago">MercadoPago</p>
+        <p id="parrafos-pago">Efectivo</p>
+        </div>
       <div class="div-botones-submenu" data-button-number="1">
         <button class="menu-button sub-menu-button" data-button-number="1">Simple</button>
         <p>$1800</p>
@@ -416,6 +427,10 @@
 
       if (!subMenuDosVisible) {
         const buttonsHTML = `
+        <div class="metodo-pago">
+        <p id="parrafos-pago">MercadoPago</p>
+        <p id="parrafos-pago">Efectivo</p>
+        </div>
       <div class="div-botones-submenu" data-button-number="10">
         <button class="menu-button sub-menu-button" data-button-number="10">Doble Cuarto</button>
         <p>$2700</p>
@@ -661,6 +676,11 @@
 
       if (!subMenuTresVisible) {
         const buttonsHTML = `
+        
+        <div class="metodo-pago">
+        <p id="parrafos-pago">MercadoPago</p>
+        <p id="parrafos-pago">Efectivo</p>
+        </div>
   <div class="div-botones-submenu" data-button-number="27">
     <button class="menu-button sub-menu-button" data-button-number="27">Papas Pequeñas</button>
     <p>$1550</p>
@@ -909,6 +929,11 @@
 
       if (!subMenuCuatroVisible) {
         const buttonsHTML = `
+        
+        <div class="metodo-pago">
+        <p id="parrafos-pago">MercadoPago</p>
+        <p id="parrafos-pago">Efectivo</p>
+        </div>
   <div class="div-botones-submenu" data-button-number= "44">
     <button class="menu-button sub-menu-button" data-button-number=44">Super Pollo</button>
     <p>$2190</p>
@@ -1009,6 +1034,10 @@
 
       if (!subMenuCincoVisible) {
         const buttonsHTML = `
+        
+        <div class="metodo-pago">
+        <p id="parrafos-pago">Efectivo</p>
+        </div>
   <div class="div-botones-submenu" data-button-number="48">
     <button class="menu-button sub-menu-button" data-button-number=48">Menu Infantil</button>
     <p>$3900</p>
@@ -1182,15 +1211,15 @@
     }
 
     function hayElementosSeleccionadosConPrecio() {
-  const hasElementsWithPrice = Object.keys(counters).some((buttonNumber) => {
-    const input = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input[type="radio"]:checked`);
-    return counters[buttonNumber] > 0 && input && input.value;
-  });
+      const hasElementsWithPrice = Object.keys(counters).some((buttonNumber) => {
+        const input = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input[type="radio"]:checked`);
+        return counters[buttonNumber] > 0 && input && input.value;
+      });
 
-  console.log('Resultado de la condición:', hasElementsWithPrice);
+      console.log('Resultado de la condición:', hasElementsWithPrice);
 
-  return hasElementsWithPrice;
-}
+      return hasElementsWithPrice;
+    }
 
     function irAContacto() {
       // Puedes personalizar esta función para hacer scroll hacia la sección de contacto
