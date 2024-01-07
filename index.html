@@ -277,9 +277,9 @@
       <div class="div-botones-submenu" data-button-number="2">
         <button class="menu-button sub-menu-button" data-button-number="2">Simple queso</button>
         <p>$2000</p>
-        <input class="radio-button" type="radio" name="simple queso" value="2000">
+        <input class="radio-button" type="radio" name="simple-queso" value="2000">
         <p>$1700</p>
-        <input class="radio-button" type="radio" name="simple queso" value="1700">
+        <input class="radio-button" type="radio" name="simple-queso" value="1700">
         <button class="counter-button" onclick="updateCounter(2, 'decrement')">-</button>
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(2, 'increment')">+</button>
@@ -1182,15 +1182,15 @@
     }
 
     function hayElementosSeleccionadosConPrecio() {
-      const hasElementsWithPrice = Object.values(counters).some((count, index) => {
-        const input = document.querySelector(`.div-botones-submenu[data-button-number="${index + 1}"] input:checked`);
-        return count > 0 && input && input.value;
-      });
+  const hasElementsWithPrice = Object.keys(counters).some((buttonNumber) => {
+    const input = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input[type="radio"]:checked`);
+    return counters[buttonNumber] > 0 && input && input.value;
+  });
 
-      console.log('Elementos con precio:', hasElementsWithPrice);
+  console.log('Resultado de la condición:', hasElementsWithPrice);
 
-      return hasElementsWithPrice;
-    }
+  return hasElementsWithPrice;
+}
 
     function irAContacto() {
       // Puedes personalizar esta función para hacer scroll hacia la sección de contacto
