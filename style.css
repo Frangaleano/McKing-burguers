@@ -168,6 +168,13 @@ body {
     padding-bottom: 20px;
   }
 
+  .imagenes-inicio {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
   .circulo {
     width: 180px;
     height: 180px;
@@ -203,6 +210,7 @@ body {
 
   .h1-nosotros {
     margin: .5em;
+    border-bottom: 2px solid #fcb502;
   }
 
   .mundo {
@@ -232,6 +240,7 @@ body {
   .carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    margin: 20px 0px;
   }
 
   .carousel-item {
@@ -241,28 +250,26 @@ body {
 
   .carousel-item img {
     width: 72%;
-    height: auto;
+    height: 90%;
+    box-shadow: 0px 0px 44px 12px rgba(255, 199, 0, 0.75);
   }
 
   .luigi-mario {
-    position: relative;
     width: 75px;
     height: 75px;
-    right: 8rem;
-    bottom: 11em;
+    margin-right: 10px;
   }
 
   .dino-mario {
-    width: 75px;
-    height: 75px;
+    width: 90px;
+    height: 90px;
+    margin-top: 22px;
   }
 
   .mario {
-    position: absolute;
     width: 75px;
     height: 75px;
-    right: 12px;
-    bottom: 45%;
+    margin-left: 10px;
   }
 
   .ancla-ig {
@@ -271,6 +278,9 @@ body {
     position: absolute;
     color: white;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .contacto {
@@ -312,7 +322,7 @@ body {
   }
 
   .card h3 {
-    margin-bottom: 0px;
+    border-bottom: 2px solid #fcb502;
   }
 
   .red-social img {
@@ -354,6 +364,13 @@ body {
     transition: background-color 0.8s;
   }
 
+  .combo {
+    width: 65%;
+    height: 50%;
+    margin-top: 56px;
+    box-shadow: 0px 0px 44px 12px rgba(255, 199, 0, 0.75);
+  }
+
   #menu-title {
     animation: shadowAnimation 1s infinite;
     border: 2px solid #fcb502;
@@ -361,9 +378,15 @@ body {
     border-radius: 30px;
     z-index: 5;
     transition: background-color 0.8s;
+    margin-bottom: 0px;
+    margin-top: 12px;
   }
 
-
+  .parrafo-menu2 {
+    border-radius: 30px;
+    border: 2px solid #fcb502;
+    width: 89%;
+  }
 
   .menu-section {
     padding: 10px;
@@ -522,12 +545,14 @@ body {
     transform: translateX(-50%);
     background-color: transparent;
     border: 2px solid #fcb502;
-    padding: 4px 37px;
+    padding: 4px 21px;
     border-radius: 30px;
     font-family: 'Kdam Thmor Pro', sans-serif;
     color: white;
     backdrop-filter: blur(10px);
     z-index: 6;
+    height: 62px;
+    font-size: 20px;
   }
 
   .metodo-pago {
@@ -546,4 +571,73 @@ body {
     margin: 0px;
   }
 
+  #tuPedidoBtn {
+    display: none;
+    position: fixed;
+    border: 2px solid #fcb502;
+    padding: 4px 30px;
+    border-radius: 30px;
+    z-index: 6;
+    backdrop-filter: blur(5.2px);
+    top: 5px;
+    left: 5px;
+    transition: opacity 1s;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: white;
+    background: transparent;
+    animation: shadowAnimation 1s infinite;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #pedidoDropdown {
+    position: fixed;
+    top: 56px;
+    font-size: 17px;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 2px solid #fcb502;
+    width: 100%;
+  }
+  
+  .eliminar-item {
+    cursor: pointer;
+    margin-left: 10px;
+    color: red;  
+  }
+
+  .flecha-abajo {
+    border: solid #fcb502;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: transform 0.8s;  /* Agregamos una transición para el efecto suave */
+    margin-left: 8px;
+  }
+  
+  .flecha-arriba {
+    transform: rotate(-135deg);
+    border: solid #fcb502;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transition: transform 0.8s;
+    margin-left: 8px;
+  }
+
+  .contacto h2 {
+    border-bottom: 2px solid #fcb502;
+  }
+  
+  .ancla-ig h3 {
+    border-bottom: 2px solid #fcb502;
+    width: 111px;
+  }
 }

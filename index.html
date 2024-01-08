@@ -42,27 +42,37 @@
     </div>
   </header>
 
+  <button id="hacerPedidoButton" class="boton-pedido" onclick="hacerPedido()" style="display: none;">Hacer
+    Pedido</button>
 
-  <button id="hacerPedidoButton" onclick="hacerPedido()" style="display: none;">Hacer Pedido</button>
+  <button id="tuPedidoBtn" class="boton-pedido" style="display: none;" onclick="toggleDropdown()">Tu Pedido
+    <span id="flecha" class="flecha-abajo"></span>
+  </button>
+
+  <div id="pedidoDropdown" class="dropdown-content" style="display: none;"></div>
 
   <main id="main" class="main-content">
+    
 
     <section id="nosotros">
+      <div class="imagenes-inicio">
+        <img class="luigi-mario" src="/luigi-mario.png" alt="luigi mario">
       <div class="circulo">
         <img class="img-logo" src="/logo-mcking.png" alt="logo">
       </div>
+    <img class="mario" src="/mario-bros.png" alt="mario bros">
+    </div>
       <p class="texto-mc">Bienvenid@s a</p>
       <h1 class="h1-nosotros">McKing burguers</h1>
       <p class="texto-mc">una familia que trabaja con mucha dedicacion y amor</p>
-
-
-      <img class="luigi-mario" src="/luigi-mario.png" alt="luigi mario">
-      <img class="mario" src="/mario-bros.png" alt="mario bros">
-
       <img class="pacman" src="/th-removebg-preview.png" alt="pacman">
     </section>
 
+
     <section class="section-menu" id="menu">
+
+      <img class="combo" src="/Combo lunes.png" alt="combo lunes">
+      <p>Encontralo en el menu: bebidas/otros</p>
 
       <h2 id="menu-title" onclick="toggleMenuSection()">Menú</h2>
 
@@ -113,7 +123,7 @@
         </div>
       </div>
 
-      <p id="hidden">Todos nuestros productos son 100% frescos y de muy alta calidad, para llevar nuestras hamburguesas
+      <p class="parrafo-menu2" id="hidden">Todos nuestros productos son 100% frescos y de muy alta calidad, para llevar nuestras hamburguesas
         al proximo
         nivel!</p>
 
@@ -142,7 +152,7 @@
             <p class="texto-contacto">Elegí tu sucursal mas cercana:</p>
             <div class="anclas-contacto">
               <a href="javascript:void(0);" onclick="enviarPedidoWhatsApp()" class="anclas-wsp">Villa Martelli</a>
-              <p class="detalles">Melo 4882<br>Martes a Sábados (12 a 15hs -  20 a 23.30hs)
+              <p class="detalles">Melo 4882<br>Martes a Sábados (12 a 15hs - 20 a 23.30hs)
                 Domingos y Lunes (20 a 23.30hs) </p>
               <a href="javascript:void(0);" onclick="enviarPedidoWhatsApp2()" class="anclas-wsp">San Andres</a>
               <p class="detalles">Bermejo 1590 <br>Martes a Sábados (12 a 15hs - 20 a 23.30hs)
@@ -394,7 +404,8 @@
 
         // Agrega la clase 'active' al botón1 cuando se despliega el submenú
         boton1.classList.add('active');
-        window.scrollBy(0, subMenu.offsetHeight);
+        subMenu.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        event.preventDefault();
       } else {
         const subMenuButtons = document.querySelectorAll('.menu-button');
         subMenuButtons.forEach(button => {
@@ -415,7 +426,6 @@
 
         // Quita la clase 'active' al botón1 cuando se contrae el submenú
         boton1.classList.remove('active');
-        window.scrollBy(0, boton1.offsetHeight);
       }
     }
 
@@ -640,8 +650,8 @@
         // Agrega la clase 'active' al botón1 cuando se despliega el submenú
         boton2.classList.add('active');
 
-
-        window.scrollBy(0, subMenuDos.offsetHeight);
+        subMenuDos.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        event.preventDefault();
       } else {
         const subMenuDosButtons = document.querySelectorAll('.menu-button');
         subMenuDosButtons.forEach(button => {
@@ -664,7 +674,6 @@
         boton2.classList.remove('active');
 
 
-        window.scrollBy(0, boton2.offsetHeight);
       }
     }
 
@@ -1132,9 +1141,6 @@
       }
     }
 
-
-
-
     function selectMainMenuButton(buttonNumber) {
       const allButtons = document.querySelectorAll('.menu-button');
       allButtons.forEach(button => {
@@ -1153,6 +1159,39 @@
       });
     });
 
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const pedidoDropdown = document.getElementById('pedidoDropdown');
+      pedidoDropdown.style.display = 'none';
+    });
+
+    function toggleDropdown() {
+      const tuPedidoBtn = document.getElementById('tuPedidoBtn');
+      const pedidoDropdown = document.getElementById('pedidoDropdown');
+
+      // Togglear la visibilidad del div al hacer clic en el botón "Tu Pedido"
+      // Togglear la visibilidad del div al hacer clic en el botón "Tu Pedido"
+      if (pedidoDropdown.style.display === 'none') {
+        actualizarPedido();
+        pedidoDropdown.style.display = 'flex';
+        pedidoDropdown.style.transition = 'transform 0.8s, opacity 0.8s';
+        pedidoDropdown.style.transform = 'translateY(0px)';
+        pedidoDropdown.style.opacity = '1';
+        flecha.classList.remove('flecha-abajo');
+        flecha.classList.add('flecha-arriba');
+      } else {
+        pedidoDropdown.style.transition = 'transform 0.8s , opacity 0.8s';
+        pedidoDropdown.style.transform = 'translateY(-50px)';
+        pedidoDropdown.style.opacity = '0';
+        flecha.classList.remove('flecha-arriba');
+        flecha.classList.add('flecha-abajo');
+        // Retrasar la ocultación para permitir que la transición tenga lugar
+        setTimeout(() => {
+          pedidoDropdown.style.display = 'none';
+        }, 800);
+      }
+    }
+
     let counters = {};
     let selectedItems = [];
     let total = 0;
@@ -1169,15 +1208,18 @@
           counters[buttonNumber] = 0;
         }
 
+        let itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
+        let itemPrice = parseFloat(selectedInput.value);
+
         switch (action) {
           case 'increment':
             counters[buttonNumber]++;
-            total += parseFloat(selectedInput.value);
+            total += itemPrice;
             break;
           case 'decrement':
             if (counters[buttonNumber] > 0) {
               counters[buttonNumber]--;
-              total -= parseFloat(selectedInput.value);
+              total -= itemPrice;
             }
             break;
           default:
@@ -1186,10 +1228,14 @@
 
         counterValue.textContent = counters[buttonNumber];
 
-        // Registra la acción en la lista
-        const itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
-        const logMessage = `${itemName} - Cantidad total: ${counters[buttonNumber]}, Total: ${total.toFixed(2)} `;
-        selectedItems.push(logMessage);
+        // Elimina todos los elementos de selectedItems correspondientes a este botón
+        selectedItems = selectedItems.filter(item => !item.includes(itemName));
+
+        // Agrega el elemento solo si la cantidad es mayor que cero
+        if (counters[buttonNumber] > 0) {
+          const formattedMessage = `${itemName} x${counters[buttonNumber]} $${itemPrice.toFixed(2)}`;
+          selectedItems.push(formattedMessage);
+        }
 
         // Muestra la lista en la consola
         console.log('Lista de selecciones:', selectedItems);
@@ -1202,12 +1248,48 @@
 
         // Actualiza el total
         actualizarTotal();
+
+        // Actualiza el pedido
+        actualizarPedido();
       }
     }
+
+    function actualizarPedido() {
+      const pedidoDropdown = document.getElementById('pedidoDropdown');
+
+      // Actualiza el contenido del div
+      if (selectedItems.length > 0) {
+        pedidoDropdown.innerHTML = selectedItems.map(item => `
+      <div>
+        <span>${item}</span>
+        <span class="eliminar-item" onclick="eliminarItem('${item}')">&#10006;</span>
+      </div>
+    `).join('');
+      } else {
+        // Limpia el contenido y oculta el div si no hay elementos
+        pedidoDropdown.innerHTML = '';
+        pedidoDropdown.style.display = 'none';
+      }
+    }
+
+    function eliminarItem(item) {
+      const itemName = item.split(' x')[0].trim();  // Obtén el nombre del artículo
+      const buttonNumber = obtenerNumeroDeBotonPorNombre(itemName);
+
+      if (buttonNumber !== null) {
+        // Decrementa el contador y actualiza el pedido
+        updateCounter(buttonNumber, 'decrement');
+        actualizarPedido();
+      }
+    }
+
+
 
     function actualizarVisibilidadBotonPedido() {
       const hacerPedidoButton = document.getElementById('hacerPedidoButton');
       hacerPedidoButton.style.display = hayElementosSeleccionadosConPrecio() ? 'block' : 'none';
+      const btnTuPedido = document.getElementById("tuPedidoBtn")
+      btnTuPedido.style.display = hayElementosSeleccionadosConPrecio() ? 'flex' : 'none';
     }
 
     function hayElementosSeleccionadosConPrecio() {
@@ -1271,6 +1353,8 @@
 
       // Imprimir en la consola para verificar el flujo
       console.log('Pedido realizado con éxito.');
+
+      actualizarPedido();
     }
 
     function enviarPedidoWhatsApp() {
@@ -1459,6 +1543,22 @@
         totalElement.textContent = `$${total.toFixed(2)}`;
       }
     }
+
+    function obtenerNumeroDeBotonPorNombre(itemName) {
+      const divBotonesSubMenu = document.querySelectorAll('.div-botones-submenu');
+
+      for (let i = 0; i < divBotonesSubMenu.length; i++) {
+        const menuButton = divBotonesSubMenu[i].querySelector('.menu-button');
+        const menuButtonName = menuButton.textContent.trim();
+
+        if (menuButtonName === itemName) {
+          return divBotonesSubMenu[i].dataset.buttonNumber;
+        }
+      }
+
+      return null;
+    }
+
 
 
 
