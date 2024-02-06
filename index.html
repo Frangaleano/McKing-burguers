@@ -2220,13 +2220,13 @@ function eliminarDelPedido(index) {
 
         // Recorrer cada producto en la lista de productos guardados
         productosGuardados.forEach((producto) => {
-          mensajeWhatsApp += `Producto: ${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+          mensajeWhatsApp += `${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
 
           // Agregar detalles de los extras de cada producto
           if (producto.producto.extras && producto.producto.extras.length > 0) {
             mensajeWhatsApp += `Extras:\n`;
             producto.producto.extras.forEach((extra) => {
-              mensajeWhatsApp += `-Extra: ${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+              mensajeWhatsApp += `${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
             });
           }
 
