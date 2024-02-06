@@ -753,7 +753,7 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(19, 'increment')">+</button>
       </div>
-      <p id="parrafos-detalles">completar</p>
+      <p id="parrafos-detalles">2 carnes - papas pay - cheddar fundido - bacon</p>
       <button class="boton-extras" data-button-number="19" onclick="toggleExtras(19)">Extras</button>
       <div class="div-extras" id="extrasList19" data-button-number="19" style="display: none;">
       </div>
@@ -1065,7 +1065,7 @@
     <button class="menu-button sub-menu-button" data-button-number="33">Papas Doritos</button> 
     <p>$2450</p>
     <input class="radio-button" type="radio" name="papas-doritos" value="2450">
-    <p>$2150</p>
+    <p>$2150</p> 
     <input class="radio-button" type="radio" name="papas-doritos" value="2150">
     <button class="counter-button" onclick="updateCounter(33, 'decrement')">-</button>
     <span class="counter-value">0</span>
@@ -1729,7 +1729,7 @@
         extrasList.innerHTML = `
 
         <div class="extra-item" data-extra-number="1" data-price="750">
-          <p style="margin-left:10px;">Carne<br>Pollo</p>
+          <p>Carne<br>Pollo</p>
           <button class="counter-button" onclick="updateExtrasCounter(1, 'decrement', ${buttonNumber})">-</button>
           <span class="counter-value" id="counter-value-${buttonNumber}-1">0</span>
           <button class="counter-button" onclick="updateExtrasCounter(1, 'increment', ${buttonNumber})">+</button>
@@ -1785,9 +1785,7 @@
           <p id="extra-price-8">$350</p>
         </div>
         <div class="extra-item" data-extra-number="9" data-price="450">
-          <p style="
-    margin-left: 14px;
-">Salsa</p>
+          <p>Salsa</p>
           <button class="counter-button" onclick="updateExtrasCounter(9, 'decrement', ${buttonNumber})">-</button>
           <span class="counter-value" id="counter-value-${buttonNumber}-9">0</span>
           <button class="counter-button" onclick="updateExtrasCounter(9, 'increment', ${buttonNumber})">+</button>

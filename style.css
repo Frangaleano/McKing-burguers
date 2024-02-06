@@ -84,7 +84,7 @@ body {
     bottom: 0;
     display: grid;
     transition: 0.3s;
-    z-index: 3;
+    z-index: 4;
   }
 
   .menu>div {
@@ -96,7 +96,7 @@ body {
   body.open .menu>div {
     transform: translateX(0);
     background-color: #030108;
-    height: 145px;
+    height: 100%;
     width: 100%;
   }
 
@@ -138,7 +138,7 @@ body {
   body.open .close-button {
     display: block;
     opacity: 1;
-    z-index: 4;
+    z-index: 5;
     position: fixed;
   }
 
@@ -343,13 +343,35 @@ body {
 
   
   @keyframes shadowAnimation {
+    
     0%, 100% {
-      box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
+      box-shadow: 0px 0px 20px 11px rgba(255, 199, 0, 0.75);
     }
     50% {
       box-shadow: none;
     }
   }
+
+  @keyframes shadowAnimationIn {
+    
+    0%, 100% {
+      box-shadow: inset 0px 0px 20px 3px rgba(255, 199, 0, 0.75);
+    }
+    50% {
+      box-shadow: none;
+    }
+  }
+
+  @keyframes shadowAnimationHacerPedido {
+    
+    0%, 100% {
+      box-shadow: inset 0px 0px 20px 3px rgba(140, 34, 195, 1);
+    }
+    50% {
+      box-shadow: none;
+    }
+  }
+ 
 
   .anclas-wsp {
     cursor: pointer;
@@ -359,7 +381,7 @@ body {
     padding: 3px 19px;
     color: white;
     text-decoration: none;
-    animation: shadowAnimation 1s infinite;
+    animation: shadowAnimationIn 1s infinite;
     transition: background-color 0.8s;
   }
 
@@ -537,21 +559,20 @@ body {
 
   #hacerPedidoButton {
     transition: background-color 0.8s;
-    animation: shadowAnimation 1s infinite;
+    animation: shadowAnimationHacerPedido 1s infinite;
     position: fixed;
-    bottom: 10px; /* Ajusta la distancia desde la parte inferior según tu preferencia */
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: transparent;
+    background-color: #fcb502;
     border: 2px solid #fcb502;
     padding: 4px 21px;
     border-radius: 30px;
     font-family: 'Kdam Thmor Pro', sans-serif;
-    color: white;
-    backdrop-filter: blur(10px);
+    color: black;
     z-index: 6;
     height: 62px;
-    font-size: 20px;
+    font-size: 23px;
   }
 
   .metodo-pago {
@@ -584,7 +605,7 @@ body {
     font-family: 'Kdam Thmor Pro', sans-serif;
     color: white;
     background: transparent;
-    animation: shadowAnimation 1s infinite;
+    animation: shadowAnimationIn 1s infinite;
     flex-direction: row;
     align-items: center;
   }
@@ -661,7 +682,7 @@ body {
     font-family: 'Kdam Thmor Pro', sans-serif;
     color: white;
     background: transparent;
-    animation: shadowAnimation 1s infinite;
+    animation: shadowAnimationIn 1s infinite;
   }
 
   .div-extras {
@@ -698,6 +719,7 @@ body {
 
   .extra-item p {
     font-size: 15px;
+    width: 100px;
   }
 
   .producto-pedido {
