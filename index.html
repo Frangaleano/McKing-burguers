@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/mk-logo-removebg-preview.png">
   <title>McKing-burguers</title>
-  <meta name="description" content="Somos McKing Burguers! Hamburguesas de verdad, estamos ubicados en las localidades de villa martelli - san andres - chilavert y carcova, hamburguesas de calidad con productos 100% frescos, hamburguesas en otro nivel!">
   <link rel="stylesheet" href="style.css" />
 
 </head>
@@ -43,7 +41,7 @@
     </div>
   </header>
 
-  <button id="hacerPedidoButton" class="boton-pedido" onclick="hacerPedido()" style="display: none;">Hacer
+  <button id="hacerPedidoButton" class="boton-pedido" onclick=" irAContacto()" style="display: none;">Hacer
     Pedido</button>
 
   <button id="tuPedidoBtn" class="boton-pedido" style="display: none;" onclick="toggleDropdown()">Tu Pedido
@@ -72,7 +70,7 @@
 
     <section class="section-menu" id="menu">
 
-      <img class="combo" src="/Combo viernes.png" alt="combo lunes">
+      <img class="combo" src="/Combo lunes.png" alt="combo lunes">
       <p>Encontralo en el menu: bebidas/otros</p>
 
       <h2 id="menu-title" onclick="toggleMenuSection()">Menú</h2>
@@ -83,7 +81,7 @@
 
         <div class="menu-button-container">
 
-          <p>Selecciona el metodo de pago, Mercadopago o efectivo para agilizar el pedido!</p>
+          <p>Selecciona un metodo unico de pago, puede ser Mercadopago o efectivo para agilizar el pedido!</p>
 
           <button class="menu-button main-menu-button" id="boton1" onclick="toggleSubMenu()">Hamburguesas - 1
             carne</button>
@@ -182,7 +180,6 @@
 
 
   </main>
-
 
   <script type="text/javascript">
 
@@ -303,6 +300,12 @@
         <button class="counter-button" onclick="updateCounter(1, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">pan - carne</p>
+      <button class="boton-extras" data-button-number="1" onclick="toggleExtras(1)">Extras</button>
+      <div class="div-extras" id="extrasList1" data-button-number="1" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(1)">Agregar al pedido</button>
+      </div>
 
 
       <div class="div-botones-submenu" data-button-number="2">
@@ -315,7 +318,13 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(2, 'increment')">+</button>
       </div>
-        <p id="parrafos-detalles">pan - carne - queso</p>
+      <p id="parrafos-detalles">pan - carne - queso</p>
+      <button class="boton-extras" data-button-number="2" onclick="toggleExtras(2)">Extras</button>
+      <div class="div-extras" id="extrasList2" data-button-number="2" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(2)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="3">
         <button class="menu-button sub-menu-button" data-button-number="3">Napoleon</button>
@@ -327,7 +336,13 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(3, 'increment')">+</button>
       </div>
-        <p id="parrafos-detalles">tomate asado - queso - oregano - mayonesa</p>
+      <p id="parrafos-detalles">tomate asado - queso - oregano - mayonesa</p>
+      <button class="boton-extras" data-button-number="3" onclick="toggleExtras(3)">Extras</button>
+      <div class="div-extras" id="extrasList3" data-button-number="3" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(3)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="4">
         <button class="menu-button sub-menu-button" data-button-number="4">Classic</button>
@@ -339,7 +354,13 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(4, 'increment')">+</button>
       </div>
-        <p id="parrafos-detalles">lechuga - tomate</p>
+      <p id="parrafos-detalles">lechuga - tomate</p>
+      <button class="boton-extras" data-button-number="4" onclick="toggleExtras(4)">Extras</button>
+      <div class="div-extras" id="extrasList4" data-button-number="4" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(4)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="5">
         <button class="menu-button sub-menu-button" data-button-number="5">Fusion</button>
@@ -351,7 +372,13 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(5, 'increment')">+</button>
       </div>
-        <p id="parrafos-detalles">jamon - queso</p>
+      <p id="parrafos-detalles">jamon - queso</p>
+      <button class="boton-extras" data-button-number="5" onclick="toggleExtras(5)">Extras</button>
+      <div class="div-extras" id="extrasList5" data-button-number="5" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(5)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="6">
         <button class="menu-button sub-menu-button" data-button-number="6">Cuarto</button>
@@ -363,7 +390,13 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(6, 'increment')">+</button>
       </div>
-        <p id="parrafos-detalles">doble queso - salsa de cebolla</p>
+      <p id="parrafos-detalles">doble queso - salsa de cebolla</p>
+      <button class="boton-extras" data-button-number="6" onclick="toggleExtras(6)">Extras</button>
+      <div class="div-extras" id="extrasList6" data-button-number="6" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(6)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="7">
         <button class="menu-button sub-menu-button" data-button-number="7">Magnifica</button> 
@@ -375,7 +408,13 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(7, 'increment')">+</button>
       </div>
-        <p id="parrafos-detalles">tomate - lechuga - cebolla - queso - salsa</p>
+      <p id="parrafos-detalles">tomate - lechuga - cebolla - queso - salsa</p>
+      <button class="boton-extras" data-button-number="7" onclick="toggleExtras(7)">Extras</button>
+      <div class="div-extras" id="extrasList7" data-button-number="7" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(7)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="8">
         <button class="menu-button sub-menu-button" data-button-number="8">Napolitano</button>
@@ -387,7 +426,13 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(8, 'increment')">+</button>
       </div>
-        <p id="parrafos-detalles">jamon - queso - tomate - cebolla - ketchup</p>
+      <p id="parrafos-detalles">jamon - queso - tomate - cebolla - ketchup</p>
+      <button class="boton-extras" data-button-number="8" onclick="toggleExtras(8)">Extras</button>
+      <div class="div-extras" id="extrasList8" data-button-number="8" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(8)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="9">
         <button class="menu-button sub-menu-button" data-button-number="9">Completa</button>
@@ -399,9 +444,14 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(9, 'increment')">+</button>
       </div>
-        <p id="parrafos-detalles">carne - jamón - queso - lechuga - tomate - huevo</p>
+      <p id="parrafos-detalles">falta info</p>
+      <button class="boton-extras" data-button-number="9" onclick="toggleExtras(9)">Extras</button>
+      <div class="div-extras" id="extrasList9" data-button-number="9" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(9)">Agregar al pedido</button>
+      </div>
     `;
-
 
 
 
@@ -470,6 +520,12 @@
         <button class="counter-button" onclick="updateCounter(10, 'increment')">+</button>
       </div> 
       <p id="parrafos-detalles">carne x2 - queso x2 - salsa de cebolla</p>
+      <button class="boton-extras" data-button-number="10" onclick="toggleExtras(10)">Extras</button>
+      <div class="div-extras" id="extrasList10" data-button-number="10" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(10)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="11">
         <button class="menu-button sub-menu-button" data-button-number="11">Doble Napoleon</button>
@@ -482,6 +538,12 @@
         <button class="counter-button" onclick="updateCounter(11, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - queso x2 - tomate asado - oregano - mayonesa</p>
+      <button class="boton-extras" data-button-number="11" onclick="toggleExtras(11)">Extras</button>
+      <div class="div-extras" id="extrasList11" data-button-number="11" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(11)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="12">
         <button class="menu-button sub-menu-button" data-button-number="12">Doble Magnifica</button>
@@ -494,6 +556,12 @@
         <button class="counter-button" onclick="updateCounter(12, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - queso - lechuga - tomate - aros de cebolla</p>
+      <button class="boton-extras" data-button-number="12" onclick="toggleExtras(12)">Extras</button>
+      <div class="div-extras" id="extrasList12" data-button-number="12" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(12)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="13">
         <button class="menu-button sub-menu-button" data-button-number="13">Doble Napolitano</button>
@@ -506,6 +574,12 @@
         <button class="counter-button" onclick="updateCounter(13, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - queso x2 - jamon x2 - cebolla - tomate - ketchup</p>
+      <button class="boton-extras" data-button-number="13" onclick="toggleExtras(13)">Extras</button>
+      <div class="div-extras" id="extrasList13" data-button-number="13" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(13)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="14">
         <button class="menu-button sub-menu-button" data-button-number="14">Onion</button>
@@ -518,6 +592,12 @@
         <button class="counter-button" onclick="updateCounter(14, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - triple queso - cebolla caramelizada</p>
+      <button class="boton-extras" data-button-number="14" onclick="toggleExtras(14)">Extras</button>
+      <div class="div-extras" id="extrasList14" data-button-number="14" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(14)">Agregar al pedido</button>
+      </div>
 
 
       <div class="div-botones-submenu" data-button-number="15">
@@ -531,6 +611,12 @@
         <button class="counter-button" onclick="updateCounter(15, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - lechuga - tomate - pepino - cebolla morada - salsa</p>
+      <button class="boton-extras" data-button-number="15" onclick="toggleExtras(15)">Extras</button>
+      <div class="div-extras" id="extrasList15" data-button-number="15" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(15)">Agregar al pedido</button>
+      </div>
 
 
       <div class="div-botones-submenu" data-button-number="16">
@@ -544,7 +630,12 @@
         <button class="counter-button" onclick="updateCounter(16, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - jamon y queso x2</p>
-
+      <button class="boton-extras" data-button-number="16" onclick="toggleExtras(16)">Extras</button>
+      <div class="div-extras" id="extrasList16" data-button-number="16" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(16)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="17">
         <button class="menu-button sub-menu-button" data-button-number="17">Club House</button>
@@ -557,7 +648,12 @@
         <button class="counter-button" onclick="updateCounter(17, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - cebolla caramelizada - bacon - lechuga - tomate - queso</p>
-
+      <button class="boton-extras" data-button-number="17" onclick="toggleExtras(17)">Extras</button>
+      <div class="div-extras" id="extrasList17" data-button-number="17" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(17)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="18">
         <button class="menu-button sub-menu-button" data-button-number="18">BBQ</button>
@@ -570,6 +666,12 @@
         <button class="counter-button" onclick="updateCounter(18, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - cebolla caramelizada - queso blanco - bacon - barbacoa</p>
+      <button class="boton-extras" data-button-number="18" onclick="toggleExtras(18)">Extras</button>
+      <div class="div-extras" id="extrasList18" data-button-number="18" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(18)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="19">
         <button class="menu-button sub-menu-button" data-button-number="19">Melo City</button>
@@ -581,7 +683,14 @@
         <span class="counter-value">0</span>
         <button class="counter-button" onclick="updateCounter(19, 'increment')">+</button>
       </div>
-      <p id="parrafos-detalles">carnes x2 - papas pay - cheddar fundido - bacon <br>(Solo displonible en Melo)</p>
+      <p id="parrafos-detalles">completar</p>
+      <button class="boton-extras" data-button-number="19" onclick="toggleExtras(19)">Extras</button>
+      <div class="div-extras" id="extrasList19" data-button-number="19" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(19)">Agregar al pedido</button>
+      </div>
+
 
       <div class="div-botones-submenu" data-button-number="20">
         <button class="menu-button sub-menu-button" data-button-number="20">Dorito</button>
@@ -594,6 +703,12 @@
         <button class="counter-button" onclick="updateCounter(20, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - triple queso - doritos</p>
+      <button class="boton-extras" data-button-number="20" onclick="toggleExtras(20)">Extras</button>
+      <div class="div-extras" id="extrasList20" data-button-number="20" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(20)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="21">
         <button class="menu-button sub-menu-button" data-button-number="21">Baconator</button>
@@ -606,6 +721,13 @@
         <button class="counter-button" onclick="updateCounter(21, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - cheddar fundido x2 - bacon x2</p>
+      <button class="boton-extras" data-button-number="21" onclick="toggleExtras(21)">Extras</button>
+      <div class="div-extras" id="extrasList21" data-button-number="21" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(21)">Agregar al pedido</button>
+      </div>
+      
 
       <div class="div-botones-submenu" data-button-number="22">
         <button class="menu-button sub-menu-button" data-button-number="22">Big King</button>
@@ -618,6 +740,12 @@
         <button class="counter-button" onclick="updateCounter(22, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - lechuga x2 - cebolla x2 - pepino - queso x2 - salsa big</p>
+      <button class="boton-extras" data-button-number="22" onclick="toggleExtras(22)">Extras</button>
+      <div class="div-extras" id="extrasList22" data-button-number="22" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(22)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="23">
         <button class="menu-button sub-menu-button" data-button-number="23">Staker</button>
@@ -630,6 +758,12 @@
         <button class="counter-button" onclick="updateCounter(23, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - queso x2 - bacon - salsa staker</p>
+      <button class="boton-extras" data-button-number="23" onclick="toggleExtras(23)">Extras</button>
+      <div class="div-extras" id="extrasList23" data-button-number="23" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(23)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="24">
         <button class="menu-button sub-menu-button" data-button-number="24">Mega Turbo Tasty</button> 
@@ -642,6 +776,12 @@
         <button class="counter-button" onclick="updateCounter(24, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - cheddar x4 - lechuga - tomate - salsa tasty x2 - bacon en tira/picado</p>
+      <button class="boton-extras" data-button-number="24" onclick="toggleExtras(24)">Extras</button>
+      <div class="div-extras" id="extrasList24" data-button-number="24" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(24)">Agregar al pedido</button>
+      </div>
 
       <div class="div-botones-submenu" data-button-number="25">
         <button class="menu-button sub-menu-button" data-button-number="25">Triple Cuarto</button>
@@ -654,6 +794,12 @@
         <button class="counter-button" onclick="updateCounter(25, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x3 - queso x3 - salsa de cebolla</p>
+      <button class="boton-extras" data-button-number="25" onclick="toggleExtras(25)">Extras</button>
+      <div class="div-extras" id="extrasList25" data-button-number="25" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(25)">Agregar al pedido</button>
+      </div>
 
 
       <div class="div-botones-submenu" data-button-number="26">
@@ -667,21 +813,12 @@
         <button class="counter-button" onclick="updateCounter(26, 'increment')">+</button>
       </div>
       <p id="parrafos-detalles">carne x2 - queso x3 - bacon - salsa de cebolla</p>
-
-      <div class="div-botones-submenu" data-button-number="57">
-        <button class="menu-button sub-menu-button" data-button-number="57">Tasty Napoleon </button>
-        <p>$2300</p>
-        <input class="radio-button" type="radio" name="tasty-napoleon" value="2300">
-        <p>$2000</p>
-        <input class="radio-button" type="radio" name="tasty-napoleon" value="2000">
-        <button class="counter-button" onclick="updateCounter(57, 'decrement')">-</button>
-        <span class="counter-value">0</span>
-        <button class="counter-button" onclick="updateCounter(57, 'increment')">+</button>
+      <button class="boton-extras" data-button-number="26" onclick="toggleExtras(26)">Extras</button>
+      <div class="div-extras" id="extrasList26" data-button-number="26" style="display: none;">
       </div>
-      <p id="parrafos-detalles">carne - salsa tasty x2 - queso blanco - jamón - tomate asado - orégano</p>
-
-
-
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(20)">Agregar al pedido</button>
+      </div>
     `;
 
 
@@ -754,6 +891,12 @@
     <button class="counter-button" onclick="updateCounter(27, 'increment')">+</button>
   </div> 
   <p id="parrafos-detalles">papas paquete regular</p>
+  <button class="boton-extras" data-button-number="27" onclick="toggleExtras(27)">Extras</button>
+      <div class="div-extras" id="extrasList27" data-button-number="27" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(27)">Agregar al pedido</button>
+      </div>
 
   <div class="div-botones-submenu" data-button-number="28">
     <button class="menu-button sub-menu-button" data-button-number="28">Papas medianas</button>
@@ -766,6 +909,12 @@
     <button class="counter-button" onclick="updateCounter(28, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas paquete mediano</p>
+  <button class="boton-extras" data-button-number="28" onclick="toggleExtras(28)">Extras</button>
+      <div class="div-extras" id="extrasList28" data-button-number="28" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(28)">Agregar al pedido</button>
+      </div>
 
   <div class="div-botones-submenu" data-button-number="29">
     <button class="menu-button sub-menu-button" data-button-number="29">Papas Grandes</button>
@@ -778,6 +927,12 @@
     <button class="counter-button" onclick="updateCounter(29, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas paquete grande</p>
+  <button class="boton-extras" data-button-number="29" onclick="toggleExtras(29)">Extras</button>
+      <div class="div-extras" id="extrasList29" data-button-number="29" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(29)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="30">
@@ -791,6 +946,12 @@
     <button class="counter-button" onclick="updateCounter(30, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas - cheddar - jamon - verdeo</p>
+  <button class="boton-extras" data-button-number="30" onclick="toggleExtras(30)">Extras</button>
+      <div class="div-extras" id="extrasList30" data-button-number="30" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(30)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="31">
@@ -804,6 +965,12 @@
     <button class="counter-button" onclick="updateCounter(31, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas - cheddar</p>
+  <button class="boton-extras" data-button-number="31" onclick="toggleExtras(31)">Extras</button>
+      <div class="div-extras" id="extrasList31" data-button-number="31" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(31)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="32">
@@ -817,6 +984,13 @@
     <button class="counter-button" onclick="updateCounter(32, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas - cheddar - bacon</p>
+  
+  <button class="boton-extras" data-button-number="32" onclick="toggleExtras(32)">Extras</button>
+      <div class="div-extras" id="extrasList32" data-button-number="32" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(32)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="33">
@@ -830,6 +1004,12 @@
     <button class="counter-button" onclick="updateCounter(33, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas - cheddar - doritos</p>
+  <button class="boton-extras" data-button-number="33" onclick="toggleExtras(33)">Extras</button>
+      <div class="div-extras" id="extrasList33" data-button-number="33" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(33)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="34">
@@ -843,7 +1023,12 @@
     <button class="counter-button" onclick="updateCounter(34, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas - huevo frito</p>
-
+  <button class="boton-extras" data-button-number="34" onclick="toggleExtras(34)">Extras</button>
+      <div class="div-extras" id="extrasList34" data-button-number="34" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(34)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="35">
@@ -857,6 +1042,13 @@
     <button class="counter-button" onclick="updateCounter(35, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas - cheddar - verdeo - carne</p>
+  
+  <button class="boton-extras" data-button-number="35" onclick="toggleExtras(35)">Extras</button>
+      <div class="div-extras" id="extrasList35" data-button-number="35" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(35)">Agregar al pedido</button>
+      </div>
 
 
   
@@ -871,7 +1063,12 @@
     <button class="counter-button" onclick="updateCounter(36, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas - cheddar - verdeo - jamon - nuggets</p>
-
+  <button class="boton-extras" data-button-number="36" onclick="toggleExtras(36)">Extras</button>
+      <div class="div-extras" id="extrasList36" data-button-number="36" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(36)">Agregar al pedido</button>
+      </div>
 
   <div class="div-botones-submenu" data-button-number="37">
     <button class="menu-button sub-menu-button" data-button-number="37">Papas Tapa Arterias</button>
@@ -884,7 +1081,12 @@
     <button class="counter-button" onclick="updateCounter(37, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">papas - cheddar - bacon - jamon - verdeo - huevo frito - carne</p>
-
+  <button class="boton-extras" data-button-number="37" onclick="toggleExtras(37)">Extras</button>
+      <div class="div-extras" id="extrasList37" data-button-number="37" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(37)">Agregar al pedido</button>
+      </div>
 
   <div class="div-botones-submenu" data-button-number="38">
     <button class="menu-button sub-menu-button" data-button-number="38">Nuggets</button>
@@ -897,6 +1099,12 @@
     <button class="counter-button" onclick="updateCounter(38, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">nuggets x10</p>
+  <button class="boton-extras" data-button-number="38" onclick="toggleExtras(38)">Extras</button>
+      <div class="div-extras" id="extrasList38" data-button-number="38" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(38)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="39">
@@ -910,6 +1118,12 @@
     <button class="counter-button" onclick="updateCounter(39, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">aros de cebolla x10</p>
+  <button class="boton-extras" data-button-number="39" onclick="toggleExtras(39)">Extras</button>
+      <div class="div-extras" id="extrasList39" data-button-number="39" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(39)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="40">
@@ -923,6 +1137,13 @@
     <button class="counter-button" onclick="updateCounter(40, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">aros de cebolla x20</p>
+  
+  <button class="boton-extras" data-button-number="40" onclick="toggleExtras(40)">Extras</button>
+      <div class="div-extras" id="extrasList40" data-button-number="40" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(40)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="41">
@@ -936,6 +1157,12 @@
     <button class="counter-button" onclick="updateCounter(41, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">tequeños de queso x6</p>
+  <button class="boton-extras" data-button-number="41" onclick="toggleExtras(41)">Extras</button>
+      <div class="div-extras" id="extrasList41" data-button-number="41" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(41)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="42">
@@ -949,7 +1176,13 @@
     <button class="counter-button" onclick="updateCounter(42, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">tequeños de jamon y queso x6</p>
-
+  
+  <button class="boton-extras" data-button-number="42" onclick="toggleExtras(42)">Extras</button>
+      <div class="div-extras" id="extrasList42" data-button-number="42" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(42)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="43">
@@ -963,6 +1196,12 @@
     <button class="counter-button" onclick="updateCounter(43, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">tequeños queso x3 - tequeños jamon y queso x3</p>
+  <button class="boton-extras" data-button-number="43" onclick="toggleExtras(43)">Extras</button>
+      <div class="div-extras" id="extrasList43" data-button-number="43" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(43)">Agregar al pedido</button>
+      </div>
 
   `;
 
@@ -986,7 +1225,8 @@
         boton3.classList.add('active');
 
 
-        window.scrollBy(0, subMenuTres.offsetHeight);
+        subMenuTres.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        event.preventDefault();
       } else {
         const subMenuTresButtons = document.querySelectorAll('.menu-button');
         subMenuTresButtons.forEach(button => {
@@ -1009,11 +1249,8 @@
         boton3.classList.remove('active');
 
 
-        window.scrollBy(0, boton3.offsetHeight);
       }
     }
-
-
 
     let subMenuCuatroVisible = false;
 
@@ -1039,6 +1276,12 @@
     <button class="counter-button" onclick="updateCounter(44, 'increment')">+</button>
   </div> 
   <p id="parrafos-detalles">pollo - mayonesa - cebolla - lechuga - tomate</p>
+  <button class="boton-extras" data-button-number="44" onclick="toggleExtras(44)">Extras</button>
+      <div class="div-extras" id="extrasList44" data-button-number="44" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(44)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="45">
@@ -1052,6 +1295,12 @@
     <button class="counter-button" onclick="updateCounter(45, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">pollo - mayonesa - lechuga - bacon - cheddar</p>
+  <button class="boton-extras" data-button-number="45" onclick="toggleExtras(45)">Extras</button>
+      <div class="div-extras" id="extrasList45" data-button-number="45" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(45)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="46">
@@ -1065,6 +1314,12 @@
     <button class="counter-button" onclick="updateCounter(46, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">pollo x2 - lechuga - pepino - cheddar x2 - pan x3 - cebolla </p>
+  <button class="boton-extras" data-button-number="46" onclick="toggleExtras(46)">Extras</button>
+      <div class="div-extras" id="extrasList46" data-button-number="46" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(46)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="47">
@@ -1078,10 +1333,15 @@
     <button class="counter-button" onclick="updateCounter(47, 'increment')">+</button>
   </div>
   <p id="parrafos-detalles">pollo x2 - cheddar x2 - lechuga - mayonesa</p>
+  <button class="boton-extras" data-button-number="47" onclick="toggleExtras(47)">Extras</button>
+      <div class="div-extras" id="extrasList47" data-button-number="47" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(47)">Agregar al pedido</button>
+      </div>
 
 
 `;
-
 
         subMenuCuatro.innerHTML = buttonsHTML;
 
@@ -1100,7 +1360,8 @@
         boton4.classList.add('active');
 
 
-        window.scrollBy(0, subMenuCuatro.offsetHeight);
+        subMenuCuatro.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        event.preventDefault();
       } else {
         const subMenuCuatroButtons = document.querySelectorAll('.menu-button');
         subMenuCuatroButtons.forEach(button => {
@@ -1122,12 +1383,8 @@
         // Quita la clase 'active' al botón1 cuando se contrae el submenú
         boton4.classList.remove('active');
 
-        window.scrollBy(0, boton4.offsetHeight);
       }
     }
-
-
-
 
     let subMenuCincoVisible = false;
 
@@ -1151,7 +1408,13 @@
     <button class="counter-button" onclick="updateCounter(48, 'decrement')">-</button>
     <span class="counter-value">0</span>
     <button class="counter-button" onclick="updateCounter(48, 'increment')">+</button>
-  </div> 
+  </div>
+  <button class="boton-extras" data-button-number="48" onclick="toggleExtras(48)">Extras</button>
+      <div class="div-extras" id="extrasList48" data-button-number="48" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(48)">Agregar al pedido</button>
+      </div> 
   
      <div class="div-botones-submenu" data-button-number="49">
       <button class="menu-button sub-menu-button" data-button-number="49">Combo del dia</button>
@@ -1163,6 +1426,13 @@
       <span class="counter-value">0</span>
       <button class="counter-button" onclick="updateCounter(49, 'increment')">+</button>
     </div>
+    
+  <button class="boton-extras" data-button-number="49" onclick="toggleExtras(49)">Extras</button>
+      <div class="div-extras" id="extrasList49" data-button-number="49" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(49)">Agregar al pedido</button>
+      </div>
 
     <p id="parrafos-pago">Efectivo</p>
 
@@ -1174,6 +1444,12 @@
     <span class="counter-value">0</span>
     <button class="counter-button" onclick="updateCounter(50, 'increment')">+</button>
   </div>
+  <button class="boton-extras" data-button-number="50" onclick="toggleExtras(50)">Extras</button>
+      <div class="div-extras" id="extrasList50" data-button-number="50" style="display: none;">
+      </div
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(50)">Agregar al pedido</button>
+      </div>
 
 
   <div class="div-botones-submenu" data-button-number="51">
@@ -1217,7 +1493,8 @@
         boton5.classList.add('active');
 
 
-        window.scrollBy(0, subMenuCinco.offsetHeight);
+        subMenuCinco.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        event.preventDefault();
       } else {
         const subMenuCincoButtons = document.querySelectorAll('.menu-button');
         subMenuCincoButtons.forEach(button => {
@@ -1239,124 +1516,281 @@
         // Quita la clase 'active' al botón1 cuando se contrae el submenú
         boton5.classList.remove('active');
 
-        window.scrollBy(0, boton5.offsetHeight);
       }
     }
 
     let subMenuMilaVisible = false;
 
-function toggleSubMenuMila() {
-  const subMenuMila = document.getElementById('subMenuMila');
-  const botonMila = document.getElementById('botonMila');
+    function toggleSubMenuMila() {
+      const subMenuMila = document.getElementById('subMenuMila');
+      const botonMila = document.getElementById('botonMila');
 
-  if (!subMenuMilaVisible) {
-    const buttonsHTML = `
-    
-    <div class="metodo-pago">
-    <p id="parrafos-pago">MercadoPago</p>
-    <p id="parrafos-pago">Efectivo</p>
+      if (!subMenuMilaVisible) {
+        const buttonsHTML = `
+        
+        <div class="metodo-pago">
+        <p id="parrafos-pago">MercadoPago</p>
+        <p id="parrafos-pago">Efectivo</p>
+        </div>
+      <div class="div-botones-submenu" data-button-number="53">
+        <button class="menu-button sub-menu-button" data-button-number=53">Sandwich Milanesa Completo</button>
+        <p>$4800</p>
+        <input class="radio-button" type="radio" name="milanese-completa" value="4800">
+        <p>$4500</p>
+        <input class="radio-button" type="radio" name="milanesa-completa" value="4500">
+        <button class="counter-button" onclick="updateCounter(53, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(53, 'increment')">+</button>
+      </div>
+      <p id="parrafos-detalles">lechuga - tomate - jamon - muzzarella - huevo + papas medianas</p>
+  <button class="boton-extras" data-button-number="53" onclick="toggleExtras(53)">Extras</button>
+      <div class="div-extras" id="extrasList53" data-button-number="53" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(53)">Agregar al pedido</button>
+      </div>
+
+
+      <p id="parrafos-pago">Al plato</p>
+  
+     <div class="div-botones-submenu" data-button-number="54">
+      <button class="menu-button sub-menu-button" data-button-number="54">Milanesa McKing</button>
+      <p>$4150</p>
+      <input class="radio-button" type="radio" name="milanesa-mcking" value="4150">
+      <p>$3850</p>
+      <input class="radio-button" type="radio" name="milanesa-mcking" value="3850">
+      <button class="counter-button" onclick="updateCounter(54, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(54, 'increment')">+</button>
     </div>
-  <div class="div-botones-submenu" data-button-number="53">
-    <button class="menu-button sub-menu-button" data-button-number=53">Sandwich Milanesa Completo</button>
-    <p>$4800</p>
-    <input class="radio-button" type="radio" name="milanese-completa" value="4800">
-    <p>$4500</p>
-    <input class="radio-button" type="radio" name="milanesa-completa" value="4500">
-    <button class="counter-button" onclick="updateCounter(53, 'decrement')">-</button>
+    <p id="parrafos-detalles">cheddar - verdeo - jamon + papas grandes</p>
+  <button class="boton-extras" data-button-number="54" onclick="toggleExtras(54)">Extras</button>
+      <div class="div-extras" id="extrasList54" data-button-number="54" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(54)">Agregar al pedido</button>
+      </div>
+
+  <div class="div-botones-submenu" data-button-number="55">
+    <button class="menu-button sub-menu-button" data-button-number="55">Milanesa Cheddar Bacon</button>
+    <p>$4150</p>
+    <input class="radio-button" type="radio" name="milanesa-cheddar-bacon" value="4150">
+    <p>$3850</p>
+    <input class="radio-button" type="radio" name="milanesa-cheddar-bacon" value="3850">
+    <button class="counter-button" onclick="updateCounter(55, 'decrement')">-</button>
     <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(53, 'increment')">+</button>
+    <button class="counter-button" onclick="updateCounter(55, 'increment')">+</button>
   </div>
-  <p id="parrafos-detalles">lechuga - tomate - jamon - muzzarella - huevo + papas medianas</p>
+  <p id="parrafos-detalles">cheddar fundido - bacon picado + papas grandes</p>
+  <button class="boton-extras" data-button-number="55" onclick="toggleExtras(55)">Extras</button>
+      <div class="div-extras" id="extrasList55" data-button-number="55" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(55)">Agregar al pedido</button>
+      </div>
 
 
-  <p id="parrafos-pago">Al plato</p>
-
- <div class="div-botones-submenu" data-button-number="54">
-  <button class="menu-button sub-menu-button" data-button-number="54">Milanesa McKing</button>
-  <p>$4150</p>
-  <input class="radio-button" type="radio" name="milanesa-mcking" value="4150">
-  <p>$3850</p>
-  <input class="radio-button" type="radio" name="milanesa-mcking" value="3850">
-  <button class="counter-button" onclick="updateCounter(54, 'decrement')">-</button>
-  <span class="counter-value">0</span>
-  <button class="counter-button" onclick="updateCounter(54, 'increment')">+</button>
-</div>
-<p id="parrafos-detalles">cheddar - verdeo - jamon + papas grandes</p>
-
-<div class="div-botones-submenu" data-button-number="55">
-<button class="menu-button sub-menu-button" data-button-number="55">Milanesa Cheddar Bacon</button>
-<p>$4150</p>
-<input class="radio-button" type="radio" name="milanesa-cheddar-bacon" value="4150">
-<p>$3850</p>
-<input class="radio-button" type="radio" name="milanesa-cheddar-bacon" value="3850">
-<button class="counter-button" onclick="updateCounter(55, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(55, 'increment')">+</button>
-</div>
-<p id="parrafos-detalles">cheddar fundido - bacon picado + papas grandes</p>
-
-
-<div class="div-botones-submenu" data-button-number="56">
-<button class="menu-button sub-menu-button" data-button-number="56">Milanesa napolitano</button>
-<p>$4150</p>
-<input class="radio-button" type="radio" name="milanesa-napolitano" value="4150">
-<p>$3850</p>
-<input class="radio-button" type="radio" name="milanesa-napolitano" value="3850">
-<button class="counter-button" onclick="updateCounter(56, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(56, 'increment')">+</button>
-</div>
-<p id="parrafos-detalles">salsa de pizza - muzzarella - jamon + papas grandes</p>
+  <div class="div-botones-submenu" data-button-number="56">
+    <button class="menu-button sub-menu-button" data-button-number="56">Milanesa napolitano</button>
+    <p>$4150</p>
+    <input class="radio-button" type="radio" name="milanesa-napolitano" value="4150">
+    <p>$3850</p>
+    <input class="radio-button" type="radio" name="milanesa-napolitano" value="3850">
+    <button class="counter-button" onclick="updateCounter(56, 'decrement')">-</button>
+    <span class="counter-value">0</span>
+    <button class="counter-button" onclick="updateCounter(56, 'increment')">+</button>
+  </div>
+  <p id="parrafos-detalles">salsa de pizza - muzzarella - jamon + papas grandes</p>
+  <button class="boton-extras" data-button-number="56" onclick="toggleExtras(56)">Extras</button>
+      <div class="div-extras" id="extrasList56" data-button-number="56" style="display: none;">
+      </div>
+      <div class="div-boton-agregar">
+        <button class="boton-agregar" onclick="agregarAlPedido(56)">Agregar al pedido</button>
+      </div>
 `;
 
 
 
 
-    subMenuMila.innerHTML = buttonsHTML;
+        subMenuMila.innerHTML = buttonsHTML;
 
-    subMenuMilaVisible = true;
-    subMenuMila.style.display = "flex";
-    subMenuMila.offsetHeight;
-    subMenuMila.style.opacity = "1";
-    subMenuMila.style.transform = "translateY(0)";
-    subMenuMila.style.visibility = "visible";
-    subMenuMila.style.flexDirection = "column";
-    subMenuMila.style.rowGap = "10px";
-    subMenuMila.style.padding = "10px"
-    subMenuMila.style.alignItems = "center"
+        subMenuMilaVisible = true;
+        subMenuMila.style.display = "flex";
+        subMenuMila.offsetHeight;
+        subMenuMila.style.opacity = "1";
+        subMenuMila.style.transform = "translateY(0)";
+        subMenuMila.style.visibility = "visible";
+        subMenuMila.style.flexDirection = "column";
+        subMenuMila.style.rowGap = "10px";
+        subMenuMila.style.padding = "10px"
+        subMenuMila.style.alignItems = "center"
 
-    // Agrega la clase 'active' al botón1 cuando se despliega el submenú
-    botonMila.classList.add('active');
-
-
-    subMenuMila.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    event.preventDefault();
-  } else {
-    const subMenuMilaButtons = document.querySelectorAll('.menu-button');
-    subMenuMilaButtons.forEach(button => {
-      button.classList.remove('initial');
-    });
-    setTimeout(() => {
-      subMenuMila.innerHTML = '';
-    }, subMenuMilaButtons.length * 100);
-
-    subMenuMilaVisible = false;
-
-    subMenuMila.style.opacity = "0";
-    subMenuMila.style.transform = "translateY(-20px)";
-    setTimeout(() => {
-      subMenuMila.style.visibility = "hidden";
-      subMenuMila.style.display = "none";
-    }, 800);
-
-    // Quita la clase 'active' al botón1 cuando se contrae el submenú
-    botonMila.classList.remove('active');
-
-  }
-}
+        // Agrega la clase 'active' al botón1 cuando se despliega el submenú
+        botonMila.classList.add('active');
 
 
+        subMenuMila.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        event.preventDefault();
+      } else {
+        const subMenuMilaButtons = document.querySelectorAll('.menu-button');
+        subMenuMilaButtons.forEach(button => {
+          button.classList.remove('initial');
+        });
+        setTimeout(() => {
+          subMenuMila.innerHTML = '';
+        }, subMenuMilaButtons.length * 100);
 
+        subMenuMilaVisible = false;
+
+        subMenuMila.style.opacity = "0";
+        subMenuMila.style.transform = "translateY(-20px)";
+        setTimeout(() => {
+          subMenuMila.style.visibility = "hidden";
+          subMenuMila.style.display = "none";
+        }, 800);
+
+        // Quita la clase 'active' al botón1 cuando se contrae el submenú
+        botonMila.classList.remove('active');
+
+      }
+    }
+
+    let extrasCounters = {}; // Objeto para almacenar los contadores de extras por lista
+
+    function toggleExtras(buttonNumber) {
+      const extrasList = document.getElementById('extrasList' + buttonNumber);
+
+      if (extrasList.style.display === 'flex') {
+        extrasList.style.display = 'none';
+      } else {
+        extrasList.style.display = 'flex'; // Muestra la lista de extras correspondiente
+
+        // Resto de la lógica para generar los extras...
+        extrasList.innerHTML = `
+
+        <div class="extra-item" data-extra-number="1" data-price="750">
+          <p style="margin-left:10px;">Carne<br>Pollo</p>
+          <button class="counter-button" onclick="updateExtrasCounter(1, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-1">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(1, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-1">$750</p>
+        </div>
+        <div class="extra-item" data-extra-number="2" data-price="450">
+          <p>Cheddar<br>feta</p>
+          <button class="counter-button" onclick="updateExtrasCounter(2, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-2">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(2, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-2">$450</p>
+        </div>
+        <div class="extra-item" data-extra-number="3" data-price="470">
+          <p>Cheddar<br>fundido</p>
+          <button class="counter-button" onclick="updateExtrasCounter(3, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-3">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(3, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-3">$470</p>
+        </div>
+        <div class="extra-item" data-extra-number="4" data-price="380">
+          <p>Jamon<br>Queso</p>
+          <button class="counter-button" onclick="updateExtrasCounter(4, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-4">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(4, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-4">$380</p>
+        </div>
+        <div class="extra-item" data-extra-number="5" data-price="500">
+          <p>Bacon</p>
+          <button class="counter-button" onclick="updateExtrasCounter(5, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-5">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(5, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-5">$500</p>
+        </div>
+        <div class="extra-item" data-extra-number="6" data-price="390">
+          <p>Huevo</p>
+          <button class="counter-button" onclick="updateExtrasCounter(6, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-6">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(6, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-6">$390</p>
+        </div>
+        <div class="extra-item" data-extra-number="7" data-price="300">
+          <p>Pepino</p>
+          <button class="counter-button" onclick="updateExtrasCounter(7, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-7">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(7, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-7">$300</p>
+        </div>
+        <div class="extra-item" data-extra-number="8" data-price="350">
+          <p>Lechuga<br>Tomate</p>
+          <button class="counter-button" onclick="updateExtrasCounter(8, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-8">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(8, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-8">$350</p>
+        </div>
+        <div class="extra-item" data-extra-number="9" data-price="450">
+          <p style="
+    margin-left: 14px;
+">Salsa</p>
+          <button class="counter-button" onclick="updateExtrasCounter(9, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-9">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(9, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-9">$450</p>
+        </div>
+        <div class="extra-item" data-extra-number="10" data-price="500">
+          <p>Doritos<br>P pay</p>
+          <button class="counter-button" onclick="updateExtrasCounter(10, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-10">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(10, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-10">$500</p>
+        </div>
+        <div class="extra-item" data-extra-number="11" data-price="1000">
+          <p>Nuggets<br>x 4</p>
+          <button class="counter-button" onclick="updateExtrasCounter(11, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-11">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(11, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-11">$1000</p>
+        </div>
+        <div class="extra-item" data-extra-number="12" data-price="400">
+          <p>Verdeo</p>
+          <button class="counter-button" onclick="updateExtrasCounter(12, 'decrement', ${buttonNumber})">-</button>
+          <span class="counter-value" id="counter-value-${buttonNumber}-12">0</span>
+          <button class="counter-button" onclick="updateExtrasCounter(12, 'increment', ${buttonNumber})">+</button>
+          <p id="extra-price-12">$400</p>
+        </div>
+        `;
+      }
+
+      const extraItems = document.querySelectorAll('.extra-item');
+      extraItems.forEach((extraItem) => {
+        extraItem.addEventListener('click', (event) => {
+          const extraNumber = event.currentTarget.dataset.extraNumber;
+          const action = event.target.dataset.action;
+
+          if (action === 'increment' || action === 'decrement') {
+            updateExtrasCounter(extraNumber, action, buttonNumber); // Pasamos el número de lista
+          }
+        });
+      });
+    }
+
+
+    function updateExtrasCounter(extraNumber, action) {
+      const extraItem = document.querySelector(`.extra-item[data-extra-number="${extraNumber}"]`);
+
+      if (extraItem) {
+        if (!extrasCounters[extraNumber]) {
+          extrasCounters[extraNumber] = 0;
+        }
+
+        if (action === 'increment') {
+          extrasCounters[extraNumber]++;
+        } else if (action === 'decrement' && extrasCounters[extraNumber] > 0) {
+          extrasCounters[extraNumber]--;
+        }
+
+        // Update counter display
+        const counterValue = extraItem.querySelector('.counter-value');
+        counterValue.innerText = extrasCounters[extraNumber].toString();
+        console.log(`El contador del extra ${extraNumber} es: ${extrasCounters[extraNumber]}`);
+      }
+    }
 
 
     function selectMainMenuButton(buttonNumber) {
@@ -1377,20 +1811,67 @@ function toggleSubMenuMila() {
       });
     });
 
-
     document.addEventListener("DOMContentLoaded", function () {
+      // Ocultar el dropdown al cargar la página
       const pedidoDropdown = document.getElementById('pedidoDropdown');
+      pedidoDropdown.innerHTML = ''; // Limpiar contenido del dropdown
       pedidoDropdown.style.display = 'none';
     });
+
+
+    function actualizarPedido() {
+    const pedidoDropdown = document.getElementById('pedidoDropdown');
+    const tuPedidoBtn = document.getElementById('tuPedidoBtn');
+
+    pedidoDropdown.innerHTML = '';
+
+    const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+
+    if (productosGuardados && productosGuardados.length > 0) {
+        let productoAnterior = null;
+
+        productosGuardados.forEach((producto, index) => {
+            const productoDiv = document.createElement('div');
+            productoDiv.className = 'producto-pedido';
+
+            productoDiv.innerHTML = `${producto.producto.nombre} Cantidad: ${producto.producto.cantidad} Precio Total: $${producto.producto.precioTotal}`;
+
+            if (producto.producto.extras && producto.producto.extras.length > 0) {
+                productoDiv.innerHTML += ' (E)';
+            }
+
+            const eliminarBtn = document.createElement('button');
+            eliminarBtn.textContent = 'x';
+            eliminarBtn.className = 'eliminar-producto';
+            eliminarBtn.onclick = function () {
+                eliminarDelPedido(index);
+                actualizarPedido();
+            };
+            productoDiv.appendChild(eliminarBtn);
+
+            pedidoDropdown.appendChild(productoDiv);
+
+            productoAnterior = { producto };
+        });
+
+        pedidoDropdown.style.display = 'flex';
+        tuPedidoBtn.style.display = 'block';
+    } else {
+        pedidoDropdown.style.display = 'none';
+        tuPedidoBtn.style.display = 'none';
+    }
+}
+
+
+
 
     function toggleDropdown() {
       const tuPedidoBtn = document.getElementById('tuPedidoBtn');
       const pedidoDropdown = document.getElementById('pedidoDropdown');
 
       // Togglear la visibilidad del div al hacer clic en el botón "Tu Pedido"
-      // Togglear la visibilidad del div al hacer clic en el botón "Tu Pedido"
       if (pedidoDropdown.style.display === 'none') {
-        actualizarPedido();
+        actualizarPedido(); // Actualizar la lista de productos en el pedido
         pedidoDropdown.style.display = 'flex';
         pedidoDropdown.style.transition = 'transform 0.8s, opacity 0.8s';
         pedidoDropdown.style.transform = 'translateY(0px)';
@@ -1410,12 +1891,6 @@ function toggleSubMenuMila() {
       }
     }
 
-    let counters = {};
-    let selectedItems = [];
-    let total = 0;
-
-    // Después de cargar el contenido inicial del menú
-    actualizarVisibilidadBotonPedido();
 
     function updateCounter(buttonNumber, action) {
       const counterValue = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`);
@@ -1426,7 +1901,6 @@ function toggleSubMenuMila() {
           counters[buttonNumber] = 0;
         }
 
-        let itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
         let itemPrice = parseFloat(selectedInput.value);
 
         switch (action) {
@@ -1445,80 +1919,241 @@ function toggleSubMenuMila() {
         }
 
         counterValue.textContent = counters[buttonNumber];
+      }
 
-        // Elimina todos los elementos de selectedItems correspondientes a este botón
-        selectedItems = selectedItems.filter(item => !item.includes(itemName));
+    }
 
-        // Agrega el elemento solo si la cantidad es mayor que cero
-        if (counters[buttonNumber] > 0) {
-          const formattedMessage = `${itemName} x${counters[buttonNumber]} $${itemPrice.toFixed(2)}`;
-          selectedItems.push(formattedMessage);
+    let totalExtras = 0;
+    let productos = [];
+    let preciosTotalesProductos = [0];
+    let counters = {};
+    let selectedItems = [];
+    let total = 0;
+
+
+function actualizarTotal() {
+  // Obtener la lista de productos del localStorage
+  const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+
+  // Inicializar el total de productos
+  let totalProductos = 0;
+
+  if (productosGuardados && productosGuardados.length > 0) {
+    // Sumar los precios totales de los productos en el pedido
+    totalProductos = productosGuardados.reduce((total, producto) => {
+      return total + producto.producto.precioTotal;
+    }, 0);
+  }
+
+  // Sumar el total de productos con el total de extras
+  const totalFinal = totalProductos + calcularExtrasTotal();
+
+  // Actualiza el total en el elemento HTML
+  const totalElement = document.getElementById('total');
+  if (totalElement) {
+    totalElement.textContent = `$${totalFinal.toFixed(2)}`;
+  }
+}
+
+
+    
+    function eliminarDelPedido(index) {
+    const productoEliminado = productos[index];
+    const precioProductoEliminado = productoEliminado.producto.precioTotal;
+    
+    productos.splice(index, 1); // Eliminar el producto del array de productos
+    localStorage.setItem('pedido', JSON.stringify(productos)); // Actualizar el localStorage con la nueva lista de productos
+    
+    // Restar el precio del producto eliminado del total del pedido
+    const totalProductos = preciosTotalesProductos.reduce((total, precio) => total + precio, 0);
+    const totalPedidoActualizado = totalProductos - precioProductoEliminado;
+    
+    preciosTotalesProductos = productos.map(producto => producto.producto.precioTotal); // Actualizar los precios totales de los productos
+    
+    // Actualizar el totalPedido en cada objeto de producto
+    productos.forEach(producto => {
+        producto.totalPedido = totalPedidoActualizado;
+    });
+
+    actualizarTotal(); // Actualizar el total en la interfaz
+    actualizarPedido(); // Actualizar el pedido mostrado en la interfaz
+}
+
+    let totalProductos = 0;
+
+    function agregarAlPedido(buttonNumber) {
+    const itemNameElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`);
+    const selectedInputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
+
+    if (!itemNameElement || !selectedInputElement) {
+        console.error('No se encontraron elementos necesarios para agregar al pedido');
+        return;
+    }
+
+    const itemName = itemNameElement.textContent;
+    const itemPrice = parseFloat(selectedInputElement.value);
+    const itemCount = counters[buttonNumber];
+    const extraItems = document.querySelectorAll(`.div-extras[data-button-number="${buttonNumber}"] .extra-item`);
+
+    let extrasTotal = 0;
+    const extrasArray = [];
+
+    extraItems.forEach(extraItem => {
+        const extraNameElement = extraItem.querySelector('p');
+        const counterElement = document.getElementById(`counter-value-${buttonNumber}-${extraItem.dataset.extraNumber}`);
+
+        if (!extraNameElement || !counterElement) {
+            console.error('No se encontraron elementos necesarios para los extras');
+            return;
         }
 
-        // Muestra la lista en la consola
-        console.log('Lista de selecciones:', selectedItems);
+        const extraName = extraNameElement.textContent;
+        const extraPrice = parseFloat(extraItem.dataset.price);
+        const extraCount = parseInt(counterElement.textContent);
 
-        // Actualiza el total en la consola
-        console.log('Total actual:', total.toFixed(2));
+        if (extraCount > 0) {
+            console.log(`Extra name: ${extraName}, extra count: ${extraCount}, extra price: ${extraPrice * extraCount}`);
+            extrasTotal += extraPrice * extraCount;
 
-        // Actualiza la visibilidad del botón 'Hacer Pedido'
-        actualizarVisibilidadBotonPedido();
+            const extraObj = {
+                nombre: extraName,
+                cantidad: extraCount,
+                precio: extraPrice * extraCount
+            };
 
-        // Actualiza el total
-        actualizarTotal();
+            extrasArray.push(extraObj);
+        }
+    });
 
-        // Actualiza el pedido
-        actualizarPedido();
-      }
+    const precioTotalProducto = itemPrice * itemCount + extrasTotal;
+
+    const pedido = {
+        producto: {
+            nombre: itemName,
+            cantidad: itemCount,
+            precio: itemPrice * itemCount,
+            extras: extrasArray,
+            precioTotal: precioTotalProducto
+        }
+    };
+
+    productos.push(pedido);
+
+    localStorage.setItem('pedido', JSON.stringify(productos));
+
+    actualizarTotal(); // Actualizar el total en la interfaz
+    actualizarTotalPedido(); // Actualizar el total del pedido en localStorage
+    counters[buttonNumber] = 0;
+    resetExtrasCounters();
+
+    if (productos.length > 0) {
+        document.getElementById('hacerPedidoButton').style.display = 'block';
     }
 
-    function actualizarPedido() {
-      const pedidoDropdown = document.getElementById('pedidoDropdown');
+    const btnTuPedido = document.getElementById("tuPedidoBtn");
+    btnTuPedido.style.display = productos.length > 0 ? 'flex' : 'none';
+}
 
-      // Actualiza el contenido del div
-      if (selectedItems.length > 0) {
-        pedidoDropdown.innerHTML = selectedItems.map(item => `
-      <div>
-        <span>${item}</span>
-        <span class="eliminar-item" onclick="eliminarItem('${item}')">&#10006;</span>
-      </div>
-    `).join('');
+function actualizarTotalPedido() {
+    const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+
+    let totalPedido = 0;
+
+    if (productosGuardados && productosGuardados.length > 0) {
+        totalPedido = productosGuardados.reduce((total, producto) => total + producto.producto.precioTotal, 0);
+    }
+
+    localStorage.setItem('totalPedido', totalPedido);
+}
+
+function eliminarDelPedido(index) {
+    productos.splice(index, 1);
+    localStorage.setItem('pedido', JSON.stringify(productos));
+    actualizarTotal(); // Actualizar el total en la interfaz
+    actualizarTotalPedido(); // Actualizar el total del pedido en localStorage
+}
+
+
+    function obtenerPrecioExtra(extraNumber, buttonNumber) {
+      const extraItem = document.querySelector(`.div-extras[data-button-number="${buttonNumber}"] .extra-item[data-extra-number="${extraNumber}"]`);
+      return extraItem ? parseFloat(extraItem.dataset.price) || 0 : 0;
+    }
+
+    function updateExtrasCounter(extraNumber, action, listNumber) {
+      const counterId = `counter-value-${listNumber}-${extraNumber}`;
+      const counterValue = document.getElementById(counterId);
+
+      if (!counterValue) {
+        console.error(`No se encontró el contador para el extra ${extraNumber} en la lista ${listNumber}`);
+        return;
+      }
+
+      if (!extrasCounters[listNumber]) {
+        extrasCounters[listNumber] = {};
+      }
+
+      if (!extrasCounters[listNumber][extraNumber]) {
+        extrasCounters[listNumber][extraNumber] = 0;
+      }
+
+      if (action === 'increment') {
+        extrasCounters[listNumber][extraNumber]++;
+      } else if (action === 'decrement' && extrasCounters[listNumber][extraNumber] > 0) {
+        extrasCounters[listNumber][extraNumber]--;
+      }
+
+      // Actualiza el valor del contador en el DOM
+      if (counterValue) {
+        counterValue.textContent = extrasCounters[listNumber][extraNumber];
       } else {
-        // Limpia el contenido y oculta el div si no hay elementos
-        pedidoDropdown.innerHTML = '';
-        pedidoDropdown.style.display = 'none';
+        console.error(`No se pudo actualizar el contador del extra ${extraNumber} en la lista ${listNumber}`);
       }
+
+      // Calcular el total de los extras y realizar acciones adicionales si es necesario
+      const extrasTotal = calcularExtrasTotal(listNumber);
+      const totalGeneral = totalExtras + extrasTotal;
     }
 
-    function eliminarItem(item) {
-      const itemName = item.split(' x')[0].trim();  // Obtén el nombre del artículo
-      const buttonNumber = obtenerNumeroDeBotonPorNombre(itemName);
-
-      if (buttonNumber !== null) {
-        // Decrementa el contador y actualiza el pedido
-        updateCounter(buttonNumber, 'decrement');
-        actualizarPedido();
-      }
-    }
-
-
-
-    function actualizarVisibilidadBotonPedido() {
-      const hacerPedidoButton = document.getElementById('hacerPedidoButton');
-      hacerPedidoButton.style.display = hayElementosSeleccionadosConPrecio() ? 'block' : 'none';
-      const btnTuPedido = document.getElementById("tuPedidoBtn")
-      btnTuPedido.style.display = hayElementosSeleccionadosConPrecio() ? 'flex' : 'none';
-    }
-
-    function hayElementosSeleccionadosConPrecio() {
-      const hasElementsWithPrice = Object.keys(counters).some((buttonNumber) => {
-        const input = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input[type="radio"]:checked`);
-        return counters[buttonNumber] > 0 && input && input.value;
+    function calcularExtrasTotal(buttonNumber) {
+      let extrasTotal = 0;
+      const extraItems = document.querySelectorAll(`.div-extras[data-button-number="${buttonNumber}"] .extra-item`);
+      extraItems.forEach(extraItem => {
+        const extraNumber = parseInt(extraItem.dataset.extraNumber);
+        const extraPrice = parseFloat(extraItem.dataset.price);
+        const extraCount = extrasCounters[buttonNumber][extraNumber] || 0;
+        extrasTotal += extraCount * extraPrice;
       });
+      return extrasTotal;
+    }
 
-      console.log('Resultado de la condición:', hasElementsWithPrice);
 
-      return hasElementsWithPrice;
+    // Add event listeners to extra items
+
+    // Add event listeners to extra items
+    const extraItems = document.querySelectorAll('.extra-item');
+    extraItems.forEach((extraItem) => {
+      extraItem.addEventListener('click', (event) => {
+        const action = event.target.dataset.action;
+        const listNumber = event.target.dataset.listNumber;
+        const counterElement = event.currentTarget.querySelector('.counter-value');
+
+        if (action === 'increment' || action === 'decrement') {
+          const extraNumber = parseInt(event.currentTarget.dataset.extraNumber);
+          updateExtrasCounter(extraNumber, action, listNumber, counterElement);
+        }
+      });
+    });
+
+    function resetCounters() {
+      counters = {};
+      resetExtrasCounters();
+    }
+
+    function resetExtrasCounters() {
+      extrasCounters = {};
+      document.querySelectorAll('.counter-value').forEach(counter => {
+        counter.innerText = '0';
+      });
     }
 
     function irAContacto() {
@@ -1527,72 +2162,34 @@ function toggleSubMenuMila() {
       contactoSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Mostrar el botón 'Hacer Pedido' después de cargar el contenido inicial del menú
-    actualizarVisibilidadBotonPedido();
-
-    function hacerPedido() {
-      // Crear el objeto pedido con información inicial
-      const pedido = {
-        items: [],
-        total: total.toFixed(2),
-      };
-
-      // Recorrer los contadores y recopilar la información
-      Object.keys(counters).forEach((buttonNumber) => {
-        const itemName = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`).textContent;
-        const itemCount = counters[buttonNumber];
-        const inputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
-        const itemPrice = parseFloat(inputElement.value);
-
-        // Agregar la información del elemento al objeto pedido solo si se seleccionaron elementos
-        if (itemCount > 0) {
-          pedido.items.push({
-            name: itemName,
-            count: itemCount,
-            value: inputElement.value,
-          });
-        }
-      });
-
-      // Almacenar el objeto pedido en el almacenamiento local
-      localStorage.setItem('pedido', JSON.stringify(pedido));
-
-      // Mostrar el botón "Hacer Pedido" (opcional, según tus necesidades)
-      document.getElementById('hacerPedidoButton').style.display = 'block';
-
-      // También puedes redirigir al usuario a la sección de contacto después de hacer el pedido
-      irAContacto();
-
-      // Imprimir en la consola la información detallada del pedido
-      console.log('Pedido Detallado:', pedido);
-
-      // Imprimir en la consola el resumen del pedido
-      console.log('Resumen del Pedido:', pedido.items);
-
-      // Imprimir en la consola para verificar el flujo
-      console.log('Pedido realizado con éxito.');
-
-      actualizarPedido();
-    }
 
     function enviarPedidoWhatsApp() {
-      // Obtener el objeto pedido del almacenamiento local
-      const pedidoGuardado = localStorage.getItem('pedido');
+    // Obtener la lista de productos del almacenamiento local
+    const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+    let totalPedido = JSON.parse(localStorage.getItem('totalPedido'));
 
-      if (pedidoGuardado) {
-        // Parsear el objeto pedido
-        const pedido = JSON.parse(pedidoGuardado);
-
+    if (productosGuardados && productosGuardados.length > 0) {
         // Crear el mensaje para WhatsApp
         let mensajeWhatsApp = `¡Hola McKing! Quiero realizar un pedido:\n\n`;
 
-        // Agregar detalles de cada elemento del pedido al mensaje
-        pedido.items.forEach((item) => {
-          mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unidad: $${item.value}\n`;
+        // Recorrer cada producto en la lista de productos guardados
+        productosGuardados.forEach((producto) => {
+            mensajeWhatsApp += `Producto: ${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+
+            // Agregar detalles de los extras de cada producto
+            if (producto.producto.extras && producto.producto.extras.length > 0) {
+                mensajeWhatsApp += `Extras:\n`;
+                producto.producto.extras.forEach((extra) => {
+                    mensajeWhatsApp += `-Extra: ${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+                });
+            }
+
+            // Agregar el precio total del producto
+            mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
         });
 
-        // Agregar el total del pedido al mensaje
-        mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
+        // Agregar el precio total del pedido obtenido del localStorage
+        mensajeWhatsApp += `Total del pedido: $${totalPedido}\n\nGracias.`;
 
         // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
         const numeroWhatsApp = '541128528053';
@@ -1605,29 +2202,40 @@ function toggleSubMenuMila() {
 
         // Imprimir en la consola para verificar el flujo
         console.log('Pedido enviado por WhatsApp.');
-      } else {
+    } else {
         console.error('No se encontró información de pedido almacenada.');
-      }
     }
+}
+
+
+
 
     function enviarPedidoWhatsApp2() {
-      // Obtener el objeto pedido del almacenamiento local
-      const pedidoGuardado = localStorage.getItem('pedido');
+      // Obtener la lista de productos del almacenamiento local
+      const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
 
-      if (pedidoGuardado) {
-        // Parsear el objeto pedido
-        const pedido = JSON.parse(pedidoGuardado);
-
+      if (productosGuardados && productosGuardados.length > 0) {
         // Crear el mensaje para WhatsApp
         let mensajeWhatsApp = `¡Hola McKing! Quiero realizar un pedido:\n\n`;
 
-        // Agregar detalles de cada elemento del pedido al mensaje
-        pedido.items.forEach((item) => {
-          mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unidad: $${item.value}\n`;
+        // Recorrer cada producto en la lista de productos guardados
+        productosGuardados.forEach((producto) => {
+          mensajeWhatsApp += `Producto: ${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+
+          // Agregar detalles de los extras de cada producto
+          if (producto.producto.extras && producto.producto.extras.length > 0) {
+            mensajeWhatsApp += `Extras:\n`;
+            producto.producto.extras.forEach((extra) => {
+              mensajeWhatsApp += `-Extra: ${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+            });
+          }
+
+          // Agregar el precio total del producto
+          mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
         });
 
-        // Agregar el total del pedido al mensaje
-        mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
+        // Agregar el precio total del pedido
+        mensajeWhatsApp += `Total del pedido: $${productosGuardados[0].totalPedido}\n\nGracias.`;
 
         // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
         const numeroWhatsApp = '541137816491';
@@ -1645,24 +2253,34 @@ function toggleSubMenuMila() {
       }
     }
 
+
+
     function enviarPedidoWhatsApp3() {
-      // Obtener el objeto pedido del almacenamiento local
-      const pedidoGuardado = localStorage.getItem('pedido');
+      // Obtener la lista de productos del almacenamiento local
+      const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
 
-      if (pedidoGuardado) {
-        // Parsear el objeto pedido
-        const pedido = JSON.parse(pedidoGuardado);
-
+      if (productosGuardados && productosGuardados.length > 0) {
         // Crear el mensaje para WhatsApp
         let mensajeWhatsApp = `¡Hola McKing! Quiero realizar un pedido:\n\n`;
 
-        // Agregar detalles de cada elemento del pedido al mensaje
-        pedido.items.forEach((item) => {
-          mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unidad: $${item.value}\n`;
+        // Recorrer cada producto en la lista de productos guardados
+        productosGuardados.forEach((producto) => {
+          mensajeWhatsApp += `Producto: ${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+
+          // Agregar detalles de los extras de cada producto
+          if (producto.producto.extras && producto.producto.extras.length > 0) {
+            mensajeWhatsApp += `Extras:\n`;
+            producto.producto.extras.forEach((extra) => {
+              mensajeWhatsApp += `-Extra: ${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+            });
+          }
+
+          // Agregar el precio total del producto
+          mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
         });
 
-        // Agregar el total del pedido al mensaje
-        mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
+        // Agregar el precio total del pedido
+        mensajeWhatsApp += `Total del pedido: $${productosGuardados[0].totalPedido}\n\nGracias.`;
 
         // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
         const numeroWhatsApp = '541150397235';
@@ -1680,24 +2298,34 @@ function toggleSubMenuMila() {
       }
     }
 
+
+
     function enviarPedidoWhatsApp4() {
-      // Obtener el objeto pedido del almacenamiento local
-      const pedidoGuardado = localStorage.getItem('pedido');
+      // Obtener la lista de productos del almacenamiento local
+      const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
 
-      if (pedidoGuardado) {
-        // Parsear el objeto pedido
-        const pedido = JSON.parse(pedidoGuardado);
-
+      if (productosGuardados && productosGuardados.length > 0) {
         // Crear el mensaje para WhatsApp
-        let mensajeWhatsApp = `¡Hola Mcking! Quiero realizar un pedido:\n\n`;
+        let mensajeWhatsApp = `¡Hola McKing! Quiero realizar un pedido:\n\n`;
 
-        // Agregar detalles de cada elemento del pedido al mensaje
-        pedido.items.forEach((item) => {
-          mensajeWhatsApp += `${item.name} - Cantidad: ${item.count} - Valor Unidad: $${item.value}\n`;
+        // Recorrer cada producto en la lista de productos guardados
+        productosGuardados.forEach((producto) => {
+          mensajeWhatsApp += `Producto: ${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+
+          // Agregar detalles de los extras de cada producto
+          if (producto.producto.extras && producto.producto.extras.length > 0) {
+            mensajeWhatsApp += `Extras:\n`;
+            producto.producto.extras.forEach((extra) => {
+              mensajeWhatsApp += `-Extra: ${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+            });
+          }
+
+          // Agregar el precio total del producto
+          mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
         });
 
-        // Agregar el total del pedido al mensaje
-        mensajeWhatsApp += `\nTotal del pedido: $${pedido.total}\n\nGracias.`;
+        // Agregar el precio total del pedido
+        mensajeWhatsApp += `Total del pedido: $${productosGuardados[0].totalPedido}\n\nGracias.`;
 
         // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
         const numeroWhatsApp = '541123058068';
@@ -1715,12 +2343,6 @@ function toggleSubMenuMila() {
       }
     }
 
-
-
-
-
-
-    // Agrega un manejador de eventos 'click' para los elementos de tipo radio
     document.querySelectorAll('.div-botones-submenu input[type="radio"]').forEach((radio) => {
       radio.addEventListener('click', (event) => {
         const buttonNumber = event.target.closest('.div-botones-submenu').dataset.buttonNumber;
@@ -1754,14 +2376,6 @@ function toggleSubMenuMila() {
 
 
 
-    // Función para actualizar el total
-    function actualizarTotal() {
-      const totalElement = document.getElementById('total');
-      if (totalElement) {
-        totalElement.textContent = `$${total.toFixed(2)}`;
-      }
-    }
-
     function obtenerNumeroDeBotonPorNombre(itemName) {
       const divBotonesSubMenu = document.querySelectorAll('.div-botones-submenu');
 
@@ -1777,16 +2391,7 @@ function toggleSubMenuMila() {
       return null;
     }
 
-
-
-
-
-
-
-
-
   </script>
-
 </body>
 
 </html>
