@@ -183,6 +183,9 @@
 
   <script type="text/javascript">
 
+    const extraItems = document.querySelectorAll('.extra-item');
+    const carouselInner = document.querySelector('.carousel-inner');
+    const items = document.querySelectorAll('.carousel-item');
     const toggleMenu = () => {
       const body = document.body;
       const main = document.getElementById("main");
@@ -198,6 +201,29 @@
         main.style.opacity = "1"
       }
     };
+
+
+    let currentIndex = 0;
+    let subMenuVisible = false;
+    let subMenuDosVisible = false;
+    let subMenuTresVisible = false;
+    let subMenuCuatroVisible = false;
+    let subMenuCincoVisible = false;
+    let subMenuMilaVisible = false;
+    let extrasCounters = {};
+    let totalExtras = 0;
+    let productos = [];
+    let preciosTotalesProductos = [0];
+    let counters = {};
+    let selectedItems = [];
+    let total = 0;
+    let totalProductos = 0;
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % items.length;
+      const translateValue = -currentIndex * 100 + '%';
+      carouselInner.style.transform = 'translateX(' + translateValue + ')';
+    }, 1500);
 
     document.querySelectorAll('.menu ul li a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -216,15 +242,63 @@
       });
     });
 
-    const carouselInner = document.querySelector('.carousel-inner');
-    const items = document.querySelectorAll('.carousel-item');
-    let currentIndex = 0;
+    document.querySelectorAll('.div-botones-submenu input[type="radio"]').forEach((radio) => {
+      radio.addEventListener('click', (event) => {
+        const buttonNumber = event.target.closest('.div-botones-submenu').dataset.buttonNumber;
+        const counterValue = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`);
 
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % items.length;
-      const translateValue = -currentIndex * 100 + '%';
-      carouselInner.style.transform = 'translateX(' + translateValue + ')';
-    }, 1500);
+        // Guarda el estado actual del radio button
+        const currentState = event.target.checked;
+
+        // Restablece todos los botones del grupo a su estado original
+        document.querySelectorAll(`.div-botones-submenu[data-button-number="${buttonNumber}"] input[type="radio"]`).forEach((r) => {
+          r.checked = false;
+        });
+
+        // Si el estado original era falso, marca el radio actual
+        if (!currentState) {
+          event.target.checked = true;
+
+          // Incrementa el contador y el total si se selecciona
+          counters[buttonNumber]++;
+          total += parseFloat(event.target.value);
+        } else {
+          // Decrementa el contador y el total si ya estaba seleccionado
+          counters[buttonNumber]--;
+          total -= parseFloat(event.target.value);
+        }
+
+        counterValue.textContent = counters[buttonNumber];
+        actualizarTotal();
+      });
+    });
+
+    document.querySelectorAll('.menu-button.main-menu-button').forEach(button => {
+      button.addEventListener('click', function () {
+        const buttonNumber = this.id.replace('boton', '');
+        selectMainMenuButton(buttonNumber);
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Ocultar el dropdown al cargar la página
+      const pedidoDropdown = document.getElementById('pedidoDropdown');
+      pedidoDropdown.innerHTML = ''; // Limpiar contenido del dropdown
+      pedidoDropdown.style.display = 'none';
+    });
+
+    extraItems.forEach((extraItem) => {
+      extraItem.addEventListener('click', (event) => {
+        const action = event.target.dataset.action;
+        const listNumber = event.target.dataset.listNumber;
+        const counterElement = event.currentTarget.querySelector('.counter-value');
+
+        if (action === 'increment' || action === 'decrement') {
+          const extraNumber = parseInt(event.currentTarget.dataset.extraNumber);
+          updateExtrasCounter(extraNumber, action, listNumber, counterElement);
+        }
+      });
+    });
 
     function toggleMenuSection() {
       const menuProductos = document.getElementById("menu-section");
@@ -276,8 +350,6 @@
         }
       });
     }
-
-    let subMenuVisible = false; // Declaración de la variable subMenuVisible
 
     function toggleSubMenu() {
       const subMenu = document.getElementById('subMenu');
@@ -496,8 +568,6 @@
         boton1.classList.remove('active');
       }
     }
-
-    let subMenuDosVisible = false;
 
     function toggleSubMenuDos() {
       const subMenuDos = document.getElementById('subMenuDos');
@@ -866,8 +936,6 @@
 
       }
     }
-
-    let subMenuTresVisible = false;
 
     function toggleSubMenuTres() {
       const subMenuTres = document.getElementById('subMenuTres');
@@ -1252,8 +1320,6 @@
       }
     }
 
-    let subMenuCuatroVisible = false;
-
     function toggleSubMenuCuatro() {
       const subMenuCuatro = document.getElementById('subMenuCuatro');
       const boton4 = document.getElementById('boton4');
@@ -1386,8 +1452,6 @@
       }
     }
 
-    let subMenuCincoVisible = false;
-
     function toggleSubMenuCinco() {
       const subMenuCinco = document.getElementById('subMenuCinco');
       const boton5 = document.getElementById('boton5');
@@ -1518,8 +1582,6 @@
 
       }
     }
-
-    let subMenuMilaVisible = false;
 
     function toggleSubMenuMila() {
       const subMenuMila = document.getElementById('subMenuMila');
@@ -1655,8 +1717,6 @@
       }
     }
 
-    let extrasCounters = {}; // Objeto para almacenar los contadores de extras por lista
-
     function toggleExtras(buttonNumber) {
       const extrasList = document.getElementById('extrasList' + buttonNumber);
 
@@ -1770,7 +1830,6 @@
       });
     }
 
-
     function updateExtrasCounter(extraNumber, action) {
       const extraItem = document.querySelector(`.extra-item[data-extra-number="${extraNumber}"]`);
 
@@ -1792,7 +1851,6 @@
       }
     }
 
-
     function selectMainMenuButton(buttonNumber) {
       const allButtons = document.querySelectorAll('.menu-button');
       allButtons.forEach(button => {
@@ -1803,67 +1861,48 @@
       mainMenuButton.classList.add('active');
     }
 
-    // Asigna la función selectMainMenuButton al evento click de los botones del menú principal
-    document.querySelectorAll('.menu-button.main-menu-button').forEach(button => {
-      button.addEventListener('click', function () {
-        const buttonNumber = this.id.replace('boton', '');
-        selectMainMenuButton(buttonNumber);
-      });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      // Ocultar el dropdown al cargar la página
-      const pedidoDropdown = document.getElementById('pedidoDropdown');
-      pedidoDropdown.innerHTML = ''; // Limpiar contenido del dropdown
-      pedidoDropdown.style.display = 'none';
-    });
-
-
     function actualizarPedido() {
-    const pedidoDropdown = document.getElementById('pedidoDropdown');
-    const tuPedidoBtn = document.getElementById('tuPedidoBtn');
+      const pedidoDropdown = document.getElementById('pedidoDropdown');
+      const tuPedidoBtn = document.getElementById('tuPedidoBtn');
 
-    pedidoDropdown.innerHTML = '';
+      pedidoDropdown.innerHTML = '';
 
-    const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+      const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
 
-    if (productosGuardados && productosGuardados.length > 0) {
+      if (productosGuardados && productosGuardados.length > 0) {
         let productoAnterior = null;
 
         productosGuardados.forEach((producto, index) => {
-            const productoDiv = document.createElement('div');
-            productoDiv.className = 'producto-pedido';
+          const productoDiv = document.createElement('div');
+          productoDiv.className = 'producto-pedido';
 
-            productoDiv.innerHTML = `${producto.producto.nombre} Cantidad: ${producto.producto.cantidad} Precio Total: $${producto.producto.precioTotal}`;
+          productoDiv.innerHTML = `${producto.producto.nombre} Cantidad: ${producto.producto.cantidad} Precio Total: $${producto.producto.precioTotal}`;
 
-            if (producto.producto.extras && producto.producto.extras.length > 0) {
-                productoDiv.innerHTML += ' (E)';
-            }
+          if (producto.producto.extras && producto.producto.extras.length > 0) {
+            productoDiv.innerHTML += ' (E)';
+          }
 
-            const eliminarBtn = document.createElement('button');
-            eliminarBtn.textContent = 'x';
-            eliminarBtn.className = 'eliminar-producto';
-            eliminarBtn.onclick = function () {
-                eliminarDelPedido(index);
-                actualizarPedido();
-            };
-            productoDiv.appendChild(eliminarBtn);
+          const eliminarBtn = document.createElement('button');
+          eliminarBtn.textContent = 'x';
+          eliminarBtn.className = 'eliminar-producto';
+          eliminarBtn.onclick = function () {
+            eliminarDelPedido(index);
+            actualizarPedido();
+          };
+          productoDiv.appendChild(eliminarBtn);
 
-            pedidoDropdown.appendChild(productoDiv);
+          pedidoDropdown.appendChild(productoDiv);
 
-            productoAnterior = { producto };
+          productoAnterior = { producto };
         });
 
         pedidoDropdown.style.display = 'flex';
         tuPedidoBtn.style.display = 'block';
-    } else {
+      } else {
         pedidoDropdown.style.display = 'none';
         tuPedidoBtn.style.display = 'none';
+      }
     }
-}
-
-
-
 
     function toggleDropdown() {
       const tuPedidoBtn = document.getElementById('tuPedidoBtn');
@@ -1890,7 +1929,6 @@
         }, 800);
       }
     }
-
 
     function updateCounter(buttonNumber, action) {
       const counterValue = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`);
@@ -1923,88 +1961,76 @@
 
     }
 
-    let totalExtras = 0;
-    let productos = [];
-    let preciosTotalesProductos = [0];
-    let counters = {};
-    let selectedItems = [];
-    let total = 0;
+    function actualizarTotal() {
+      // Obtener la lista de productos del localStorage
+      const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
 
+      // Inicializar el total de productos
+      let totalProductos = 0;
 
-function actualizarTotal() {
-  // Obtener la lista de productos del localStorage
-  const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+      if (productosGuardados && productosGuardados.length > 0) {
+        // Sumar los precios totales de los productos en el pedido
+        totalProductos = productosGuardados.reduce((total, producto) => {
+          return total + producto.producto.precioTotal;
+        }, 0);
+      }
 
-  // Inicializar el total de productos
-  let totalProductos = 0;
+      // Sumar el total de productos con el total de extras
+      const totalFinal = totalProductos + calcularExtrasTotal();
 
-  if (productosGuardados && productosGuardados.length > 0) {
-    // Sumar los precios totales de los productos en el pedido
-    totalProductos = productosGuardados.reduce((total, producto) => {
-      return total + producto.producto.precioTotal;
-    }, 0);
-  }
-
-  // Sumar el total de productos con el total de extras
-  const totalFinal = totalProductos + calcularExtrasTotal();
-
-  // Actualiza el total en el elemento HTML
-  const totalElement = document.getElementById('total');
-  if (totalElement) {
-    totalElement.textContent = `$${totalFinal.toFixed(2)}`;
-  }
-}
-
-
-    
-    function eliminarDelPedido(index) {
-    const productoEliminado = productos[index];
-    const precioProductoEliminado = productoEliminado.producto.precioTotal;
-    
-    productos.splice(index, 1); // Eliminar el producto del array de productos
-    localStorage.setItem('pedido', JSON.stringify(productos)); // Actualizar el localStorage con la nueva lista de productos
-    
-    // Restar el precio del producto eliminado del total del pedido
-    const totalProductos = preciosTotalesProductos.reduce((total, precio) => total + precio, 0);
-    const totalPedidoActualizado = totalProductos - precioProductoEliminado;
-    
-    preciosTotalesProductos = productos.map(producto => producto.producto.precioTotal); // Actualizar los precios totales de los productos
-    
-    // Actualizar el totalPedido en cada objeto de producto
-    productos.forEach(producto => {
-        producto.totalPedido = totalPedidoActualizado;
-    });
-
-    actualizarTotal(); // Actualizar el total en la interfaz
-    actualizarPedido(); // Actualizar el pedido mostrado en la interfaz
-}
-
-    let totalProductos = 0;
-
-    function agregarAlPedido(buttonNumber) {
-    const itemNameElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`);
-    const selectedInputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
-
-    if (!itemNameElement || !selectedInputElement) {
-        console.error('No se encontraron elementos necesarios para agregar al pedido');
-        return;
+      // Actualiza el total en el elemento HTML
+      const totalElement = document.getElementById('total');
+      if (totalElement) {
+        totalElement.textContent = `$${totalFinal.toFixed(2)}`;
+      }
     }
 
-    const itemName = itemNameElement.textContent;
-    const itemPrice = parseFloat(selectedInputElement.value);
-    const itemCount = counters[buttonNumber];
-    const extraItems = document.querySelectorAll(`.div-extras[data-button-number="${buttonNumber}"] .extra-item`);
+    function eliminarDelPedido(index) {
+      const productoEliminado = productos[index];
+      const precioProductoEliminado = productoEliminado.producto.precioTotal;
 
-    let extrasTotal = 0;
-    const extrasArray = [];
+      productos.splice(index, 1); // Eliminar el producto del array de productos
+      localStorage.setItem('pedido', JSON.stringify(productos)); // Actualizar el localStorage con la nueva lista de productos
 
-    extraItems.forEach(extraItem => {
+      // Restar el precio del producto eliminado del total del pedido
+      const totalProductos = preciosTotalesProductos.reduce((total, precio) => total + precio, 0);
+      const totalPedidoActualizado = totalProductos - precioProductoEliminado;
+
+      preciosTotalesProductos = productos.map(producto => producto.producto.precioTotal); // Actualizar los precios totales de los productos
+
+      // Actualizar el totalPedido en cada objeto de producto
+      productos.forEach(producto => {
+        producto.totalPedido = totalPedidoActualizado;
+      });
+
+      actualizarTotal(); // Actualizar el total en la interfaz
+      actualizarPedido(); // Actualizar el pedido mostrado en la interfaz
+    }
+
+    function agregarAlPedido(buttonNumber) {
+      const itemNameElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`);
+      const selectedInputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
+
+      if (!itemNameElement || !selectedInputElement) {
+        console.error('No se encontraron elementos necesarios para agregar al pedido');
+        return;
+      }
+
+      const itemName = itemNameElement.textContent;
+      const itemPrice = parseFloat(selectedInputElement.value);
+      const itemCount = counters[buttonNumber];
+      const extraItems = document.querySelectorAll(`.div-extras[data-button-number="${buttonNumber}"] .extra-item`);
+
+      let extrasTotal = 0;
+      const extrasArray = [];
+
+      extraItems.forEach(extraItem => {
         const extraNameElement = extraItem.querySelector('p');
         const counterElement = document.getElementById(`counter-value-${buttonNumber}-${extraItem.dataset.extraNumber}`);
 
         if (!extraNameElement || !counterElement) {
-            console.error('No se encontraron elementos necesarios para los extras');
-            return;
+          console.error('No se encontraron elementos necesarios para los extras');
+          return;
         }
 
         const extraName = extraNameElement.textContent;
@@ -2012,67 +2038,66 @@ function actualizarTotal() {
         const extraCount = parseInt(counterElement.textContent);
 
         if (extraCount > 0) {
-            console.log(`Extra name: ${extraName}, extra count: ${extraCount}, extra price: ${extraPrice * extraCount}`);
-            extrasTotal += extraPrice * extraCount;
+          console.log(`Extra name: ${extraName}, extra count: ${extraCount}, extra price: ${extraPrice * extraCount}`);
+          extrasTotal += extraPrice * extraCount;
 
-            const extraObj = {
-                nombre: extraName,
-                cantidad: extraCount,
-                precio: extraPrice * extraCount
-            };
+          const extraObj = {
+            nombre: extraName,
+            cantidad: extraCount,
+            precio: extraPrice * extraCount
+          };
 
-            extrasArray.push(extraObj);
+          extrasArray.push(extraObj);
         }
-    });
+      });
 
-    const precioTotalProducto = itemPrice * itemCount + extrasTotal;
+      const precioTotalProducto = itemPrice * itemCount + extrasTotal;
 
-    const pedido = {
+      const pedido = {
         producto: {
-            nombre: itemName,
-            cantidad: itemCount,
-            precio: itemPrice * itemCount,
-            extras: extrasArray,
-            precioTotal: precioTotalProducto
+          nombre: itemName,
+          cantidad: itemCount,
+          precio: itemPrice * itemCount,
+          extras: extrasArray,
+          precioTotal: precioTotalProducto
         }
-    };
+      };
 
-    productos.push(pedido);
+      productos.push(pedido);
 
-    localStorage.setItem('pedido', JSON.stringify(productos));
+      localStorage.setItem('pedido', JSON.stringify(productos));
 
-    actualizarTotal(); // Actualizar el total en la interfaz
-    actualizarTotalPedido(); // Actualizar el total del pedido en localStorage
-    counters[buttonNumber] = 0;
-    resetExtrasCounters();
+      actualizarTotal(); // Actualizar el total en la interfaz
+      actualizarTotalPedido(); // Actualizar el total del pedido en localStorage
+      counters[buttonNumber] = 0;
+      resetExtrasCounters();
 
-    if (productos.length > 0) {
+      if (productos.length > 0) {
         document.getElementById('hacerPedidoButton').style.display = 'block';
+      }
+
+      const btnTuPedido = document.getElementById("tuPedidoBtn");
+      btnTuPedido.style.display = productos.length > 0 ? 'flex' : 'none';
     }
 
-    const btnTuPedido = document.getElementById("tuPedidoBtn");
-    btnTuPedido.style.display = productos.length > 0 ? 'flex' : 'none';
-}
+    function actualizarTotalPedido() {
+      const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
 
-function actualizarTotalPedido() {
-    const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+      let totalPedido = 0;
 
-    let totalPedido = 0;
-
-    if (productosGuardados && productosGuardados.length > 0) {
+      if (productosGuardados && productosGuardados.length > 0) {
         totalPedido = productosGuardados.reduce((total, producto) => total + producto.producto.precioTotal, 0);
+      }
+
+      localStorage.setItem('totalPedido', totalPedido);
     }
 
-    localStorage.setItem('totalPedido', totalPedido);
-}
-
-function eliminarDelPedido(index) {
-    productos.splice(index, 1);
-    localStorage.setItem('pedido', JSON.stringify(productos));
-    actualizarTotal(); // Actualizar el total en la interfaz
-    actualizarTotalPedido(); // Actualizar el total del pedido en localStorage
-}
-
+    function eliminarDelPedido(index) {
+      productos.splice(index, 1);
+      localStorage.setItem('pedido', JSON.stringify(productos));
+      actualizarTotal(); // Actualizar el total en la interfaz
+      actualizarTotalPedido(); // Actualizar el total del pedido en localStorage
+    }
 
     function obtenerPrecioExtra(extraNumber, buttonNumber) {
       const extraItem = document.querySelector(`.div-extras[data-button-number="${buttonNumber}"] .extra-item[data-extra-number="${extraNumber}"]`);
@@ -2126,24 +2151,6 @@ function eliminarDelPedido(index) {
       return extrasTotal;
     }
 
-
-    // Add event listeners to extra items
-
-    // Add event listeners to extra items
-    const extraItems = document.querySelectorAll('.extra-item');
-    extraItems.forEach((extraItem) => {
-      extraItem.addEventListener('click', (event) => {
-        const action = event.target.dataset.action;
-        const listNumber = event.target.dataset.listNumber;
-        const counterElement = event.currentTarget.querySelector('.counter-value');
-
-        if (action === 'increment' || action === 'decrement') {
-          const extraNumber = parseInt(event.currentTarget.dataset.extraNumber);
-          updateExtrasCounter(extraNumber, action, listNumber, counterElement);
-        }
-      });
-    });
-
     function resetCounters() {
       counters = {};
       resetExtrasCounters();
@@ -2162,57 +2169,10 @@ function eliminarDelPedido(index) {
       contactoSection.scrollIntoView({ behavior: 'smooth' });
     }
 
-
     function enviarPedidoWhatsApp() {
-    // Obtener la lista de productos del almacenamiento local
-    const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
-    let totalPedido = JSON.parse(localStorage.getItem('totalPedido'));
-
-    if (productosGuardados && productosGuardados.length > 0) {
-        // Crear el mensaje para WhatsApp
-        let mensajeWhatsApp = `¡Hola McKing! Quiero realizar un pedido:\n\n`;
-
-        // Recorrer cada producto en la lista de productos guardados
-        productosGuardados.forEach((producto) => {
-            mensajeWhatsApp += `Producto: ${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
-
-            // Agregar detalles de los extras de cada producto
-            if (producto.producto.extras && producto.producto.extras.length > 0) {
-                mensajeWhatsApp += `Extras:\n`;
-                producto.producto.extras.forEach((extra) => {
-                    mensajeWhatsApp += `-Extra: ${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
-                });
-            }
-
-            // Agregar el precio total del producto
-            mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
-        });
-
-        // Agregar el precio total del pedido obtenido del localStorage
-        mensajeWhatsApp += `Total del pedido: $${totalPedido}\n\nGracias.`;
-
-        // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
-        const numeroWhatsApp = '541128528053';
-
-        // Crear el enlace de WhatsApp utilizando 'https://wa.me/'
-        const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
-
-        // Redirigir a WhatsApp
-        window.location.href = enlaceWhatsApp;
-
-        // Imprimir en la consola para verificar el flujo
-        console.log('Pedido enviado por WhatsApp.');
-    } else {
-        console.error('No se encontró información de pedido almacenada.');
-    }
-}
-
-
-
-
-    function enviarPedidoWhatsApp2() {
       // Obtener la lista de productos del almacenamiento local
       const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+      let totalPedido = JSON.parse(localStorage.getItem('totalPedido'));
 
       if (productosGuardados && productosGuardados.length > 0) {
         // Crear el mensaje para WhatsApp
@@ -2234,8 +2194,52 @@ function eliminarDelPedido(index) {
           mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
         });
 
-        // Agregar el precio total del pedido
-        mensajeWhatsApp += `Total del pedido: $${productosGuardados[0].totalPedido}\n\nGracias.`;
+        // Agregar el precio total del pedido obtenido del localStorage
+        mensajeWhatsApp += `Total del pedido: $${totalPedido}\n\nGracias.`;
+
+        // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
+        const numeroWhatsApp = '541128528053';
+
+        // Crear el enlace de WhatsApp utilizando 'https://wa.me/'
+        const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+        // Redirigir a WhatsApp
+        window.location.href = enlaceWhatsApp;
+
+        // Imprimir en la consola para verificar el flujo
+        console.log('Pedido enviado por WhatsApp.');
+      } else {
+        console.error('No se encontró información de pedido almacenada.');
+      }
+    }
+
+    function enviarPedidoWhatsApp2() {
+      // Obtener la lista de productos del almacenamiento local
+      const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+      let totalPedido = JSON.parse(localStorage.getItem('totalPedido'));
+
+      if (productosGuardados && productosGuardados.length > 0) {
+        // Crear el mensaje para WhatsApp
+        let mensajeWhatsApp = `¡Hola McKing! Quiero realizar un pedido:\n\n`;
+
+        // Recorrer cada producto en la lista de productos guardados
+        productosGuardados.forEach((producto) => {
+          mensajeWhatsApp += `${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+
+          // Agregar detalles de los extras de cada producto
+          if (producto.producto.extras && producto.producto.extras.length > 0) {
+            mensajeWhatsApp += `Extras:\n`;
+            producto.producto.extras.forEach((extra) => {
+              mensajeWhatsApp += `-${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+            });
+          }
+
+          // Agregar el precio total del producto
+          mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
+        });
+
+        // Agregar el precio total del pedido obtenido del localStorage
+        mensajeWhatsApp += `Total del pedido: $${totalPedido}\n\nGracias.`;
 
         // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
         const numeroWhatsApp = '541137816491';
@@ -2253,11 +2257,10 @@ function eliminarDelPedido(index) {
       }
     }
 
-
-
     function enviarPedidoWhatsApp3() {
       // Obtener la lista de productos del almacenamiento local
       const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+      let totalPedido = JSON.parse(localStorage.getItem('totalPedido'));
 
       if (productosGuardados && productosGuardados.length > 0) {
         // Crear el mensaje para WhatsApp
@@ -2265,13 +2268,13 @@ function eliminarDelPedido(index) {
 
         // Recorrer cada producto en la lista de productos guardados
         productosGuardados.forEach((producto) => {
-          mensajeWhatsApp += `Producto: ${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+          mensajeWhatsApp += `${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
 
           // Agregar detalles de los extras de cada producto
           if (producto.producto.extras && producto.producto.extras.length > 0) {
             mensajeWhatsApp += `Extras:\n`;
             producto.producto.extras.forEach((extra) => {
-              mensajeWhatsApp += `-Extra: ${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+              mensajeWhatsApp += `-${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
             });
           }
 
@@ -2279,8 +2282,8 @@ function eliminarDelPedido(index) {
           mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
         });
 
-        // Agregar el precio total del pedido
-        mensajeWhatsApp += `Total del pedido: $${productosGuardados[0].totalPedido}\n\nGracias.`;
+        // Agregar el precio total del pedido obtenido del localStorage
+        mensajeWhatsApp += `Total del pedido: $${totalPedido}\n\nGracias.`;
 
         // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
         const numeroWhatsApp = '541150397235';
@@ -2298,11 +2301,10 @@ function eliminarDelPedido(index) {
       }
     }
 
-
-
     function enviarPedidoWhatsApp4() {
       // Obtener la lista de productos del almacenamiento local
       const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+      let totalPedido = JSON.parse(localStorage.getItem('totalPedido'));
 
       if (productosGuardados && productosGuardados.length > 0) {
         // Crear el mensaje para WhatsApp
@@ -2310,13 +2312,13 @@ function eliminarDelPedido(index) {
 
         // Recorrer cada producto en la lista de productos guardados
         productosGuardados.forEach((producto) => {
-          mensajeWhatsApp += `Producto: ${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+          mensajeWhatsApp += `${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
 
           // Agregar detalles de los extras de cada producto
           if (producto.producto.extras && producto.producto.extras.length > 0) {
             mensajeWhatsApp += `Extras:\n`;
             producto.producto.extras.forEach((extra) => {
-              mensajeWhatsApp += `-Extra: ${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+              mensajeWhatsApp += `-${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
             });
           }
 
@@ -2324,8 +2326,8 @@ function eliminarDelPedido(index) {
           mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
         });
 
-        // Agregar el precio total del pedido
-        mensajeWhatsApp += `Total del pedido: $${productosGuardados[0].totalPedido}\n\nGracias.`;
+        // Agregar el precio total del pedido obtenido del localStorage
+        mensajeWhatsApp += `Total del pedido: $${totalPedido}\n\nGracias.`;
 
         // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
         const numeroWhatsApp = '541123058068';
@@ -2342,39 +2344,6 @@ function eliminarDelPedido(index) {
         console.error('No se encontró información de pedido almacenada.');
       }
     }
-
-    document.querySelectorAll('.div-botones-submenu input[type="radio"]').forEach((radio) => {
-      radio.addEventListener('click', (event) => {
-        const buttonNumber = event.target.closest('.div-botones-submenu').dataset.buttonNumber;
-        const counterValue = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .counter-value`);
-
-        // Guarda el estado actual del radio button
-        const currentState = event.target.checked;
-
-        // Restablece todos los botones del grupo a su estado original
-        document.querySelectorAll(`.div-botones-submenu[data-button-number="${buttonNumber}"] input[type="radio"]`).forEach((r) => {
-          r.checked = false;
-        });
-
-        // Si el estado original era falso, marca el radio actual
-        if (!currentState) {
-          event.target.checked = true;
-
-          // Incrementa el contador y el total si se selecciona
-          counters[buttonNumber]++;
-          total += parseFloat(event.target.value);
-        } else {
-          // Decrementa el contador y el total si ya estaba seleccionado
-          counters[buttonNumber]--;
-          total -= parseFloat(event.target.value);
-        }
-
-        counterValue.textContent = counters[buttonNumber];
-        actualizarTotal();
-      });
-    });
-
-
 
     function obtenerNumeroDeBotonPorNombre(itemName) {
       const divBotonesSubMenu = document.querySelectorAll('.div-botones-submenu');
