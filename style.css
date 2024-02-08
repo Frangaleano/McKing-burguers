@@ -572,7 +572,7 @@ body {
     color: black;
     z-index: 6;
     height: 62px;
-    font-size: 23px;
+    font-size: 20px;
   }
 
   .metodo-pago {
@@ -691,6 +691,9 @@ body {
     align-items: center;
     row-gap: 25px;
     width: 100%;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s, transform 1s;
   }
 
   .boton-extras {
