@@ -168,12 +168,12 @@ body {
   }
 
   .imagenes-inicio {
-  display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
     justify-content: center;
-}
+  }
+
   .circulo {
     width: 180px;
     height: 180px;
@@ -234,12 +234,14 @@ body {
     font-size: 19px;
     padding: 26px;
     margin: 0px;
+    width: 250px;
   }
 
   .carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
     margin: 20px 0px;
+    width: 250px;
   }
 
   .carousel-item {
@@ -248,8 +250,8 @@ body {
   }
 
   .carousel-item img {
-    width: 72%;
-    height: 90%;
+    width: 210px;
+    height: 200px;
     box-shadow: 0px 0px 44px 12px rgba(255, 199, 0, 0.75);
   }
 
@@ -341,37 +343,43 @@ body {
     row-gap: 1rem;
   }
 
-  
+
   @keyframes shadowAnimation {
-    
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0px 0px 20px 11px rgba(255, 199, 0, 0.75);
     }
+
     50% {
       box-shadow: none;
     }
   }
 
   @keyframes shadowAnimationIn {
-    
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: inset 0px 0px 20px 3px rgba(255, 199, 0, 0.75);
     }
+
     50% {
       box-shadow: none;
     }
   }
 
   @keyframes shadowAnimationHacerPedido {
-    
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: inset 0px 0px 20px 3px rgba(140, 34, 195, 1);
     }
+
     50% {
       box-shadow: none;
     }
   }
- 
+
 
   .anclas-wsp {
     cursor: pointer;
@@ -386,8 +394,8 @@ body {
   }
 
   .combo {
-    width: 65%;
-    height: 50%;
+    width: 200px;
+    height: 240px;
     margin-top: 56px;
     box-shadow: 0px 0px 44px 12px rgba(255, 199, 0, 0.75);
   }
@@ -411,7 +419,6 @@ body {
 
   .menu-section {
     padding: 10px;
-    width: 100%;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -490,20 +497,28 @@ body {
   }
 
   input[type="radio"] {
-    appearance: none; /* Oculta la apariencia por defecto del radio button */
-    -webkit-appearance: none; /* Para navegadores basados en WebKit como Chrome y Safari */
-    -moz-appearance: none; /* Para navegadores basados en Gecko como Firefox */
-    width: 10px; /* Tamaño del radio button */
+    appearance: none;
+    /* Oculta la apariencia por defecto del radio button */
+    -webkit-appearance: none;
+    /* Para navegadores basados en WebKit como Chrome y Safari */
+    -moz-appearance: none;
+    /* Para navegadores basados en Gecko como Firefox */
+    width: 10px;
+    /* Tamaño del radio button */
     height: 10px;
     margin-right: 8px;
-    border-radius: 50%; /* Borde redondeado para que sea un círculo */
-    border: 2px solid #fcb502; /* Borde azul */
-    outline: none; /* Quita el contorno predeterminado al hacer clic */
+    border-radius: 50%;
+    /* Borde redondeado para que sea un círculo */
+    border: 2px solid #fcb502;
+    /* Borde azul */
+    outline: none;
+    /* Quita el contorno predeterminado al hacer clic */
   }
-  
+
   /* Estilo para los radio buttons cuando están seleccionados */
   input[type="radio"]:checked {
-    background-color: #fcb502 ; /* Fondo azul cuando está seleccionado */
+    background-color: #fcb502;
+    /* Fondo azul cuando está seleccionado */
   }
 
   .counter-value {
@@ -544,7 +559,7 @@ body {
 
   .total {
     display: none;
-    opacity:  0;
+    opacity: 0;
     position: fixed;
     border: 2px solid #fcb502;
     box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
@@ -625,7 +640,7 @@ body {
     border: 2px solid #fcb502;
     width: 100%;
   }
-  
+
   .eliminar-producto {
     cursor: pointer;
     color: red;
@@ -640,10 +655,11 @@ body {
     display: inline-block;
     padding: 4px;
     transform: rotate(45deg);
-    transition: transform 0.8s;  /* Agregamos una transición para el efecto suave */
+    transition: transform 0.8s;
+    /* Agregamos una transición para el efecto suave */
     margin-left: 8px;
   }
-  
+
   .flecha-arriba {
     transform: rotate(-135deg);
     border: solid #fcb502;
@@ -657,7 +673,7 @@ body {
   .contacto h2 {
     border-bottom: 2px solid #fcb502;
   }
-  
+
   .ancla-ig h3 {
     border-bottom: 2px solid #fcb502;
     width: 111px;
@@ -711,11 +727,10 @@ body {
   }
 
   .extra-item {
-    display: flex; 
+    display: flex;
     flex-direction: row;
     align-items: center;
     height: 30px;
-    width: 100%;
     column-gap: 10px;
     justify-content: center;
   }
