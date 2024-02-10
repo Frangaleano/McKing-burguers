@@ -512,230 +512,337 @@ body {
   }
 
 
-input[type="radio"]:checked {
-  background-color: #fcb502;
+  input[type="radio"]:checked {
+    background-color: #fcb502;
+  }
+
+  .counter-value {
+    margin: 6px 3px;
+    font-size: 15px;
+  }
+
+  .counter-button {
+    width: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid #fcb502;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 26px;
+    justify-content: center;
+  }
+
+  .sub-menu-dos {
+    transition: opacity 1s, transform 1s;
+  }
+
+  .sub-menu-tres {
+    transition: opacity 1s, transform 1s;
+  }
+
+  .sub-menu-cuatro {
+    transition: opacity 1s, transform 1s;
+  }
+
+  .sub-menu-cinco {
+    transition: opacity 1s, transform 1s;
+  }
+
+
+  .total {
+    display: none;
+    opacity: 0;
+    position: fixed;
+    border: 2px solid #fcb502;
+    box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
+    padding: 4px 37px;
+    border-radius: 30px;
+    z-index: 6;
+    backdrop-filter: blur(5.2px);
+    top: 5px;
+    right: 5px;
+    transition: opacity 1s;
+  }
+
+  #hacerPedidoButton {
+    transition: background-color 0.8s;
+    animation: shadowAnimationHacerPedido 1s infinite;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fcb502;
+    border: 2px solid #fcb502;
+    padding: 4px 21px;
+    border-radius: 30px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: black;
+    z-index: 6;
+    height: 62px;
+    font-size: 20px;
+  }
+
+  .metodo-pago {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+  }
+
+  #parrafos-pago {
+    font-size: 13px;
+    padding: 0px 10px;
+    width: 108px;
+  }
+
+  .detalles {
+    font-size: 12px;
+    margin: 0px;
+  }
+
+  #tuPedidoBtn {
+    display: none;
+    position: fixed;
+    border: 2px solid #fcb502;
+    padding: 4px 30px;
+    border-radius: 30px;
+    z-index: 6;
+    backdrop-filter: blur(5.2px);
+    top: 5px;
+    left: 5px;
+    transition: opacity 1s;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: white;
+    background: transparent;
+    animation: shadowAnimationIn 1s infinite;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #pedidoDropdown {
+    position: fixed;
+    top: 56px;
+    font-size: 17px;
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 2px solid #fcb502;
+    width: 100%;
+  }
+
+  .eliminar-producto {
+    cursor: pointer;
+    color: red;
+    background: transparent;
+    border: none;
+    font-size: 21px;
+  }
+
+  .flecha-abajo {
+    border: solid #fcb502;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: transform 0.8s;
+    /* Agregamos una transición para el efecto suave */
+    margin-left: 8px;
+  }
+
+  .flecha-arriba {
+    transform: rotate(-135deg);
+    border: solid #fcb502;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    transition: transform 0.8s;
+    margin-left: 8px;
+  }
+
+  .contacto h2 {
+    border: 2px solid #fcb502;
+    padding: 5px 20px;
+    border-radius: 30px;
+    z-index: 5;
+    transition: background-color 0.8s;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .ancla-ig h3 {
+    border-bottom: 2px solid #fcb502;
+    width: 111px;
+  }
+
+  #parrafos-detalles {
+    padding: 0px;
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .boton-agregar {
+    border: 2px solid #fcb502;
+    padding: 4px;
+    border-radius: 30px;
+    z-index: 6;
+    backdrop-filter: blur(5.2px);
+    top: 5px;
+    left: 5px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: white;
+    background: transparent;
+    animation: shadowAnimationIn 1s infinite;
+  }
+
+  .div-extras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 25px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s, transform 1s;
+  }
+
+  .boton-extras {
+    background-color: transparent;
+    border: 2px solid #fcb502;
+    box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
+    padding: 4px 37px;
+    border-radius: 30px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .extra-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+    column-gap: 10px;
+    justify-content: center;
+  }
+
+  .extra-item p {
+    font-size: 15px;
+    width: 100px;
+  }
+
+  .producto-pedido {
+    font-size: 15px;
+  }
+
+  .span-dv {
+    width: 80px;
+    height: 80px;
+    background: transparent;
+    transform: rotate(45deg);
+    margin: 30px;
+    border: 3px solid white;
+    transition: background-color .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    animation: shadowAnimationInRombo 1.5s infinite;
+  }
+
+  .texto-rombo {
+    font-size: 40px;
+    font-family: 'Gilda Display', serif;
+    color: white;
+    z-index: 4;
+    transform: rotate(-45deg);
+    opacity: 99;
+    margin-left: 9px;
+    margin-right: 4px;
+    margin-bottom: -4px;
+    text-decoration: none;
+  }
+
+  @keyframes shadowAnimationInRombo {
+
+    0%,
+    100% {
+      box-shadow: inset 0px 0px 20px 3px rgb(255, 255, 255);
+    }
+
+    50% {
+      box-shadow: none;
+    }
+  }
+
+
+
+
 }
 
-.counter-value {
-  margin: 6px 3px;
-  font-size: 15px;
-}
+@media (min-width: 450px) {
 
-.counter-button {
-  width: 20px;
-  background-color: transparent;
-  border-radius: 5px;
-  border: 2px solid #fcb502;
-  color: white;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 26px;
-  justify-content: center;
-}
+  .circulo {
+    width: 200px;
+    height: 200px;
+  }
 
-.sub-menu-dos {
-  transition: opacity 1s, transform 1s;
-}
+  .luigi-mario {
+    width: 95px;
+    height: 95px;
+  }
 
-.sub-menu-tres {
-  transition: opacity 1s, transform 1s;
-}
-
-.sub-menu-cuatro {
-  transition: opacity 1s, transform 1s;
-}
-
-.sub-menu-cinco {
-  transition: opacity 1s, transform 1s;
-}
+  .mario {
+    width: 90px;
+    height: 90px;
+  }
 
 
-.total {
-  display: none;
-  opacity: 0;
-  position: fixed;
-  border: 2px solid #fcb502;
-  box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
-  padding: 4px 37px;
-  border-radius: 30px;
-  z-index: 6;
-  backdrop-filter: blur(5.2px);
-  top: 5px;
-  right: 5px;
-  transition: opacity 1s;
-}
 
-#hacerPedidoButton {
-  transition: background-color 0.8s;
-  animation: shadowAnimationHacerPedido 1s infinite;
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #fcb502;
-  border: 2px solid #fcb502;
-  padding: 4px 21px;
-  border-radius: 30px;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  color: black;
-  z-index: 6;
-  height: 62px;
-  font-size: 20px;
-}
+  .combo {
+    width: 250px;
+    height: 280px;
+  }
 
-.metodo-pago {
-  display: flex;
-  flex-direction: row;
-  margin-right: 15px;
-}
+  .carousel-inner {
+    margin-bottom: 50px;
+  }
 
-#parrafos-pago {
-  font-size: 13px;
-  padding: 0px 10px;
-  width: 108px;
-}
+  .section-menu p {
+    font-size: 21px;
+    width: 280px;
+  }
 
-.detalles {
-  font-size: 12px;
-  margin: 0px;
-}
+  .dino-mario {
+    width: 110px;
+    height: 110px;
+  }
 
-#tuPedidoBtn {
-  display: none;
-  position: fixed;
-  border: 2px solid #fcb502;
-  padding: 4px 30px;
-  border-radius: 30px;
-  z-index: 6;
-  backdrop-filter: blur(5.2px);
-  top: 5px;
-  left: 5px;
-  transition: opacity 1s;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  color: white;
-  background: transparent;
-  animation: shadowAnimationIn 1s infinite;
-  flex-direction: row;
-  align-items: center;
-}
+  .card {
+    height: 21em;
+    width: 15em;
+  }
 
-#pedidoDropdown {
-  position: fixed;
-  top: 56px;
-  font-size: 17px;
-  padding: 5px 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  backdrop-filter: blur(10px);
-  border-radius: 30px;
-  border: 2px solid #fcb502;
-  width: 100%;
-}
+  .red-social img {
+    width: 11em;
+  }
 
-.eliminar-producto {
-  cursor: pointer;
-  color: red;
-  background: transparent;
-  border: none;
-  font-size: 21px;
-}
+  .detalles {
+    font-size: 14px;
+  }
 
-.flecha-abajo {
-  border: solid #fcb502;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 4px;
-  transform: rotate(45deg);
-  transition: transform 0.8s;
-  /* Agregamos una transición para el efecto suave */
-  margin-left: 8px;
-}
 
-.flecha-arriba {
-  transform: rotate(-135deg);
-  border: solid #fcb502;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 4px;
-  transition: transform 0.8s;
-  margin-left: 8px;
-}
 
-.contacto h2 {
-  border-bottom: 2px solid #fcb502;
-}
 
-.ancla-ig h3 {
-  border-bottom: 2px solid #fcb502;
-  width: 111px;
-}
 
-#parrafos-detalles {
-  padding: 0px;
-  font-size: 14px;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-}
-
-.boton-agregar {
-  border: 2px solid #fcb502;
-  padding: 4px;
-  border-radius: 30px;
-  z-index: 6;
-  backdrop-filter: blur(5.2px);
-  top: 5px;
-  left: 5px;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  color: white;
-  background: transparent;
-  animation: shadowAnimationIn 1s infinite;
-}
-
-.div-extras {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 25px;
-  width: 100%;
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 1s, transform 1s;
-}
-
-.boton-extras {
-  background-color: transparent;
-  border: 2px solid #fcb502;
-  box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
-  padding: 4px 37px;
-  border-radius: 30px;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  color: white;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.extra-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 30px;
-  column-gap: 10px;
-  justify-content: center;
-}
-
-.extra-item p {
-  font-size: 15px;
-  width: 100px;
-}
-
-.producto-pedido {
-  font-size: 15px;
-}
 }
