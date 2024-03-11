@@ -222,6 +222,40 @@ body {
     width: 342px;
   }
 
+  #boton-como {
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 17px;
+    animation: shadowAnimation 2s infinite;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    border: solid 2px #fcb502;
+    background: transparent;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    z-index: 99;
+  }
+
+
+  .pasos {
+    margin-top: 0px;
+    padding: 23px;
+    font-size: 12px;
+    text-align: center;
+    width: 200px;
+  }
+
+  .div-pasos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .img-pasos {
+    width: 120px;
+    height: 80px;
+  }
+
+
   .section-menu {
     overflow: hidden;
     display: flex;

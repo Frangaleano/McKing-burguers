@@ -25,6 +25,7 @@ let subMenuTresVisible = false;
 let subMenuCuatroVisible = false;
 let subMenuCincoVisible = false;
 let subMenuMilaVisible = false;
+let comoVisible = false;
 let extrasCounters = {};
 let totalExtras = 0;
 let productos = [];
@@ -114,6 +115,105 @@ extraItems.forEach((extraItem) => {
     }
   });
 });
+
+function toggleComo() {
+  const como = document.getElementById('como');
+  const botonComo = document.getElementById('boton-como');
+
+  if (!comoVisible) {
+      const buttonsHTML = `
+      <div class="div-pasos">
+          <div class="div-texto-pasos">
+              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 1:</b> <br>
+              Tocar el boton "Menú".</p>
+          </div>
+          <img class="img-pasos" src="./menu.png" alt="menu" style="width: 100px"></img>
+      </div>
+      
+      <div class="div-pasos">
+          <div class="div-texto-pasos">
+              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 2:</b> <br>
+              Selecciona el submenu que desees.</p>
+          </div>
+          <img class="img-pasos" src="./submenus.png" alt="submenu" style="width: 100px"></img>
+      </div>
+
+      <div class="div-pasos">
+          <div class="div-texto-pasos">
+              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 3:</b> <br>
+              a) Selecciona el producto que desees y su cantidad.<br>
+              b) También puedes seleccionar los extras que quieras.<br>
+              c) Luego agrega el producto al pedido, con el boton "Agregar al pedido".
+              </p>
+          </div>
+          <img class="img-pasos" src="./seleccion-menu.png" alt="seleccion menu" style="width: 100px"></img>
+      </div>
+
+      <div class="div-pasos">
+          <div class="div-texto-pasos">
+              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 4:</b> <br>
+              Al agregar vas a ver, el total del pedido, y el boton de tu pedido, desde el cual vas a poder ver tu pedido actual y eliminar algun producto si es necesario.<br>
+              </p>
+          </div>
+          <img class="img-pasos" src="./tupedido.png" alt="pedido" style="width: 100px"></img>
+      </div>
+
+      <div class="div-pasos">
+          <div class="div-texto-pasos">
+              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 5:</b> <br>
+              Al agregar tambien va a aparecer un boton de "Hacer pedido", el cual vamos a tocar para ir a whatsapp directamente.<br>
+              </p>
+          </div>
+          <img class="img-pasos" src="./hacerpedido.png" alt="hacer pedido" style="width: 100px"></img>
+      </div>
+
+      <div class="div-pasos">
+              <p class="pasos" style="width: 300px; font-size: 12px;"> <b>Paso 6:</b> <br>
+              Finalmente en whatsapp, enviaremos el mensaje con todo nuestro pedido detallado.<br>
+              * Nombre, Precio total y cantidad de cada producto. <br>
+              * Precio total del pedido.
+              </p>
+      </div>
+      `;
+
+
+      como.innerHTML = buttonsHTML;
+
+      comoVisible = true;
+      como.style.display = "flex";
+      como.offsetHeight;
+      como.style.opacity = "1";
+      como.style.transform = "translateY(0)";
+      como.style.visibility = "visible";
+      como.style.flexDirection = "column";
+      como.style.alignItems = "center"
+      como.style.zIndex = "99"
+
+      // Agrega la clase 'active' al botón1 cuando se despliega el submenú
+      botonComo.classList.add('active');
+      como.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+      const comoButtons = document.querySelectorAll('.menu-button');
+      comoButtons.forEach(button => {
+          button.classList.remove('initial');
+      });
+      setTimeout(() => {
+          como.innerHTML = '';
+      }, comoButtons.length * 100);
+
+      comoVisible = false;
+
+      como.style.opacity = "0";
+      como.style.transform = "translateY(-20px)";
+      setTimeout(() => {
+          como.style.visibility = "hidden";
+          como.style.display = "none";
+      }, 800);
+
+      // Quita la clase 'active' al botón1 cuando se contrae el submenú
+      botonComo.classList.remove('active');
+  }
+}
 
 function toggleMenuSection() {
   const menuProductos = document.getElementById("menu-section");
@@ -1839,7 +1939,6 @@ function agregarAlPedido(buttonNumber) {
   const itemName = itemNameElement.textContent;
   const itemPrice = parseFloat(selectedInputElement.value);
   const itemCount = counters[buttonNumber];
-  const extraItems = document.querySelectorAll(`.div-extras[data-button-number="${buttonNumber}"] .extra-item`);
 
   let extrasTotal = 0;
   const extrasArray = [];
@@ -1891,6 +1990,7 @@ function agregarAlPedido(buttonNumber) {
   actualizarTotalPedido(); // Actualizar el total del pedido en localStorage
   counters[buttonNumber] = 0;
   resetExtrasCounters();
+  console.log(counters.textContent)
 
   if (productos.length > 0) {
     document.getElementById('hacerPedidoButton').style.display = 'block';
