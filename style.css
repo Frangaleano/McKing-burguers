@@ -235,6 +235,29 @@ body {
     z-index: 99;
   }
 
+  .carousel {
+    display: flex;
+    width: 263px;
+    overflow: hidden;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 20px;
+    border: solid 5px #cb6ce6;
+    margin-top: 20px;
+  }
+
+  .carousel-images {
+    display: flex;
+    transition: transform 1s ease;
+    flex-direction: row;
+    align-items: center;
+    width: 165px;
+  }
+
+  .carousel-images img {
+    width: 462px;
+    height: 350px;
+  }
 
   .pasos {
     margin-top: 0px;
