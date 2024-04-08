@@ -457,7 +457,7 @@ function toggleSubMenu() {
     <span class="counter-value">0</span>
     <button class="counter-button" onclick="updateCounter(9, 'increment')">+</button>
   </div>
-  <p id="parrafos-detalles">falta info</p>
+  <p id="parrafos-detalles">Carne - jamon - queso - tomate - lechuga - huevo</p>
   <button class="boton-extras" data-button-number="9" onclick="toggleExtras(9)">Extras</button>
   <div class="div-extras" id="extrasList9" data-button-number="9" style="display: none;">
   </div>
@@ -2295,6 +2295,49 @@ function enviarPedidoWhatsApp4() {
   }
 }
 
+function enviarPedidoWhatsApp5() {
+  // Obtener la lista de productos del almacenamiento local
+  const productosGuardados = JSON.parse(localStorage.getItem('pedido'));
+  let totalPedido = JSON.parse(localStorage.getItem('totalPedido'));
+
+  if (productosGuardados && productosGuardados.length > 0) {
+    // Crear el mensaje para WhatsApp
+    let mensajeWhatsApp = `¡Hola McKing! Quiero realizar un pedido:\n\n`;
+
+    // Recorrer cada producto en la lista de productos guardados
+    productosGuardados.forEach((producto) => {
+      mensajeWhatsApp += `${producto.producto.nombre} - Cantidad: ${producto.producto.cantidad} - Precio: $${producto.producto.precio}\n`;
+
+      // Agregar detalles de los extras de cada producto
+      if (producto.producto.extras && producto.producto.extras.length > 0) {
+        mensajeWhatsApp += `Extras:\n`;
+        producto.producto.extras.forEach((extra) => {
+          mensajeWhatsApp += `-${extra.nombre} - Cantidad: ${extra.cantidad} - Precio: $${extra.precio}\n`;
+        });
+      }
+
+      // Agregar el precio total del producto
+      mensajeWhatsApp += `Precio Total del Producto: $${producto.producto.precioTotal}\n\n`;
+    });
+
+    // Agregar el precio total del pedido obtenido del localStorage
+    mensajeWhatsApp += `Total del pedido: $${totalPedido}\n\nGracias.`;
+
+    // Reemplazar 'NUMERO_DE_TELEFONO' con el número de WhatsApp al que deseas enviar el mensaje, asegurándote de quitar espacios o guiones
+    const numeroWhatsApp = '541152205477';
+
+    // Crear el enlace de WhatsApp utilizando 'https://wa.me/'
+    const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+    // Redirigir a WhatsApp
+    window.location.href = enlaceWhatsApp;
+
+    // Imprimir en la consola para verificar el flujo
+    console.log('Pedido enviado por WhatsApp.');
+  } else {
+    console.error('No se encontró información de pedido almacenada.');
+  }
+}
 function obtenerNumeroDeBotonPorNombre(itemName) {
   const divBotonesSubMenu = document.querySelectorAll('.div-botones-submenu');
 

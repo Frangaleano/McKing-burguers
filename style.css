@@ -898,7 +898,15 @@ body {
     font-size: 14px;
   }
 
+  .div-detalles-productos {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .div-precio-producto {
+    display: flex;
+    flex-direction: row;
+  }
 
 
 
