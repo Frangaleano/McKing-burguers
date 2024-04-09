@@ -1278,6 +1278,7 @@ function toggleSubMenuCinco() {
   <div class="div-boton-agregar">
     <button class="boton-agregar" onclick="agregarAlPedido(50)">Agregar al pedido</button>
   </div>
+
 <div class="div-botones-submenu" data-button-number="51">
 <button class="menu-button sub-menu-button" data-button-number="51">Gaseosa</button>
 <p>$950</p>
@@ -1286,6 +1287,11 @@ function toggleSubMenuCinco() {
 <span class="counter-value">0</span>
 <button class="counter-button" onclick="updateCounter(51, 'increment')">+</button>
 </div>
+
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(51)">Agregar al pedido</button>
+</div>
+
 <div class="div-botones-submenu" data-button-number="52">
 <button class="menu-button sub-menu-button" data-button-number="52">Agua</button>
 <p>$650</p>
@@ -1293,6 +1299,9 @@ function toggleSubMenuCinco() {
 <button class="counter-button" onclick="updateCounter(52, 'decrement')">-</button>
 <span class="counter-value">0</span>
 <button class="counter-button" onclick="updateCounter(52, 'increment')">+</button>
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(52)">Agregar al pedido</button>
 </div>
 `;
     subMenuCinco.innerHTML = buttonsHTML;
