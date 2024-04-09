@@ -288,10 +288,10 @@ body {
   }
 
   .section-menu p {
-    font-size: 19px;
+    font-size: 17px;
     padding: 26px;
     margin: 0px;
-    width: 250px;
+    width: 300px;
   }
 
   .carousel-inner {
@@ -372,7 +372,7 @@ body {
   }
 
   #whatsapp-card {
-    height: 45em;
+    height: 47em;
   }
 
   .sonic {
@@ -500,7 +500,7 @@ body {
 
   .menu-button {
     cursor: pointer;
-    background-color: transparent;
+    background-color: rgb(26 0 51);
     transition: background-color 0.3s;
     border: 2px solid #fcb502;
     box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
@@ -508,6 +508,7 @@ body {
     border-radius: 30px;
     font-family: 'Kdam Thmor Pro', sans-serif;
     color: white;
+    width: 100%;
   }
 
   .menu-button.active {
@@ -519,19 +520,25 @@ body {
     width: 330px;
   }
 
+  .div-boton-agregar {
+    margin-bottom: 23px;
+  }
+
   .div-botones-submenu {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
     width: 330px;
+    border-top: solid 2px rgba(255, 199, 0, 0.75);
+    padding-top: 10px;
   }
 
   .div-botones-submenu p {
-    font-size: 15px;
-    padding: 14px 0px;
-    margin: 0px;
-    width: 90px;
+  font-size: 15px;
+  padding: 14px 0px;
+  margin: 0px;
+  width: 76px;
   }
 
   .menu-button.sub-menu-button {
@@ -863,7 +870,6 @@ body {
     width: 90px;
     height: 90px;
   }
-
 
 
   .combo {
