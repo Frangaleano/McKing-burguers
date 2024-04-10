@@ -14,6 +14,31 @@ const toggleMenu = () => {
     main.style.opacity = "1"
   }
 };
+
+window.addEventListener('load', function() {
+  const carousel = document.querySelector('.carousel-images');
+  const images = document.querySelectorAll('.carousel-images img');
+
+  let counter = 0;
+  const slideCount = images.length;
+  let slideWidth;
+
+  function nextSlide() {
+      if (slideWidth === undefined) {
+          slideWidth = images[0].clientWidth;
+      }
+      carousel.style.transition = 'transform 0.5s ease-in-out';
+      carousel.style.transform = `translateX(${-slideWidth * counter}px)`;
+      counter = (counter + 1) % slideCount;
+  }
+
+  // Ajustar el carousel al inicio
+  carousel.style.transform = `translateX(0)`;
+
+  // Iniciar el carousel automáticamente
+  setInterval(nextSlide, 1500);
+});
+
 let currentIndex = 0;
 let subMenuVisible = false;
 let subMenuDosVisible = false;
@@ -521,8 +546,8 @@ function toggleSubMenuDos() {
     <button class="menu-button sub-menu-button" data-button-number="14">Onion</button>
     <p>$3550</p>
     <input class="radio-button" type="radio" name="onion" value="3550">
-    <p>$2350</p>
-    <input class="radio-button" type="radio" name="onion" value="2350">
+    <p>$3350</p>
+    <input class="radio-button" type="radio" name="onion" value="3350">
     <button class="counter-button" onclick="updateCounter(14, 'decrement')">-</button>
     <span class="counter-value">0</span>
     <button class="counter-button" onclick="updateCounter(14, 'increment')">+</button>
@@ -886,23 +911,7 @@ function toggleSubMenuTres() {
   <div class="div-boton-agregar">
     <button class="boton-agregar" onclick="agregarAlPedido(32)">Agregar al pedido</button>
   </div>
-<div class="div-botones-submenu" data-button-number="33">
-<button class="menu-button sub-menu-button" data-button-number="33">Papas Doritos</button> 
-<p>$0</p>
-<input class="radio-button" type="radio" name="papas-doritos" value="2450">
-<p>$0</p> 
-<input class="radio-button" type="radio" name="papas-doritos" value="2150">
-<button class="counter-button" onclick="updateCounter(33, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(33, 'increment')">+</button>
-</div>
-<p id="parrafos-detalles">papas - cheddar - doritos</p>
-<button class="boton-extras" data-button-number="33" onclick="toggleExtras(33)">Extras</button>
-  <div class="div-extras" id="extrasList33" data-button-number="33" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(33)">Agregar al pedido</button>
-  </div>
+
 <div class="div-botones-submenu" data-button-number="34">
 <button class="menu-button sub-menu-button" data-button-number="34">Papas Huevo</button>
 <p>$3300</p>
@@ -1233,10 +1242,10 @@ function toggleSubMenuCinco() {
     </div>
 <div class="div-botones-submenu" data-button-number="48">
 <button class="menu-button sub-menu-button" data-button-number=48">Cajita McKing infantil</button>
+<p>$5200</p>
+<input class="radio-button" type="radio" name="menu-infantil" value="5200">
 <p>$4900</p>
 <input class="radio-button" type="radio" name="menu-infantil" value="4900">
-<p>$4600</p>
-<input class="radio-button" type="radio" name="menu-infantil" value="4600">
 <button class="counter-button" onclick="updateCounter(48, 'decrement')">-</button>
 <span class="counter-value">0</span>
 <button class="counter-button" onclick="updateCounter(48, 'increment')">+</button>
