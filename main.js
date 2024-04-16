@@ -15,7 +15,7 @@ const toggleMenu = () => {
   }
 };
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   const carousel = document.querySelector('.carousel-images');
   const images = document.querySelectorAll('.carousel-images img');
 
@@ -24,12 +24,12 @@ window.addEventListener('load', function() {
   let slideWidth;
 
   function nextSlide() {
-      if (slideWidth === undefined) {
-          slideWidth = images[0].clientWidth;
-      }
-      carousel.style.transition = 'transform 0.5s ease-in-out';
-      carousel.style.transform = `translateX(${-slideWidth * counter}px)`;
-      counter = (counter + 1) % slideCount;
+    if (slideWidth === undefined) {
+      slideWidth = images[0].clientWidth;
+    }
+    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transform = `translateX(${-slideWidth * counter}px)`;
+    counter = (counter + 1) % slideCount;
   }
 
   // Ajustar el carousel al inicio
@@ -128,7 +128,7 @@ function toggleComo() {
   const botonComo = document.getElementById('boton-como');
 
   if (!comoVisible) {
-      const buttonsHTML = `
+    const buttonsHTML = `
       <div class="div-pasos">
           <div class="div-texto-pasos">
               <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 1:</b> <br>
@@ -180,41 +180,41 @@ function toggleComo() {
       `;
 
 
-      como.innerHTML = buttonsHTML;
+    como.innerHTML = buttonsHTML;
 
-      comoVisible = true;
-      como.style.display = "flex";
-      como.offsetHeight;
-      como.style.opacity = "1";
-      como.style.transform = "translateY(0)";
-      como.style.visibility = "visible";
-      como.style.flexDirection = "column";
-      como.style.alignItems = "center"
-      como.style.zIndex = "99"
+    comoVisible = true;
+    como.style.display = "flex";
+    como.offsetHeight;
+    como.style.opacity = "1";
+    como.style.transform = "translateY(0)";
+    como.style.visibility = "visible";
+    como.style.flexDirection = "column";
+    como.style.alignItems = "center"
+    como.style.zIndex = "99"
 
-      // Agrega la clase 'active' al botón1 cuando se despliega el submenú
-      botonComo.classList.add('active');
-      como.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // Agrega la clase 'active' al botón1 cuando se despliega el submenú
+    botonComo.classList.add('active');
+    como.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   } else {
-      const comoButtons = document.querySelectorAll('.menu-button');
-      comoButtons.forEach(button => {
-          button.classList.remove('initial');
-      });
-      setTimeout(() => {
-          como.innerHTML = '';
-      }, comoButtons.length * 100);
+    const comoButtons = document.querySelectorAll('.menu-button');
+    comoButtons.forEach(button => {
+      button.classList.remove('initial');
+    });
+    setTimeout(() => {
+      como.innerHTML = '';
+    }, comoButtons.length * 100);
 
-      comoVisible = false;
+    comoVisible = false;
 
-      como.style.opacity = "0";
-      como.style.transform = "translateY(-20px)";
-      setTimeout(() => {
-          como.style.visibility = "hidden";
-          como.style.display = "none";
-      }, 800);
+    como.style.opacity = "0";
+    como.style.transform = "translateY(-20px)";
+    setTimeout(() => {
+      como.style.visibility = "hidden";
+      como.style.display = "none";
+    }, 800);
 
-      // Quita la clase 'active' al botón1 cuando se contrae el submenú
-      botonComo.classList.remove('active');
+    // Quita la clase 'active' al botón1 cuando se contrae el submenú
+    botonComo.classList.remove('active');
   }
 }
 
@@ -266,26 +266,37 @@ function selectButton(buttonNumber) {
     }
   });
 }
+
+
 function toggleSubMenu() {
   const subMenu = document.getElementById('subMenu');
   const boton1 = document.getElementById('boton1');
+
   if (!subMenuVisible) {
     const buttonsHTML = `
-    <div class="metodo-pago">
-    <p id="parrafos-pago">MercadoPago</p>
-    <p id="parrafos-pago">Efectivo</p>
-    </div>
   <div class="div-botones-submenu" data-button-number="1">
-    <button class="menu-button sub-menu-button" data-button-number="1">Simple</button>
-    <p>$2300</p>
-    <input class="radio-button" type="radio" name="simple" value="2300">
-    <p>$2000</p>
-    <input class="radio-button" type="radio" name="simple" value="2000">
-    <button class="counter-button" onclick="updateCounter(1, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(1, 'increment')">+</button>
+    <img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+    <div class="div-detalles-productos">
+      <button class="menu-button sub-menu-button" data-button-number="1" style="border: none;">Simple</button>
+      <p id="parrafos-detalles">pan - carne</p>
+      <div class="div-precio-producto" style="    display: flex;
+        align-items: center;
+        flex-direction: row;">
+          <p>MP:$2300</p>
+          <input class="radio-button" type="radio" name="Simple" value="2300">
+          <p>FT:$2000</p>
+          <input class="radio-button" type="radio" name="Simple" value="2000">
+      </div>
+      <div style="    display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-left: 10px;">
+          <button class="counter-button" onclick="updateCounter(1, 'decrement')">-</button>
+          <span class="counter-value">0</span>
+          <button class="counter-button" onclick="updateCounter(1, 'increment')">+</button>
+      </div>
+    </div>
   </div>
-  <p id="parrafos-detalles">pan - carne</p>
   <button class="boton-extras" data-button-number="1" onclick="toggleExtras(1)">Extras</button>
   <div class="div-extras" id="extrasList1" data-button-number="1" style="display: none;">
   </div>
@@ -295,143 +306,261 @@ function toggleSubMenu() {
 
 
   <div class="div-botones-submenu" data-button-number="2">
-    <button class="menu-button sub-menu-button" data-button-number="2">S. Queso</button>
-    <p>$2650</p>
-    <input class="radio-button" type="radio" name="queso" value="2650">
-    <p>$2350</p>
-    <input class="radio-button" type="radio" name="queso" value="2350">
-    <button class="counter-button" onclick="updateCounter(2, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(2, 'increment')">+</button>
+    <img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+    <div class="div-detalles-productos">
+      <button class="menu-button sub-menu-button" data-button-number="2" style="border: none;">S. Queso</button>
+      <p id="parrafos-detalles">pan - carne - queso</p>
+      <div class="div-precio-producto" style="    display: flex;
+        align-items: center;
+        flex-direction: row;">
+          <p>MP:$2650</p>
+          <input class="radio-button" type="radio" name="queso simple" value="2650">
+          <p>FT:$2350</p>
+          <input class="radio-button" type="radio" name="queso simple" value="2350">
+      </div>
+      <div style="    display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-left: 10px;">
+          <button class="counter-button" onclick="updateCounter(2, 'decrement')">-</button>
+          <span class="counter-value">0</span>
+          <button class="counter-button" onclick="updateCounter(2, 'increment')">+</button>
+      </div>
+    </div>
   </div>
-  <p id="parrafos-detalles">pan - carne - queso</p>
   <button class="boton-extras" data-button-number="2" onclick="toggleExtras(2)">Extras</button>
   <div class="div-extras" id="extrasList2" data-button-number="2" style="display: none;">
   </div>
   <div class="div-boton-agregar">
     <button class="boton-agregar" onclick="agregarAlPedido(2)">Agregar al pedido</button>
   </div>
+
+
+
+
   <div class="div-botones-submenu" data-button-number="3">
-    <button class="menu-button sub-menu-button" data-button-number="3">Napoleon</button>
-    <p>$2700</p>
-    <input class="radio-button" type="radio" name="napoleon" value="2700">
-    <p>$2400</p>
-    <input class="radio-button" type="radio" name="napoleon" value="2400">
-    <button class="counter-button" onclick="updateCounter(3, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(3, 'increment')">+</button>
+    <img class="img-producto" src="./magnifica.png" alt=""></img>
+    <div class="div-detalles-productos">
+      <button class="menu-button sub-menu-button" data-button-number="3" style="border: none;">Napoleon</button>
+      <p id="parrafos-detalles">tomate asado - queso - oregano - mayonesa</p>
+      <div class="div-precio-producto" style="    display: flex;
+        align-items: center;
+        flex-direction: row;">
+          <p>MP:$2700</p>
+          <input class="radio-button" type="radio" name="Napoleon" value="2700">
+          <p>FT:$2400</p>
+          <input class="radio-button" type="radio" name="Napoleon" value="2400">
+      </div>
+      <div style="    display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-left: 10px;">
+          <button class="counter-button" onclick="updateCounter(3, 'decrement')">-</button>
+          <span class="counter-value">0</span>
+          <button class="counter-button" onclick="updateCounter(3, 'increment')">+</button>
+      </div>
+    </div>
   </div>
-  <p id="parrafos-detalles">tomate asado - queso - oregano - mayonesa</p>
   <button class="boton-extras" data-button-number="3" onclick="toggleExtras(3)">Extras</button>
   <div class="div-extras" id="extrasList3" data-button-number="3" style="display: none;">
   </div>
   <div class="div-boton-agregar">
     <button class="boton-agregar" onclick="agregarAlPedido(3)">Agregar al pedido</button>
   </div>
+
+
   <div class="div-botones-submenu" data-button-number="4">
-    <button class="menu-button sub-menu-button" data-button-number="4">Classic</button>
-    <p>$2700</p>
-    <input class="radio-button" type="radio" name="classic" value="2700">
-    <p>$2400</p>
-    <input class="radio-button" type="radio" name="classic" value="2400">
-    <button class="counter-button" onclick="updateCounter(4, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(4, 'increment')">+</button>
+  <img class="img-producto" src="./magnifica.png" alt=""></img>
+
+  <div class="div-detalles-productos">
+    <button class="menu-button sub-menu-button" data-button-number="4" style="border: none;">Classic</button>
+    <p id="parrafos-detalles">lechuga - tomate</p>
+    <div class="div-precio-producto" style="    display: flex;
+      align-items: center;
+      flex-direction: row;">
+        <p>MP:$2700</p>
+        <input class="radio-button" type="radio" name="Classic" value="2700">
+        <p>FT:$2400</p>
+        <input class="radio-button" type="radio" name="Classic" value="2400">
+    </div>
+    <div style="    display: flex;
+      align-items: center;
+      flex-direction: row;
+      margin-left: 10px;">
+        <button class="counter-button" onclick="updateCounter(4, 'decrement')">-</button>
+        <span class="counter-value">0</span>
+        <button class="counter-button" onclick="updateCounter(4, 'increment')">+</button>
+    </div>
   </div>
-  <p id="parrafos-detalles">lechuga - tomate</p>
-  <button class="boton-extras" data-button-number="4" onclick="toggleExtras(4)">Extras</button>
-  <div class="div-extras" id="extrasList4" data-button-number="4" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(4)">Agregar al pedido</button>
-  </div>
-  <div class="div-botones-submenu" data-button-number="5">
-    <button class="menu-button sub-menu-button" data-button-number="5">Fusion</button>
-    <p>$2600</p>
-    <input class="radio-button" type="radio" name="fusion" value="2600">
-    <p>$2400</p>
-    <input class="radio-button" type="radio" name="fusion" value="2400">
-    <button class="counter-button" onclick="updateCounter(5, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(5, 'increment')">+</button>
-  </div>
+</div>
+<button class="boton-extras" data-button-number="4" onclick="toggleExtras(4)">Extras</button>
+<div class="div-extras" id="extrasList4" data-button-number="4" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+  <button class="boton-agregar" onclick="agregarAlPedido(4)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="5">
+<img class="img-producto" src="./magnifica.png" alt=""></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="5" style="border: none;">Fusión</button>
   <p id="parrafos-detalles">jamon - queso</p>
-  <button class="boton-extras" data-button-number="5" onclick="toggleExtras(5)">Extras</button>
-  <div class="div-extras" id="extrasList5" data-button-number="5" style="display: none;">
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$2600</p>
+      <input class="radio-button" type="radio" name="Fusion" value="2600">
+      <p>FT:$2400</p>
+      <input class="radio-button" type="radio" name="Fusion" value="2400">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(5)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(5, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(5, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="6">
-    <button class="menu-button sub-menu-button" data-button-number="6">Cuarto</button>
-    <p>$2850</p>
-    <input class="radio-button" type="radio" name="cuarto" value="2850">
-    <p>$2550</p>
-    <input class="radio-button" type="radio" name="cuarto" value="2550">
-    <button class="counter-button" onclick="updateCounter(6, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(6, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="5" onclick="toggleExtras(5)">Extras</button>
+<div class="div-extras" id="extrasList5" data-button-number="5" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(5)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="6">
+<img class="img-producto" src="./magnifica.png" alt=""></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="6" style="border: none;">Cuarto</button>
   <p id="parrafos-detalles">doble queso - salsa de cebolla</p>
-  <button class="boton-extras" data-button-number="6" onclick="toggleExtras(6)">Extras</button>
-  <div class="div-extras" id="extrasList6" data-button-number="6" style="display: none;">
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$2850</p>
+      <input class="radio-button" type="radio" name="Cuarto" value="2850">
+      <p>FT:$2550</p>
+      <input class="radio-button" type="radio" name="Cuarto" value="2550">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(6)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(6, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(6, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="7">
-    <button class="menu-button sub-menu-button" data-button-number="7">Magnifica</button> 
-    <p>$2850</p>
-    <input class="radio-button" type="radio" name="magnifica" value="2850">
-    <p>$2550</p>
-    <input class="radio-button" type="radio" name="magnifica" value="2550">
-    <button class="counter-button" onclick="updateCounter(7, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(7, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="6" onclick="toggleExtras(6)">Extras</button>
+<div class="div-extras" id="extrasList6" data-button-number="6" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(6)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="7">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="7" style="border: none;">Magnifica</button>
   <p id="parrafos-detalles">tomate - lechuga - cebolla - queso - salsa</p>
-  <button class="boton-extras" data-button-number="7" onclick="toggleExtras(7)">Extras</button>
-  <div class="div-extras" id="extrasList7" data-button-number="7" style="display: none;">
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$2850</p>
+      <input class="radio-button" type="radio" name="Magnifica" value="2850">
+      <p>FT:$2550</p>
+      <input class="radio-button" type="radio" name="Magnifica" value="2550">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(7)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(7, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(7, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="8">
-    <button class="menu-button sub-menu-button" data-button-number="8">Napolitano</button>
-    <p>$2850</p>
-    <input class="radio-button" type="radio" name="napolitano" value="2850">
-    <p>$2550</p>
-    <input class="radio-button" type="radio" name="napolitano" value="2550">
-    <button class="counter-button" onclick="updateCounter(8, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(8, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="7" onclick="toggleExtras(7)">Extras</button>
+<div class="div-extras" id="extrasList7" data-button-number="7" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(7)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="8">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="8" style="border: none;">Napolitano</button>
   <p id="parrafos-detalles">jamon - queso - tomate - cebolla - ketchup</p>
-  <button class="boton-extras" data-button-number="8" onclick="toggleExtras(8)">Extras</button>
-  <div class="div-extras" id="extrasList8" data-button-number="8" style="display: none;">
+    <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$2850</p>
+      <input class="radio-button" type="radio" name="Napolitano" value="2850">
+      <p>FT:$2550</p>
+      <input class="radio-button" type="radio" name="Napolitano" value="2550">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(8)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(8, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(8, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="9">
-    <button class="menu-button sub-menu-button" data-button-number="9">Completa</button>
-    <p>$3000</p>
-    <input class="radio-button" type="radio" name="completa" value="3000">
-    <p>$2700</p>
-    <input class="radio-button" type="radio" name="completa" value="2700">
-    <button class="counter-button" onclick="updateCounter(9, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(9, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="8" onclick="toggleExtras(8)">Extras</button>
+<div class="div-extras" id="extrasList8" data-button-number="8" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(8)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="9">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="9" style="border: none;">Completa</button>
   <p id="parrafos-detalles">carne - jamón - queso - lechuga - tomate - huevo</p>
-  <button class="boton-extras" data-button-number="9" onclick="toggleExtras(9)">Extras</button>
-  <div class="div-extras" id="extrasList9" data-button-number="9" style="display: none;">
+    <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3000</p>
+      <input class="radio-button" type="radio" name="Completa" value="3000">
+      <p>FT:$2700</p>
+      <input class="radio-button" type="radio" name="Completa" value="2700">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(9)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(9, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(9, 'increment')">+</button>
   </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="9" onclick="toggleExtras(9)">Extras</button>
+<div class="div-extras" id="extrasList9" data-button-number="9" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(9)">Agregar al pedido</button>
+</div>
+
+
 `;
+
+
+
+
+
     subMenu.innerHTML = buttonsHTML;
+
     subMenuVisible = true;
     subMenu.style.display = "flex";
     subMenu.offsetHeight;
@@ -442,6 +571,7 @@ function toggleSubMenu() {
     subMenu.style.rowGap = "10px";
     subMenu.style.padding = "10px"
     subMenu.style.alignItems = "center"
+
     // Agrega la clase 'active' al botón1 cuando se despliega el submenú
     boton1.classList.add('active');
     subMenu.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -454,316 +584,552 @@ function toggleSubMenu() {
     setTimeout(() => {
       subMenu.innerHTML = '';
     }, subMenuButtons.length * 100);
+
     subMenuVisible = false;
+
     subMenu.style.opacity = "0";
     subMenu.style.transform = "translateY(-20px)";
     setTimeout(() => {
       subMenu.style.visibility = "hidden";
       subMenu.style.display = "none";
     }, 800);
+
     // Quita la clase 'active' al botón1 cuando se contrae el submenú
     boton1.classList.remove('active');
   }
 }
+
+
 function toggleSubMenuDos() {
   const subMenuDos = document.getElementById('subMenuDos');
   const boton2 = document.getElementById('boton2');
   if (!subMenuDosVisible) {
     const buttonsHTML = `
-    <div class="metodo-pago">
-    <p id="parrafos-pago">MercadoPago</p>
-    <p id="parrafos-pago">Efectivo</p>
-    </div>
-  <div class="div-botones-submenu" data-button-number="10">
-    <button class="menu-button sub-menu-button" data-button-number="10">Doble Cuarto</button>
-    <p>$3600</p>
-    <input class="radio-button" type="radio" name="doble-cuarto" value="3600">
-    <p>$3300</p>
-    <input class="radio-button" type="radio" name="doble-cuarto" value="3300">
-    <button class="counter-button" onclick="updateCounter(10, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(10, 'increment')">+</button>
-  </div> 
-  <p id="parrafos-detalles">carne x2 - queso x2 - salsa de cebolla</p>
-  <button class="boton-extras" data-button-number="10" onclick="toggleExtras(10)">Extras</button>
-  <div class="div-extras" id="extrasList10" data-button-number="10" style="display: none;">
+
+    <div class="div-botones-submenu" data-button-number="10">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="10" style="border: none;">Doble Cuarto</button>
+  <p id="parrafos-detalles">Carne x2 - queso x2 - salsa cebolla</p>
+    <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3600</p>
+      <input class="radio-button" type="radio" name="doble-cuarto" value="3600">
+      <p>FT:$3300</p>
+      <input class="radio-button" type="radio" name="doble-cuarto" value="3300">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(10)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(10, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(10, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="11">
-    <button class="menu-button sub-menu-button" data-button-number="11">Doble Napoleon</button>
-    <p>$3600</p>
-    <input class="radio-button" type="radio" name="doble-napoleon" value="3600">
-    <p>$3300</p>
-    <input class="radio-button" type="radio" name="doble-napoleon" value="3300">
-    <button class="counter-button" onclick="updateCounter(11, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(11, 'increment')">+</button>
+</div>
+</div>
+<button class="boton-extras" data-button-number="10" onclick="toggleExtras(10)">Extras</button>
+<div class="div-extras" id="extrasList10" data-button-number="10" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(10)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="11">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="11" style="border: none;">Doble Napoleon</button>
+  <p id="parrafos-detalles">Carne x2 - queso x2 - tomate asado - oregano - mayonesa</p>
+    <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3600</p>
+      <input class="radio-button" type="radio" name="doble-napoleon" value="3600">
+      <p>FT:$3300</p>
+      <input class="radio-button" type="radio" name="doble-napoleon" value="3300">
   </div>
-  <p id="parrafos-detalles">carne x2 - queso x2 - tomate asado - oregano - mayonesa</p>
-  <button class="boton-extras" data-button-number="11" onclick="toggleExtras(11)">Extras</button>
-  <div class="div-extras" id="extrasList11" data-button-number="11" style="display: none;">
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(11, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(11, 'increment')">+</button>
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(11)">Agregar al pedido</button>
+</div>
+</div>
+<button class="boton-extras" data-button-number="11" onclick="toggleExtras(11)">Extras</button>
+<div class="div-extras" id="extrasList11" data-button-number="11" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(11)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="12">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="12" style="border: none;">Doble Magnifica</button>
+  <p id="parrafos-detalles">Carne x2 - queso - lechuga - tomate - aros de cebolla</p>
+    <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3550</p>
+      <input class="radio-button" type="radio" name="doble-magnifica" value="3550">
+      <p>FT:$3350</p>
+      <input class="radio-button" type="radio" name="doble-magnifica" value="3350">
   </div>
-  <div class="div-botones-submenu" data-button-number="12">
-    <button class="menu-button sub-menu-button" data-button-number="12">Doble Magnifica</button>
-    <p>$3550</p>
-    <input class="radio-button" type="radio" name="doble-magnifica" value="3550">
-    <p>$3350</p>
-    <input class="radio-button" type="radio" name="doble-magnifica" value="3350">
-    <button class="counter-button" onclick="updateCounter(12, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(12, 'increment')">+</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(12, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(12, 'increment')">+</button>
   </div>
-  <p id="parrafos-detalles">carne x2 - queso - lechuga - tomate - aros de cebolla</p>
-  <button class="boton-extras" data-button-number="12" onclick="toggleExtras(12)">Extras</button>
-  <div class="div-extras" id="extrasList12" data-button-number="12" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(12)">Agregar al pedido</button>
-  </div>
-  <div class="div-botones-submenu" data-button-number="13">
-    <button class="menu-button sub-menu-button" data-button-number="13">Doble Napolitano</button>
-    <p>$3550</p>
-    <input class="radio-button" type="radio" name="doble-napolitano" value="3550">
-    <p>$3350</p>
-    <input class="radio-button" type="radio" name="doble-napolitano" value="3350">
-    <button class="counter-button" onclick="updateCounter(13, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(13, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="12" onclick="toggleExtras(12)">Extras</button>
+<div class="div-extras" id="extrasList12" data-button-number="12" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(12)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="13">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="13" style="border: none;">Doble Napolitano</button>
   <p id="parrafos-detalles">carne x2 - queso x2 - jamon x2 - cebolla - tomate - ketchup</p>
-  <button class="boton-extras" data-button-number="13" onclick="toggleExtras(13)">Extras</button>
-  <div class="div-extras" id="extrasList13" data-button-number="13" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3550</p>
+      <input class="radio-button" type="radio" name="doble-napolitano" value="3550">
+      <p>FT:$3350</p>
+      <input class="radio-button" type="radio" name="doble-napolitano" value="3350">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(13)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(13, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(13, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="14">
-    <button class="menu-button sub-menu-button" data-button-number="14">Onion</button>
-    <p>$3550</p>
-    <input class="radio-button" type="radio" name="onion" value="3550">
-    <p>$3350</p>
-    <input class="radio-button" type="radio" name="onion" value="3350">
-    <button class="counter-button" onclick="updateCounter(14, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(14, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="13" onclick="toggleExtras(13)">Extras</button>
+<div class="div-extras" id="extrasList13" data-button-number="13" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(13)">Agregar al pedido</button>
+</div>
+
+
+
+<div class="div-botones-submenu" data-button-number="14">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="14" style="border: none;">Onion</button>
   <p id="parrafos-detalles">carne x2 - triple queso - cebolla caramelizada</p>
-  <button class="boton-extras" data-button-number="14" onclick="toggleExtras(14)">Extras</button>
-  <div class="div-extras" id="extrasList14" data-button-number="14" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3550</p>
+      <input class="radio-button" type="radio" name="Onion" value="3550">
+      <p>FT:$3350</p>
+      <input class="radio-button" type="radio" name="Onion" value="3350">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(14)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(14, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(14, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="15">
-    <button class="menu-button sub-menu-button" data-button-number="15">Whopper</button>
-    <p>$3600</p>
-    <input class="radio-button" type="radio" name="whopper" value="3600">
-    <p>$3300</p>
-    <input class="radio-button" type="radio" name="whopper" value="3300">
-    <button class="counter-button" onclick="updateCounter(15, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(15, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="14" onclick="toggleExtras(14)">Extras</button>
+<div class="div-extras" id="extrasList14" data-button-number="14" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(14)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="15">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="15" style="border: none;">Whopper</button>
   <p id="parrafos-detalles">carne x2 - tomate - cebolla - ketchup - mayonesa - pepinos - lechuga</p>
-  <button class="boton-extras" data-button-number="15" onclick="toggleExtras(15)">Extras</button>
-  <div class="div-extras" id="extrasList15" data-button-number="15" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3600</p>
+      <input class="radio-button" type="radio" name="whopper" value="3600">
+      <p>FT:$3300</p>
+      <input class="radio-button" type="radio" name="whopper" value="3300">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(15)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(15, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(15, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="16">
-    <button class="menu-button sub-menu-button" data-button-number="16">Duo</button> 
-    <p>$3700</p>
-    <input class="radio-button" type="radio" name="duo" value="3700">
-    <p>$3400</p>
-    <input class="radio-button" type="radio" name="duo" value="3400">
-    <button class="counter-button" onclick="updateCounter(16, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(16, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="15" onclick="toggleExtras(15)">Extras</button>
+<div class="div-extras" id="extrasList15" data-button-number="15" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(15)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="16">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="16" style="border: none;">Dúo</button>
   <p id="parrafos-detalles">carne x2 - jamon y queso x2</p>
-  <button class="boton-extras" data-button-number="16" onclick="toggleExtras(16)">Extras</button>
-  <div class="div-extras" id="extrasList16" data-button-number="16" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3700</p>
+      <input class="radio-button" type="radio" name="duo" value="3700">
+      <p>FT:$3400</p>
+      <input class="radio-button" type="radio" name="duo" value="3400">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(16)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(16, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(16, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="17">
-    <button class="menu-button sub-menu-button" data-button-number="17">Club House</button>
-    <p>$3800</p>
-    <input class="radio-button" type="radio" name="club-house" value="3800">
-    <p>$3500</p>
-    <input class="radio-button" type="radio" name="club-house" value="3500">
-    <button class="counter-button" onclick="updateCounter(17, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(17, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="16" onclick="toggleExtras(16)">Extras</button>
+<div class="div-extras" id="extrasList16" data-button-number="16" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(16)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="17">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="17" style="border: none;">Club House</button>
   <p id="parrafos-detalles">carne x2 - cebolla caramelizada - bacon - lechuga - tomate - queso</p>
-  <button class="boton-extras" data-button-number="17" onclick="toggleExtras(17)">Extras</button>
-  <div class="div-extras" id="extrasList17" data-button-number="17" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3800</p>
+      <input class="radio-button" type="radio" name="club-house" value="3800">
+      <p>FT:$3500</p>
+      <input class="radio-button" type="radio" name="club-house" value="3500">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(17)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(17, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(17, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="18">
-    <button class="menu-button sub-menu-button" data-button-number="18">BBQ</button>
-    <p>$3700</p>
-    <input class="radio-button" type="radio" name="bbq" value="3700">
-    <p>$3400</p>
-    <input class="radio-button" type="radio" name="bbq" value="3400">
-    <button class="counter-button" onclick="updateCounter(18, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(18, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="17" onclick="toggleExtras(17)">Extras</button>
+<div class="div-extras" id="extrasList17" data-button-number="17" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(17)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="18">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="18" style="border: none;">BBQ</button>
   <p id="parrafos-detalles">carne x2 - cebolla caramelizada - queso blanco - bacon - barbacoa</p>
-  <button class="boton-extras" data-button-number="18" onclick="toggleExtras(18)">Extras</button>
-  <div class="div-extras" id="extrasList18" data-button-number="18" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3700</p>
+      <input class="radio-button" type="radio" name="BBQ" value="3700">
+      <p>FT:$3400</p>
+      <input class="radio-button" type="radio" name="BBQ" value="3400">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(18)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(18, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(18, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="19">
-    <button class="menu-button sub-menu-button" data-button-number="19">Melo City</button>
-    <p>$3700</p>
-    <input class="radio-button" type="radio" name="melo-city" value="3700">
-    <p>$3400</p>
-    <input class="radio-button" type="radio" name="melo-city" value="3400">
-    <button class="counter-button" onclick="updateCounter(19, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(19, 'increment')">+</button>
+</div>
+</div>
+<button class="boton-extras" data-button-number="18" onclick="toggleExtras(18)">Extras</button>
+<div class="div-extras" id="extrasList18" data-button-number="18" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(18)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="19">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="19" style="border: none;">Melo City</button>
+  <p id="parrafos-detalles">Carnes x2 - papas pay - cheddar fundido - bacon</p>
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3700</p>
+      <input class="radio-button" type="radio" name="melo-city" value="3700">
+      <p>FT:$3400</p>
+      <input class="radio-button" type="radio" name="melo-city" value="3400">
   </div>
-  <p id="parrafos-detalles">2 carnes - papas pay - cheddar fundido - bacon</p>
-  <button class="boton-extras" data-button-number="19" onclick="toggleExtras(19)">Extras</button>
-  <div class="div-extras" id="extrasList19" data-button-number="19" style="display: none;">
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(19, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(19, 'increment')">+</button>
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(19)">Agregar al pedido</button>
-  </div>
-  <div class="div-botones-submenu" data-button-number="20">
-    <button class="menu-button sub-menu-button" data-button-number="20">Dorito</button>
-    <p>$3700</p>
-    <input class="radio-button" type="radio" name="dorito" value="3700">
-    <p>$3400</p>
-    <input class="radio-button" type="radio" name="dorito" value="3400">
-    <button class="counter-button" onclick="updateCounter(20, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(20, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="19" onclick="toggleExtras(19)">Extras</button>
+<div class="div-extras" id="extrasList19" data-button-number="19" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(19)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="20">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="20" style="border: none;">Dorito</button>
   <p id="parrafos-detalles">carne x2 - triple queso - doritos</p>
-  <button class="boton-extras" data-button-number="20" onclick="toggleExtras(20)">Extras</button>
-  <div class="div-extras" id="extrasList20" data-button-number="20" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3700</p>
+      <input class="radio-button" type="radio" name="Dorito" value="3700">
+      <p>FT:$3400</p>
+      <input class="radio-button" type="radio" name="Dorito" value="3400">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(20)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(20, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(20, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="21">
-    <button class="menu-button sub-menu-button" data-button-number="21">Baconator</button>
-    <p>$4300</p>
-    <input class="radio-button" type="radio" name="baconator" value="4300">
-    <p>$4000</p>
-    <input class="radio-button" type="radio" name="baconator" value="4000">
-    <button class="counter-button" onclick="updateCounter(21, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(21, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="20" onclick="toggleExtras(20)">Extras</button>
+<div class="div-extras" id="extrasList20" data-button-number="20" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(20)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="21">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="21" style="border: none;">Baconator</button>
   <p id="parrafos-detalles">carne x2 - cheddar fundido x2 - bacon x2</p>
-  <button class="boton-extras" data-button-number="21" onclick="toggleExtras(21)">Extras</button>
-  <div class="div-extras" id="extrasList21" data-button-number="21" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$4300</p>
+      <input class="radio-button" type="radio" name="Baconator" value="4300">
+      <p>FT:$4000</p>
+      <input class="radio-button" type="radio" name="Baconator" value="4000">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(21)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(21, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(21, 'increment')">+</button>
   </div>
-  
-  <div class="div-botones-submenu" data-button-number="22">
-    <button class="menu-button sub-menu-button" data-button-number="22">Big King</button>
-    <p>$4100</p>
-    <input class="radio-button" type="radio" name="big-king" value="4100">
-    <p>$3800</p>
-    <input class="radio-button" type="radio" name="big-king" value="3800">
-    <button class="counter-button" onclick="updateCounter(22, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(22, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="21" onclick="toggleExtras(21)">Extras</button>
+<div class="div-extras" id="extrasList21" data-button-number="21" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(21)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="22">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="22" style="border: none;">Big King</button>
   <p id="parrafos-detalles">carne x2 - lechuga x2 - cebolla x2 - pepino - queso x2 - salsa big</p>
-  <button class="boton-extras" data-button-number="22" onclick="toggleExtras(22)">Extras</button>
-  <div class="div-extras" id="extrasList22" data-button-number="22" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$4100</p>
+      <input class="radio-button" type="radio" name="Big-king" value="4100">
+      <p>FT:$3800</p>
+      <input class="radio-button" type="radio" name="Big-king" value="3800">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(22)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(22, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(22, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="23">
-    <button class="menu-button sub-menu-button" data-button-number="23">Staker</button>
-    <p>$3900</p>
-    <input class="radio-button" type="radio" name="staker" value="3900">
-    <p>$3600</p>
-    <input class="radio-button" type="radio" name="staker" value="3600">
-    <button class="counter-button" onclick="updateCounter(23, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(23, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="22" onclick="toggleExtras(22)">Extras</button>
+<div class="div-extras" id="extrasList22" data-button-number="22" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(22)">Agregar al pedido</button>
+</div>
+ 
+
+<div class="div-botones-submenu" data-button-number="23">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="23" style="border: none;">Staker</button>
   <p id="parrafos-detalles">carne x2 - queso x2 - bacon - salsa staker</p>
-  <button class="boton-extras" data-button-number="23" onclick="toggleExtras(23)">Extras</button>
-  <div class="div-extras" id="extrasList23" data-button-number="23" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3900</p>
+      <input class="radio-button" type="radio" name="Staker" value="3900">
+      <p>FT:$3600</p>
+      <input class="radio-button" type="radio" name="Staker" value="3600">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(23)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(23, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(23, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="24">
-    <button class="menu-button sub-menu-button" data-button-number="24">Mega Turbo Tasty</button> 
-    <p>$4500</p>
-    <input class="radio-button" type="radio" name="mega-turbo-tasty" value="4500">
-    <p>$4200</p>
-    <input class="radio-button" type="radio" name="mega-turbo-tasty" value="4200">
-    <button class="counter-button" onclick="updateCounter(24, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(24, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="23" onclick="toggleExtras(23)">Extras</button>
+<div class="div-extras" id="extrasList23" data-button-number="23" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(23)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="24">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="24" style="border: none;">Mega Turbo Tasty</button>
   <p id="parrafos-detalles">carne x2 - cheddar x4 - lechuga - tomate - salsa tasty x2 - bacon en tira/picado</p>
-  <button class="boton-extras" data-button-number="24" onclick="toggleExtras(24)">Extras</button>
-  <div class="div-extras" id="extrasList24" data-button-number="24" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$4500</p>
+      <input class="radio-button" type="radio" name="Mega-turbo-tasty" value="4500">
+      <p>FT:$4200</p>
+      <input class="radio-button" type="radio" name="Mega-turbo-tasty" value="4200">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(24)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(24, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(24, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="25">
-    <button class="menu-button sub-menu-button" data-button-number="25">Triple Cuarto</button>
-    <p>$4600</p>
-    <input class="radio-button" type="radio" name="triple-cuarto" value="4600">
-    <p>$4300</p>
-    <input class="radio-button" type="radio" name="triple-cuarto" value="4300">
-    <button class="counter-button" onclick="updateCounter(25, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(25, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="24" onclick="toggleExtras(24)">Extras</button>
+<div class="div-extras" id="extrasList24" data-button-number="24" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(24)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="25">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="25" style="border: none;">Triple Cuarto</button>
   <p id="parrafos-detalles">carne x3 - queso x3 - salsa de cebolla</p>
-  <button class="boton-extras" data-button-number="25" onclick="toggleExtras(25)">Extras</button>
-  <div class="div-extras" id="extrasList25" data-button-number="25" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$4600</p>
+      <input class="radio-button" type="radio" name="Triple-cuarto" value="4600">
+      <p>FT:$4300</p>
+      <input class="radio-button" type="radio" name="Triple-cuarto" value="4300">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(25)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(25, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(25, 'increment')">+</button>
   </div>
-  <div class="div-botones-submenu" data-button-number="26">
-    <button class="menu-button sub-menu-button" data-button-number="26">Triple Bacon</button>
-    <p>$4900</p>
-    <input class="radio-button" type="radio" name="triple-bacon" value="4900">
-    <p>$4600</p>
-    <input class="radio-button" type="radio" name="triple-bacon" value="4600">
-    <button class="counter-button" onclick="updateCounter(26, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(26, 'increment')">+</button>
-  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="25" onclick="toggleExtras(25)">Extras</button>
+<div class="div-extras" id="extrasList25" data-button-number="25" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(25)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="26">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="26" style="border: none;">Triple Bacon</button>
   <p id="parrafos-detalles">carne x2 - queso x3 - bacon - salsa de cebolla</p>
-  <button class="boton-extras" data-button-number="26" onclick="toggleExtras(26)">Extras</button>
-  <div class="div-extras" id="extrasList26" data-button-number="26" style="display: none;">
+      <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$4900</p>
+      <input class="radio-button" type="radio" name="Triple-bacon" value="4900">
+      <p>FT:$4600</p>
+      <input class="radio-button" type="radio" name="Triple-bacon" value="4600">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(20)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(26, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(26, 'increment')">+</button>
   </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="26" onclick="toggleExtras(26)">Extras</button>
+<div class="div-extras" id="extrasList26" data-button-number="26" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(26)">Agregar al pedido</button>
+</div>
+
+
 `;
     subMenuDos.innerHTML = buttonsHTML;
     subMenuDosVisible = true;
@@ -805,283 +1171,497 @@ function toggleSubMenuTres() {
   if (!subMenuTresVisible) {
     const buttonsHTML = `
     
-    <div class="metodo-pago">
-    <p id="parrafos-pago">MercadoPago</p>
-    <p id="parrafos-pago">Efectivo</p>
-    </div>
-<div class="div-botones-submenu" data-button-number="27">
-<button class="menu-button sub-menu-button" data-button-number="27">Papas regulares</button>
-<p>$2100</p>
-<input class="radio-button" type="radio" name="papas-regulares" value="2100">
-<p>$1800</p>
-<input class="radio-button" type="radio" name="papas-regulares" value="1800">
-<button class="counter-button" onclick="updateCounter(27, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(27, 'increment')">+</button>
-</div> 
-<p id="parrafos-detalles">papas paquete regular</p>
+    <div class="div-botones-submenu" data-button-number="27">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="27" style="border: none;">Papas regulares</button>
+  <p id="parrafos-detalles">papas paquete regular</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$2100</p>
+      <input class="radio-button" type="radio" name="papas-regulares" value="2100">
+      <p>FT:$1800</p>
+      <input class="radio-button" type="radio" name="papas-regulares" value="1800">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(27, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(27, 'increment')">+</button>
+  </div>
+</div>
+</div>
 <button class="boton-extras" data-button-number="27" onclick="toggleExtras(27)">Extras</button>
-  <div class="div-extras" id="extrasList27" data-button-number="27" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(27)">Agregar al pedido</button>
-  </div>
-<div class="div-botones-submenu" data-button-number="28">
-<button class="menu-button sub-menu-button" data-button-number="28">Papas medianas</button>
-<p>$2600</p>
-<input class="radio-button" type="radio" name="papas-medianas" value="2600">
-<p>$2300</p>
-<input class="radio-button" type="radio" name="papas-medianas" value="2300">
-<button class="counter-button" onclick="updateCounter(28, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(28, 'increment')">+</button>
+<div class="div-extras" id="extrasList27" data-button-number="27" style="display: none;">
 </div>
-<p id="parrafos-detalles">papas paquete mediano</p>
-<button class="boton-extras" data-button-number="28" onclick="toggleExtras(28)">Extras</button>
-  <div class="div-extras" id="extrasList28" data-button-number="28" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(28)">Agregar al pedido</button>
-  </div>
-<div class="div-botones-submenu" data-button-number="29">
-<button class="menu-button sub-menu-button" data-button-number="29">Papas Grandes</button>
-<p>$3000</p>
-<input class="radio-button" type="radio" name="papas-grandes" value="3000">
-<p>$2700</p>
-<input class="radio-button" type="radio" name="papas-grandes" value="2700">
-<button class="counter-button" onclick="updateCounter(29, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(29, 'increment')">+</button>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(27)">Agregar al pedido</button>
 </div>
-<p id="parrafos-detalles">papas paquete grandes</p>
-<button class="boton-extras" data-button-number="29" onclick="toggleExtras(29)">Extras</button>
-  <div class="div-extras" id="extrasList29" data-button-number="29" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(29)">Agregar al pedido</button>
-  </div>
-<div class="div-botones-submenu" data-button-number="30">
-<button class="menu-button sub-menu-button" data-button-number="30">Papas McKing</button>
-<p>$3300</p>
-<input class="radio-button" type="radio" name="papas-mcking" value="3300">
-<p>$3000</p>
-<input class="radio-button" type="radio" name="papas-mcking" value="3000">
-<button class="counter-button" onclick="updateCounter(30, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(30, 'increment')">+</button>
-</div>
-<p id="parrafos-detalles">papas - cheddar - jamon - verdeo</p>
-<button class="boton-extras" data-button-number="30" onclick="toggleExtras(30)">Extras</button>
-  <div class="div-extras" id="extrasList30" data-button-number="30" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(30)">Agregar al pedido</button>
-  </div>
-<div class="div-botones-submenu" data-button-number="31">
-<button class="menu-button sub-menu-button" data-button-number="31">Papas Solo Cheddar</button>
-<p>$3050</p>
-<input class="radio-button" type="radio" name="solo-cheddar" value="3050">
-<p>$2750</p>
-<input class="radio-button" type="radio" name="solo-cheddar" value="2750">
-<button class="counter-button" onclick="updateCounter(31, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(31, 'increment')">+</button>
-</div>
-<p id="parrafos-detalles">papas - cheddar</p>
-<button class="boton-extras" data-button-number="31" onclick="toggleExtras(31)">Extras</button>
-  <div class="div-extras" id="extrasList31" data-button-number="31" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(31)">Agregar al pedido</button>
-  </div>
-<div class="div-botones-submenu" data-button-number="32">
-<button class="menu-button sub-menu-button" data-button-number="32">Cheddar y Bacon</button>
-<p>$3300</p>
-<input class="radio-button" type="radio" name="cheddar-bacon" value="3300">
-<p>$3000</p>
-<input class="radio-button" type="radio" name="cheddar-bacon" value="3000">
-<button class="counter-button" onclick="updateCounter(32, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(32, 'increment')">+</button>
-</div>
-<p id="parrafos-detalles">papas - cheddar - bacon</p>
-<button class="boton-extras" data-button-number="32" onclick="toggleExtras(32)">Extras</button>
-  <div class="div-extras" id="extrasList32" data-button-number="32" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(32)">Agregar al pedido</button>
-  </div>
 
-<div class="div-botones-submenu" data-button-number="34">
-<button class="menu-button sub-menu-button" data-button-number="34">Papas Huevo</button>
-<p>$3300</p>
-<input class="radio-button" type="radio" name="papas-huevos" value="3300">
-<p>$3000</p>
-<input class="radio-button" type="radio" name="papas-huevo" value="3000">
-<button class="counter-button" onclick="updateCounter(34, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(34, 'increment')">+</button>
+<div class="div-botones-submenu" data-button-number="28">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="28" style="border: none;">Papas medianas</button>
+  <p id="parrafos-detalles">papas paquete mediano</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$2600</p>
+      <input class="radio-button" type="radio" name="papas-medianas" value="2600">
+      <p>FT:$2300</p>
+      <input class="radio-button" type="radio" name="papas-medianas" value="2300">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(28, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(28, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">papas - huevo frito</p>
-<button class="boton-extras" data-button-number="34" onclick="toggleExtras(34)">Extras</button>
-  <div class="div-extras" id="extrasList34" data-button-number="34" style="display: none;">
+</div>
+<button class="boton-extras" data-button-number="28" onclick="toggleExtras(28)">Extras</button>
+<div class="div-extras" id="extrasList28" data-button-number="28" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(28)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="29">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="29" style="border: none;">Papas grandes</button>
+  <p id="parrafos-detalles">papas paquete grande</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3000</p>
+      <input class="radio-button" type="radio" name="papas-grandes" value="3000">
+      <p>FT:$2700</p>
+      <input class="radio-button" type="radio" name="papas-grandes" value="2700">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(34)">Agregar al pedido</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(29, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(29, 'increment')">+</button>
   </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="29" onclick="toggleExtras(29)">Extras</button>
+<div class="div-extras" id="extrasList29" data-button-number="29" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(29)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="30">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="30" style="border: none;">Papas McKing</button>
+  <p id="parrafos-detalles">papas - cheddar - jamon - verdeo</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3300</p>
+      <input class="radio-button" type="radio" name="papas-mcking" value="3300">
+      <p>FT:$3000</p>
+      <input class="radio-button" type="radio" name="papas-mcking" value="3000">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(30, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(30, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="30" onclick="toggleExtras(30)">Extras</button>
+<div class="div-extras" id="extrasList30" data-button-number="30" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(30)">Agregar al pedido</button>
+</div>
+
+
+
+<div class="div-botones-submenu" data-button-number="31">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="31" style="border: none;">Solo cheddar</button>
+  <p id="parrafos-detalles">papas - cheddar</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3050</p>
+      <input class="radio-button" type="radio" name="papas-cheddar" value="3050">
+      <p>FT:$2750</p>
+      <input class="radio-button" type="radio" name="papas-cheddar" value="2750">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(31, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(31, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="31" onclick="toggleExtras(31)">Extras</button>
+<div class="div-extras" id="extrasList31" data-button-number="31" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(31)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="32">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="32" style="border: none;">Cheddar y bacon</button>
+  <p id="parrafos-detalles">papas - cheddar - bacon</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3300</p>
+      <input class="radio-button" type="radio" name="papas-cheddar-bacon" value="3300">
+      <p>FT:$3000</p>
+      <input class="radio-button" type="radio" name="papas-cheddar-bacon" value="3000">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(32, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(32, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="32" onclick="toggleExtras(32)">Extras</button>
+<div class="div-extras" id="extrasList32" data-button-number="32" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(32)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="33">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="33" style="border: none;">Papas huevo</button>
+  <p id="parrafos-detalles">papas - huevo frito</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3300</p>
+      <input class="radio-button" type="radio" name="papas-huevo" value="3300">
+      <p>FT:$3000</p>
+      <input class="radio-button" type="radio" name="papas-huevo" value="3000">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(33, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(33, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="33" onclick="toggleExtras(33)">Extras</button>
+<div class="div-extras" id="extrasList33" data-button-number="33" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(33)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="35">
-<button class="menu-button sub-menu-button" data-button-number="35">Papas Bajón</button>
-<p>$3900</p>
-<input class="radio-button" type="radio" name="papas-bajon" value="3900">
-<p>$3600</p>
-<input class="radio-button" type="radio" name="papas-bajon" value="3600">
-<button class="counter-button" onclick="updateCounter(35, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(35, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="35" style="border: none;">Papas bajón</button>
+  <p id="parrafos-detalles">papas - cheddar - verdeo - carne</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3900</p>
+      <input class="radio-button" type="radio" name="papas-bajon" value="3900">
+      <p>FT:$3600</p>
+      <input class="radio-button" type="radio" name="papas-bajon" value="3600">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(35, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(35, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">papas - cheddar - verdeo - carne</p>
+</div>
 <button class="boton-extras" data-button-number="35" onclick="toggleExtras(35)">Extras</button>
-  <div class="div-extras" id="extrasList35" data-button-number="35" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(35)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList35" data-button-number="35" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(35)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="36">
-<button class="menu-button sub-menu-button" data-button-number="36">Papas Nuggets</button>
-<p>$3700</p>
-<input class="radio-button" type="radio" name="papas-nuggets" value="3700">
-<p>$3400</p>
-<input class="radio-button" type="radio" name="papas-nuggets" value="3400">
-<button class="counter-button" onclick="updateCounter(36, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(36, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="36" style="border: none;">Papas nuggets</button>
+  <p id="parrafos-detalles">papas - cheddar - verdeo - jamon - nuggets</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3700</p>
+      <input class="radio-button" type="radio" name="papas-nuggets" value="3700">
+      <p>FT:$3400</p>
+      <input class="radio-button" type="radio" name="papas-nuggets" value="3400">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(36, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(36, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">papas - cheddar - verdeo - jamon - nuggets</p>
+</div>
 <button class="boton-extras" data-button-number="36" onclick="toggleExtras(36)">Extras</button>
-  <div class="div-extras" id="extrasList36" data-button-number="36" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(36)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList36" data-button-number="36" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(36)">Agregar al pedido</button>
+</div>
+
 <div class="div-botones-submenu" data-button-number="37">
-<button class="menu-button sub-menu-button" data-button-number="37">Papas Tapa Arterias</button>
-<p>$4200</p>
-<input class="radio-button" type="radio" name="papas-tapa-arterias" value="4200">
-<p>$3900</p>
-<input class="radio-button" type="radio" name="papas-tapa-arterias" value="3900">
-<button class="counter-button" onclick="updateCounter(37, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(37, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="37" style="border: none;">Papas tapa arterias</button>
+  <p id="parrafos-detalles">papas - cheddar - bacon - jamon - verdeo - huevo frito - carne</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$4200</p>
+      <input class="radio-button" type="radio" name="papas-tapa-arterias" value="4200">
+      <p>FT:$3900</p>
+      <input class="radio-button" type="radio" name="papas-tapa-arterias" value="3900">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(37, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(37, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">papas - cheddar - bacon - jamon - verdeo - huevo frito - carne</p>
+</div>
 <button class="boton-extras" data-button-number="37" onclick="toggleExtras(37)">Extras</button>
-  <div class="div-extras" id="extrasList37" data-button-number="37" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(37)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList37" data-button-number="37" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(37)">Agregar al pedido</button>
+</div>
+
 <div class="div-botones-submenu" data-button-number="38">
-<button class="menu-button sub-menu-button" data-button-number="38">Nuggets</button>
-<p>$3500</p>
-<input class="radio-button" type="radio" name="nuggets" value="3500">
-<p>$3200</p>
-<input class="radio-button" type="radio" name="nuggets" value="3200">
-<button class="counter-button" onclick="updateCounter(38, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(38, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="38" style="border: none;">Nuggets x10</button>
+  <p id="parrafos-detalles">Nuggets x10</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3500</p>
+      <input class="radio-button" type="radio" name="nuggets-10" value="3500">
+      <p>FT:$3200</p>
+      <input class="radio-button" type="radio" name="nuggets-10" value="3200">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(38, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(38, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">nuggets x10</p>
+</div>
 <button class="boton-extras" data-button-number="38" onclick="toggleExtras(38)">Extras</button>
-  <div class="div-extras" id="extrasList38" data-button-number="38" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(38)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList38" data-button-number="38" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(38)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="39">
-<button class="menu-button sub-menu-button" data-button-number="39">Aros de cebolla</button>
-<p>$3400</p>
-<input class="radio-button" type="radio" name="aros-de-cebolla" value="3400">
-<p>$3100</p>
-<input class="radio-button" type="radio" name="aros-de-cebolla" value="3100">
-<button class="counter-button" onclick="updateCounter(39, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(39, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="39" style="border: none;">Aros de cebolla x10</button>
+  <p id="parrafos-detalles">aros de cebolla x10</p>  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3400</p>
+      <input class="radio-button" type="radio" name="aros-cebolla-10" value="3400">
+      <p>FT:$3100</p>
+      <input class="radio-button" type="radio" name="aros-cebolla-10" value="3100">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(39, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(39, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">aros de cebolla x10</p>
+</div>
 <button class="boton-extras" data-button-number="39" onclick="toggleExtras(39)">Extras</button>
-  <div class="div-extras" id="extrasList39" data-button-number="39" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(39)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList39" data-button-number="39" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(39)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="40">
-<button class="menu-button sub-menu-button" data-button-number="40">Aros de cebolla</button>
-<p>$6200</p>
-<input class="radio-button" type="radio" name="aros-de-cebolla20" value="6200">
-<p>$5900</p>
-<input class="radio-button" type="radio" name="aros-de-cebolla20" value="5900">
-<button class="counter-button" onclick="updateCounter(40, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(40, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="40" style="border: none;">Aros de cebolla x20</button>
+  <p id="parrafos-detalles">aros de cebolla x20</p>  
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$6200</p>
+      <input class="radio-button" type="radio" name="aros-cebolla-20" value="6200">
+      <p>FT:$5900</p>
+      <input class="radio-button" type="radio" name="aros-cebolla-20" value="5900">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(40, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(40, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">aros de cebolla x20</p>
+</div>
 <button class="boton-extras" data-button-number="40" onclick="toggleExtras(40)">Extras</button>
-  <div class="div-extras" id="extrasList40" data-button-number="40" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(40)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList40" data-button-number="40" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(40)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="41">
-<button class="menu-button sub-menu-button" data-button-number="41">Tequeños de queso</button> 
-<p>$3450</p>
-<input class="radio-button" type="radio" name="tequeño-queso" value="3450">
-<p>$3150</p>
-<input class="radio-button" type="radio" name="tequeño-queso" value="3150">
-<button class="counter-button" onclick="updateCounter(41, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(41, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="41" style="border: none;">Tequeños de queso</button>
+  <p id="parrafos-detalles">Tequeños de queso x6</p>  
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3450</p>
+      <input class="radio-button" type="radio" name="tequeños-queso" value="3450">
+      <p>FT:$3150</p>
+      <input class="radio-button" type="radio" name="tequeños-queso" value="3150">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(41, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(41, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">tequeños de queso x6</p>
+</div>
 <button class="boton-extras" data-button-number="41" onclick="toggleExtras(41)">Extras</button>
-  <div class="div-extras" id="extrasList41" data-button-number="41" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(41)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList41" data-button-number="41" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(41)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="42">
-<button class="menu-button sub-menu-button" data-button-number="42">Tequeños de JyQ x6</button>
-<p>$3600</p>
-<input class="radio-button" type="radio" name="tequeño-jyq" value="3600">
-<p>$3300</p>
-<input class="radio-button" type="radio" name="tequeño-jyq" value="3300">
-<button class="counter-button" onclick="updateCounter(42, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(42, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="42" style="border: none;">Tequeños de JyQ</button>
+  <p id="parrafos-detalles">Tequeños de JyQ x6</p>  
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3600</p>
+      <input class="radio-button" type="radio" name="tequeños-jamon-queso" value="3600">
+      <p>FT:$3300</p>
+      <input class="radio-button" type="radio" name="tequeños-jamon-queso" value="3300">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(42, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(42, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">tequeños de jamon y queso x6</p>
+</div>
 <button class="boton-extras" data-button-number="42" onclick="toggleExtras(42)">Extras</button>
-  <div class="div-extras" id="extrasList42" data-button-number="42" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(42)">Agregar al pedido</button>
-  </div>
-<div class="div-botones-submenu" data-button-number="43">
-<button class="menu-button sub-menu-button" data-button-number="43">Tequeños Mixtos x6</button>
-<p>$3700</p>
-<input class="radio-button" type="radio" name="tequeños-mixtos" value="3700">
-<p>$3400</p>
-<input class="radio-button" type="radio" name="tequeños-mixtos" value="3400">
-<button class="counter-button" onclick="updateCounter(43, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(43, 'increment')">+</button>
+<div class="div-extras" id="extrasList42" data-button-number="42" style="display: none;">
 </div>
-<p id="parrafos-detalles">tequeños queso x3 - tequeños jamon y queso x3</p>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(42)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="43">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="43" style="border: none;">Tequeños mixtos</button>
+  <p id="parrafos-detalles">Tequeños de JyQ x3 - tequeños de queso x3</p>  
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3700</p>
+      <input class="radio-button" type="radio" name="tequeños-mixtos" value="3700">
+      <p>FT:$3400</p>
+      <input class="radio-button" type="radio" name="tequeños-mixtos" value="3400">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(43, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(43, 'increment')">+</button>
+  </div>
+</div>
+</div>
 <button class="boton-extras" data-button-number="43" onclick="toggleExtras(43)">Extras</button>
-  <div class="div-extras" id="extrasList43" data-button-number="43" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(43)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList43" data-button-number="43" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(43)">Agregar al pedido</button>
+</div>
+
 `;
     subMenuTres.innerHTML = buttonsHTML;
     subMenuTresVisible = true;
@@ -1123,78 +1703,132 @@ function toggleSubMenuCuatro() {
   if (!subMenuCuatroVisible) {
     const buttonsHTML = `
     
-    <div class="metodo-pago">
-    <p id="parrafos-pago">MercadoPago</p>
-    <p id="parrafos-pago">Efectivo</p>
-    </div>
-<div class="div-botones-submenu" data-button-number= "44">
-<button class="menu-button sub-menu-button" data-button-number=44">Super Pollo</button>
-<p>$2900</p>
-<input class="radio-button" type="radio" name="super-pollo" value="2900">
-<p>$2500</p>
-<input class="radio-button" type="radio" name="super-pollo" value="2500">
-<button class="counter-button" onclick="updateCounter(44, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(44, 'increment')">+</button>
-</div> 
-<p id="parrafos-detalles">pollo - mayonesa - cebolla - lechuga - tomate</p>
+
+    <div class="div-botones-submenu" data-button-number="44">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="44" style="border: none;">Super pollo</button>
+  <p id="parrafos-detalles">pollo - mayonesa - cebolla - lechuga - tomate</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$2900</p>
+      <input class="radio-button" type="radio" name="super-pollo" value="2900">
+      <p>FT:$2500</p>
+      <input class="radio-button" type="radio" name="super-pollo" value="2500">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(44, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(44, 'increment')">+</button>
+  </div>
+</div>
+</div>
 <button class="boton-extras" data-button-number="44" onclick="toggleExtras(44)">Extras</button>
-  <div class="div-extras" id="extrasList44" data-button-number="44" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(44)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList44" data-button-number="44" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(44)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="45">
-<button class="menu-button sub-menu-button" data-button-number="45">Pollonator</button>
-<p>$3000</p>
-<input class="radio-button" type="radio" name="pollonator" value="3000">
-<p>$2700</p>
-<input class="radio-button" type="radio" name="pollonator" value="2700">
-<button class="counter-button" onclick="updateCounter(45, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(45, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="45" style="border: none;">Pollonator</button>
+  <p id="parrafos-detalles">pollo - mayonesa - lechuga - bacon - cheddar</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3000</p>
+      <input class="radio-button" type="radio" name="pollonator" value="3000">
+      <p>FT:$2700</p>
+      <input class="radio-button" type="radio" name="pollonator" value="2700">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(45, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(45, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">pollo - mayonesa - lechuga - bacon - cheddar</p>
+</div>
 <button class="boton-extras" data-button-number="45" onclick="toggleExtras(45)">Extras</button>
-  <div class="div-extras" id="extrasList45" data-button-number="45" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(45)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList45" data-button-number="45" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(45)">Agregar al pedido</button>
+</div>
+
+
+
 <div class="div-botones-submenu" data-button-number="46">
-<button class="menu-button sub-menu-button" data-button-number="46">Big Pollo</button>
-<p>$3450</p>
-<input class="radio-button" type="radio" name="big-pollo" value="3450">
-<p>$3150</p>
-<input class="radio-button" type="radio" name="big-pollo" value="3150">
-<button class="counter-button" onclick="updateCounter(46, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(46, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="46" style="border: none;">Big pollo</button>
+  <p id="parrafos-detalles">pollo x2 - lechuga - pepino - cheddar x2 - pan x3 - cebolla </p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3450</p>
+      <input class="radio-button" type="radio" name="big-pollo" value="3450">
+      <p>FT:$3150</p>
+      <input class="radio-button" type="radio" name="big-pollo" value="3150">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(46, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(46, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">pollo x2 - lechuga - pepino - cheddar x2 - pan x3 - cebolla </p>
+</div>
 <button class="boton-extras" data-button-number="46" onclick="toggleExtras(46)">Extras</button>
-  <div class="div-extras" id="extrasList46" data-button-number="46" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(46)">Agregar al pedido</button>
-  </div>
-<div class="div-botones-submenu" data-button-number="47">
-<button class="menu-button sub-menu-button" data-button-number="47">Coronel Supremo</button>
-<p>$3250</p>
-<input class="radio-button" type="radio" name="coronel-supremo" value="3250">
-<p>$2850</p>
-<input class="radio-button" type="radio" name="coronel-supremo" value="2850">
-<button class="counter-button" onclick="updateCounter(47, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(47, 'increment')">+</button>
+<div class="div-extras" id="extrasList46" data-button-number="46" style="display: none;">
 </div>
-<p id="parrafos-detalles">pollo x2 - cheddar x2 - lechuga - mayonesa</p>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(46)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="47">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="47" style="border: none;">Coronel supremo</button>
+  <p id="parrafos-detalles">pollo x2 - cheddar x2 - lechuga - mayonesa</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$3250</p>
+      <input class="radio-button" type="radio" name="coronel-supremo" value="3250">
+      <p>FT:$2850</p>
+      <input class="radio-button" type="radio" name="coronel-supremo" value="2850">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(47, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(47, 'increment')">+</button>
+  </div>
+</div>
+</div>
 <button class="boton-extras" data-button-number="47" onclick="toggleExtras(47)">Extras</button>
-  <div class="div-extras" id="extrasList47" data-button-number="47" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(47)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList47" data-button-number="47" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(47)">Agregar al pedido</button>
+</div>
+
+
 `;
     subMenuCuatro.innerHTML = buttonsHTML;
     subMenuCuatroVisible = true;
@@ -1236,78 +1870,149 @@ function toggleSubMenuCinco() {
   if (!subMenuCincoVisible) {
     const buttonsHTML = `
     
-    <div class="metodo-pago">
-    <p id="parrafos-pago">MercadoPago</p>
-    <p id="parrafos-pago">Efectivo</p>
-    </div>
+    
 <div class="div-botones-submenu" data-button-number="48">
-<button class="menu-button sub-menu-button" data-button-number=48">Cajita McKing infantil</button>
-<p>$5200</p>
-<input class="radio-button" type="radio" name="menu-infantil" value="5200">
-<p>$4900</p>
-<input class="radio-button" type="radio" name="menu-infantil" value="4900">
-<button class="counter-button" onclick="updateCounter(48, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(48, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="48" style="border: none;">Cajita McKing infantil</button>
+  <p id="parrafos-detalles">juguete - jugo - hamburguesa con queso - porción de papas fritas</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$5200</p>
+      <input class="radio-button" type="radio" name="cajita-mcking" value="5200">
+      <p>FT:$4900</p>
+      <input class="radio-button" type="radio" name="cajita-mcking" value="4900">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(48, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(48, 'increment')">+</button>
+  </div>
+</div>
 </div>
 <button class="boton-extras" data-button-number="48" onclick="toggleExtras(48)">Extras</button>
-  <div class="div-extras" id="extrasList48" data-button-number="48" style="display: none;">
+<div class="div-extras" id="extrasList48" data-button-number="48" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(48)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="49">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="49" style="border: none;">Combo del dia</button>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>MP:$4100</p>
+      <input class="radio-button" type="radio" name="combo-del-dia" value="4100">
+      <p>FT:$3800</p>
+      <input class="radio-button" type="radio" name="combo-del-dia" value="3800">
   </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(48)">Agregar al pedido</button>
-  </div> 
- <div class="div-botones-submenu" data-button-number="49">
-  <button class="menu-button sub-menu-button" data-button-number="49">Combo del dia</button>
-  <p>$4100</p>
-  <input class="radio-button" type="radio" name="combo-del-dia" value="4100">
-  <p>$3800</p>
-  <input class="radio-button" type="radio" name="combo-del-dia" value="3800">
-  <button class="counter-button" onclick="updateCounter(49, 'decrement')">-</button>
-  <span class="counter-value">0</span>
-  <button class="counter-button" onclick="updateCounter(49, 'increment')">+</button>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(49, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(49, 'increment')">+</button>
+  </div>
+</div>
 </div>
 <button class="boton-extras" data-button-number="49" onclick="toggleExtras(49)">Extras</button>
-  <div class="div-extras" id="extrasList49" data-button-number="49" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(49)">Agregar al pedido</button>
-  </div>
-<p id="parrafos-pago">Efectivo</p>
+<div class="div-extras" id="extrasList49" data-button-number="49" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(49)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="50">
-<button class="menu-button sub-menu-button" data-button-number="50">Combo Mediano</button>
-<p>$2700</p>
-<input class="radio-button" type="radio" name="combo-mediano" value="2700">
-<button class="counter-button" onclick="updateCounter(50, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(50, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="50" style="border: none;">Combo mediano</button>
+  <p id="parrafos-detalles">pollo x2 - cheddar x2 - lechuga - mayonesa</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>FT:$2700</p>
+      <input class="radio-button" type="radio" name="combo-mediano" value="2700">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(50, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(50, 'increment')">+</button>
+  </div>
+</div>
 </div>
 <button class="boton-extras" data-button-number="50" onclick="toggleExtras(50)">Extras</button>
-  <div class="div-extras" id="extrasList50" data-button-number="50" style="display: none;">
-  </div
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(50)">Agregar al pedido</button>
-  </div>
-
-<div class="div-botones-submenu" data-button-number="51">
-<button class="menu-button sub-menu-button" data-button-number="51">Gaseosa</button>
-<p>$950</p>
-<input class="radio-button" type="radio" name="Gaseosas" value="950">
-<button class="counter-button" onclick="updateCounter(51, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(51, 'increment')">+</button>
+<div class="div-extras" id="extrasList50" data-button-number="50" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(50)">Agregar al pedido</button>
 </div>
 
+
+<div class="div-botones-submenu" data-button-number="51">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="51" style="border: none;">Gaseosa</button>
+  <p id="parrafos-detalles">Pepsi - Seven Up</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>FT:$950</p>
+      <input class="radio-button" type="radio" name="gaseosa" value="950">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(51, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(51, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="51" onclick="toggleExtras(51)">Extras</button>
+<div class="div-extras" id="extrasList51" data-button-number="51" style="display: none;">
+</div>
 <div class="div-boton-agregar">
 <button class="boton-agregar" onclick="agregarAlPedido(51)">Agregar al pedido</button>
 </div>
 
+
+
 <div class="div-botones-submenu" data-button-number="52">
-<button class="menu-button sub-menu-button" data-button-number="52">Agua</button>
-<p>$650</p>
-<input class="radio-button" type="radio" name="agua" value="650">
-<button class="counter-button" onclick="updateCounter(52, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(52, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="52" style="border: none;">Agua</button>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+      <p>FT:$650</p>
+      <input class="radio-button" type="radio" name="agua" value="650">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(52, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(52, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="52" onclick="toggleExtras(52)">Extras</button>
+<div class="div-extras" id="extrasList52" data-button-number="52" style="display: none;">
 </div>
 <div class="div-boton-agregar">
 <button class="boton-agregar" onclick="agregarAlPedido(52)">Agregar al pedido</button>
@@ -1353,81 +2058,132 @@ function toggleSubMenuMila() {
   if (!subMenuMilaVisible) {
     const buttonsHTML = `
     
-    <div class="metodo-pago">
-    <p id="parrafos-pago">MercadoPago</p>
-    <p id="parrafos-pago">Efectivo</p>
-    </div>
-  <div class="div-botones-submenu" data-button-number="53">
-    <button class="menu-button sub-menu-button" data-button-number=53">Sandwich Milanesa Completo</button>
-    <p>$6100</p>
-    <input class="radio-button" type="radio" name="milanese-completa" value="6100">
-    <p>$5900</p>
-    <input class="radio-button" type="radio" name="milanesa-completa" value="5900">
-    <button class="counter-button" onclick="updateCounter(53, 'decrement')">-</button>
-    <span class="counter-value">0</span>
-    <button class="counter-button" onclick="updateCounter(53, 'increment')">+</button>
-  </div>
+    
+<div class="div-botones-submenu" data-button-number="53">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="53" style="border: none;">Sandwich Milanesa Completo</button>
   <p id="parrafos-detalles">lechuga - tomate - jamon - muzzarella - huevo + papas medianas</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$6100</p>
+    <input class="radio-button" type="radio" name="milanesa-completa" value="6100">
+    <p>FT:$5900</p>
+    <input class="radio-button" type="radio" name="milanesa-completa" value="5900">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(53, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(53, 'increment')">+</button>
+  </div>
+</div>
+</div>
 <button class="boton-extras" data-button-number="53" onclick="toggleExtras(53)">Extras</button>
-  <div class="div-extras" id="extrasList53" data-button-number="53" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(53)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList53" data-button-number="53" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(53)">Agregar al pedido</button>
+</div>
 
 
   <p id="parrafos-pago">Al plato</p>
- <div class="div-botones-submenu" data-button-number="54">
-  <button class="menu-button sub-menu-button" data-button-number="54">Milanesa McKing</button>
-  <p>$5350</p>
-  <input class="radio-button" type="radio" name="milanesa-mcking" value="5350">
-  <p>$5050</p>
-  <input class="radio-button" type="radio" name="milanesa-mcking" value="5050">
-  <button class="counter-button" onclick="updateCounter(54, 'decrement')">-</button>
-  <span class="counter-value">0</span>
-  <button class="counter-button" onclick="updateCounter(54, 'increment')">+</button>
+
+<div class="div-botones-submenu" data-button-number="54">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="54" style="border: none;">Milanesa McKing</button>
+  <p id="parrafos-detalles">cheddar - verdeo - jamon + papas grandes</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$5350</p>
+    <input class="radio-button" type="radio" name="milanesa-mcking" value="5350">
+    <p>FT:$5050</p>
+    <input class="radio-button" type="radio" name="milanesa-mcking" value="5050">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(54, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(54, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">cheddar - verdeo - jamon + papas grandes</p>
+</div>
 <button class="boton-extras" data-button-number="54" onclick="toggleExtras(54)">Extras</button>
-  <div class="div-extras" id="extrasList54" data-button-number="54" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(54)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList54" data-button-number="54" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(54)">Agregar al pedido</button>
+</div>
+
+
 <div class="div-botones-submenu" data-button-number="55">
-<button class="menu-button sub-menu-button" data-button-number="55">Milanesa Cheddar Bacon</button>
-<p>$4150</p>
-<input class="radio-button" type="radio" name="milanesa-cheddar-bacon" value="4150">
-<p>$3850</p>
-<input class="radio-button" type="radio" name="milanesa-cheddar-bacon" value="3850">
-<button class="counter-button" onclick="updateCounter(55, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(55, 'increment')">+</button>
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="55" style="border: none;">Milanesa cheddar y bacon</button>
+  <p id="parrafos-detalles">cheddar fundido - bacon picado + papas grandes</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$4150</p>
+    <input class="radio-button" type="radio" name="milanesa-cheddar-bacon" value="4150">
+    <p>FT:$3850</p>
+    <input class="radio-button" type="radio" name="milanesa-cheddar-bacon" value="3850">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(55, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(55, 'increment')">+</button>
+  </div>
 </div>
-<p id="parrafos-detalles">cheddar fundido - bacon picado + papas grandes</p>
+</div>
 <button class="boton-extras" data-button-number="55" onclick="toggleExtras(55)">Extras</button>
-  <div class="div-extras" id="extrasList55" data-button-number="55" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(55)">Agregar al pedido</button>
-  </div>
-<div class="div-botones-submenu" data-button-number="56">
-<button class="menu-button sub-menu-button" data-button-number="56">Milanesa napolitano</button>
-<p>$4150</p>
-<input class="radio-button" type="radio" name="milanesa-napolitano" value="4150">
-<p>$3850</p>
-<input class="radio-button" type="radio" name="milanesa-napolitano" value="3850">
-<button class="counter-button" onclick="updateCounter(56, 'decrement')">-</button>
-<span class="counter-value">0</span>
-<button class="counter-button" onclick="updateCounter(56, 'increment')">+</button>
+<div class="div-extras" id="extrasList55" data-button-number="55" style="display: none;">
 </div>
-<p id="parrafos-detalles">salsa de pizza - muzzarella - jamon + papas grandes</p>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(55)">Agregar al pedido</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="56">
+<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="56" style="border: none;">Milanesa napolitano</button>
+  <p id="parrafos-detalles">salsa de pizza - muzzarella - jamon + papas grandes</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$4150</p>
+    <input class="radio-button" type="radio" name="milanesa-napolitano" value="4150">
+    <p>FT:$3850</p>
+    <input class="radio-button" type="radio" name="milanesa-napolitano" value="3850">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(56, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(56, 'increment')">+</button>
+  </div>
+</div>
+</div>
 <button class="boton-extras" data-button-number="56" onclick="toggleExtras(56)">Extras</button>
-  <div class="div-extras" id="extrasList56" data-button-number="56" style="display: none;">
-  </div>
-  <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(56)">Agregar al pedido</button>
-  </div>
+<div class="div-extras" id="extrasList56" data-button-number="56" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(56)">Agregar al pedido</button>
+</div>
+
+
 `;
     subMenuMila.innerHTML = buttonsHTML;
     subMenuMilaVisible = true;
@@ -1787,7 +2543,7 @@ function eliminarDelPedido(index) {
   localStorage.setItem('pedido', JSON.stringify(productos));
   actualizarTotal(); // Actualizar el total en la interfaz
   actualizarTotalPedido(); // Actualizar el total del pedido en localStorage
-  if(total.textContent == '$0.00') {
+  if (total.textContent == '$0.00') {
     btnHacerPedido.style.display = "none"
   }
 }

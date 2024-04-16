@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 
 body {
@@ -288,10 +289,10 @@ body {
   }
 
   .section-menu p {
-    font-size: 17px;
+    font-size: 16px;
     padding: 26px;
     margin: 0px;
-    width: 300px;
+    width: 250px;
   }
 
   .carousel-inner {
@@ -372,7 +373,7 @@ body {
   }
 
   #whatsapp-card {
-    height: 47em;
+    height: 48em;
   }
 
   .sonic {
@@ -500,7 +501,7 @@ body {
 
   .menu-button {
     cursor: pointer;
-    background-color: rgb(26 0 51);
+    background-color: rgb(38 1 75);
     transition: background-color 0.3s;
     border: 2px solid #fcb502;
     box-shadow: inset 0px 0px 15px 0px rgba(255, 199, 0, 0.75);
@@ -508,7 +509,6 @@ body {
     border-radius: 30px;
     font-family: 'Kdam Thmor Pro', sans-serif;
     color: white;
-    width: 100%;
   }
 
   .menu-button.active {
@@ -520,25 +520,20 @@ body {
     width: 330px;
   }
 
-  .div-boton-agregar {
-    margin-bottom: 23px;
-  }
-
   .div-botones-submenu {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    width: 330px;
-    border-top: solid 2px rgba(255, 199, 0, 0.75);
-    padding-top: 10px;
+    width: 316px;
+    border-top: 2px solid #fcb502;
+    padding-top: 15px;
   }
 
   .div-botones-submenu p {
-  font-size: 15px;
-  padding: 14px 0px;
-  margin: 0px;
-  width: 76px;
+    font-size: 15px;
+    padding: 14px 0px;
+    margin: 0px;
+    width: 90px;
   }
 
   .menu-button.sub-menu-button {
@@ -549,7 +544,6 @@ body {
     border-radius: 30px;
     font-family: 'Kdam Thmor Pro', sans-serif;
     color: white;
-    width: 5.5em;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -748,8 +742,10 @@ body {
   #parrafos-detalles {
     padding: 0px;
     font-size: 14px;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    width: 93%;
+    margin-top: 12px;
+    text-align: left;
+    margin-left: 9px;
   }
 
   .boton-agregar {
@@ -764,6 +760,7 @@ body {
     color: white;
     background: transparent;
     animation: shadowAnimationIn 1s infinite;
+    margin-bottom: 31px;
   }
 
   .div-extras {
@@ -849,6 +846,13 @@ body {
     }
   }
 
+  .img-producto {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+
 
 
 
@@ -870,6 +874,7 @@ body {
     width: 90px;
     height: 90px;
   }
+
 
 
   .combo {
