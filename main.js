@@ -277,7 +277,7 @@ function toggleSubMenu() {
   if (!subMenuVisible) {
     const buttonsHTML = `
   <div class="div-botones-submenu" data-button-number="1">
-    <img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+    <img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
     <div class="div-detalles-productos">
       <button class="menu-button sub-menu-button" data-button-number="1" style="border: none;">Simple</button>
       <p id="parrafos-detalles">pan - carne</p>
@@ -372,7 +372,7 @@ function toggleSubMenu() {
 
 
   <div class="div-botones-submenu" data-button-number="4">
-  <img class="img-producto" src="./magnifica.png" alt=""></img>
+  <img class="img-producto" src="./productos/magnifica.png" alt=""></img>
 
   <div class="div-detalles-productos">
     <button class="menu-button sub-menu-button" data-button-number="4" style="border: none;">Classic</button>
@@ -404,7 +404,7 @@ function toggleSubMenu() {
 
 
 <div class="div-botones-submenu" data-button-number="65">
-<img class="img-producto" src="./magnifica.png" alt=""></img>
+<img class="img-producto" src="./productos/magnifica.png" alt=""></img>
 
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="65" style="border: none;">Whopper simple</button>
@@ -436,7 +436,7 @@ function toggleSubMenu() {
 
 
 <div class="div-botones-submenu" data-button-number="66">
-<img class="img-producto" src="./magnifica.png" alt=""></img>
+<img class="img-producto" src="./productos/magnifica.png"" alt=""></img>
 
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="66" style="border: none;">Dorito simple</button>
@@ -467,7 +467,7 @@ function toggleSubMenu() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="67">
-<img class="img-producto" src="./magnifica.png" alt=""></img>
+<img class="img-producto" src="./productos/magnifica.png" alt=""></img>
 
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="67" style="border: none;">Onion Cheese Simple</button>
@@ -498,7 +498,7 @@ function toggleSubMenu() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="68">
-<img class="img-producto" src="./magnifica.png" alt=""></img>
+<img class="img-producto" src="src="./productos/magnifica.png" alt=""></img>
 
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="68" style="border: none;">Baconeitor simple</button>
@@ -530,7 +530,7 @@ function toggleSubMenu() {
 
 
 <div class="div-botones-submenu" data-button-number="69">
-<img class="img-producto" src="./magnifica.png" alt=""></img>
+<img class="img-producto" src="./productos/magnifica.png" alt=""></img>
 
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="69" style="border: none;">Club House Simple</button>
@@ -562,7 +562,7 @@ function toggleSubMenu() {
 
 
 <div class="div-botones-submenu" data-button-number="70">
-<img class="img-producto" src="./magnifica.png" alt=""></img>
+<img class="img-producto" src="./productos/magnifica.png" alt=""></img>
 
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="70" style="border: none;">BBQ simple</button>
@@ -745,7 +745,7 @@ function toggleSubMenu() {
 
 
 <div class="div-botones-submenu" data-button-number="9">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="9" style="border: none;">Completa</button>
   <p id="parrafos-detalles">carne - jamón - queso - lechuga - tomate - huevo</p>
@@ -829,7 +829,7 @@ function toggleSubMenuDos() {
     const buttonsHTML = `
 
     <div class="div-botones-submenu" data-button-number="10">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="10" style="border: none;">Doble Cuarto</button>
   <p id="parrafos-detalles">Carne x2 - queso x2 - salsa cebolla</p>
@@ -860,7 +860,7 @@ function toggleSubMenuDos() {
 
 
 <div class="div-botones-submenu" data-button-number="11">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="11" style="border: none;">Doble Napoleon</button>
   <p id="parrafos-detalles">Carne x2 - queso x2 - tomate asado - oregano - mayonesa</p>
@@ -922,7 +922,7 @@ function toggleSubMenuDos() {
 
 
 <div class="div-botones-submenu" data-button-number="13">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="13" style="border: none;">Doble Napolitano</button>
   <p id="parrafos-detalles">carne x2 - queso x2 - jamon x2 - cebolla - tomate - ketchup</p>
@@ -956,7 +956,7 @@ function toggleSubMenuDos() {
 <div class="div-botones-submenu" data-button-number="14">
 <img class="img-producto" src="./productos/onion.png" alt="onion"></img>
 <div class="div-detalles-productos">
-  <button class="menu-button sub-menu-button" data-button-number="14" style="border: none;">Onion cheese</button>
+  <button class="menu-button sub-menu-button" data-button-number="14" style="border: none;">Onion</button>
   <p id="parrafos-detalles">carne x2 - triple queso - cebolla caramelizada</p>
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
@@ -985,7 +985,7 @@ function toggleSubMenuDos() {
 
 
 <div class="div-botones-submenu" data-button-number="15">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="15" style="border: none;">Whopper</button>
   <p id="parrafos-detalles">carne x2 - tomate - cebolla - ketchup - mayonesa - pepinos - lechuga</p>
@@ -1047,7 +1047,7 @@ function toggleSubMenuDos() {
 
 
 <div class="div-botones-submenu" data-button-number="17">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="17" style="border: none;">Club House</button>
   <p id="parrafos-detalles">carne x2 - cebolla caramelizada - bacon - lechuga - tomate - queso</p>
@@ -1107,7 +1107,7 @@ function toggleSubMenuDos() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="19">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png"alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="19" style="border: none;">Melo City</button>
   <p id="parrafos-detalles">Carnes x2 - papas pay - cheddar fundido - bacon</p>
@@ -1137,7 +1137,7 @@ function toggleSubMenuDos() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="20">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="20" style="border: none;">Dorito</button>
   <p id="parrafos-detalles">carne x2 - triple queso - doritos</p>
@@ -1198,7 +1198,7 @@ function toggleSubMenuDos() {
 
 
 <div class="div-botones-submenu" data-button-number="22">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="22" style="border: none;">Big King</button>
   <p id="parrafos-detalles">carne x2 - lechuga x2 - cebolla x2 - pepino - queso x2 - salsa big</p>
@@ -1229,7 +1229,7 @@ function toggleSubMenuDos() {
  
 
 <div class="div-botones-submenu" data-button-number="23">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="23" style="border: none;">Staker</button>
   <p id="parrafos-detalles">carne x2 - queso x2 - bacon - salsa staker</p>
@@ -1260,7 +1260,7 @@ function toggleSubMenuDos() {
 
 
 <div class="div-botones-submenu" data-button-number="24">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="24" style="border: none;">Mega Turbo Tasty</button>
   <p id="parrafos-detalles">carne x2 - cheddar x4 - lechuga - tomate - salsa tasty x2 - bacon en tira/picado</p>
@@ -1610,7 +1610,7 @@ function toggleSubMenuTres() {
 
 
 <div class="div-botones-submenu" data-button-number="35">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="35" style="border: none;">Papas bajón</button>
   <p id="parrafos-detalles">papas - cheddar - verdeo - carne</p>
@@ -1701,7 +1701,7 @@ function toggleSubMenuTres() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="38">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="38" style="border: none;">Nuggets x10</button>
   <p id="parrafos-detalles">Nuggets x10</p>
@@ -1732,7 +1732,7 @@ function toggleSubMenuTres() {
 
 
 <div class="div-botones-submenu" data-button-number="39">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="39" style="border: none;">Aros de cebolla x10</button>
   <p id="parrafos-detalles">aros de cebolla x10</p>  <div class="div-precio-producto" style="    display: flex;
@@ -1762,7 +1762,7 @@ function toggleSubMenuTres() {
 
 
 <div class="div-botones-submenu" data-button-number="40">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="40" style="border: none;">Aros de cebolla x20</button>
   <p id="parrafos-detalles">aros de cebolla x20</p>  
@@ -1793,7 +1793,7 @@ function toggleSubMenuTres() {
 
 
 <div class="div-botones-submenu" data-button-number="41">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="41" style="border: none;">Tequeños de queso</button>
   <p id="parrafos-detalles">Tequeños de queso x6</p>  
@@ -1824,7 +1824,7 @@ function toggleSubMenuTres() {
 
 
 <div class="div-botones-submenu" data-button-number="42">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="42" style="border: none;">Tequeños de JyQ</button>
   <p id="parrafos-detalles">Tequeños de JyQ x6</p>  
@@ -1855,7 +1855,7 @@ function toggleSubMenuTres() {
 
 
 <div class="div-botones-submenu" data-button-number="43">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="43" style="border: none;">Tequeños mixtos</button>
   <p id="parrafos-detalles">Tequeños de JyQ x3 - tequeños de queso x3</p>  
@@ -1990,7 +1990,7 @@ function toggleSubMenuCuatro() {
 
 
 <div class="div-botones-submenu" data-button-number="46">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="46" style="border: none;">Big pollo</button>
   <p id="parrafos-detalles">pollo x2 - lechuga - pepino - cheddar x2 - pan x3 - cebolla </p>
@@ -2094,7 +2094,7 @@ function toggleSubMenuCinco() {
     
     
 <div class="div-botones-submenu" data-button-number="48">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="48" style="border: none;">Cajita McKing infantil</button>
   <p id="parrafos-detalles">juguete - jugo - hamburguesa con queso - porción de papas fritas</p>
@@ -2125,7 +2125,7 @@ function toggleSubMenuCinco() {
 
 
 <div class="div-botones-submenu" data-button-number="49">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="49" style="border: none;">Combo del dia</button>
   <div class="div-precio-producto" style="    display: flex;
@@ -2214,7 +2214,7 @@ function toggleSubMenuCinco() {
 
 
 <div class="div-botones-submenu" data-button-number="52">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="52" style="border: none;">Agua</button>
   <div class="div-precio-producto" style="    display: flex;
@@ -2284,7 +2284,7 @@ function toggleSubMenuMila() {
     
     
 <div class="div-botones-submenu" data-button-number="53">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="53" style="border: none;">Sandwich Milanesa Completo</button>
   <p id="parrafos-detalles">lechuga - tomate - jamon - muzzarella - huevo + papas medianas</p>
@@ -2314,7 +2314,7 @@ function toggleSubMenuMila() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="60">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="60" style="border: none;">Krilin</button>
   <p id="parrafos-detalles">lechuga - tomate</p>
@@ -2344,7 +2344,7 @@ function toggleSubMenuMila() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="61">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="61" style="border: none;">Gohan</button>
   <p id="parrafos-detalles">lechuga - tomate - jamon - queso - huevo</p>
@@ -2374,7 +2374,7 @@ function toggleSubMenuMila() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="62">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="62" style="border: none;">Goten</button>
   <p id="parrafos-detalles">Cheddar fundido - bacon - huevo</p>
@@ -2407,7 +2407,7 @@ function toggleSubMenuMila() {
   <p id="parrafos-pago">Al plato</p>
 
 <div class="div-botones-submenu" data-button-number="54">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="54" style="border: none;">Milanesa McKing</button>
   <p id="parrafos-detalles">cheddar - verdeo - jamon + papas grandes</p>
@@ -2438,7 +2438,7 @@ function toggleSubMenuMila() {
 
 
 <div class="div-botones-submenu" data-button-number="55">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="55" style="border: none;">Milanesa cheddar y bacon</button>
   <p id="parrafos-detalles">cheddar fundido - bacon picado + papas grandes</p>
@@ -2468,7 +2468,7 @@ function toggleSubMenuMila() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="56">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="56" style="border: none;">Milanesa napolitano</button>
   <p id="parrafos-detalles">salsa de pizza - muzzarella - jamon + papas grandes</p>
@@ -2542,7 +2542,7 @@ function toggleSubMenuLomito() {
     
     
 <div class="div-botones-submenu" data-button-number="58">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="58" style="border: none;">ShengLomito</button>
   <p id="parrafos-detalles">lechuga - tomate - jamon - queso - huevo</p>
@@ -2573,7 +2573,7 @@ function toggleSubMenuLomito() {
 
 
 <div class="div-botones-submenu" data-button-number="59">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="59" style="border: none;">Lomito Onión</button>
   <p id="parrafos-detalles">Muzzarella - cebolla salteada - orégano</p>
@@ -2648,7 +2648,7 @@ function toggleSubMenuArrollado() {
     
     
 <div class="div-botones-submenu" data-button-number="63">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="63" style="border: none;">Crispy Bacon</button>
   <p id="parrafos-detalles">bacon - pollo frito - tomate - lechuga - mayonesa - cheddar</p>
@@ -2679,7 +2679,7 @@ function toggleSubMenuArrollado() {
 
 
 <div class="div-botones-submenu" data-button-number="64">
-<img class="img-producto" src="./magnifica.png" alt="magnifica"></img>
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="64" style="border: none;">Americano</button>
   <p id="parrafos-detalles">Huevo revuelto - cheddar - carne</p>
