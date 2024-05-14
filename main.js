@@ -133,7 +133,7 @@ function toggleComo() {
     const buttonsHTML = `
       <div class="div-pasos">
           <div class="div-texto-pasos">
-              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 1:</b> <br>
+              <p id="pasos"> <b>Paso 1:</b> <br>
               Tocar el boton "Menú".</p>
           </div>
           <img class="img-pasos" src="./menu.png" alt="menu" style="width: 100px"></img>
@@ -141,14 +141,15 @@ function toggleComo() {
       
       <div class="div-pasos">
           <div class="div-texto-pasos">
-              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 2:</b> <br>
+              <p id="pasos"> <b>Paso 2:</b> <br>
               Selecciona el submenu que desees.</p>
           </div>
           <img class="img-pasos" src="./submenus.png" alt="submenu" style="width: 100px"></img>
       </div>
+
       <div class="div-pasos">
           <div class="div-texto-pasos">
-              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 3:</b> <br>
+              <p id="pasos"> <b>Paso 3:</b> <br>
               a) Selecciona el producto que desees y su cantidad.<br>
               b) También puedes seleccionar los extras que quieras.<br>
               c) Luego agrega el producto al pedido, con el boton "Agregar al pedido".
@@ -156,24 +157,27 @@ function toggleComo() {
           </div>
           <img class="img-pasos" src="./seleccion-menu.png" alt="seleccion menu" style="width: 100px"></img>
       </div>
+
       <div class="div-pasos">
           <div class="div-texto-pasos">
-              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 4:</b> <br>
+              <p id="pasos"> <b>Paso 4:</b> <br>
               Al agregar vas a ver, el total del pedido, y el boton de tu pedido, desde el cual vas a poder ver tu pedido actual y eliminar algun producto si es necesario.<br>
               </p>
           </div>
           <img class="img-pasos" src="./tupedido.png" alt="pedido" style="width: 100px"></img>
       </div>
+
       <div class="div-pasos">
           <div class="div-texto-pasos">
-              <p class="pasos" style="margin-top: 0px; font-size: 12px;"> <b>Paso 5:</b> <br>
+              <p id="pasos"> <b>Paso 5:</b> <br>
               Al agregar tambien va a aparecer un boton de "Hacer pedido", el cual vamos a tocar para ir a whatsapp directamente.<br>
               </p>
           </div>
           <img class="img-pasos" src="./hacerpedido.png" alt="hacer pedido" style="width: 100px"></img>
       </div>
+
       <div class="div-pasos">
-              <p class="pasos" style="width: 300px; font-size: 12px;"> <b>Paso 6:</b> <br>
+              <p id="pasos"> <b>Paso 6:</b> <br>
               Finalmente en whatsapp, enviaremos el mensaje con todo nuestro pedido detallado.<br>
               * Nombre, Precio total y cantidad de cada producto. <br>
               * Precio total del pedido.
