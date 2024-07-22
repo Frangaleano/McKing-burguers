@@ -503,7 +503,7 @@ function toggleSubMenu() {
 </div>
 
 <div class="div-botones-submenu" data-button-number="68">
-<img class="img-producto" src="src="./productos/magnifica.png" alt=""></img>
+<img class="img-producto" src="./productos/magnifica.png" alt=""></img>
 
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="68" style="border: none;">Baconeitor simple</button>
