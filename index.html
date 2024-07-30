@@ -45,7 +45,8 @@
   <button id="hacerPedidoButton" class="boton-pedido" onclick=" irAContacto()" style="display: none;">Hacer
     Pedido</button>
 
-  <button id="tuPedidoBtn" class="boton-pedido" style="display: none;" onclick="toggleDropdown()">Tu Pedido
+  <button id="tuPedidoBtn" class="boton-pedido" style="display: none;" onclick="toggleDropdown()">
+    <img class="carrito" src="./icono-carrito.png" alt="carrito">
     <span id="flecha" class="flecha-abajo"></span>
   </button>
 
@@ -81,7 +82,7 @@
 
         </div>
       </div>
-      
+
       <p>Encontralo en el menu: bebidas/otros</p>
 
       <button id="boton-como" style="margin-top: 30px;" onclick="toggleComo()">¿Como utilizo el menú?
@@ -91,7 +92,7 @@
 
       <h2 id="menu-title" onclick="toggleMenuSection()">Menú</h2>
 
-      
+
       <p id="parrafo-menu">Podes realizar tu pedido haciendo click en el boton Menú</p>
 
       <div class="menu-section" id="menu-section">
@@ -124,12 +125,14 @@
           <div id="subMenuCinco" class="sub-menu-cinco">
           </div>
 
-          <button class="menu-button main-menu-button" id="botonLomito" onclick="toggleSubMenuLomito()">Sanguche de Lomito</button>
+          <button class="menu-button main-menu-button" id="botonLomito" onclick="toggleSubMenuLomito()">Sanguche de
+            Lomito</button>
           <div id="subMenuLomito" class="sub-menu-Lomito">
           </div>
 
 
-          <button class="menu-button main-menu-button" id="botonArrollado" onclick="toggleSubMenuArrollado()">Arrollados</button>
+          <button class="menu-button main-menu-button" id="botonArrollado"
+            onclick="toggleSubMenuArrollado()">Arrollados</button>
           <div id="subMenuArrollado" class="sub-menu-Arrollado">
           </div>
 
@@ -144,7 +147,8 @@
           <p id="parrafos-detalles" style="
     text-align: center">Linea premium solo disponibles en sucursales Vlla Martelli y Malaver</p>
 
-          <button class="menu-button main-menu-button" id="botonPremium" onclick="toggleSubMenuPremium()">Linea Premium</button>
+          <button class="menu-button main-menu-button" id="botonPremium" onclick="toggleSubMenuPremium()">Linea
+            Premium</button>
           <div id="subMenuPremium" class="sub-menu-premium">
           </div>
 
@@ -219,6 +223,29 @@
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="div-texto-ft">
+      <a class="anclas-ft" href="#nosotros">Nosotros</a>
+      <a class="anclas-ft" href="#menu">Menú</a>
+      <a class="anclas-ft" href="#contacto">Contacto</a>
+    </div>
+
+    <div class="texto-ft">
+      <p class="parrafo-ft">Todos los derechos reservados</p>
+      <p class="parrafo-ft">Mc-King Burguers S.A.</p>
+    </div>
+
+    <div class="botones-ft">
+      <a class="instagram" href="https://www.instagram.com/mckingburguers/" target="_blank">
+        <img class="icono-ft" src="./instagram.svg" alt="instagram">
+      </a>
+      <a class="facebook" style="background-color: #0165E1;" href="https://www.facebook.com/mckingburguers/"
+        target="_blank">
+        <img class="icono-facebook" src="./icono-facebook.png" alt="facebook">
+      </a>
+    </div>
+  </footer>
 
   <script src="./main.js"></script>
 </body>

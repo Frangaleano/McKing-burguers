@@ -153,7 +153,7 @@ function toggleComo() {
               <p id="pasos"> <b>Paso 3:</b> <br>
               a) Selecciona el producto que desees y su cantidad.<br>
               b) También puedes seleccionar los extras que quieras.<br>
-              c) Luego agrega el producto al pedido, con el boton "Agregar al pedido".
+              c) Luego agrega el producto al pedido, con el boton "Agregar al carrito".
               </p>
           </div>
           <img class="img-pasos" src="./seleccion-menu.png" alt="seleccion menu" style="width: 100px"></img>
@@ -308,7 +308,7 @@ function toggleSubMenu() {
   <div class="div-extras" id="extrasList1" data-button-number="1" style="display: none;">
   </div>
   <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(1)">Agregar al pedido</button>
+    <button class="boton-agregar" onclick="agregarAlPedido(1)">Agregar al carrito</button>
   </div>
 
 
@@ -339,7 +339,7 @@ function toggleSubMenu() {
   <div class="div-extras" id="extrasList2" data-button-number="2" style="display: none;">
   </div>
   <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(2)">Agregar al pedido</button>
+    <button class="boton-agregar" onclick="agregarAlPedido(2)">Agregar al carrito</button>
   </div>
 
 
@@ -372,7 +372,7 @@ function toggleSubMenu() {
   <div class="div-extras" id="extrasList3" data-button-number="3" style="display: none;">
   </div>
   <div class="div-boton-agregar">
-    <button class="boton-agregar" onclick="agregarAlPedido(3)">Agregar al pedido</button>
+    <button class="boton-agregar" onclick="agregarAlPedido(3)">Agregar al carrito</button>
   </div>
 
 
@@ -404,7 +404,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList4" data-button-number="4" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-  <button class="boton-agregar" onclick="agregarAlPedido(4)">Agregar al pedido</button>
+  <button class="boton-agregar" onclick="agregarAlPedido(4)">Agregar al carrito</button>
 </div>
 
 
@@ -436,7 +436,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList65" data-button-number="65" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(65)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(65)">Agregar al carrito</button>
 </div>
 
 
@@ -468,7 +468,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList66" data-button-number="66" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(66)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(66)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="67">
@@ -499,7 +499,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList67" data-button-number="67" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(67)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(67)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="68">
@@ -530,7 +530,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList68" data-button-number="68" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(68)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(68)">Agregar al carrito</button>
 </div>
 
 
@@ -562,7 +562,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList69" data-button-number="69" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(69)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(69)">Agregar al carrito</button>
 </div>
 
 
@@ -594,7 +594,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList70" data-button-number="70" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(70)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(70)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="5">
@@ -624,7 +624,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList5" data-button-number="5" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(5)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(5)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="6">
@@ -654,7 +654,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList6" data-button-number="6" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(6)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(6)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="7">
@@ -684,7 +684,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList7" data-button-number="7" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(7)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(7)">Agregar al carrito</button>
 </div>
 
 
@@ -715,7 +715,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList8" data-button-number="8" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(8)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(8)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="57">
@@ -745,7 +745,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList57" data-button-number="57" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(57)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(57)">Agregar al carrito</button>
 </div>
 
 
@@ -776,7 +776,7 @@ function toggleSubMenu() {
 <div class="div-extras" id="extrasList9" data-button-number="9" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(9)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(9)">Agregar al carrito</button>
 </div>
 
 
@@ -860,7 +860,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList10" data-button-number="10" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(10)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(10)">Agregar al carrito</button>
 </div>
 
 
@@ -891,7 +891,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList11" data-button-number="11" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(11)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(11)">Agregar al carrito</button>
 </div>
 
 
@@ -922,7 +922,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList12" data-button-number="12" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(12)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(12)">Agregar al carrito</button>
 </div>
 
 
@@ -953,7 +953,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList13" data-button-number="13" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(13)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(13)">Agregar al carrito</button>
 </div>
 
 
@@ -985,7 +985,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList14" data-button-number="14" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(14)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(14)">Agregar al carrito</button>
 </div>
 
 
@@ -1016,7 +1016,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList15" data-button-number="15" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(15)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(15)">Agregar al carrito</button>
 </div>
 
 
@@ -1047,7 +1047,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList16" data-button-number="16" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(16)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(16)">Agregar al carrito</button>
 </div>
 
 
@@ -1078,7 +1078,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList17" data-button-number="17" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(17)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(17)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="18">
@@ -1108,7 +1108,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList18" data-button-number="18" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(18)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(18)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="19">
@@ -1138,7 +1138,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList19" data-button-number="19" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(19)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(19)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="20">
@@ -1168,7 +1168,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList20" data-button-number="20" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(20)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(20)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="21">
@@ -1198,7 +1198,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList21" data-button-number="21" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(21)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(21)">Agregar al carrito</button>
 </div>
 
 
@@ -1229,7 +1229,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList22" data-button-number="22" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(22)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(22)">Agregar al carrito</button>
 </div>
  
 
@@ -1260,7 +1260,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList23" data-button-number="23" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(23)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(23)">Agregar al carrito</button>
 </div>
 
 
@@ -1291,7 +1291,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList24" data-button-number="24" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(24)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(24)">Agregar al carrito</button>
 </div>
 
 
@@ -1322,7 +1322,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList25" data-button-number="25" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(25)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(25)">Agregar al carrito</button>
 </div>
 
 
@@ -1353,7 +1353,7 @@ function toggleSubMenuDos() {
 <div class="div-extras" id="extrasList26" data-button-number="26" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(26)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(26)">Agregar al carrito</button>
 </div>
 
 
@@ -1425,7 +1425,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList27" data-button-number="27" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(27)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(27)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="28">
@@ -1455,7 +1455,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList28" data-button-number="28" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(28)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(28)">Agregar al carrito</button>
 </div>
 
 
@@ -1486,7 +1486,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList29" data-button-number="29" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(29)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(29)">Agregar al carrito</button>
 </div>
 
 
@@ -1517,7 +1517,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList30" data-button-number="30" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(30)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(30)">Agregar al carrito</button>
 </div>
 
 
@@ -1549,7 +1549,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList31" data-button-number="31" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(31)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(31)">Agregar al carrito</button>
 </div>
 
 
@@ -1580,7 +1580,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList32" data-button-number="32" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(32)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(32)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="33">
@@ -1610,7 +1610,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList33" data-button-number="33" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(33)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(33)">Agregar al carrito</button>
 </div>
 
 
@@ -1641,7 +1641,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList35" data-button-number="35" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(35)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(35)">Agregar al carrito</button>
 </div>
 
 
@@ -1672,7 +1672,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList36" data-button-number="36" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(36)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(36)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="37">
@@ -1702,7 +1702,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList37" data-button-number="37" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(37)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(37)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="38">
@@ -1732,7 +1732,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList38" data-button-number="38" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(38)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(38)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="91">
@@ -1762,7 +1762,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList91" data-button-number="91" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(91)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(91)">Agregar al carrito</button>
 </div>
 
 
@@ -1792,7 +1792,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList39" data-button-number="39" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(39)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(39)">Agregar al carrito</button>
 </div>
 
 
@@ -1823,7 +1823,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList40" data-button-number="40" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(40)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(40)">Agregar al carrito</button>
 </div>
 
 
@@ -1854,7 +1854,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList41" data-button-number="41" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(41)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(41)">Agregar al carrito</button>
 </div>
 
 
@@ -1885,7 +1885,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList42" data-button-number="42" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(42)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(42)">Agregar al carrito</button>
 </div>
 
 
@@ -1916,7 +1916,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList43" data-button-number="43" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(43)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(43)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="90">
@@ -1946,7 +1946,7 @@ function toggleSubMenuTres() {
 <div class="div-extras" id="extrasList90" data-button-number="90" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(90)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(90)">Agregar al carrito</button>
 </div>
 
 `;
@@ -2018,7 +2018,7 @@ function toggleSubMenuCuatro() {
 <div class="div-extras" id="extrasList44" data-button-number="44" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(44)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(44)">Agregar al carrito</button>
 </div>
 
 
@@ -2049,7 +2049,7 @@ function toggleSubMenuCuatro() {
 <div class="div-extras" id="extrasList45" data-button-number="45" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(45)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(45)">Agregar al carrito</button>
 </div>
 
 
@@ -2081,7 +2081,7 @@ function toggleSubMenuCuatro() {
 <div class="div-extras" id="extrasList46" data-button-number="46" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(46)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(46)">Agregar al carrito</button>
 </div>
 
 
@@ -2112,7 +2112,7 @@ function toggleSubMenuCuatro() {
 <div class="div-extras" id="extrasList47" data-button-number="47" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(47)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(47)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="70">
@@ -2142,7 +2142,7 @@ function toggleSubMenuCuatro() {
 <div class="div-extras" id="extrasList70" data-button-number="70" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(70)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(70)">Agregar al carrito</button>
 </div>
 
 `;
@@ -2214,7 +2214,7 @@ function toggleSubMenuCinco() {
 <div class="div-extras" id="extrasList48" data-button-number="48" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(48)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(48)">Agregar al carrito</button>
 </div>
 
 
@@ -2244,7 +2244,7 @@ function toggleSubMenuCinco() {
 <div class="div-extras" id="extrasList49" data-button-number="49" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(49)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(49)">Agregar al carrito</button>
 </div>
 
 
@@ -2273,7 +2273,7 @@ function toggleSubMenuCinco() {
 <div class="div-extras" id="extrasList50" data-button-number="50" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(50)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(50)">Agregar al carrito</button>
 </div>
 
 
@@ -2302,7 +2302,7 @@ function toggleSubMenuCinco() {
 <div class="div-extras" id="extrasList51" data-button-number="51" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(51)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(51)">Agregar al carrito</button>
 </div>
 
 
@@ -2331,7 +2331,7 @@ function toggleSubMenuCinco() {
 <div class="div-extras" id="extrasList52" data-button-number="52" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(52)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(52)">Agregar al carrito</button>
 </div>
 `;
     subMenuCinco.innerHTML = buttonsHTML;
@@ -2404,7 +2404,7 @@ function toggleSubMenuMila() {
 <div class="div-extras" id="extrasList53" data-button-number="53" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(53)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(53)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="60">
@@ -2434,7 +2434,7 @@ function toggleSubMenuMila() {
 <div class="div-extras" id="extrasList60" data-button-number="60" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(60)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(60)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="61">
@@ -2464,7 +2464,7 @@ function toggleSubMenuMila() {
 <div class="div-extras" id="extrasList61" data-button-number="61" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(61)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(61)">Agregar al carrito</button>
 </div>
 
 
@@ -2495,7 +2495,7 @@ function toggleSubMenuMila() {
 <div class="div-extras" id="extrasList62" data-button-number="62" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(62)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(62)">Agregar al carrito</button>
 </div>
 
 
@@ -2528,7 +2528,7 @@ function toggleSubMenuMila() {
 <div class="div-extras" id="extrasList54" data-button-number="54" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(54)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(54)">Agregar al carrito</button>
 </div>
 
 
@@ -2559,7 +2559,7 @@ function toggleSubMenuMila() {
 <div class="div-extras" id="extrasList55" data-button-number="55" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(55)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(55)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="56">
@@ -2589,7 +2589,7 @@ function toggleSubMenuMila() {
 <div class="div-extras" id="extrasList56" data-button-number="56" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(56)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(56)">Agregar al carrito</button>
 </div>
 
 
@@ -2664,7 +2664,7 @@ function toggleSubMenuLomito() {
 <div class="div-extras" id="extrasList58" data-button-number="58" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(58)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(58)">Agregar al carrito</button>
 </div>
 
 
@@ -2695,7 +2695,7 @@ function toggleSubMenuLomito() {
 <div class="div-extras" id="extrasList59" data-button-number="59" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(59)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(59)">Agregar al carrito</button>
 </div>
 
 `;
@@ -2770,7 +2770,7 @@ function toggleSubMenuArrollado() {
 <div class="div-extras" id="extrasList63" data-button-number="63" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(63)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(63)">Agregar al carrito</button>
 </div>
 
 
@@ -2801,7 +2801,7 @@ function toggleSubMenuArrollado() {
 <div class="div-extras" id="extrasList64" data-button-number="64" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(64)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(64)">Agregar al carrito</button>
 </div>
 
 `;
@@ -2875,7 +2875,7 @@ function toggleSubMenuPremium() {
 <div class="div-extras" id="extrasList80" data-button-number="80" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(80)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(80)">Agregar al carrito</button>
 </div>
 
 
@@ -2906,7 +2906,7 @@ function toggleSubMenuPremium() {
 <div class="div-extras" id="extrasList81" data-button-number="81" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(81)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(81)">Agregar al carrito</button>
 </div>
 
 <div class="div-botones-submenu" data-button-number="82">
@@ -2936,7 +2936,7 @@ function toggleSubMenuPremium() {
 <div class="div-extras" id="extrasList82" data-button-number="82" style="display: none;">
 </div>
 <div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(82)">Agregar al pedido</button>
+<button class="boton-agregar" onclick="agregarAlPedido(82)">Agregar al carrito</button>
 </div>
 
 <div class="div-detalles-premium">
@@ -3248,7 +3248,7 @@ function agregarAlPedido(buttonNumber) {
   const itemNameElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] .menu-button`);
   const selectedInputElement = document.querySelector(`.div-botones-submenu[data-button-number="${buttonNumber}"] input:checked`);
   if (!itemNameElement || !selectedInputElement) {
-    console.error('No se encontraron elementos necesarios para agregar al pedido');
+    console.error('No se encontraron elementos necesarios para Agregar al carrito');
     return;
   }
   const itemName = itemNameElement.textContent;
