@@ -90,9 +90,8 @@
       <div id="como" class="como">
       </div>
 
-      <h2 id="menu-title">Menú</h2>
+      <h2 id="menu-title" onclick="toggleMenuSection()">Menú</h2>
 
-      <!--onclick="toggleMenuSection()"-->
 
       <p id="parrafo-menu">Podes realizar tu pedido haciendo click en el boton Menú</p>
 
@@ -117,6 +116,14 @@
           <div id="subMenuTres" class="sub-menu-tres">
           </div>
 
+          <button class="menu-button main-menu-button" id="botonJr" onclick="toggleSubMenuJr()">Linea Junior</button>
+          <div id="subMenuJr" class="sub-menu-jr">
+          </div>
+
+          <button class="menu-button main-menu-button" id="botonPromos" onclick="toggleSubMenuPromos()">Promociones</button>
+          <div id="subMenuPromos" class="sub-menu-promos">
+          </div>
+
           <button class="menu-button main-menu-button" id="boton4" onclick="toggleSubMenuCuatro()">Linea Pollo</button>
           <div id="subMenuCuatro" class="sub-menu-cuatro">
           </div>
@@ -126,16 +133,12 @@
           <div id="subMenuCinco" class="sub-menu-cinco">
           </div>
 
-          <button class="menu-button main-menu-button" id="botonLomito" onclick="toggleSubMenuLomito()">Sanguche de
+          <button class="menu-button main-menu-button" id="botonLomito" onclick="toggleSubMenuLomito()">Sanguches de
             Lomito</button>
           <div id="subMenuLomito" class="sub-menu-Lomito">
           </div>
 
 
-          <button class="menu-button main-menu-button" id="botonArrollado"
-            onclick="toggleSubMenuArrollado()">Arrollados</button>
-          <div id="subMenuArrollado" class="sub-menu-Arrollado">
-          </div>
 
 
           <p id="parrafos-detalles" style="
