@@ -858,6 +858,75 @@ body {
     filter: drop-shadow(2px 4px 6px black);
   }
 
+  .footer {
+    height: 120px;
+    border-top: 2px solid white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  .div-texto-ft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .anclas-ft {
+    text-decoration: underline; /* Asegurarse de que el enlace esté subrayado */
+    text-decoration-color: #fcb502; /* Cambiar el color de la línea */
+    text-underline-offset: 5px;
+    color: #f9f9f9;
+    font-size: 18px;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+  }
+
+  .botones-ft {
+    display: flex;
+    flex-direction: column;
+    height: 92px;
+    gap: 5px;
+  }
+
+  .icono-ft {
+    width: 40px;
+    height: 25px;
+  }
+
+  .instagram {
+    background-color: deeppink;
+    border-radius: 30px;
+    opacity: 60%;
+  }
+
+
+  .facebook {
+    border-radius: 30px;
+    opacity: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icono-facebook {
+    width: 26px;
+    height: 23px;
+  }
+
+  .texto-ft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .parrafo-ft {
+    margin: 0px;
+    font-size: 14px;
+  }
+
 }
 
 @media (min-width: 450px) {
