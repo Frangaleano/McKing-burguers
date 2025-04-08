@@ -237,7 +237,7 @@ body {
 
   .carousel {
     display: flex;
-    width: 263px;
+    width: 206px;
     overflow: hidden;
     flex-direction: row;
     align-items: center;
@@ -373,7 +373,7 @@ body {
   }
 
   #whatsapp-card {
-    height: 48em;
+    height: 44em;
   }
 
   .sonic {

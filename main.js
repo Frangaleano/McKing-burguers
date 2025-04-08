@@ -27,7 +27,7 @@ window.addEventListener('load', function () {
     if (slideWidth === undefined) {
       slideWidth = images[0].clientWidth;
     }
-    carousel.style.transition = 'transform 0.5s ease-in-out';
+    carousel.style.transition = 'transform 1s ease-in-out';
     carousel.style.transform = `translateX(${-slideWidth * counter}px)`;
     counter = (counter + 1) % slideCount;
   }
@@ -36,7 +36,7 @@ window.addEventListener('load', function () {
   carousel.style.transform = `translateX(0)`;
 
   // Iniciar el carousel automáticamente
-  setInterval(nextSlide, 1500);
+  setInterval(nextSlide, 3000);
 });
 
 let currentIndex = 0;
