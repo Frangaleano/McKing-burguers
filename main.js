@@ -290,10 +290,10 @@ function toggleSubMenu() {
       <div class="div-precio-producto" style="    display: flex;
         align-items: center;
         flex-direction: row;">
-          <p>MP:$4477</p>
-          <input class="radio-button" type="radio" name="Simple" value="4477">
-          <p>FT:$4577</p>
-          <input class="radio-button" type="radio" name="Simple" value="4577">
+          <p>MP:$6050</p>
+          <input class="radio-button" type="radio" name="Simple" value="6050">
+          <p>FT:$5000</p>
+          <input class="radio-button" type="radio" name="Simple" value="5000">
       </div>
       <div style="    display: flex;
         align-items: center;
@@ -321,10 +321,10 @@ function toggleSubMenu() {
       <div class="div-precio-producto" style="    display: flex;
         align-items: center;
         flex-direction: row;">
-          <p>MP:$4840</p>
-          <input class="radio-button" type="radio" name="queso simple" value="4840">
-          <p>FT:$4640</p>
-          <input class="radio-button" type="radio" name="queso simple" value="4640">
+          <p>MP:$6534</p>
+          <input class="radio-button" type="radio" name="queso simple" value="6534">
+          <p>FT:$5400</p>
+          <input class="radio-button" type="radio" name="queso simple" value="5400">
       </div>
       <div style="    display: flex;
         align-items: center;
@@ -354,10 +354,10 @@ function toggleSubMenu() {
       <div class="div-precio-producto" style="    display: flex;
         align-items: center;
         flex-direction: row;">
-          <p>MP:$5082</p>
-          <input class="radio-button" type="radio" name="Napoleon" value="5082">
-          <p>FT:$4882</p>
-          <input class="radio-button" type="radio" name="Napoleon" value="4882">
+          <p>MP:$6776</p>
+          <input class="radio-button" type="radio" name="Napoleon" value="6776">
+          <p>FT:$5600</p>
+          <input class="radio-button" type="radio" name="Napoleon" value="5600">
       </div>
       <div style="    display: flex;
         align-items: center;
@@ -386,10 +386,10 @@ function toggleSubMenu() {
     <div class="div-precio-producto" style="    display: flex;
       align-items: center;
       flex-direction: row;">
-        <p>MP:$5082</p>
-        <input class="radio-button" type="radio" name="Classic" value="5082">
-        <p>FT:$4882</p>
-        <input class="radio-button" type="radio" name="Classic" value="4882">
+        <p>MP:$6776</p>
+        <input class="radio-button" type="radio" name="Classic" value="6776">
+        <p>FT:$5600</p>
+        <input class="radio-button" type="radio" name="Classic" value="5600">
     </div>
     <div style="    display: flex;
       align-items: center;
@@ -418,10 +418,10 @@ function toggleSubMenu() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5203</p>
-      <input class="radio-button" type="radio" name="whopper-simple" value="5203">
-      <p>FT:$5003</p>
-      <input class="radio-button" type="radio" name="whopper-simple" value="5003">
+      <p>MP:$7260</p>
+      <input class="radio-button" type="radio" name="whopper-simple" value="7260">
+      <p>FT:$6000</p>
+      <input class="radio-button" type="radio" name="whopper-simple" value="6000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -450,10 +450,10 @@ function toggleSubMenu() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6050</p>
-      <input class="radio-button" type="radio" name="dorito-simple" value="6050">
-      <p>FT:$5850</p>
-      <input class="radio-button" type="radio" name="dorito-simple" value="5850">
+      <p>MP:$7744</p>
+      <input class="radio-button" type="radio" name="dorito-simple" value="7744">
+      <p>FT:$6400</p>
+      <input class="radio-button" type="radio" name="dorito-simple" value="6400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -481,10 +481,10 @@ function toggleSubMenu() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5687</p>
-      <input class="radio-button" type="radio" name="Onion-simple" value="5687">
-      <p>FT:$5487</p>
-      <input class="radio-button" type="radio" name="Onion-simple" value="5487">
+      <p>MP:$7502</p>
+      <input class="radio-button" type="radio" name="Onion-simple" value="7502">
+      <p>FT:$6200</p>
+      <input class="radio-button" type="radio" name="Onion-simple" value="6200">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -507,15 +507,15 @@ function toggleSubMenu() {
 <img class="img-producto" src="./productos/magnifica.png" alt=""></img>
 
 <div class="div-detalles-productos">
-  <button class="menu-button sub-menu-button" data-button-number="68" style="border: none;">Baconeitor simple</button>
+  <button class="menu-button sub-menu-button" data-button-number="68" style="border: none;">Baconator simple</button>
   <p id="parrafos-detalles">Carne - cheddar fundido - bacon</p>
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6050</p>
-      <input class="radio-button" type="radio" name="baconeitor-simple" value="6050">
-      <p>FT:$5850</p>
-      <input class="radio-button" type="radio" name="baconeitor-simple" value="5850">
+      <p>MP:$7623</p>
+      <input class="radio-button" type="radio" name="baconeitor-simple" value="7623">
+      <p>FT:$6300</p>
+      <input class="radio-button" type="radio" name="baconeitor-simple" value="6300">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -544,10 +544,10 @@ function toggleSubMenu() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6050</p>
-      <input class="radio-button" type="radio" name="Club-house-simple" value="6050">
-      <p>FT:$5850</p>
-      <input class="radio-button" type="radio" name="Club-house-simple" value="5850">
+      <p>MP:$7865</p>
+      <input class="radio-button" type="radio" name="Club-house-simple" value="7865">
+      <p>FT:$6500</p>
+      <input class="radio-button" type="radio" name="Club-house-simple" value="6500">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -576,10 +576,10 @@ function toggleSubMenu() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6050</p>
-      <input class="radio-button" type="radio" name="BBQ-simple" value="6050">
-      <p>FT:$5850</p>
-      <input class="radio-button" type="radio" name="BBQ-simple" value="5850">
+      <p>MP:$7623</p>
+      <input class="radio-button" type="radio" name="BBQ-simple" value="7623">
+      <p>FT:$6300</p>
+      <input class="radio-button" type="radio" name="BBQ-simple" value="6300">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -606,10 +606,10 @@ function toggleSubMenu() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5082</p>
-      <input class="radio-button" type="radio" name="Fusion" value="5082">
-      <p>FT:$4882</p>
-      <input class="radio-button" type="radio" name="Fusion" value="4882">
+      <p>MP:$6776</p>
+      <input class="radio-button" type="radio" name="Fusion" value="6776">
+      <p>FT:$5600</p>
+      <input class="radio-button" type="radio" name="Fusion" value="5600">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -636,10 +636,10 @@ function toggleSubMenu() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5203</p>
-      <input class="radio-button" type="radio" name="Cuarto" value="5203">
-      <p>FT:$5003</p>
-      <input class="radio-button" type="radio" name="Cuarto" value="5003">
+      <p>MP:$7502</p>
+      <input class="radio-button" type="radio" name="Cuarto" value="7502">
+      <p>FT:$6200</p>
+      <input class="radio-button" type="radio" name="Cuarto" value="6200">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -666,10 +666,10 @@ function toggleSubMenu() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5203</p>
-      <input class="radio-button" type="radio" name="Magnifica" value="5203">
-      <p>FT:$5003</p>
-      <input class="radio-button" type="radio" name="Magnifica" value="5003">
+      <p>MP:$7260</p>
+      <input class="radio-button" type="radio" name="Magnifica" value="7260">
+      <p>FT:$6000</p>
+      <input class="radio-button" type="radio" name="Magnifica" value="6000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -697,10 +697,10 @@ function toggleSubMenu() {
     <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5445</p>
-      <input class="radio-button" type="radio" name="Napolitano" value="5445">
-      <p>FT:$5245</p>
-      <input class="radio-button" type="radio" name="Napolitano" value="5245">
+      <p>MP:$7139</p>
+      <input class="radio-button" type="radio" name="Napolitano" value="7139">
+      <p>FT:$5900</p>
+      <input class="radio-button" type="radio" name="Napolitano" value="5900">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -727,10 +727,10 @@ function toggleSubMenu() {
     <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5808</p>
-      <input class="radio-button" type="radio" name="Napolitano" value="5808">
-      <p>FT:$5608</p>
-      <input class="radio-button" type="radio" name="Napolitano" value="5608">
+      <p>MP:$7260</p>
+      <input class="radio-button" type="radio" name="Napolitano" value="7260">
+      <p>FT:$6000</p>
+      <input class="radio-button" type="radio" name="Napolitano" value="6000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -758,10 +758,10 @@ function toggleSubMenu() {
     <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$4400</p>
-      <input class="radio-button" type="radio" name="Completa" value="4400">
-      <p>FT:$4100</p>
-      <input class="radio-button" type="radio" name="Completa" value="4100">
+      <p>MP:$7260</p>
+      <input class="radio-button" type="radio" name="Completa" value="7260">
+      <p>FT:$6000</p>
+      <input class="radio-button" type="radio" name="Completa" value="6000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -842,10 +842,10 @@ function toggleSubMenuDos() {
     <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6897</p>
-      <input class="radio-button" type="radio" name="doble-cuarto" value="6897">
-      <p>FT:$6697</p>
-      <input class="radio-button" type="radio" name="doble-cuarto" value="6697">
+      <p>MP:$9075</p>
+      <input class="radio-button" type="radio" name="doble-cuarto" value="9075">
+      <p>FT:$7500</p>
+      <input class="radio-button" type="radio" name="doble-cuarto" value="7500">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -873,10 +873,10 @@ function toggleSubMenuDos() {
     <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6897</p>
-      <input class="radio-button" type="radio" name="doble-napoleon" value="6897">
-      <p>FT:$6697</p>
-      <input class="radio-button" type="radio" name="doble-napoleon" value="6697">
+      <p>MP:$9075</p>
+      <input class="radio-button" type="radio" name="doble-napoleon" value="9075">
+      <p>FT:$7500</p>
+      <input class="radio-button" type="radio" name="doble-napoleon" value="7500">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -904,10 +904,10 @@ function toggleSubMenuDos() {
     <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7139</p>
-      <input class="radio-button" type="radio" name="doble-magnifica" value="7139">
-      <p>FT:$6939</p>
-      <input class="radio-button" type="radio" name="doble-magnifica" value="6939">
+      <p>MP:$9075</p>
+      <input class="radio-button" type="radio" name="doble-magnifica" value="9075">
+      <p>FT:$7500</p>
+      <input class="radio-button" type="radio" name="doble-magnifica" value="7500">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -935,10 +935,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7139</p>
-      <input class="radio-button" type="radio" name="doble-napolitano" value="7139">
-      <p>FT:$6939</p>
-      <input class="radio-button" type="radio" name="doble-napolitano" value="6939">
+      <p>MP:$9075</p>
+      <input class="radio-button" type="radio" name="doble-napolitano" value="9075">
+      <p>FT:$7500</p>
+      <input class="radio-button" type="radio" name="doble-napolitano" value="7500">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -967,10 +967,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6897</p>
-      <input class="radio-button" type="radio" name="Onion" value="6897">
-      <p>FT:$6697</p>
-      <input class="radio-button" type="radio" name="Onion" value="6697">
+      <p>MP:$8954</p>
+      <input class="radio-button" type="radio" name="Onion" value="8954">
+      <p>FT:$7400</p>
+      <input class="radio-button" type="radio" name="Onion" value="7400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -998,10 +998,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6897</p>
-      <input class="radio-button" type="radio" name="whopper" value="6897">
-      <p>FT:$6697</p>
-      <input class="radio-button" type="radio" name="whopper" value="6697">
+      <p>MP:$8954</p>
+      <input class="radio-button" type="radio" name="whopper" value="8954">
+      <p>FT:$7400</p>
+      <input class="radio-button" type="radio" name="whopper" value="7400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1029,10 +1029,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7139</p>
-      <input class="radio-button" type="radio" name="duo" value="7139">
-      <p>FT:$6939</p>
-      <input class="radio-button" type="radio" name="duo" value="6939">
+      <p>MP:$9196</p>
+      <input class="radio-button" type="radio" name="duo" value="9196">
+      <p>FT:$7600</p>
+      <input class="radio-button" type="radio" name="duo" value="7600">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1060,10 +1060,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7260</p>
-      <input class="radio-button" type="radio" name="club-house" value="7260">
-      <p>FT:$7060</p>
-      <input class="radio-button" type="radio" name="club-house" value="7060">
+      <p>MP:$9317</p>
+      <input class="radio-button" type="radio" name="club-house" value="9317">
+      <p>FT:$7700</p>
+      <input class="radio-button" type="radio" name="club-house" value="7700">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1090,10 +1090,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7260</p>
-      <input class="radio-button" type="radio" name="BBQ" value="7260">
-      <p>FT:$7060</p>
-      <input class="radio-button" type="radio" name="BBQ" value="7060">
+      <p>MP:$9317</p>
+      <input class="radio-button" type="radio" name="BBQ" value="9317">
+      <p>FT:$7700</p>
+      <input class="radio-button" type="radio" name="BBQ" value="7700">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1120,10 +1120,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5400</p>
-      <input class="radio-button" type="radio" name="melo-city" value="5400">
-      <p>FT:$5100</p>
-      <input class="radio-button" type="radio" name="melo-city" value="5100">
+      <p>MP:$9317</p>
+      <input class="radio-button" type="radio" name="melo-city" value="9317">
+      <p>FT:$7700</p>
+      <input class="radio-button" type="radio" name="melo-city" value="7700">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1150,10 +1150,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7260</p>
-      <input class="radio-button" type="radio" name="Dorito" value="7260">
-      <p>FT:$7060</p>
-      <input class="radio-button" type="radio" name="Dorito" value="7060">
+      <p>MP:$9317</p>
+      <input class="radio-button" type="radio" name="Dorito" value="9317">
+      <p>FT:$7700</p>
+      <input class="radio-button" type="radio" name="Dorito" value="7700">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1180,10 +1180,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7865</p>
-      <input class="radio-button" type="radio" name="Baconator" value="7865">
-      <p>FT:$7665</p>
-      <input class="radio-button" type="radio" name="Baconator" value="7665">
+      <p>MP:$10043</p>
+      <input class="radio-button" type="radio" name="Baconator" value="10043">
+      <p>FT:$8300</p>
+      <input class="radio-button" type="radio" name="Baconator" value="8300">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1211,10 +1211,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7865</p>
-      <input class="radio-button" type="radio" name="Big-king" value="7865">
-      <p>FT:$7665</p>
-      <input class="radio-button" type="radio" name="Big-king" value="7665">
+      <p>MP:$9922</p>
+      <input class="radio-button" type="radio" name="Big-king" value="9922">
+      <p>FT:$8200</p>
+      <input class="radio-button" type="radio" name="Big-king" value="8200">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1242,10 +1242,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7260</p>
-      <input class="radio-button" type="radio" name="Staker" value="7260">
-      <p>FT:$7060</p>
-      <input class="radio-button" type="radio" name="Staker" value="7060">
+      <p>MP:$9317</p>
+      <input class="radio-button" type="radio" name="Staker" value="9317">
+      <p>FT:$7700</p>
+      <input class="radio-button" type="radio" name="Staker" value="7700">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1273,10 +1273,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7986</p>
-      <input class="radio-button" type="radio" name="Mega-turbo-tasty" value="7986">
-      <p>FT:$7786</p>
-      <input class="radio-button" type="radio" name="Mega-turbo-tasty" value="7786">
+      <p>MP:$10043</p>
+      <input class="radio-button" type="radio" name="Mega-turbo-tasty" value="10043">
+      <p>FT:$8300</p>
+      <input class="radio-button" type="radio" name="Mega-turbo-tasty" value="8300">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1304,10 +1304,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$8349</p>
-      <input class="radio-button" type="radio" name="Triple-cuarto" value="8349">
-      <p>FT:$8149</p>
-      <input class="radio-button" type="radio" name="Triple-cuarto" value="8149">
+      <p>MP:$10527</p>
+      <input class="radio-button" type="radio" name="Triple-cuarto" value="10527">
+      <p>FT:$8700</p>
+      <input class="radio-button" type="radio" name="Triple-cuarto" value="8700">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1335,10 +1335,10 @@ function toggleSubMenuDos() {
       <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$9196</p>
-      <input class="radio-button" type="radio" name="Triple-bacon" value="9196">
-      <p>FT:$8996</p>
-      <input class="radio-button" type="radio" name="Triple-bacon" value="8996">
+      <p>MP:$11374</p>
+      <input class="radio-button" type="radio" name="Triple-bacon" value="11374">
+      <p>FT:$9400</p>
+      <input class="radio-button" type="radio" name="Triple-bacon" value="9400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1402,15 +1402,15 @@ function toggleSubMenuTres() {
     <div class="div-botones-submenu" data-button-number="27">
 <img class="img-producto" src="./productos/papas.png" alt="papas regulares"></img>
 <div class="div-detalles-productos">
-  <button class="menu-button sub-menu-button" data-button-number="27" style="border: none;">Papas regulares</button>
-  <p id="parrafos-detalles">papas paquete regular</p>
+  <button class="menu-button sub-menu-button" data-button-number="27" style="border: none;">Papas pequeñas</button>
+  <p id="parrafos-detalles">papas paquete pequeño</p>
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$3878</p>
-      <input class="radio-button" type="radio" name="papas-regulares" value="3878">
-      <p>FT:$3678</p>
-      <input class="radio-button" type="radio" name="papas-regulares" value="3678">
+      <p>MP:$4114</p>
+      <input class="radio-button" type="radio" name="papas-pequeñas" value="4114">
+      <p>FT:$3400</p>
+      <input class="radio-button" type="radio" name="papas-pequeñas" value="3400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1437,10 +1437,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$4356</p>
-      <input class="radio-button" type="radio" name="papas-medianas" value="4356">
-      <p>FT:$4156</p>
-      <input class="radio-button" type="radio" name="papas-medianas" value="4156">
+      <p>MP:$4598</p>
+      <input class="radio-button" type="radio" name="papas-medianas" value="4598">
+      <p>FT:$3800</p>
+      <input class="radio-button" type="radio" name="papas-medianas" value="3800">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1468,10 +1468,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$4719</p>
-      <input class="radio-button" type="radio" name="papas-grandes" value="4719">
-      <p>FT:$4519</p>
-      <input class="radio-button" type="radio" name="papas-grandes" value="4519">
+      <p>MP:$4961</p>
+      <input class="radio-button" type="radio" name="papas-grandes" value="4961">
+      <p>FT:$4100</p>
+      <input class="radio-button" type="radio" name="papas-grandes" value="4100">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1499,10 +1499,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5808</p>
-      <input class="radio-button" type="radio" name="papas-mcking" value="5808">
-      <p>FT:$5608</p>
-      <input class="radio-button" type="radio" name="papas-mcking" value="5608">
+      <p>MP:$7744</p>
+      <input class="radio-button" type="radio" name="papas-mcking" value="7744">
+      <p>FT:$6400</p>
+      <input class="radio-button" type="radio" name="papas-mcking" value="6400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1531,8 +1531,8 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$4100</p>
-      <input class="radio-button" type="radio" name="papas-cheddar" value="4100">
+      <p>MP:$7260</p>
+      <input class="radio-button" type="radio" name="papas-cheddar" value="7260">
       <p>FT:$3900</p>
       <input class="radio-button" type="radio" name="papas-cheddar" value="3900">
   </div>
@@ -1562,10 +1562,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5566</p>
-      <input class="radio-button" type="radio" name="papas-cheddar-bacon" value="5566">
-      <p>FT:$5366</p>
-      <input class="radio-button" type="radio" name="papas-cheddar-bacon" value="5366">
+      <p>MP:$7744</p>
+      <input class="radio-button" type="radio" name="papas-cheddar-bacon" value="7744">
+      <p>FT:$6400</p>
+      <input class="radio-button" type="radio" name="papas-cheddar-bacon" value="6400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1592,10 +1592,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5808</p>
-      <input class="radio-button" type="radio" name="papas-huevo" value="5808">
-      <p>FT:$5608</p>
-      <input class="radio-button" type="radio" name="papas-huevo" value="5608">
+      <p>MP:$7744</p>
+      <input class="radio-button" type="radio" name="papas-huevo" value="7744">
+      <p>FT:$6400</p>
+      <input class="radio-button" type="radio" name="papas-huevo" value="6400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1623,10 +1623,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6534</p>
-      <input class="radio-button" type="radio" name="papas-bajon" value="6534">
-      <p>FT:$6334</p>
-      <input class="radio-button" type="radio" name="papas-bajon" value="6334">
+      <p>MP:$8349</p>
+      <input class="radio-button" type="radio" name="papas-bajon" value="8349">
+      <p>FT:$6900</p>
+      <input class="radio-button" type="radio" name="papas-bajon" value="6900">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1654,10 +1654,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6413</p>
-      <input class="radio-button" type="radio" name="papas-nuggets" value="6413">
-      <p>FT:$6213</p>
-      <input class="radio-button" type="radio" name="papas-nuggets" value="6213">
+      <p>MP:$7502</p>
+      <input class="radio-button" type="radio" name="papas-nuggets" value="7502">
+      <p>FT:$6200</p>
+      <input class="radio-button" type="radio" name="papas-nuggets" value="6200">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1684,10 +1684,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7018</p>
-      <input class="radio-button" type="radio" name="papas-tapa-arterias" value="7018">
-      <p>FT:$6818</p>
-      <input class="radio-button" type="radio" name="papas-tapa-arterias" value="6818">
+      <p>MP:$8954</p>
+      <input class="radio-button" type="radio" name="papas-tapa-arterias" value="8954">
+      <p>FT:$7400</p>
+      <input class="radio-button" type="radio" name="papas-tapa-arterias" value="7400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1714,10 +1714,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6655</p>
-      <input class="radio-button" type="radio" name="nuggets-10" value="6655">
-      <p>FT:$6455</p>
-      <input class="radio-button" type="radio" name="nuggets-10" value="6455">
+      <p>MP:$8349</p>
+      <input class="radio-button" type="radio" name="nuggets-10" value="8349">
+      <p>FT:$6900</p>
+      <input class="radio-button" type="radio" name="nuggets-10" value="6900">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1744,10 +1744,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$12705</p>
-      <input class="radio-button" type="radio" name="nuggets-20" value="12705">
-      <p>FT:$12505</p>
-      <input class="radio-button" type="radio" name="nuggets-20" value="12505">
+      <p>MP:$14520</p>
+      <input class="radio-button" type="radio" name="nuggets-20" value="14520">
+      <p>FT:$12000</p>
+      <input class="radio-button" type="radio" name="nuggets-20" value="12000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1774,10 +1774,10 @@ function toggleSubMenuTres() {
   <p id="parrafos-detalles">aros de cebolla x10</p>  <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5929</p>
-      <input class="radio-button" type="radio" name="aros-cebolla-10" value="5929">
-      <p>FT:$5729</p>
-      <input class="radio-button" type="radio" name="aros-cebolla-10" value="5729">
+      <p>MP:$7865</p>
+      <input class="radio-button" type="radio" name="aros-cebolla-10" value="7865">
+      <p>FT:$6500</p>
+      <input class="radio-button" type="radio" name="aros-cebolla-10" value="6500">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1805,10 +1805,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$10890</p>
-      <input class="radio-button" type="radio" name="aros-cebolla-20" value="10890">
-      <p>FT:$10690</p>
-      <input class="radio-button" type="radio" name="aros-cebolla-20" value="10690">
+      <p>MP:$14278</p>
+      <input class="radio-button" type="radio" name="aros-cebolla-20" value="14278">
+      <p>FT:$11800</p>
+      <input class="radio-button" type="radio" name="aros-cebolla-20" value="11800">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1836,10 +1836,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5808</p>
-      <input class="radio-button" type="radio" name="tequeños-queso" value="5808">
-      <p>FT:$5608</p>
-      <input class="radio-button" type="radio" name="tequeños-queso" value="5608">
+      <p>MP:$7502</p>
+      <input class="radio-button" type="radio" name="tequeños-queso" value="7502">
+      <p>FT:$6200</p>
+      <input class="radio-button" type="radio" name="tequeños-queso" value="6200">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1867,10 +1867,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6050</p>
-      <input class="radio-button" type="radio" name="tequeños-jamon-queso" value="6050">
-      <p>FT:$5850</p>
-      <input class="radio-button" type="radio" name="tequeños-jamon-queso" value="5850">
+      <p>MP:$7744</p>
+      <input class="radio-button" type="radio" name="tequeños-jamon-queso" value="7744">
+      <p>FT:$6400</p>
+      <input class="radio-button" type="radio" name="tequeños-jamon-queso" value="6400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1898,10 +1898,10 @@ function toggleSubMenuTres() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5808</p>
-      <input class="radio-button" type="radio" name="tequeños-mixtos" value="5808">
-      <p>FT:$5608</p>
-      <input class="radio-button" type="radio" name="tequeños-mixtos" value="5608">
+      <p>MP:$7744</p>
+      <input class="radio-button" type="radio" name="tequeños-mixtos" value="7744">
+      <p>FT:$6200</p>
+      <input class="radio-button" type="radio" name="tequeños-mixtos" value="6200">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -1920,35 +1920,6 @@ function toggleSubMenuTres() {
 <button class="boton-agregar" onclick="agregarAlPedido(43)">Agregar al carrito</button>
 </div>
 
-<div class="div-botones-submenu" data-button-number="90">
-<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
-<div class="div-detalles-productos">
-  <button class="menu-button sub-menu-button" data-button-number="90" style="border: none;">Tequeños Pizza x6</button>
-  <p id="parrafos-detalles">Tequeños Pizza x 6</p>  
-  <div class="div-precio-producto" style="    display: flex;
-    align-items: center;
-    flex-direction: row;">
-      <p>MP:$4600</p>
-      <input class="radio-button" type="radio" name="tequeños-pizza" value="4600">
-      <p>FT:$4200</p>
-      <input class="radio-button" type="radio" name="tequeños-pizza" value="4200">
-  </div>
-  <div style="    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-left: 10px;">
-      <button class="counter-button" onclick="updateCounter(90, 'decrement')">-</button>
-      <span class="counter-value">0</span>
-      <button class="counter-button" onclick="updateCounter(90, 'increment')">+</button>
-  </div>
-</div>
-</div>
-<button class="boton-extras" data-button-number="90" onclick="toggleExtras(90)">Extras</button>
-<div class="div-extras" id="extrasList90" data-button-number="90" style="display: none;">
-</div>
-<div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(90)">Agregar al carrito</button>
-</div>
 
 `;
     subMenuTres.innerHTML = buttonsHTML;
@@ -2002,10 +1973,10 @@ function toggleSubMenuCuatro() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$4100</p>
-      <input class="radio-button" type="radio" name="super-pollo" value="4100">
-      <p>FT:$3900</p>
-      <input class="radio-button" type="radio" name="super-pollo" value="3900">
+      <p>MP:$5687</p>
+      <input class="radio-button" type="radio" name="super-pollo" value="5687">
+      <p>FT:$4700</p>
+      <input class="radio-button" type="radio" name="super-pollo" value="4700">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2033,10 +2004,10 @@ function toggleSubMenuCuatro() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$4300</p>
-      <input class="radio-button" type="radio" name="pollonator" value="4300">
-      <p>FT:$4100</p>
-      <input class="radio-button" type="radio" name="pollonator" value="4100">
+      <p>MP:$6292</p>
+      <input class="radio-button" type="radio" name="pollonator" value="6292">
+      <p>FT:$5200</p>
+      <input class="radio-button" type="radio" name="pollonator" value="5200">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2065,10 +2036,10 @@ function toggleSubMenuCuatro() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5500</p>
-      <input class="radio-button" type="radio" name="big-pollo" value="5500">
-      <p>FT:$5300</p>
-      <input class="radio-button" type="radio" name="big-pollo" value="5300">
+      <p>MP:$8349</p>
+      <input class="radio-button" type="radio" name="big-pollo" value="8349">
+      <p>FT:$6900</p>
+      <input class="radio-button" type="radio" name="big-pollo" value="6900">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2096,10 +2067,10 @@ function toggleSubMenuCuatro() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$5000</p>
-      <input class="radio-button" type="radio" name="coronel-supremo" value="5000">
-      <p>FT:$4800</p>
-      <input class="radio-button" type="radio" name="coronel-supremo" value="4800">
+      <p>MP:$7260</p>
+      <input class="radio-button" type="radio" name="coronel-supremo" value="7260">
+      <p>FT:$6000</p>
+      <input class="radio-button" type="radio" name="coronel-supremo" value="6000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2126,10 +2097,10 @@ function toggleSubMenuCuatro() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$6000</p>
-      <input class="radio-button" type="radio" name="Pollo extremo" value="6000">
-      <p>FT:5800</p>
-      <input class="radio-button" type="radio" name="Pollo extremo" value="5800">
+      <p>MP:$9196</p>
+      <input class="radio-button" type="radio" name="Pollo extremo" value="9196">
+      <p>FT:7300</p>
+      <input class="radio-button" type="radio" name="Pollo extremo" value="7300">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2200,10 +2171,10 @@ function toggleSubMenuCinco() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7100</p>
-      <input class="radio-button" type="radio" name="cajita-mcking" value="7100">
-      <p>FT:$6800</p>
-      <input class="radio-button" type="radio" name="cajita-mcking" value="6800">
+      <p>MP:$10769</p>
+      <input class="radio-button" type="radio" name="cajita-mcking" value="10769">
+      <p>FT:$8900</p>
+      <input class="radio-button" type="radio" name="cajita-mcking" value="8900">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2230,10 +2201,10 @@ function toggleSubMenuCinco() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$7623</p>
-      <input class="radio-button" type="radio" name="combo-del-dia" value="7623">
-      <p>FT:$7423</p>
-      <input class="radio-button" type="radio" name="combo-del-dia" value="7423">
+      <p>MP:$9559</p>
+      <input class="radio-button" type="radio" name="combo-del-dia" value="9559">
+      <p>FT:$7900</p>
+      <input class="radio-button" type="radio" name="combo-del-dia" value="7900">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2261,11 +2232,11 @@ function toggleSubMenuCinco() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$4100</p>
+      <p>MP:$6050</p>
       <input class="radio-button" type="radio" name="combo-mediano" 
-      value="4100">
-      <p>FT:$3900</p>
-      <input class="radio-button" type="radio" name="combo-mediano" value="3900">
+      value="6050">
+      <p>FT:$5000</p>
+      <input class="radio-button" type="radio" name="combo-mediano" value="5000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2293,10 +2264,10 @@ function toggleSubMenuCinco() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$1600</p>
-      <input class="radio-button" type="radio" name="gaseosa" value="1600">
-      <p>FT:$1300</p>
-      <input class="radio-button" type="radio" name="gaseosa" value="1300">
+      <p>MP:$2420</p>
+      <input class="radio-button" type="radio" name="gaseosa" value="2420">
+      <p>FT:$2000</p>
+      <input class="radio-button" type="radio" name="gaseosa" value="2000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2324,10 +2295,10 @@ function toggleSubMenuCinco() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-      <p>MP:$1400</p>
-      <input class="radio-button" type="radio" name="agua" value="1400">
-      <p>FT:$1100</p>
-      <input class="radio-button" type="radio" name="agua" value="1100">
+      <p>MP:$2178</p>
+      <input class="radio-button" type="radio" name="agua" value="2178">
+      <p>FT:$1800</p>
+      <input class="radio-button" type="radio" name="agua" value="1800">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2382,140 +2353,6 @@ function toggleSubMenuCinco() {
 }
 
 
-function toggleSubMenuMila() {
-  const subMenuMila = document.getElementById('subMenuMila');
-  const botonMila = document.getElementById('botonMila');
-  if (!subMenuMilaVisible) {
-    const buttonsHTML = `
-
-<div class="div-botones-submenu" data-button-number="60">
-<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
-<div class="div-detalles-productos">
-  <button class="menu-button sub-menu-button" data-button-number="60" style="border: none;">Krilin</button>
-  <p id="parrafos-detalles">lechuga - tomate</p>
-  <div class="div-precio-producto" style="    display: flex;
-    align-items: center;
-    flex-direction: row;">
-    <p>MP:$6292</p>
-    <input class="radio-button" type="radio" name="milanesa-krilin" value="6292">
-    <p>FT:$6092</p>
-    <input class="radio-button" type="radio" name="milanesa-krilin" value="6092">
-  </div>
-  <div style="    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-left: 10px;">
-      <button class="counter-button" onclick="updateCounter(60, 'decrement')">-</button>
-      <span class="counter-value">0</span>
-      <button class="counter-button" onclick="updateCounter(60, 'increment')">+</button>
-  </div>
-</div>
-</div>
-<button class="boton-extras" data-button-number="60" onclick="toggleExtras(60)">Extras</button>
-<div class="div-extras" id="extrasList60" data-button-number="60" style="display: none;">
-</div>
-<div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(60)">Agregar al carrito</button>
-</div>
-
-<div class="div-botones-submenu" data-button-number="61">
-<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
-<div class="div-detalles-productos">
-  <button class="menu-button sub-menu-button" data-button-number="61" style="border: none;">Gohan</button>
-  <p id="parrafos-detalles">lechuga - tomate - jamon - queso - huevo</p>
-  <div class="div-precio-producto" style="    display: flex;
-    align-items: center;
-    flex-direction: row;">
-    <p>MP:$6776</p>
-    <input class="radio-button" type="radio" name="milanesa-gohan" value="6776">
-    <p>FT:$6576</p>
-    <input class="radio-button" type="radio" name="milanesa-gohan" value="6576">
-  </div>
-  <div style="    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-left: 10px;">
-      <button class="counter-button" onclick="updateCounter(61, 'decrement')">-</button>
-      <span class="counter-value">0</span>
-      <button class="counter-button" onclick="updateCounter(61, 'increment')">+</button>
-  </div>
-</div>
-</div>
-<button class="boton-extras" data-button-number="61" onclick="toggleExtras(61)">Extras</button>
-<div class="div-extras" id="extrasList61" data-button-number="61" style="display: none;">
-</div>
-<div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(61)">Agregar al carrito</button>
-</div>
-
-
-<div class="div-botones-submenu" data-button-number="62">
-<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
-<div class="div-detalles-productos">
-  <button class="menu-button sub-menu-button" data-button-number="62" style="border: none;">Goten</button>
-  <p id="parrafos-detalles">Cheddar fundido - bacon - huevo</p>
-  <div class="div-precio-producto" style="    display: flex;
-    align-items: center;
-    flex-direction: row;">
-    <p>MP:$7865</p>
-    <input class="radio-button" type="radio" name="milanesa-goten" value="7865">
-    <p>FT:$7665</p>
-    <input class="radio-button" type="radio" name="milanesa-goten" value="7665">
-  </div>
-  <div style="    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-left: 10px;">
-      <button class="counter-button" onclick="updateCounter(62, 'decrement')">-</button>
-      <span class="counter-value">0</span>
-      <button class="counter-button" onclick="updateCounter(62, 'increment')">+</button>
-  </div>
-</div>
-</div>
-<button class="boton-extras" data-button-number="62" onclick="toggleExtras(62)">Extras</button>
-<div class="div-extras" id="extrasList62" data-button-number="62" style="display: none;">
-</div>
-<div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(62)">Agregar al carrito</button>
-</div>
-
-`;
-    subMenuMila.innerHTML = buttonsHTML;
-    subMenuMilaVisible = true;
-    subMenuMila.style.display = "flex";
-    subMenuMila.offsetHeight;
-    subMenuMila.style.opacity = "1";
-    subMenuMila.style.transform = "translateY(0)";
-    subMenuMila.style.visibility = "visible";
-    subMenuMila.style.flexDirection = "column";
-    subMenuMila.style.rowGap = "10px";
-    subMenuMila.style.padding = "10px"
-    subMenuMila.style.alignItems = "center"
-    // Agrega la clase 'active' al botón1 cuando se despliega el submenú
-    botonMila.classList.add('active');
-    subMenuMila.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    event.preventDefault();
-  } else {
-    const subMenuMilaButtons = document.querySelectorAll('.menu-button');
-    subMenuMilaButtons.forEach(button => {
-      button.classList.remove('initial');
-    });
-    setTimeout(() => {
-      subMenuMila.innerHTML = '';
-    }, subMenuMilaButtons.length * 100);
-    subMenuMilaVisible = false;
-    subMenuMila.style.opacity = "0";
-    subMenuMila.style.transform = "translateY(-20px)";
-    setTimeout(() => {
-      subMenuMila.style.visibility = "hidden";
-      subMenuMila.style.display = "none";
-    }, 800);
-    // Quita la clase 'active' al botón1 cuando se contrae el submenú
-    botonMila.classList.remove('active');
-  }
-}
-
-
 function toggleSubMenuLomito() {
   const subMenuLomito = document.getElementById('subMenuLomito');
   const botonLomito = document.getElementById('botonLomito');
@@ -2531,10 +2368,10 @@ function toggleSubMenuLomito() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-    <p>MP:$7900</p>
-    <input class="radio-button" type="radio" name="shenglomito" value=7900">
-    <p>FT:$7600</p>
-    <input class="radio-button" type="radio" name="shenglomito" value="7600">
+    <p>MP:$11374</p>
+    <input class="radio-button" type="radio" name="shenglomito" value="11374">
+    <p>FT:$9400</p>
+    <input class="radio-button" type="radio" name="shenglomito" value="9400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2553,36 +2390,6 @@ function toggleSubMenuLomito() {
 <button class="boton-agregar" onclick="agregarAlPedido(58)">Agregar al carrito</button>
 </div>
 
-
-<div class="div-botones-submenu" data-button-number="59">
-<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
-<div class="div-detalles-productos">
-  <button class="menu-button sub-menu-button" data-button-number="59" style="border: none;">Lomito Onión</button>
-  <p id="parrafos-detalles">Muzzarella - cebolla salteada - orégano</p>
-  <div class="div-precio-producto" style="    display: flex;
-    align-items: center;
-    flex-direction: row;">
-    <p>MP:$9801</p>
-    <input class="radio-button" type="radio" name="lomito-onion" value="9801">
-    <p>FT:$9601</p>
-    <input class="radio-button" type="radio" name="lomito-onion" value="9601">
-  </div>
-  <div style="    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin-left: 10px;">
-      <button class="counter-button" onclick="updateCounter(59, 'decrement')">-</button>
-      <span class="counter-value">0</span>
-      <button class="counter-button" onclick="updateCounter(59, 'increment')">+</button>
-  </div>
-</div>
-</div>
-<button class="boton-extras" data-button-number="59" onclick="toggleExtras(59)">Extras</button>
-<div class="div-extras" id="extrasList59" data-button-number="59" style="display: none;">
-</div>
-<div class="div-boton-agregar">
-<button class="boton-agregar" onclick="agregarAlPedido(59)">Agregar al carrito</button>
-</div>
 
 `;
     subMenuLomito.innerHTML = buttonsHTML;
@@ -2637,10 +2444,10 @@ function toggleSubMenuPremium() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-    <p>MP:$9438</p>
-    <input class="radio-button" type="radio" name="super saiyajin fase 2" value="9438">
-    <p>FT:$9238</p>
-    <input class="radio-button" type="radio" name="super saiyajin fase 2" value="9238">
+    <p>MP:$11374</p>
+    <input class="radio-button" type="radio" name="super saiyajin fase 2" value="11374">
+    <p>FT:$9400</p>
+    <input class="radio-button" type="radio" name="super saiyajin fase 2" value="9400">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2668,10 +2475,10 @@ function toggleSubMenuPremium() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-    <p>MP:$12342</p>
-    <input class="radio-button" type="radio" name="Super saiyajin fase 3" value="12342">
-    <p>FT:$12142</p>
-    <input class="radio-button" type="radio" name="Super saiyajin fase 3" value="12142">
+    <p>MP:$14520</p>
+    <input class="radio-button" type="radio" name="Super saiyajin fase 3" value="14520">
+    <p>FT:$12000</p>
+    <input class="radio-button" type="radio" name="Super saiyajin fase 3" value="12000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2698,10 +2505,10 @@ function toggleSubMenuPremium() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-    <p>MP:$14883</p>
-    <input class="radio-button" type="radio" name="Super saiyajin fase 4" value="14883">
-    <p>FT:$14683</p>
-    <input class="radio-button" type="radio" name="Super saiyajin fase 4" value="14683">
+    <p>MP:$16819</p>
+    <input class="radio-button" type="radio" name="Super saiyajin fase 4" value="16819">
+    <p>FT:$13900</p>
+    <input class="radio-button" type="radio" name="Super saiyajin fase 4" value="13900">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2949,10 +2756,10 @@ function toggleSubMenuPromos() {
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-    <p>MP:$15500</p>
-    <input class="radio-button" type="radio" name="combo-1" value="15500">
-    <p>FT:$15300</p>
-    <input class="radio-button" type="radio" name="combo-1" value="15300">
+    <p>MP:$23595</p>
+    <input class="radio-button" type="radio" name="combo-1" value="23595">
+    <p>FT:$19500</p>
+    <input class="radio-button" type="radio" name="combo-1" value="19500">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -2976,14 +2783,14 @@ function toggleSubMenuPromos() {
 <img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="95" style="border: none;">Combo 2</button>
-  <p id="parrafos-detalles">Onion Cheese Doble x2 + Simple Queso x2 + Papas medianas x4</p>
+  <p id="parrafos-detalles">Cheesse burger x4 + Papas grandes de regalo</p>
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-    <p>MP:$31500</p>
-    <input class="radio-button" type="radio" name="combo-2" value="31500">
-    <p>FT:$31300</p>
-    <input class="radio-button" type="radio" name="combo-2" value="31300">
+    <p>MP:$26136</p>
+    <input class="radio-button" type="radio" name="combo-2" value="26136">
+    <p>FT:$21600</p>
+    <input class="radio-button" type="radio" name="combo-2" value="21600">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -3006,14 +2813,14 @@ function toggleSubMenuPromos() {
 <img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="96" style="border: none;">Combo 3</button>
-  <p id="parrafos-detalles">Triple Bacon x2 + Gaseosas x2 + Papas Medianas x2 + nuggets x10</p>
+  <p id="parrafos-detalles">2 wraps pollo y queso + Papas grande de regalo</p>
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-    <p>MP:$29900</p>
-    <input class="radio-button" type="radio" name="combo-3" value="29900">
-    <p>FT:$29700</p>
-    <input class="radio-button" type="radio" name="combo-3" value="29700">
+    <p>MP:$15730</p>
+    <input class="radio-button" type="radio" name="combo-3" value="15730">
+    <p>FT:$13000</p>
+    <input class="radio-button" type="radio" name="combo-3" value="13000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -3036,14 +2843,14 @@ function toggleSubMenuPromos() {
 <img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
 <div class="div-detalles-productos">
   <button class="menu-button sub-menu-button" data-button-number="97" style="border: none;">Combo 4</button>
-  <p id="parrafos-detalles">Sandwich de Milanesa Krilin x2 + papas grandes x1</p>
+  <p id="parrafos-detalles">3 Empanadas Chinas + gaseosa de regalo</p>
   <div class="div-precio-producto" style="    display: flex;
     align-items: center;
     flex-direction: row;">
-    <p>MP:$13300</p>
-    <input class="radio-button" type="radio" name="combo-4" value="13300">
-    <p>FT:$13100</p>
-    <input class="radio-button" type="radio" name="combo-4" value="13100">
+    <p>MP:$4400</p>
+    <input class="radio-button" type="radio" name="combo-4" value="4400">
+    <p>FT:$4000</p>
+    <input class="radio-button" type="radio" name="combo-4" value="4000">
   </div>
   <div style="    display: flex;
     align-items: center;
@@ -3060,6 +2867,66 @@ function toggleSubMenuPromos() {
 </div>
 <div class="div-boton-agregar">
 <button class="boton-agregar" onclick="agregarAlPedido(97)">Agregar al carrito</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="98">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="98" style="border: none;">Combo 5</button>
+  <p id="parrafos-detalles">2 Mario smash + Papas cheddar de regalo</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$20570</p>
+    <input class="radio-button" type="radio" name="combo-5" value="20570">
+    <p>FT:$17000</p>
+    <input class="radio-button" type="radio" name="combo-5" value="17000">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(98, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(98, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="98" onclick="toggleExtras(98)">Extras</button>
+<div class="div-extras" id="extrasList98" data-button-number="98" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(98)">Agregar al carrito</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="99">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="99" style="border: none;">Combo 6</button>
+  <p id="parrafos-detalles">Pollo frito x6, Papas mediano, cerveza o gaseosa</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$15125</p>
+    <input class="radio-button" type="radio" name="combo-6" value="15125">
+    <p>FT:$12500</p>
+    <input class="radio-button" type="radio" name="combo-6" value="12500">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(99, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(99, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="99" onclick="toggleExtras(99)">Extras</button>
+<div class="div-extras" id="extrasList99" data-button-number="99" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(99)">Agregar al carrito</button>
 </div>
 
 `;
@@ -3112,89 +2979,89 @@ function toggleExtras(buttonNumber) {
     extrasList.style.transition = "transition: opacity 1s, transform 1s"
     // Resto de la lógica para generar los extras...
     extrasList.innerHTML = `
-    <div class="extra-item" data-extra-number="1" data-price="1800">
+    <div class="extra-item" data-extra-number="1" data-price="2420">
       <p>Carne<br>Pollo</p>
       <button class="counter-button" onclick="updateExtrasCounter(1, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-1">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(1, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-1">$1800</p>
+      <p id="extra-price-1">$2420</p>
     </div>
-    <div class="extra-item" data-extra-number="2" data-price="1000">
+    <div class="extra-item" data-extra-number="2" data-price="1210">
       <p>Cheddar<br>feta</p>
       <button class="counter-button" onclick="updateExtrasCounter(2, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-2">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(2, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-2">$1000</p>
+      <p id="extra-price-2">$1210</p>
     </div>
-    <div class="extra-item" data-extra-number="3" data-price="1150">
+    <div class="extra-item" data-extra-number="3" data-price="1391">
       <p>Cheddar<br>fundido</p>
       <button class="counter-button" onclick="updateExtrasCounter(3, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-3">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(3, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-3">$1150</p>
+      <p id="extra-price-3">$1391</p>
     </div>
-    <div class="extra-item" data-extra-number="4" data-price="950">
+    <div class="extra-item" data-extra-number="4" data-price="1149">
       <p>Jamon<br>Queso</p>
       <button class="counter-button" onclick="updateExtrasCounter(4, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-4">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(4, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-4">$950</p>
+      <p id="extra-price-4">$1149</p>
     </div>
-    <div class="extra-item" data-extra-number="5" data-price="1150">
+    <div class="extra-item" data-extra-number="5" data-price="1391">
       <p>Bacon</p>
       <button class="counter-button" onclick="updateExtrasCounter(5, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-5">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(5, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-5">$1150</p>
+      <p id="extra-price-5">$1391</p>
     </div>
-    <div class="extra-item" data-extra-number="6" data-price="850">
+    <div class="extra-item" data-extra-number="6" data-price="1028">
       <p>Huevo</p>
       <button class="counter-button" onclick="updateExtrasCounter(6, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-6">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(6, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-6">$850</p>
+      <p id="extra-price-6">$1028</p>
     </div>
-    <div class="extra-item" data-extra-number="7" data-price="600">
+    <div class="extra-item" data-extra-number="7" data-price="726">
       <p>Pepino</p>
       <button class="counter-button" onclick="updateExtrasCounter(7, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-7">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(7, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-7">$600</p>
+      <p id="extra-price-7">$726</p>
     </div>
-    <div class="extra-item" data-extra-number="8" data-price="800">
+    <div class="extra-item" data-extra-number="8" data-price="968">
       <p>Lechuga<br>Tomate</p>
       <button class="counter-button" onclick="updateExtrasCounter(8, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-8">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(8, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-8">$800</p>
+      <p id="extra-price-8">$968</p>
     </div>
-    <div class="extra-item" data-extra-number="9" data-price="1100">
+    <div class="extra-item" data-extra-number="9" data-price="1331">
       <p>Salsa</p>
       <button class="counter-button" onclick="updateExtrasCounter(9, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-9">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(9, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-9">$1100</p>
+      <p id="extra-price-9">$1331</p>
     </div>
-    <div class="extra-item" data-extra-number="10" data-price="1200">
+    <div class="extra-item" data-extra-number="10" data-price="1452">
       <p>Doritos<br>P pay</p>
       <button class="counter-button" onclick="updateExtrasCounter(10, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-10">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(10, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-10">$1200</p>
+      <p id="extra-price-10">$1452</p>
     </div>
-    <div class="extra-item" data-extra-number="11" data-price="1500">
+    <div class="extra-item" data-extra-number="11" data-price="1815">
       <p>Nuggets<br>x 4</p>
       <button class="counter-button" onclick="updateExtrasCounter(11, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-11">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(11, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-11">$1500</p>
+      <p id="extra-price-11">$1815</p>
     </div>
-    <div class="extra-item" data-extra-number="12" data-price="800">
+    <div class="extra-item" data-extra-number="12" data-price="968">
       <p>Verdeo</p>
       <button class="counter-button" onclick="updateExtrasCounter(12, 'decrement', ${buttonNumber})">-</button>
       <span class="counter-value" id="counter-value-${buttonNumber}-12">0</span>
       <button class="counter-button" onclick="updateExtrasCounter(12, 'increment', ${buttonNumber})">+</button>
-      <p id="extra-price-12">$800</p>
+      <p id="extra-price-12">$968</p>
     </div>
     `;
   }
