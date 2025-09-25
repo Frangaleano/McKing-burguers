@@ -4,7 +4,7 @@ body {
   margin: 0;
   display: grid;
   font-family: "Euclid Circular A";
-  background: linear-gradient(180deg, rgba(140, 34, 195, 1) 0%, rgba(68, 9, 126, 1) 53%, rgba(28, 1, 59, 1) 100%);
+  background: linear-gradient(180deg, rgba(140, 34, 195, 1) 20%, rgba(68, 9, 126, 1) 53%, rgba(28, 1, 59, 1) 100%);
   font-family: 'Kdam Thmor Pro', sans-serif;
   color: white;
   width: 100%;
@@ -143,10 +143,17 @@ body {
   }
 
   header {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 10;
     height: 50px;
     display: flex;
-    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
   }
 
   .div-header {
@@ -161,6 +168,30 @@ body {
   .frase-header {
     font-size: 20px;
     color: rgb(255, 255, 255);
+    transition: opacity 0.7s;
+  }
+
+  .frase-header-oculta {
+    opacity: 0;
+  }
+
+  .mundo {
+    transition: opacity 0.7s;
+  }
+
+  .mundo-oculta {
+    opacity: 0;
+  }
+
+  section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+  }
+
+  section.visible-section {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   main {
@@ -192,10 +223,18 @@ body {
   }
 
   #nosotros {
+    min-height: 100vh;
+    padding-top: 90px;
+    box-sizing: border-box;
+    background-image:
+      linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, transparent),
+      url("./burguer-simple.webp");
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2em;
+    justify-content: flex-start;
   }
 
   .texto-mc {
@@ -462,7 +501,7 @@ body {
     animation: shadowAnimation 1s infinite;
     border: 2px solid #fcb502;
     padding: 4px 37px;
-    border-radius: 44% 56% 42% 58% / 37% 56% 44% 63% ;
+    border-radius: 44% 56% 42% 58% / 37% 56% 44% 63%;
     z-index: 5;
     transition: background-color 0.8s;
     margin-bottom: 0px;
@@ -875,8 +914,10 @@ body {
   }
 
   .anclas-ft {
-    text-decoration: underline; /* Asegurarse de que el enlace esté subrayado */
-    text-decoration-color: #fcb502; /* Cambiar el color de la línea */
+    text-decoration: underline;
+    /* Asegurarse de que el enlace esté subrayado */
+    text-decoration-color: #fcb502;
+    /* Cambiar el color de la línea */
     text-underline-offset: 5px;
     color: #f9f9f9;
     font-size: 18px;
@@ -1066,8 +1107,10 @@ body {
   }
 
   .anclas-ft {
-    text-decoration: underline; /* Asegurarse de que el enlace esté subrayado */
-    text-decoration-color: #fcb502; /* Cambiar el color de la línea */
+    text-decoration: underline;
+    /* Asegurarse de que el enlace esté subrayado */
+    text-decoration-color: #fcb502;
+    /* Cambiar el color de la línea */
     text-underline-offset: 5px;
     color: #f9f9f9;
     font-size: 20px;
@@ -1119,5 +1162,5 @@ body {
     margin: 0px;
     font-size: 14px;
   }
-  
+
 }

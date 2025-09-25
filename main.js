@@ -50,6 +50,8 @@ let subMenuMilaVisible = false;
 let subMenuLomitoVisible = false;
 let subMenuJrVisible = false;
 let subMenuPromosVisible = false;
+let subMenuWrapsVisible = false;
+let subMenuSuperVisible = false;
 let comoVisible = false;
 let extrasCounters = {};
 let totalExtras = 0;
@@ -2428,6 +2430,478 @@ function toggleSubMenuLomito() {
 
 }
 
+function toggleSubMenuWraps() {
+  const subMenuWraps = document.getElementById('subMenuWraps');
+  const botonWraps = document.getElementById('botonWraps');
+  if (!subMenuWrapsVisible) {
+    const buttonsHTML = `
+    
+    
+<div class="div-botones-submenu" data-button-number="56">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="56" style="border: none;">Wrap Queso y Pollo</button>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$7865</p>
+    <input class="radio-button" type="radio" name="wrap-queso-pollo" value=7865">
+    <p>FT:$6500</p>
+    <input class="radio-button" type="radio" name="wrap-queso-pollo" value="6500">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(56, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(56, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="56" onclick="toggleExtras(56)">Extras</button>
+<div class="div-extras" id="extrasList56" data-button-number="56" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(56)">Agregar al carrito</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="57">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="57" style="border: none;">Wrap Queso y Carne</button>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$7865</p>
+    <input class="radio-button" type="radio" name="wrap-queso-carne" value="7865">
+    <p>FT:$6500</p>
+    <input class="radio-button" type="radio" name="wrap-queso-carne" value="6500">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(57, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(57, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="57" onclick="toggleExtras(57)">Extras</button>
+<div class="div-extras" id="extrasList57" data-button-number=57" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(57)">Agregar al carrito</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="58">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="58" style="border: none;">Wrap Bacon y Pollo</button>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$7865</p>
+    <input class="radio-button" type="radio" name="wrap-bacon-pollo" value="7865">
+    <p>FT:$6500</p>
+    <input class="radio-button" type="radio" name="wrap-bacon-pollo" value="6500">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(58, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(58, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="58" onclick="toggleExtras(58)">Extras</button>
+<div class="div-extras" id="extrasList58" data-button-number="58" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(58)">Agregar al carrito</button>
+</div>
+
+
+`;
+    subMenuWraps.innerHTML = buttonsHTML;
+    subMenuWrapsVisible = true;
+    subMenuWraps.style.display = "flex";
+    subMenuWraps.offsetHeight;
+    subMenuWraps.style.opacity = "1";
+    subMenuWraps.style.transform = "translateY(0)";
+    subMenuWraps.style.visibility = "visible";
+    subMenuWraps.style.flexDirection = "column";
+    subMenuWraps.style.rowGap = "10px";
+    subMenuWraps.style.padding = "10px"
+    subMenuWraps.style.alignItems = "center"
+    // Agrega la clase 'active' al botón1 cuando se despliega el submenú
+    botonWraps.classList.add('active');
+    subMenuWraps.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    event.preventDefault();
+  } else {
+    const subMenuWrapsButtons = document.querySelectorAll('.menu-button');
+    subMenuWrapsButtons.forEach(button => {
+      button.classList.remove('initial');
+    });
+    setTimeout(() => {
+      subMenuWraps.innerHTML = '';
+    }, subMenuWrapsButtons.length * 100);
+    subMenuWrapsVisible = false;
+    subMenuWraps.style.opacity = "0";
+    subMenuWraps.style.transform = "translateY(-20px)";
+    setTimeout(() => {
+      subMenuWraps.style.visibility = "hidden";
+      subMenuWraps.style.display = "none";
+    }, 800);
+    // Quita la clase 'active' al botón1 cuando se contrae el submenú
+    botonWraps.classList.remove('active');
+  }
+
+}
+
+
+function toggleSubMenuSuper() {
+  const subMenuSuper = document.getElementById('subMenuSuper');
+  const botonSuper = document.getElementById('botonSuper');
+  if (!subMenuSuperVisible) {
+    const buttonsHTML = `
+    
+    
+<div class="div-botones-submenu" data-button-number="59">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="59" style="border: none;">Kirby</button>
+  <p id="parrafos-detalles">Pan de papa - Carne x2 - Cheddar x4 - Tomate - Pepino - Kethup - Mayonesa</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$10890</p>
+    <input class="radio-button" type="radio" name="super-kirby" value=10890">
+    <p>FT:$9000</p>
+    <input class="radio-button" type="radio" name="super-kirby" value="9000">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(59, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(59, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="59" onclick="toggleExtras(59)">Extras</button>
+<div class="div-extras" id="extrasList59" data-button-number="59" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(59)">Agregar al carrito</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="60">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="60" style="border: none;">Link</button>
+  <p id="parrafos-detalles">Pan de papa - Carne x2 - Muzarella x2 - Albahaca - Provenzal</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$10890</p>
+    <input class="radio-button" type="radio" name="super-smash-link" value="10890">
+    <p>FT:$9000</p>
+    <input class="super-smash-link" type="radio" name="Link" value="9000">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(60, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(60, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="60" onclick="toggleExtras(60)">Extras</button>
+<div class="div-extras" id="extrasList60" data-button-number=60" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(60)">Agregar al carrito</button>
+</div>
+
+
+
+<div class="div-botones-submenu" data-button-number="61">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="61" style="border: none;">Pikachu</button>
+  <p id="parrafos-detalles">Pan de papa - Carne x2 - Cheddar x4 - Bacon premium - Huevo frito</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$10890</p>
+    <input class="radio-button" type="radio" name="super-smash-pikachu" value="10890">
+    <p>FT:$9000</p>
+    <input class="super-smash-pikachu" type="radio" name="Link" value="9000">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(61, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(61, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="61" onclick="toggleExtras(61)">Extras</button>
+<div class="div-extras" id="extrasList61" data-button-number=61" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(61)">Agregar al carrito</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="62">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="62" style="border: none;">Mario Doble</button>
+  <p id="parrafos-detalles">Pan de papa - Carne x2 - Cheddar x2</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$10285</p>
+    <input class="radio-button" type="radio" name="super-smash-mario-doble" value="10285">
+    <p>FT:$8500</p>
+    <input class="super-smash-mario-doble" type="radio" name="Link" value="8500">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(62, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(62, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="62" onclick="toggleExtras(62)">Extras</button>
+<div class="div-extras" id="extrasList62" data-button-number=62" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(62)">Agregar al carrito</button>
+</div>
+
+<div class="div-botones-submenu" data-button-number="63">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="63" style="border: none;">Mario Triple</button>
+  <p id="parrafos-detalles">Pan de papa - Carne x3 - Cheddar x6</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$12342</p>
+    <input class="radio-button" type="radio" name="super-smash-mario-triple" value="12342">
+    <p>FT:$10200</p>
+    <input class="super-smash-mario-triple" type="radio" name="Link" value="10200">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(63, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(63, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="63" onclick="toggleExtras(63)">Extras</button>
+<div class="div-extras" id="extrasList63" data-button-number=63" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(63)">Agregar al carrito</button>
+</div>
+
+`;
+    subMenuSuper.innerHTML = buttonsHTML;
+    subMenuSuperVisible = true;
+    subMenuSuper.style.display = "flex";
+    subMenuSuper.offsetHeight;
+    subMenuSuper.style.opacity = "1";
+    subMenuSuper.style.transform = "translateY(0)";
+    subMenuSuper.style.visibility = "visible";
+    subMenuSuper.style.flexDirection = "column";
+    subMenuSuper.style.rowGap = "10px";
+    subMenuSuper.style.padding = "10px"
+    subMenuSuper.style.alignItems = "center"
+    // Agrega la clase 'active' al botón1 cuando se despliega el submenú
+    botonSuper.classList.add('active');
+    subMenuSuper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    event.preventDefault();
+  } else {
+    const subMenuSuperButtons = document.querySelectorAll('.menu-button');
+    subMenuSuperButtons.forEach(button => {
+      button.classList.remove('initial');
+    });
+    setTimeout(() => {
+      subMenuSuper.innerHTML = '';
+    }, subMenuSuperButtons.length * 100);
+    subMenuSuperVisible = false;
+    subMenuSuper.style.opacity = "0";
+    subMenuSuper.style.transform = "translateY(-20px)";
+    setTimeout(() => {
+      subMenuSuper.style.visibility = "hidden";
+      subMenuSuper.style.display = "none";
+    }, 800);
+    // Quita la clase 'active' al botón1 cuando se contrae el submenú
+    botonSuper.classList.remove('active');
+  }
+
+}
+
+
+
+
+function toggleSubMenuMila() {
+  const subMenuMila = document.getElementById('subMenuMila');
+  const botonMila = document.getElementById('botonMila');
+  if (!subMenuMilaVisible) {
+    const buttonsHTML = `
+    
+    
+<div class="div-botones-submenu" data-button-number="53">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="53" style="border: none;">Krilin</button>
+  <p id="parrafos-detalles">lechuga - tomate</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$7865</p>
+    <input class="radio-button" type="radio" name="milanesa-Krilin" value="7865">
+    <p>FT:$6500</p>
+    <input class="radio-button" type="radio" name="milanesa-Krilin" value="6500">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(53, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(53, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="53" onclick="toggleExtras(53)">Extras</button>
+<div class="div-extras" id="extrasList53" data-button-number="53" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(53)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="54">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="54" style="border: none;">Gohan</button>
+  <p id="parrafos-detalles">lechuga - tomate - jamon - queso - huevo</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$8349</p>
+    <input class="radio-button" type="radio" name="milanesa-gohan" value="8349">
+    <p>FT:$6900</p>
+    <input class="radio-button" type="radio" name="milanesa-gohan" value="6900">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(54, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(54, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="54" onclick="toggleExtras(54)">Extras</button>
+<div class="div-extras" id="extrasList54" data-button-number="54" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(54)">Agregar al pedido</button>
+</div>
+
+
+<div class="div-botones-submenu" data-button-number="55">
+<img class="img-producto" src="./productos/magnifica.png" alt="magnifica"></img>
+<div class="div-detalles-productos">
+  <button class="menu-button sub-menu-button" data-button-number="55" style="border: none;">Goten</button>
+  <p id="parrafos-detalles">Cheddar fundido - bacon - huevo</p>
+  <div class="div-precio-producto" style="    display: flex;
+    align-items: center;
+    flex-direction: row;">
+    <p>MP:$9438</p>
+    <input class="radio-button" type="radio" name="milanesa-goten" value="9438">
+    <p>FT:$7800</p>
+    <input class="radio-button" type="radio" name="milanesa-goten" value="7800">
+  </div>
+  <div style="    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 10px;">
+      <button class="counter-button" onclick="updateCounter(55, 'decrement')">-</button>
+      <span class="counter-value">0</span>
+      <button class="counter-button" onclick="updateCounter(55, 'increment')">+</button>
+  </div>
+</div>
+</div>
+<button class="boton-extras" data-button-number="55" onclick="toggleExtras(55)">Extras</button>
+<div class="div-extras" id="extrasList55" data-button-number="55" style="display: none;">
+</div>
+<div class="div-boton-agregar">
+<button class="boton-agregar" onclick="agregarAlPedido(55)">Agregar al pedido</button>
+</div>
+`;
+
+    subMenuMila.innerHTML = buttonsHTML;
+    subMenuMilaVisible = true;
+    subMenuMila.style.display = "flex";
+    subMenuMila.offsetHeight;
+    subMenuMila.style.opacity = "1";
+    subMenuMila.style.transform = "translateY(0)";
+    subMenuMila.style.visibility = "visible";
+    subMenuMila.style.flexDirection = "column";
+    subMenuMila.style.rowGap = "10px";
+    subMenuMila.style.padding = "10px"
+    subMenuMila.style.alignItems = "center"
+    // Agrega la clase 'active' al botón1 cuando se despliega el submenú
+    botonMila.classList.add('active');
+    subMenuMila.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    event.preventDefault();
+  } else {
+    const subMenuMilaButtons = document.querySelectorAll('.menu-button');
+    subMenuMilaButtons.forEach(button => {
+      button.classList.remove('initial');
+    });
+    setTimeout(() => {
+      subMenuMila.innerHTML = '';
+    }, subMenuMilaButtons.length * 100);
+    subMenuMilaVisible = false;
+    subMenuMila.style.opacity = "0";
+    subMenuMila.style.transform = "translateY(-20px)";
+    setTimeout(() => {
+      subMenuMila.style.visibility = "hidden";
+      subMenuMila.style.display = "none";
+    }, 800);
+    // Quita la clase 'active' al botón1 cuando se contrae el submenú
+    botonMila.classList.remove('active');
+  }
+
+}
+
+
 
 function toggleSubMenuPremium() {
   const subMenuPremium = document.getElementById('subMenuPremium');
@@ -3506,3 +3980,44 @@ function obtenerNumeroDeBotonPorNombre(itemName) {
   }
   return null;
 }
+
+function activarScrollAnimaciones() {
+  const secciones = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible-section');
+      } else {
+        entry.target.classList.remove('visible-section');
+      }
+    });
+  }, {
+    threshold: 0.2 // Ajusta el porcentaje visible para activar la animación
+  });
+
+  secciones.forEach(seccion => observer.observe(seccion));
+}
+
+document.addEventListener('DOMContentLoaded', activarScrollAnimaciones);
+
+function ocultarFraseHeaderConScroll() {
+  const fraseHeader = document.querySelector('.frase-header');
+  const mundito = document.querySelector('.mundo');
+  const imagenes = document.getElementById('imagenes-inicio');
+
+  if (!fraseHeader || !mundito || !nosotros) return;
+
+  window.addEventListener('scroll', () => {
+    const seccionTop = imagenes.getBoundingClientRect().top;
+    if (seccionTop < 10) {
+      fraseHeader.classList.add('frase-header-oculta');
+      mundito.classList.add('mundo-oculta');
+    } else {
+      fraseHeader.classList.remove('frase-header-oculta');
+      mundito.classList.remove('mundo-oculta');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', ocultarFraseHeaderConScroll);
+
