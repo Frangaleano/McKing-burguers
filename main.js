@@ -3981,24 +3981,6 @@ function obtenerNumeroDeBotonPorNombre(itemName) {
   return null;
 }
 
-function activarScrollAnimaciones() {
-  const secciones = document.querySelectorAll('section');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible-section');
-      } else {
-        entry.target.classList.remove('visible-section');
-      }
-    });
-  }, {
-    threshold: 0.2 // Ajusta el porcentaje visible para activar la animación
-  });
-
-  secciones.forEach(seccion => observer.observe(seccion));
-}
-
-document.addEventListener('DOMContentLoaded', activarScrollAnimaciones);
 
 function ocultarFraseHeaderConScroll() {
   const fraseHeader = document.querySelector('.frase-header');

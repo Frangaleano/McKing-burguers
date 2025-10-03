@@ -85,12 +85,20 @@ body {
     display: grid;
     transition: 0.3s;
     z-index: 4;
+
+    /* 👇 agregado para que no bloquee cuando está cerrado */
+    pointer-events: none;
   }
 
   .menu>div {
     background: #030108;
     transform: translateX(-100%);
     transition: 0.2s ease-in-out;
+  }
+
+  /* 👇 cuando el body tiene .open, sí habilita clics y muestra el menú */
+  body.open .menu {
+    pointer-events: auto;
   }
 
   body.open .menu>div {
@@ -142,6 +150,7 @@ body {
     position: fixed;
   }
 
+
   header {
     background: transparent;
     position: fixed;
@@ -181,17 +190,6 @@ body {
 
   .mundo-oculta {
     opacity: 0;
-  }
-
-  section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s, transform 1s;
-  }
-
-  section.visible-section {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   main {
