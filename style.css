@@ -224,11 +224,9 @@ body {
     min-height: 100vh;
     padding-top: 90px;
     box-sizing: border-box;
-    background-image:
-      linear-gradient(to bottom, rgba(255, 255, 255, 0) 70%, transparent),
-      url("./burguer-simple.webp");
+    background-image: url("./burguer-simple.webp");
     background-size: cover;
-    background-position: center;
+    background-position: left;
     display: flex;
     flex-direction: column;
     align-items: center;
